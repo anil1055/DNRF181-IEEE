@@ -1,0 +1,52 @@
+**Summary**
+
+The paper "BlockChain-Based Model to Predict Agile Software Estimation Using Machine Learning Techniques" proposes a blockchain-based model to estimate agile software development (ASD) effort and time. The authors suggest that the existing software estimation techniques have limitations due to their low accuracy and the need for a more precise estimation method. They argue that machine learning (ML) techniques and blockchain technology can be leveraged together to develop a more accurate estimation model.
+
+**Contributions of the Paper**
+
+The authors contribute to the field of software estimation by:
+
+1. Proposing a novel blockchain-based model that integrates ML techniques for ASD effort and time estimation.
+2. Developing a GUI-based system that utilizes historical data to make predictions.
+3. Evaluating the performance of the proposed model using four ML techniques: Random Forest (RF), Logistic Regression (LR), Support Vector Regression (SVR), and Extreme Gradient Boosting (XGBoost).
+4. Comparing the results of the proposed model with the original model proposed by Ziauddin and Zia (2012).
+5. Introducing the use of a standard deviation technique to refine the estimates and present them with more confidence to the customers.
+
+**Dataset Used**
+
+The authors use two datasets for their experiments:
+
+1. **Augmented dataset**: Comprises 126 software projects from software houses in Pakistan, with 5-fold augmentation to mitigate overfitting.
+2. **Dataset for effort estimation**: Contains 136 projects with characteristics such as team composition, project nature, technological dependencies, and person-hour effort as the target variable.
+
+**Key Findings**
+
+1. The authors report that the proposed model achieves a better mean magnitude of relative error (MMRE) compared to the original model, specifically 1.73% for the SVR model.
+2. The MMRE of all ML models is better than the original model, indicating that ML helps in improving the accuracy of estimation.
+3. The proposed model's performance is evaluated using three metrics: mean relative error (MRE), MMRE, and prediction at level 25% (Pred (25)).
+4. The authors observe that the MMRE decreases with the addition of more datasets, demonstrating the ability of the proposed model to generalize to unseen data.
+5. The use of the standard deviation technique further improves the MMRE, especially at 70%, 80%, and 90% confidence levels.
+
+**Limitations and Future Work**
+
+1. The proposed method for time estimation requires the input of the overall effort of the software, limiting its applicability in the early stages of software development.
+2. The authors acknowledge the need to explore additional features like task management and resource allocation in future work.
+
+**Predictors Used in the Research**
+
+According to the text, the following predictors were used in the research:
+
+1. Project size
+2. Number of tasks (Noftasks)
+3. Project complexity
+4. Size
+5. Complexity
+6. Hours of person-hour effort
+7. Monthly team salary
+8. Estimated cost
+9. Person-hours
+10. Input features (size, complexity, and Noftasks) selected based on correlation with effort and relevance in software engineering literature.
+
+Note that these predictors are used in conjunction with machine learning algorithms to build the proposed estimation model.
+
+Overall, the paper presents a comprehensive solution to the challenge of accurate software estimation in agile environments by harnessing the power of machine learning and blockchain technologies.

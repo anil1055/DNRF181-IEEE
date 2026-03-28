@@ -1,0 +1,1271 @@
+SN Computer Science      (2025) 6:790
+[https://doi.org/10.1007/s42979-025-04329-y](https://doi.org/10.1007/s42979-025-04329-y)
+
+
+# **Web Case Points for Early Web Size Prediction**
+
+**Sami Alshmrany** **[1]** **· Syed Immamul Ansarullah** **[2]** **· Syed Mohsin Saif** **[3]** **· Srikanth Cherukuvada** **[4]** **· Sudhanshu Maurya** **[5]** **·**
+**Anurag Sinha** **[6]** **· Shubhang Mishra** **[7]**
+
+Received: 16 October 2024 / Accepted: 18 August 2025
+© The Author(s), under exclusive licence to Springer Nature Singapore Pte Ltd. 2025
+
+**Abstract**
+
+The advent of Internet of Things (IoT) has revolutionized the way information and services are delivered via the web.
+The widespread popularity of web applications has seen a meteoric rise, with organizations of all sizes, both public and
+private, opting to make their services and operations available online. However, the development of these web-based
+applications has become increasingly complex, posing a challenge for organizations to manage this growing complexity
+within budget and timeline constraints. To address this challenge, there is a pressing need for accurate and efficient web
+effort estimation methods. The accuracy of such estimation has a direct and profound impact on the survival and success of
+development companies. This research paper proposes a novel approach to web size estimation, the Web Use Case Points
+(WCP) method, which takes into consideration functional and non-functional size to predict the size of a web application.
+The study also compares the WCP method with the widely used Function Point (FP) and Web Object (WO) methods. The
+results show that the size obtained through the WCP method is smaller than that obtained through the WO method, and
+greater than that obtained through the FP method in almost all ten web projects analyzed in this study. In conclusion, the
+WCP method provides a new and promising approach to web effort estimation, offering greater accuracy and efficiency
+for organizations looking to navigate the complex landscape of web application development.
+
+**Keywords** Web effort estimation · Web size metrics · Technical and environmental web factors · Web case points
+
+
+**Introduction**
+
+The dream conceived by Tim-Berners Lee in 1989 to estab-­
+lish a sophisticated online mechanism for sharing research
+related data and information among the research community.
+
+Anurag Sinha
+
+anuragsinha257@gmail.com
+
+Sami Alshmrany
+s.alshmrany@iu.edu.sa
+
+Syed Immamul Ansarullah
+syedansr@gmail.com
+
+Syed Mohsin Saif
+sms.manuu@gmail.com
+
+Srikanth Cherukuvada
+
+srikanth.ch@bvrit.ac.in
+
+Sudhanshu Maurya
+dr.sm0302@gmail.com
+
+Shubhang Mishra
+shubhangmishra094@gmail.com
+
+
+This was not limited to a group of users but was aimed to
+connect preachers across bounders and nations. The usage,
+popularity and demand of this way of information and
+data communication were widely accepted by different
+groups with different disciplines. This whole infrastructure
+
+1 Faculty of Computer and Information Systems, University of
+Madinah, Medina 42351, Saudi Arabia
+
+2 Department of Management Studies, University of Kashmir,
+North Campus, Delina Baramulla, Kashmir, India
+
+3 Department of Computer Science, IUST, Awantipora, Jammu
+& Kashmir, India
+
+4 Department of CSE (AI & ML), B V Raju Institute of
+Technology, Narsapur, Telangana, India
+
+5 Symbiosis Institute of Technology, Symbiosis International
+(Deemed University), Nagpur Campus, 18, Pune, India
+
+6 School of Computer and Information Sciences, Indira Gandhi
+National Open University, Delhi, India
+
+7 Department of Computer Science and Engineering, Sikkim
+Manipal Institute of Technology, Majitar, Sikkim, India
+
+SN Computer Science
+
+790 Page 2 of 11
+
+of sharing and accessing data and information remotely
+through client/server network architecture is called as World
+Wide Web or simply as Web. There happened a lot to reform
+and reframe the way Web used to deliver its services. Data
+or information made available on web is actually a hyper-­
+linked text build using HTML and now with more sophis-­
+ticated stuffs like XML, XHTML, Scripts, CMF, and CMS
+etc. The tradition of delivering content through websites has
+changed in different perspectives of technology, presenta-­
+tion and accessibility. Web applications are now most used;
+most demanded and widely discussed interfaces to access
+and exploit the power of web. Web applications are dynamic,
+responsive web sites were real-time data interpretation and
+customization of available constructs is made possible. User
+stationed at any location connected with communication
+network can access web resources through graphical user
+interface contained within web browser.
+
+The popularity of using these web applications has
+increased explosively and consequently the tradition of
+using conventional software applications became challeng-­
+ing. The restriction of being within the bounders to access
+traditional software and now the web applications which
+is accessible from anywhere made organizations to think
+beyond rituals. Most of the organizations have switched
+their operations and services on web by developing their
+customized web applications. Web application development
+is different from traditional software development in many
+aspects [1–5].
+
+The growing demand and much anticipated endorsement
+of Web Technology is a tire for content delivery in almost
+all public and private organizations. Increasing popularity
+and dependence on web based applications have resulted
+web applications with diverse functionality. This growing
+heterogeneity, diversity and multitudinous functionality
+have proportionally increased the complexity of web appli-­
+cation development. Web application complexity became a
+challenge for web project management. Effort estimation is
+most discussed and very critical challenge for web project
+management in particular and software project manage-­
+ment in general [6]. Web effort estimation is a systematic
+approach to elicit the efforts required for web application
+development that particularly corresponds to human efforts.
+Web effort estimates is very import and most influencing
+parameter in approximating the cost for web application
+development. The approximate cost estimation for any web
+application takes three major constituents into account:
+Efforts, contingency cost and profit [7]. It is prerequisite for
+web project management to have an efficient, most reliable
+and accurate effort estimation process. Accuracy in efforts
+has direct influence on web Development Company. The
+more accuracy in estimation results the more beneficial out-­
+comes for web Development Company.
+
+SN Computer Science
+
+
+SN Computer Science      (2025) 6:790
+
+Good effort estimation processes helps project manage-­
+ment to understand and draw efficient budgetary schedules
+for web application development [8]. Efficient results help
+Development Company to motivate more clients to get
+their projects developed. This raises Development Com-­
+pany high in competition and consequently outstanding
+figures in revenue and profit. Less efficient and inaccuracy
+in effort estimation results have negative repercussions on
+web development company [9]. This is now inevitable and
+indispensable for web project management to design and
+development effect and effective effort estimation process
+so, accurate effort estimation results can be made available
+before any actual development is initiated.
+
+This study is an attempt to propose web effort estimation
+approach. In this study new web size measurement metrics:
+web use point (WCP) is introduced. WCP is adjusted size of
+web application that represents both functional and dimen-­
+sional size measures required for web application develop-­
+ment. The remainder of this paper is organized as follows.
+Section “Web Effort Estimation” gives brief discussion of
+web effort estimation models, section “Background” dis-­
+cusses background of web size metrics, section “Web Case
+Points” gives overview of proposed size metrics, WCP, in
+section “Results and Discussions” comparative analysis of
+WCP, WO and FP is performed and finally section “Conclu-­
+sion” the conclusion.
+
+**Web Effort Estimation**
+
+As mentioned above, web effort estimation is a system-­
+atic procedure used to approximate or forecast the extent
+of efforts required to carry out a successful web applica-­
+tion development. Effort estimation models can be broadly
+categorized as algorithmic models and non-algorithmic
+models. Algorithmic models use certain empirical or math-­
+ematical relationship model between certain dependent and
+independent variables whereas non-algorithmic models use
+past project data and expert based judgment to decide efforts
+for web application development [10–13]. To offer best cost
+for web application development, web development com-­
+pany needs to have more appropriate method or technique
+to obtain realistic cost for web application development [9].
+The cost of development have direct relationship with web
+application size which intern depends on various require-­
+ments to be delivered by web application to be developed
+
+[14]. The perfectness in requirement elicitation and their
+analysis possess visible reflections on effort estimation. The
+standard and systematic approach that is considered dur-­
+ing effort estimation of any web application development is
+shown in Fig. 1.
+
+SN Computer Science      (2025) 6:790
+
+**Fig. 1** Abstract view of web effort
+estimation
+
+As obvious from above figure, web effort estimation is
+not a solo process but is actually an integrated approach of
+different specialized sub process. Each of these steps for-­
+ward more relevant information in order to acquire best and
+accurate effort estimates as outcome.
+
+Effort estimation for web application development is
+usually carried out by exploiting traditional effort estima-­
+tion models. There is no doubt that their implementation has
+produced good estimation results in certain web applica-­
+tions but as a generalized approach they failed to draw bet-­
+ter estimation inferences. The inaccuracy in effort estimates
+that was observed is directly tribute to implementation of
+ad-hoc or traditional approaches for web effort estimation
+
+[15]. There has been many effort estimation methodolo-­
+gies developed from time to time by different researchers.
+These methodologies were aimed to fulfill the challenges
+faced by project management during effort estimation. Few
+popular functional size measurement metrics used to obtain
+web development size and consequently the efforts were FP
+
+[16], WO [9], RWO [17], CFSU [18], UCP [19], Internet
+Points [20], Web Point Metrics [21], Data Web Points [22],
+etc. Web objects proposed by Donald, J. Reifer are the first
+web specific functional size metrics [9]. This functional
+size measurements quantification was done on the basis of
+functional user requirements specified for particular web
+application development. These proposed approaches didn’t
+succeed much. There still continues the implementation of
+fractional and ad-hoc approaches for web effort estimation.
+
+**Background**
+
+A functional and dimensional measure of web application
+development constitutes the size of web application. The
+identification of these measures is very critical for effec-­
+tive size prediction and consequently the accurate web
+effort estimates. Web effort estimation was carried out by
+using different available traditional software effort estima-­
+tion models. With the increasing diversity in architecture,
+functionality, content, navigational structure, behavior and
+implementation, web application complexity increased
+many folds. It was pretty challenging for web project man-­
+agement to render the web development perfectively by
+extending to traditional practices and ad-hoc methods [15].
+To develop new approaches to ensure effectiveness in web
+
+
+Page 3 of 11 790
+
+application development in general and web effort estima-­
+tion in particular, different models were proposed. Most
+of these approaches were practices to obtain functional
+size measures of web application and very few prediction
+models specific to web effort estimation were developed.
+The literature reviewed in [10] generates direct and clear
+insights that there is not even a single model available in
+literature that performs web effort estimation accurately and
+effectively [23].
+
+Donald, J. Reifer [9] proposed web objects web size mea-­
+sures after adding four web specific components to tradi-­
+tional function points approach and WebMo were developed
+as effort prediction model and no empirical analysis were
+discussed for WebMo. Emilia Mendes et al., performed
+web size measures using attributes: length, functional and
+complexity measures [24]. Leonardo M and Roberta [25]
+developed metrics model based on W2000, size measured
+from functional, navigational, structural and multimedia
+components. Sergio, F. et al., proposed data web points
+to measure functional size of web [22]. Melanic Ruhe et
+al., compared FP and WO the results revealed that WO
+with OLS performed better than FP and also revealed size
+expressed in WO were 55% more than FP [26]. Paul Umber
+
+[27] expressed web size as CFSU and proposed COSMICFFP performed better effort prediction than expert-based
+judgment.
+
+Costagliola, G. et al., [28, 29] in his study revealed that
+COSMIC-FFP produced better effort prediction results.
+Costagliola in his other study divided size measures into
+functional measures and length measures, WO were used
+as web size metrics the results revealed that the proposed
+approach played better estimates than analogy based
+approaches [30]. Ferrucci et al., investigated COSMIC and
+WO, the results showed COSMIC as better indicator [31].
+Giulio, B. Giulio et al., studied the effectiveness of FP and
+WO, as web size measures and showed that WO performed
+better in comparison to FP [32]. Filament Ferrucci [33]
+studied Web-CORBA and COSMIC size measures and the
+
+results revealed were better than [34].
+
+Silvia Abraham used OO-HFP and was more accurate
+
+than FPA [35]. Sergio, D. Martino performed replicated
+study and showed WO better than FP when OLSR, WebCORBA were used as predictive approaches [36]. R. Fol-­
+gieriet et al., in his study proposed RWO and results showed
+that RWO performed better in comparison to FP and WO
+
+SN Computer Science
+
+790 Page 4 of 11
+
+[9]. Erika Corona et al., opposed web CMF model for web
+effort estimation and results showed better effort prediction
+than RWO and FP [37]. Lucio De Marco performed web
+size approximation by COSMIC functional process (cfunP)
+and average functional process(AFP), the results obtained
+were significant [38]. Similarly Denis Cake et al., proposed
+hybrid approach by clubbing COSMIC-FFP and UWE,
+the predictability results obtained were satisfying Contest
+Criteria [39]. The detailed review on these studies can be
+obtained from [10].
+
+Use Case Point (UCP) analysis has been widely employed
+as an early-stage effort estimation technique for software
+development, offering a structured approach grounded in
+functional requirements. Numerous studies have extended
+and enhanced the traditional UCP model to address its limi-­
+tations and improve its prediction accuracy.Ramesh and
+Varalakshmi (2023) proposed an ensemble learning-based
+prediction model for UCP-based effort estimation. Their
+study demonstrated that machine learning ensembles such
+as Random Forest and AdaBoost significantly improve
+estimation accuracy compared to conventional UCP
+approaches. The findings emphasize the benefits of integrat-­
+ing intelligent learning methods into traditional estimation
+techniques [40]. In a systematic review, Rani and Arora
+(2021) analyzed the existing literature on UCP-based effort
+estimation. They observed a growing trend toward hybrid
+and model-enhanced estimation approaches and highlighted
+key challenges such as adjusting for productivity rates and
+calibration factors. Their work provides a strong foundation
+for understanding the evolution of UCP applications over
+the past decade [41]. To address the inherent uncertainty in
+early-stage estimation, Vetriselvan and Suresh (2024) intro-­
+duced an Adaptive Neuro-Fuzzy Inference System (ANFIS)
+integrated with Enhanced Use Case Points (EUCP). Their
+hybrid model accounts for imprecise and fuzzy project
+attributes, resulting in better adaptability and prediction
+accuracy, particularly during the requirements phase [42].
+Another refinement in UCP modeling was proposed by
+Febriani and Hidayat (2023), who incorporated activitybased function point complexity into use case diagrams.
+Their approach offers a more granular analysis of software
+activities, thereby refining the estimation of development
+effort and aligning it more closely with actual project tasks
+
+[43]. In the context of software reuse, Haron et al. (2019)
+investigated effort estimation models that utilize reusable
+
+**Table 1** WCF with their fixed weighting factor
+Factor Description Weight(w) Count(C)
+
+W1 No. of web Pages 0.5
+W2 No. interactive web pages 2
+
+W3 No. of multimedia Files 1
+
+W4 No. of application points 1
+W5 Multilingual support 1
+
+SN Computer Science
+
+
+SN Computer Science      (2025) 6:790
+
+use cases. Their case study confirmed that use case reuse
+can lead to improved efficiency and estimation accuracy,
+especially for projects with similar functional scopes. This
+approach supports the development of reusable software
+components as a strategic asset in effort estimation [44].
+
+The insights from above discussion about different size
+metrics and their behaviour in web effort estimation have
+been quite elusive to find more accurate choice. Neverthe-­
+less it was possible to observe the popularity and usability
+of web objects and function points to express the functional
+size of web application development. Selection of param-­
+eters and their mapping as web size metrics have influence
+on the accuracy of efforts estimated [45, 46]. The need of
+the hour is to propose new and affect approach for pursing
+effective web effort estimation. To over these challenges this
+study proposes new web size metrics, web case pints to pre-­
+dict web application size.
+
+**Web Case Points**
+
+Web case points (WCP), a web size metrics proposed in this
+study are based on functional, dimensional and nontechni-­
+cal parameters required for web application development.
+WCPs were obtained from requirements elicited and elabo-­
+rated through objective oriented model-driven approach
+called as use case modelling. In use case modelling, use
+case diagrams are used to express requirements into their
+corresponding functional and dimensional functional mea-­
+sures. Actors, use-cases, use case scenarios and different
+type’s relations and associations are main constructs in
+objective oriented approach to model working framework
+of web application development. The overall size of the web
+application development is carried out in multiple steps:
+
+***Step I: Obtaining Web Complexity Factors corresponding***
+***to functional size***
+
+The actual size expressed as WCPs is calculated from web
+complexity factors (WCF) proposed in [47]. WCF has five
+parameters to represent functional and dimensional aspect
+of web development: no. of web pages, no. of interactive
+web pages, no. of application points, no. of multimedia files
+and nature of multilingualism. The identification, behaviour
+and implementation of operands and operators are carried
+out through use case modeling. Each of these parameters
+has associated a fixed weighting factor. This weighting fac-­
+tor relates to their complexity. The overall density of these
+parameters produce unadjusted size of web application cal-­
+culated as unadjusted web case points by using equation no.
+1 and parameters are shown in Table 1 below.
+
+SN Computer Science      (2025) 6:790
+
+
+*UWCP*
+
+
+5
+∑
+
+*i* =1
+
+
+( *W* *i* *C* *i* )  (1)
+
+
+In order to normalize the unadjusted weight the factors that
+influence WCP were identified as technical and environ-­
+mental web complexity factors as were used by Karnar in
+software effort estimation [19]. Both technical and environ-­
+mental factors in [19] were revisited to find their relevance
+with web application development. The relevance was
+obtained from respondents who were researchers, academi-­
+cians, web development practitioners, consultants and free-­
+lancers through questionnaires and interviews. The trends
+of the reviewed responses were in favor of inclusion of ECF
+and TCF of [19, 48] after certain changes.
+
+***Step II: Identification and Inclusion of Technical Com-­***
+***plexity Factors (TCF*** ***web*** ***)***
+
+The Technical Complexity Factors were extended from
+the UCP model to reflect web-specific technical challenges
+more accurately. Fifteen (15) factors were included in the
+proposed TCF web, based on their expert-rated relevance.
+These include original factors like “Complex Internal Pro-­
+cessing” and “Code Reusability,” as well as web-specific
+refinements such as “Web Development Architecture,”
+“Scalable and Reliable Systems,” and “Database Integra-­
+tion” as shown in Table 2 below:.
+
+The TCF web is calculated using equation :
+
+
+Page 5 of 11 790
+
+**Table 2** Technical complexity factors TCFweb (T1-T15) for web
+application development
+Factor Description Weight(w) Signifi-­
+cance(0,
+5)
+
+T1 WebApp development 2
+Architecture
+
+T2 Persistence and throughput 1
+T3 End User Efficiency 1
+T4 Complex Internal Processing 1
+Required
+
+T5 code reusability 1
+
+T6 Installation Ease 0.5
+
+T7 Usability 0.5
+T8 Cross-Platform Support 2
+T9 Easy To Change 1
+T10 Highly Concurrent 1
+T11 Custom Security 1
+T12 Dependence On Third-Party 1
+Code
+
+T13 User Training 1
+
+T14 Scalable and Reliable **2**
+
+T15 Database integration. 2
+
+**Table 3** Environmental complexity factors (E1-E10) for web applica-­
+tion development
+Factor Description Weight(w) Signifi-­
+cance(0,
+5)
+E1 Familiarity With The web appli-­ 1.5
+cation development.
+
+E2 Developers technical capability 0.5
+E3 OO Programming Experience 1
+E4 Lead Analyst Capability 0.5
+
+E5 Motivation 1
+
+E6 Stable Requirements 2
+E7 Usage of developmental -1
+tools(CMS/CMF support)
+
+E8 Difficult Programming Language -1
+E9 Project Methodology 1
+E10 Testability 0.5
+
+Where *W* *i* is the fixed weight for each factor, and *S* *i* is the
+expert-assigned significance score.This factor adjusts for
+productivity variations due to team capability, technology
+familiarity, and development practices.
+
+***Step IV: Calculating the overall Size expressed in Web***
+***Case Points (WCP’s)***
+
+After obtaining UWCP, TCFweb and ECFweb, the next
+component for web size estimation is to calculate adjusted
+web application size that is to get total number of web case
+points (WCP) or adjusted web case points (AWCP). The
+actual causation of WCPs is expressed by using Eq. 4a or
+4b *[WCP]* [ =] *[ UWCP][ ×][ TCF]* web *[×][ ECF]* web [ ] (4a)
+
+*AWCP* = *UWCP × TCF* web *× ECF* web  (4b)
+
+SN Computer Science
+
+
+*TCF* web = 0 *.* 6 + (0 *.* 01 *×*
+
+
+15
+∑
+
+*i* =1
+
+
+*W* *i* *S* *i* )  (2)
+
+
+Where: *W* I is the fixed weight of the technical factor and *S* i is
+the significance score (0–5) based on expert input.
+
+This factor adjusts the UWCP to reflect the techni-­
+cal rigor and infrastructure needs associated with the web
+application.
+
+
+***Step III: Identification and Inclusion of Environmental***
+***Complexity Factors (ECF*** ***web*** ***)***
+
+The Environmental Complexity Factors **(** *ECF* *web* **)** encap-­
+sulate the development team’s characteristics, project
+methodology, and work environment. A total of 10 factors
+were finalized after evaluating expert responses, including
+“Familiarity with Development,” “Use of Development
+Tools,” and the newly added factor “Testability.” Table 3
+lists these factors along with their corresponding weights.
+
+The *ECF* *web* is computed using:
+
+
+*ECF* web = 1 *.* 4 + ( *−* 0 *.* 03 *×*
+
+
+10
+∑ *W* *i* *S* *i* )  (3)
+
+*i* =1
+
+790 Page 6 of 11
+
+**Table 4** Estimating total number(size) of FP, WO and UWCP calcu-­
+lated from individual project
+Project ID FP WO WCP
+
+P1 41 79 48
+
+P2 83 208 132
+
+P3 127 269 174
+
+P4 234 424 320
+
+P5 218 390 291
+
+P6 166 303 202
+
+P7 218 404 286
+
+P8 83 159 88
+
+P9 221 481 288
+
+P10 349 434 344
+
+**Table 5** Magnitude of relative error in estimated efforts obtained by
+using FPA, WebMo and Web-UCP
+Project ID Magnitude of Relative Error(MRE)
+
+FPA WebMo Web-UCP
+
+P1 0.30282 0.20423 0.10915
+
+P2 0.15634 0.02065 0.02507
+
+P3 0.25056 0.20449 0.03146
+
+P4 0.11430 0.08206 0.01172
+
+P5 0.09275 0.03560 0.01655
+
+P6 0.09076 0.04538 0.06975
+
+P7 0.11030 0.07758 0.08485
+
+P8 0.20209 0.03484 0.05749
+
+P9 0.13049 0.11093 0.09057
+
+P10 0.07785 0.03509 0.02166
+
+Where WCP or AWCP is estimated size of web application
+and is expressed as total number of web case points after
+considering the impact of technical and environmental fac-­
+tors on web development, UWCP are unadjusted web case
+points, TCFweb is technical complexity factor and ECF-­
+web, is environmental complexity factor.
+
+***Step V: Integration and Final Effort Estimation***
+After computing the WCP, the final effort estimation is
+determined by factoring in the Web Application Complex-­
+ity Ranking (WAC rank), which classifies the application as
+Simple, Average, Complex, or Critical with respective mul-­
+tipliers of 5, 10, 15, or 20. The final estimated effort is then:
+
+*Effort* = *WCP × WAC* *rank*  (5)
+
+*Effort* (Person *−* Hours) = WCP *×* WAC rank  (6)
+
+Where *WCP* is total calculated web application size and
+*WAP* *rank* is a fixed web application complexity factor deter-­
+mined by using expert-based judgment approach. *Efforts* are
+estimated efforts for web application development and are
+expressed in *person hours.*
+
+SN Computer Science
+
+
+SN Computer Science      (2025) 6:790
+
+**Results and Discussions**
+
+The proposed web size metric, WCP, was rigorously evalu-­
+ated in this study by comparing its estimated size with two
+widely used metrics, FP and WO. Both FP and WO cal-­
+culate the functional size of a web application. FP, a com-­
+monly used sizing metric for software effort estimation, and
+WO, the first web-specific size metric, were implemented
+for effort estimation as described in references [11] and [9].
+
+A dataset of 10 industrial web projects was employed to
+assess the accuracy of FP, WO, and WCP in calculating web
+application size. The results of the implementation are pre-­
+sented in Table 4.
+
+The results indicate that the size estimates obtained by
+FP were smaller than both WO and WCP in the majority of
+the 10 web projects. WO, on the other hand, produced larger
+size estimates than FP and WCP. The proposed WCP met-­
+ric was found to provide a balanced size estimate that falls
+between the estimates obtained by FP and WO.
+
+This study highlights the limitations of FP in web effort
+estimation and underscores the need for a more comprehen-­
+sive metric that takes into account all aspects and parameters
+relevant to web application development. While WO was
+specifically designed for web effort estimation, the results
+show that WCP provides more balanced size estimates in
+most of the web projects studied.
+
+In conclusion, this study demonstrates the potential of
+WCP to provide better size estimates for web application
+development compared to commonly used FP and WO met-­
+rics. The balanced size estimate obtained through WCP can
+lead to more accurate effort estimates, making it a valuable
+addition to the field of web effort estimation.
+
+**Performance Evaluation Metrics**
+
+To assess the performance of Web-UCP, WebMo, and FPA
+for web effort estimation, this study applied standard evalu-­
+ation metrics—including MRE, MMRE, MdMRE, MAE,
+MdAE, STD DEV, and PRED(25/20/10)—on a dataset of
+ten projects. The results from Web-UCP were then com-­
+pared with those of WebMo and FPA to evaluate its relative
+accuracy and effectiveness.
+
+**Magnitude of Relative Error(MRE)**
+
+Magnitude of Relative Error (MRE) for Web-UCP, WebMo,
+and FPA was calculated using Eq. 7 across ten web projects
+(P1–P10), as presented in Table 5.
+
+
+
+*[−]* *[E]* *[ff]* *[ort]* *[Estimated]*
+*MRE* = *[E]* *[ff]* *[ort]* *[Actual]*
+
+*Effort* *Actual*
+
+
+ (7)
+
+SN Computer Science      (2025) 6:790
+
+**Fig. 2** MMRE in calculated efforts obtained after using Web-UCP,
+WebMo and FPA
+
+**Fig. 3** MdMRE in calculated efforts obtained after using Web-UCP,
+WebMo and FPA
+
+Table 5 shows that MRE values for Web-UCP are consis-­
+tently lower than those for WebMo and FPA, highlighting
+the superior accuracy of Web-UCP in web effort estimation.
+
+**Mean Magnitude of Relative Error (MMRE)**
+
+Mean Magnitude of Relative Error (MMRE) was calculated
+from the MRE values for projects P1–P10 using Eq. 8. It
+quantifies the average relative deviation in estimated efforts,
+regardless of units (e.g., person-hours or man-months), and
+
+2
+is illustrated in Fig. . Deviations may be either underesti-­
+mates or overestimates.
+
+
+Page 7 of 11 790
+
+**Fig. 4** MAE in calculated efforts obtained after using Web-UCP,
+WebMo and FPA
+
+The perusal of Fig. 3 shows MdMRE for web projects(P1P10) obtained using Web-UCP is comparatively lesser than
+the MdMRE obtained using WebMo and FPA. Similarly
+MdMRE for projects(P1-P10) obtained using WebMo is
+less than MdMRE obtained using FPA.
+
+**Mean Absolute Error (MAE)**
+
+Absolute error measures the difference between estimated
+and actual efforts. The Mean Absolute Error (MAE) is the
+average of these absolute errors for projects P1–P10, calcu-­
+lated using Web-UCP, WebMo, and FPA. MAE is computed
+by Eq. 8 and shown in Fig. 4.
+
+
+*MAE* = [1]
+
+*n*
+
+
+*n*
+∑ *i* =1 *[|][Effort]* *Actual* *[−]* *[Effort]* *Estimated* *[|]* [ ] (9)
+
+
+Figure 4 clearly shows that the MAE for projects (P1–P10)
+using the Web-UCP model is lower than that of WebMo and
+FPA. Additionally, WebMo performs better than FPA for
+web effort estimation. These results highlight the superior
+performance of the Web-UCP model compared to WebMo
+and FPA.
+
+**Mean, Standard Deviation(STDEV) and Variance of**
+**Estimated Efforts**
+
+The calculated efforts were further analyzed by comparing
+the mean, standard deviation, and variance resulting from
+Web-UCP, WebMo, and FPA for web effort estimation, as
+shown in Figs. 8, 9 and 10, respectively. The mean actual
+effort for projects P1–P10 is approximately 1926 manhours. The mean estimated efforts using Web-UCP, WebMo,
+and FPA are 1851, 1800, and 1698 man-hours, respectively.
+The mean estimated by Web-UCP is closer to the actual
+mean effort than those from WebMo and FPA, as illustrated
+in Fig. 5.
+
+Figure 5 shows the standard deviation of estimated
+efforts using Web-UCP, WebMo, and FPA. The standard
+deviation from Web-UCP (1353.061) closely matches that
+
+SN Computer Science
+
+
+*MMRE* = [1]
+
+*n*
+
+
+*n*
+∑ *MRE*  (8)
+
+*i* =1
+
+
+Figure 2 shows that MMRE values for Web-UCP are lower
+than those for WebMo and FPA, indicating that Web-UCP
+provides more accurate effort estimation. WebMo also out-­
+performs FPA in this regard.
+
+**Median Magnitude of Relative Error (MdMRE)**
+
+The Median Magnitude of Relative Error (MdMRE) repre-­
+sents the median relative deviation between estimated and
+actual efforts. Figure 3 shows the MdMRE for projects P1 to
+P10 using Web-UCP, WebMO, and FPA.
+
+790 Page 8 of 11
+
+**Fig. 5** Mean estimated efforts obtained using Web-UCP, WebMo and
+FPA
+
+**Fig. 6** STDEV in estimated efforts obtained using Web-UCP, WebMo
+and FPA
+
+**Fig. 7** Variance of calculated efforts after using Web-UCP, WebMo and
+FPA
+
+of the actual efforts (1407.76). In comparison, the standard
+deviations for WebMo and FPA are 1315.577 and 1287.952,
+respectively [49].
+
+Based on the standard deviation results, Fig. 6 compares
+the variance of estimated efforts using Web-UCP, WebMo,
+and FPA with the actual efforts variance (1,981,781). It
+shows that the variance from Web-UCP (1,830,773.7)
+closely aligns with the actual efforts variance (See Fig. 7).
+
+The overall interpretations obtained from Mean, Stan-­
+dard Deviation and Variance in effort estimated using WebUCP, WebMo and FPA for projects P1 through P10 shows
+better performance and close relevance of Web-UCP in
+comparison with WebMo and FPA for web effort estimation.
+
+SN Computer Science
+
+
+SN Computer Science      (2025) 6:790
+
+**Fig. 8** Mean of deviations in estimated efforts obtained using WebUCP, WebMo and FPA
+
+**Fig. 9** STDEV of absolute deviations in estimated efforts obtained
+using Web-UCP, WebMo and FPA
+
+**Fig. 10** Variance of deviations in estimated efforts obtained using WebUCP, WebMo and FPA
+
+**Mean, Standard Deviation (STDEV) and Variance of**
+**Deviation in Estimated Efforts Estimated Using Web-UCP,**
+**WebMo and FPA**
+
+In order to further evaluate the effectiveness and accuracy
+in results obtained using Web-UCP, WebMo and FPA, this
+study performs Mean, Standard deviation and Variance on
+the absolute deviation in estimated efforts. Absolute devia-­
+tion quantifies the gap between actual and estimated efforts,
+more gap mean more deviation. Mean, Standard deviation
+and Variance calculated is graphically expressed by Figs. 8,
+9 and 10 respectively.
+
+The perusal of the results expressed in Fig. 8 show that
+mean of deviation using Web-UCP were comparatively less
+than mean of deviations obtained using WebMo and FPA for
+web effort estimation.
+
+SN Computer Science      (2025) 6:790
+
+Similarly, the STDEV of deviation obtained using WebUCP model were comparatively lesser than STDEV of devi-­
+ations in efforts estimated using WebMo and FPA and the
+same is given in Fig. 9.
+
+Further the variance of deviation obtained using WebUCP, WebMo and FPA for projects P1-P10 reiterates the bet-­
+ter performance of Web-UCP in comparison with WebMo
+and FPA models for web effort estimation and the same is
+given in Fig. 10.
+
+The results from evaluating Web-UCP, WebMo, and FPA
+across various criteria clearly demonstrate that the WebUCP model significantly outperforms WebMo and FPA in
+estimating web effort for all projects P1 through P10. Addi-­
+tionally, the findings show that WebMo performs better than
+FPA. Overall, these results strongly support the superior per-­
+formance of the Web-UCP model for web effort estimation.
+
+**Predictability (PRED(n))**
+
+To further evaluate the results, effort predictability was eval-­
+uated. Predictability, or *Pred* (x), is defined as the number or
+proportion of projects with an MRE less than or equal to the
+prediction level ‘x’. *Pred* (x) is calculated using Eq. 10.
+
+Pr *ed* ( *x* ) = *[T]* (10)
+
+*N* [ ]
+
+Where N is total number of projects, T represents total num-­
+ber of projects where calculated MRE of projects P1, P2
+upto P10 is less than or equal to “x”. *Pred* (x) is the total
+number of projects where MRE less than or equal to the
+value substituted for variable “x”.
+
+In this study, *Pred* (25), *Pred* (20) and *Pred* (10) is per-­
+formed on efforts estimated using Web-UCP, WebMo and
+FPA and the results obtained are given in Figs. 11, 12 and
+13 respectively.
+
+Figure 11 presents the *Pred* (25) results for estimated
+efforts of projects P1 to P10. The data clearly show that
+*Pred* (25) using Web-UCP is higher compared to WebMo
+and FPA. Additionally, WebMo’s *Pred* (25) outperforms
+FPA. These results also meet Conte’s Predictability Criteria,
+which requires *Pred* (25) to be at least 75%, meaning that
+75% or more of the projects have an MRE of 0.25 or less
+
+[24].
+
+Similarly, the results obtained for *pred* (20) are given in
+Fig. 12 and shows that Web-UCP performed comparatively
+better than WebMo and FPA in projects P1, P2 upto P10.
+
+The *Pred* (10) results in Fig. 13 further confirm the superior
+performance of the Web-UCP model compared to WebMo
+and FPA for web effort estimation. Overall, the predictabil-­
+ity values of Web-UCP at *Pred* (25), *Pred* (20), and *Pred* (10)
+meet Conte’s Predictability Criteria and outperform those
+
+
+Page 9 of 11 790
+
+**Fig. 11** Pred (25) of calculated efforts using Web-UCP, WebMo and
+FPA
+
+**Fig. 12** Pred(20) of calculated efforts using Web-UCP, WebMo and
+FPA
+
+**Fig. 13** *Pred* (10) of calculated efforts using Web-UCP, WebMo and
+FPA
+
+of WebMo and FPA. Additionally, the predictability results
+for WebMo are consistently better than those for FPA. These
+findings clearly demonstrate the better performance of WebUCP over WebMo and FPA in web effort estimation.
+
+**Conclusion**
+
+In this study, a new web size metrics was proposed to
+calculate the size of web applications, the Web Use Case
+Points (WCP) method. The WCP method is based on three
+different complexity categories that reflect the functional,
+dimensional, technical, and environmental parameters that
+impact web application development and web effort esti-­
+mation. The results of the study, which calculated the size
+
+SN Computer Science
+
+790 Page 10 of 11
+
+of web application development using the WCP, Function
+Point (FP), and Web Object (WO) methods for ten projects,
+showed that the size calculated using the WCP method was
+in between the size calculated using the FP and WO meth-­
+ods. The future of this research holds significant promise,
+as it seeks to develop a web effort estimation model based
+on the proposed WCP method, thereby enabling a more
+accurate and efficient method of estimating the size of web
+applications. The ultimate goal is to empirically validate
+the effectiveness of the WCP method compared to the FP
+and WO methods, providing organizations with a valuable
+tool for better managing the complexity and cost of web
+application development. This research holds the potential
+to revolutionize the way web effort estimation is performed,
+offering greater accuracy and efficiency for organizations in
+the rapidly growing field of web development.
+
+**Acknowledgements** We extend our gratitude to Kwintech R Labs for
+their support in many this study possible.
+
+**Author Contributions** Dr. Syed Mohsin Saif: Conceptualized the
+study, designed the research framework, and provided critical revi-­
+sions to the manuscript. Dr. Syed Ansarullah: Assisted in the meth-­
+odology development, conducted data analysis, and contributed to the
+writing and editing of the manuscript. Dr. Sami Alshmrany: Provided
+expert advice on the research topic and contributed to the interpreta-­
+tion of results. Anurag Sinha: [Corresponding Author] Coordinated the
+study, oversaw the project management, and ensured that all authors
+contributed to the final manuscript.
+
+**Funding** This research received no specific grant from any funding
+agency in the public, commercial, or not-for-profit sectors. The authors
+did not receive any financial support that could have influenced the
+study’s design, data collection, analysis, interpretation, or publication
+of the results.
+
+**Data Availability** The data supporting the findings of this study are
+available from the corresponding author upon reasonable request. The
+datasets used during the study are not publicly available due to privacy
+concerns but can be accessed by researchers under specified condi-­
+tions.
+
+**Declarations**
+
+**Research Involving Human and/or Animals** This research did not in-­
+volve any studies on human participants or animals. All experiments
+and methodologies were conducted in accordance with ethical stan-­
+dards and relevant institutional guidelines.
+
+**Informed Consent** As the study did not involve human participants,
+informed consent was not applicable. However, ethical approval was
+obtained from the relevant institutional review board for any potential
+future studies involving human subjects or animal research.
+
+**Competing Interests** The authors declare that there are no competing
+interests that could potentially influence the findings or interpretations
+presented in this study. All authors have disclosed any financial or
+personal relationships that could be perceived as conflicts of interest
+related to the research.
+
+SN Computer Science
+
+
+SN Computer Science      (2025) 6:790
+
+**References**
+
+1. Overmyer S. What’s different about requirements engineering for
+web sites? Requirements Eng J. 2000;5(1):62–5.
+2. Lowe D, Henderson-Sellers B. Impacts on the development
+process of differences between web systems and conventional
+software systems. In: International Conference on Advances in
+Infrastructure for Electronic Business, Science, and Education on
+the Internet, L’Aquila, Italy; 2001.
+3. Powell T, Jones D, Cutts D. Web site engineering: beyond web
+page design. Prentice Hall; 1998.
+4. Jesper H, Torkil C. What makes web-development different? 24th
+Information Systems Research Seminar Norway; 2001.
+5. Pressman RS. Can internet-based applications be engineered?
+IEEE Softw. 1998;15(5):104–10.
+6. Dhawan S, Kumar R. Web metrics for evaluating effort and
+design of hyperdocuments. Assocition for Computing Machinery
+New Zealand Bulletin; 2007. pp. 331–40.
+7. Kitchenham BA, Pickard LM, Linkman S, Jones P. Mod-­
+elling software bidding risks. IEEE Trans Software Eng.
+2003;29(6):54–554.
+8. Moayed MJ et al. Comparing between web application effort esti-­
+mation methods. In: Fifth International Conference on Computa-­
+[tional Science and Applications, IEEE; 2007. ​h ​t ​t ​p ​​s ​: ​/ ​​/ ​d ​o ​i ​​. ​o ​​r ​g ​/ ​​1 ​0 ​. ​1 ​​](https://doi.org/10.1109/ICCSA.2007.33)
+[1 ​0 ​9 ​​/ ​I ​C ​​C ​S ​A ​. ​2 ​0 ​0 ​7 ​. ​3 ​3](https://doi.org/10.1109/ICCSA.2007.33)
+9. Reifer DJ. Web development: estimating quick-to-market soft-­
+ware. Softw IEEE. 2000;17(6):57–64.
+10. Saif SM, Wahid A. Effort Estimation techniques for web appli-­
+
+cation development: A review. Int J Adv Res Comput Sci.
+2017;8(9):Nov–Dec.
+11. Trendowicz A, Jeffery R. Classification of effort estimation meth-­
+
+ods. Software project effort Estimation. Springer; 2014. pp. 155–
+[206. ​h ​t ​t ​p ​​s ​: ​/ ​​/ ​d ​o ​i ​​. ​o ​​r ​g ​/ ​​1 ​0 ​. ​1 ​​0 ​0 ​7 ​​/ ​9 ​7 ​​8 ​- ​3 ​- ​3 ​1 ​9 ​- ​0 ​3 ​6 ​2 ​9 ​- ​8 ​_ ​6](https://doi.org/10.1007/978-3-319-03629-8_6)
+12. Chulani S, et al. Calibrating software cost models using bayesian
+
+analysis. IEEE Trans Software Eng. 1999;25(4):573–83.
+13. Shepperd MJ, Schofield C, Kitchenham B. Effort estimation
+
+using analogy. In: Proc. ICSE-18, IEEE Computer Society Press,
+Berlin; 1996.
+14. Druzdzel MJ, van der Gaag LC. Building probabilistic networks:
+
+where do the numbers come from? IEEE Trans Knowl Data Eng.
+2000;12(4):481–6.
+15. Giulio B, Guido P, Giulio C. Computational intelligence and soft-­
+
+ware engineering. In: International Conference on Computational
+Intelligence and Software Engineering, CiSE; 2009.
+16. Albrecht AJ. Measuring application development productivity.
+
+In: Proceedings of the joint SHARE, GUIDE and IBM applica-­
+tion development symposium. IBM Corporation; 1979.
+17. Foilgieri R. A Revised Web Objects Method to estimate web
+
+Application development effort. In Proceedings of ACM ICSE’11,
+Waikiki, USA; 2011, May 21–28.
+18. ISO/IEC. 19761:2011, Software engineering -- COSMIC: a func-­
+
+tional size measurement method. International Organisation for
+[Standardisation. Retrieved October 9, 2017, from ​h ​t ​t ​p ​​s ​: ​/ ​​/ ​w ​w ​w ​​. ​i ​​s ​](https://www.iso.org/standard/54849.html)
+[o ​. ​​o ​r ​g ​/ ​​s ​t ​a ​​n ​d ​a ​​r ​d ​/ ​5 ​4 ​8 ​4 ​9 ​. ​h ​t ​m ​l](https://www.iso.org/standard/54849.html)
+19. Karner G. Estimation for objectory projects. Objectory Systems;
+
+1993.
+20. Cost Xpert Group Inc. (n.d.). Estimating Internet Development.
+
+[Retrieved from http://www.costxpert.com/](http://www.costxpert.com/)
+21. Cleary D. Web-based development and functional size measure-­
+
+ment. In: Proceedings of IFPUG Annual Conference, San Diego,
+USA; 2000, October.
+22. Ochoa SF, Bastarrica MC, Parra G. Estimating the development
+
+effort of web projects in Chile. In: Proceedings of First Latin
+American Web Congress; 2003, March.
+
+SN Computer Science      (2025) 6:790
+
+23. French AM. (n.d.). Web development life cycle: a new meth-­
+
+odology for developing web applications. J Int Bank Commer.
+[Retrieved from ​h ​t ​t ​p ​​: ​/ ​/ ​​w ​w ​w ​. ​​i ​c ​​o ​m ​m ​​e ​r ​c ​e ​​c ​e ​n ​​t ​r ​a ​​l ​. ​c ​o ​m ​/](http://www.icommercecentral.com/)
+24. Mendes E, Mosley N, Counsell S. Early web size measures and
+
+effort prediction for web costimation. In: Proceedings of Ninth
+International Software Metrics Symposium, IEEE; 2003.
+25. Mango L, Paisano R. MMWA: a software sizing model for Web
+
+applications. In: Proceedings of the Fourth International Con-­
+ference on Web Information Systems Engineering, WISE 2003,
+IEEE; 2003, December 12–12.
+26. Ruhe M, Jeffery R, Wieczorek I. Using web objects for estimating
+
+software development effort for web applications. In: Proceed-­
+ings of the Ninth International Software Metrics Symposium
+(METRICS’03), IEEE; 2003.
+27. Umbers P, Miles G. Resource estimation for web applications. In:
+
+Proceedings of the 10th International Symposium on Software
+Metrics (METRICS’04), IEEE; 2004. [​h ​t ​t ​p ​​s ​: ​/ ​​/ ​d ​o ​i ​​. ​o ​​r ​g ​/ ​​1 ​0 ​. ​1 ​​1 ​0 ​9 ​​/ ​M ​](https://doi.org/10.1109/METRIC.2004.1357922)
+[E ​​T ​R ​I ​C ​. ​2 ​0 ​0 ​4 ​. ​1 ​3 ​5 ​7 ​9 ​2 ​2](https://doi.org/10.1109/METRIC.2004.1357922)
+28. Costagliola G, Di Martino S, Ferrucci F, Gravino C, Tortora G,
+
+Vitiello G. A COSMIC-FTP approach to estimate web applica-­
+tion development effort. In: Proceedings of the first international
+conference on Web Information Systems and Technologies 2005;1:80–87. WEBIST, ISBN 972-8865-20-1.
+29. Costagliola G, Di Martino S, Ferrucci F, Gravino C, Tortora G,
+
+
+Page 11 of 11 790
+
+Measurement and 2012 Seventh International Conference on
+
+Software Process and Product Measurement, IEEE, pp. 15–22.
+38. Marco LD, Ferrucci F, Gravino C. Approximate COSMIC size to
+
+early estimate Web application development effort. In: 39th Euro-­
+micro Conference Series on Software Engineering and Advanced
+Applications,IEEE, pp. 4–6 Sept. 2013.
+39. Mendes E. Using knowledge elicitation to improve web effort
+
+estimation: lessons from six industrial case studies. In: 34th Inter-­
+national Conference on Software Engineering (ICSE), IEEE,
+[2012. ​h ​t ​t ​p ​​s ​: ​/ ​​/ ​d ​o ​i ​​. ​o ​​r ​g ​/ ​​1 ​0 ​. ​1 ​​1 ​0 ​9 ​​/ ​I ​C ​​S ​E ​. ​2 ​0 ​1 ​2 ​. ​6 ​2 ​2 ​7 ​1 ​0 ​8](https://doi.org/10.1109/ICSE.2012.6227108)
+40. Ramesh B, Varalakshmi P. An ensemble Learning-Based pre-­
+
+diction model for use case point Estimation. Software Qual J.
+2023;31(1):199–216. [​h ​t ​t ​p ​​s ​: ​/ ​​/ ​d ​o ​i ​​. ​o ​​r ​g ​/ ​​1 ​0 ​. ​1 ​​0 ​0 ​7 ​​/ ​s ​1 ​​1 ​2 ​1 ​9 ​- ​0 ​2 ​2 ​- ​0 ​9 ​6 ​1 ​](https://doi.org/10.1007/s11219-022-09612-2)
+[2 ​- ​2.](https://doi.org/10.1007/s11219-022-09612-2)
+41. Rani R, Arora A. Use case point based software effort estimation:
+
+[A systematic literature review. Information. 2021;12(3):127. ​h ​t ​t ​p ​](https://doi.org/10.3390/info12030127)
+[s ​: ​​​/ ​​/ ​d ​o ​​i ​. ​o ​​r ​​g ​​/ ​​1 ​0 ​​. ​3 ​3 ​​​9 ​0 ​/ ​​i ​n ​f ​o ​1 ​2 ​0 ​3 ​0 ​1 ​2 ​7.](https://doi.org/10.3390/info12030127)
+42. Vetriselvan P, Suresh R. An early stage effort Estimation
+
+
+Vitiello G. A COSMIC-FFP approach to predict web application
+development effort. J Web Eng. 2006;5(2):93–120.
+30. Costagliola S, Di Martino F, Ferrucci C, Gravino G, Tortora G,
+
+Vitiello G. Effort estimation modeling techniques: a case study
+for web applications. In: ICWE’06, July 11–14, ACM, 2006, Palo
+Alto, California, USA.
+31. Ferrucci F, Gravino C, Di Martino S. A case study using Web
+
+objects and COSMIC for effort estimation of Web applications.
+In: Proceedings of the 34thEuromicro Conference on Software
+Engineering and Advanced Applications (SEAA’08), Parma,
+Italy, 2008, pp. 441–48.
+32. Giulio B, Giulio C, Roberto DL. An empirical comparison of FP
+
+and WO. In: International Conference on Computational Intelli-­
+gence and Software Engineering, 2009. CiSE IEEE, 2009. China.
+33. Estimating web application development effort using web
+COBRA and COSMIC: an empirical study. In: 35th Euromicro
+Conference onSoftware Engineering and Advanced Applications.
+2009. SEAA ’09, IEEE, Patras, Greece., 27–29 Aug 2009.
+34. Ruhe M, Jeffery R, Wieczorek I. Cost estimation for web appli-­
+
+cations. In: Proceedings of the 25th International Conference on
+Software Engineering (ICSE’03),IEEE, 2003.
+35. Silvia A, Jaime G, Emilio. Validating a size measure for effort
+
+Estimation in model-drivenWebdevelopmentInsfran, information
+sciences. Volume 180. Elsevier; October 2010. p. 15.
+36. Martino SD, Ferrucci F, Gravino C, Sarro F. Using web objects
+
+for development effort estimation of web applications: a repli-­
+cated study. In: Proceedings of 12th International Conference,
+PROFES 2011, Torre Canne, Italy, Springer Berlin Heidelberg,
+June 20–22, 2011, pp. 186–201.
+37. Erika C, Giulio C, Michele M, Giulio B, Daniele G. Effort estima-­
+
+tion of web application through CMF Objects. In: Joint interna-­
+tional conference on the 22nd international workshop on software
+
+
+from enhanced use case point analysis using adaptive NeuroFuzzy inference system. Int J Eng Res Technol (IJERT).
+2024;13(2):44–50.
+43. Febriani R, Hidayat R. The use of Activity-Based function point
+
+complexity in use case diagram for software effort Estimation. J
+Soft Comput Explor. 2023;4(2):112–20.
+44. Haron H, Sahibuddin S, Ghani AAA. Use case reuse for soft-­
+
+ware effort estimation: a case study. J Software: Evol Process,
+2019;31(11), e2119.
+45. Mendes E, Mosley N. Bayesian network models for web
+
+effort prediction: A comparative study. IEEE Trans Soft Eng.
+2008;34(6):723–37.
+46. Briand L, Langley T, Wieczorek I. A replicated assessment of
+
+common software cost Estimation techniques. Procs Conf Softw
+Eng, 2000, pp.377–86.
+47. Saif 43SM, Wahid A. Web Complexity Factors: A novel approach
+
+for predicting size measures for web application development. In:
+proceedings of the International Conference on Inventive Com-­
+puting and Informatics ICICI (2017), 23–24 Nov. 2017, IEEE, pp.
+900–5.
+48. Kirmani MM, Wahid A. Revised use case point (Re-UCP)
+
+model for software effort Estimation. Int J Adv Comput Sci Appl
+(IJACSA). 2015;6(3):65–71.
+49. Mendes E, Hall W, Harrison R. Applying measurement principles
+
+to improve hypermedia authoring. New Rev Hypermedia Multi-­
+media. 1999;5:105–32.
+
+**Publisher’s Note** Springer Nature remains neutral with regard to juris-­
+dictional claims in published maps and institutional affiliations.
+
+Springer Nature or its licensor (e.g. a society or other partner) holds
+exclusive rights to this article under a publishing agreement with the
+author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of
+such publishing agreement and applicable law.
+
+SN Computer Science
+

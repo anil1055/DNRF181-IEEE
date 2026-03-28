@@ -1,0 +1,67 @@
+Here is the detailed summary of the provided research paper titled "Modern Metrics (MM): Functional Size Estimator for AI and BDA Applications" written by B. Senthilkumaran et al.
+
+**Introduction**: 
+The authors begin by highlighting the significance of software project management (SPM) and the need for accurate estimation of the cost, time, and effort required for developing software applications. They emphasize that the traditional application-oriented and single-dimensional software sizing techniques fail to provide the correct estimate due to the complexities involved in modern software development.
+
+**Literature Review**: 
+The review discusses various software size estimation techniques such as Lines Of Code (LOC), Function Point Analysis (FPA), Expert Judgment, Pattern Matching, and others. It mentions the limitations of these approaches and emphasizes the need for a novel and adaptive method suitable for modern software applications like Artificial Intelligence (AI) and Big Data Analytics (BDA).
+
+**Objectives**: 
+The primary objectives of the paper include:
+
+1. Identifying missing Function Points (FPs) in modern AI and BDA software systems.
+2. Determining all complexity adjustment factors (CAFs) influencing the System Development Lifecycle (SDL).
+3. Deriving a novel methodology for identifying software size.
+4. Developing formulas for calculating the effort level, essential time, and cost required for developing software.
+5. Deriving a formula to calculate the cost required to develop the software product.
+
+**Methodology - Modern Metrics (MM)**: 
+The paper proposes a novel methodology called Modern Metrics (MM) for estimating the size of software products like AI and BDA applications. MM builds upon Alan Albrecht's FPA method with updated Function Points (FPs) and Complexity Adjustment Factors (CAFs). The MM architecture consists of two components: Functional Units (FUs) and CAFs.
+
+**Functional Units (FUs)**: 
+The FUs of software represent the fundamental building blocks for estimating its size. Eight categories of FUs are considered in MM, namely Internal Inputs (II), Internal Outputs (IO), Internal Logical Files (ILF), External Input (EI), External Output (EO), External Inquiry (EQ), External Interface File (EIF), and Data And Text (DT).
+
+Each FU has its unique metrics and metric values, categorized as Low, Average, High, and Very High based on the effort required to complete the operation of each FU. These categories are represented in a standardized format to facilitate easy comparison across different projects.
+
+**Complexity Adjustment Factors (CAFs)**: 
+The paper identifies several CAFs contributing to the overall complexity of modern software applications, including technological incorporation, standardization, parallel/distributed processing, novelty, uncertainty (failure, deadlock, policy, etc.). These factors significantly contribute to the difficulty in accurately predicting the effort and timeline needed for software development.
+
+**Computing the Effort Required for FUs:** 
+For each FU, the MM includes specific effort multipliers ranging from 3 to 9, representing varying degrees of difficulty. These multipliers enable users to calculate the effort required for each FU, taking into account the characteristics of the particular functionality being implemented.
+
+**Calculation of Total Effort Using MM**: 
+By multiplying the Weighted Value of FUs by the corresponding Multiplier, we obtain the total effort required for implementing a given software system. This can further be adjusted considering the influence of CAFs.
+
+**Modifications to Traditional Methods:** 
+Compared to traditional methods, the MM offers improved precision in measuring software size since it incorporates recent developments and advancements in software design, reflecting contemporary trends in AI and BDA applications.
+
+**Limitations and Future Enhancements:** 
+While MM demonstrates significant potential in enhancing software size estimation, there remains room for improvement through incorporating global perspectives rather than just focusing on local market conditions. Additionally, addressing challenges related to updating threshold values for functional units might optimize the effectiveness of MM even further.
+
+Overall, the paper highlights the necessity of adapting traditional methods to address the growing intricacies within the realm of AI-driven and BDA-related software development, advocating the adoption of MM to enhance prediction efficacy and streamline the development lifecycle.
+
+Predictors Used for Web Application Effort Estimation:
+
+1. Functional Units (FUs):
+   - Internal Inputs (II)
+   - Internal Outputs (IO)
+   - Internal Logical Files (ILF)
+   - External Input (EI)
+   - External Output (EO)
+   - External Inquiry (EQ)
+   - External Interface File (EIF)
+   - Data And Text (DT)
+   
+These FUs serve as critical indicators of the size of the software and directly relate to the effort multiplier applied during the estimation process.
+
+2. Complexity Adjustment Factors (CAFs):
+
+   - Technological Incorporation
+   - Standardization and Development Models
+   - Parallel/Distributed Processing
+   - Novelty and Innovation Techniques
+   - Uncertainty (Failure, Deadlock, Policy, etc.)
+
+These factors play a pivotal role in assessing the degree of complexity associated with the software application, impacting the final effort assessment made via the MM.
+
+Note: While the paper primarily focuses on general-purpose software development, its underlying principles could potentially inform the creation of analogous frameworks tailored specifically towards web application development if expanded appropriately.

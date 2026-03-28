@@ -1,0 +1,21 @@
+After careful examination of the paper "Agile effort estimation in Colombia: An assessment and opportunities for improvement" by Juan Cubillos, Jairo Aponte, Diana Gomez, and Edwar Rojas, here is a thorough summary of the paper along with the predictors used as effort estimators mentioned in the paper:
+
+**Summary of Paper**
+
+The paper explores the current methodologies used for effort estimation in Agile Software Development (ASD) in Colombia and identifies opportunities for improvement. The researchers conducted an exploratory survey study involving 60 agile practitioners in Colombia. The survey examined various aspects of effort estimation in ASD, including the techniques used, accuracy levels, predictors of effort, and datasets used for estimation. The results revealed that agile practitioners prefer non-algorithmic estimation techniques, especially Expert Judgment-based methods, such as Planning Poker and Delphi. Most respondents perceived that their estimates had a medium accuracy level, despite the fact that formal analysis of accuracy levels was rare.
+
+**Predictors of Effort Used as Estimators in the Paper**
+
+According to the paper, the predictors of effort used as estimators in ASD are:
+
+1. **Team Experience**: The most relevant predictor of effort in ASD, with 95% of respondents citing it as a fundamental factor.
+2. **Software Complexity**: Ranked second, with 83.3% of respondents considering it an important factor.
+3. **Type of Development**: The third-ranked predictor, with 65% of respondents indicating that it affects effort estimation.
+4. **Team Size**: Fourth on the list, with 65% of respondents recognizing it as a contributing factor.
+5. **Agile Development Method**: Fifth on the list, with 53.3% of respondents acknowledging its influence.
+
+Additionally, the paper mentions that other factors, including **software domain**, **programming language**, and **team skillset**, are also considered by respondents, albeit to a lesser extent.
+
+**Important Note**
+
+While the paper discusses various predictors of effort, it appears that these predictors are not necessarily used as standalone estimators but rather as inputs to inform effort estimation decisions. The paper highlights the importance of combining these predictors with other factors, such as team experience and software complexity, to arrive at more accurate estimates.

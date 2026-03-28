@@ -1,0 +1,80 @@
+Here's a thorough breakdown of the paper titled "An Alternative Software Benchmarking Dataset: Effort Estimation with Machine Learning".
+
+**Introduction**
+The paper starts by discussing the significance of effort estimation in software project planning, emphasizing the necessity of accurate estimates of required resources. They mention that traditional estimation models often rely on historical size and effort data, but organizations face difficulties in obtaining reliable historic data. Public benchmarking datasets like ISBSG suffer from issues such as lacking coverage, poor accessibility, and costly licenses.
+
+**Related Work**
+The authors discuss the current efforts in effort estimation and software benchmarking, citing numerous papers that utilize machine learning algorithms for this purpose. They note the benefits of combining different machine learning techniques to achieve optimal results.
+
+**Methodology**
+The researchers outline their approach, starting with the construction of a novel benchmarking dataset collected through a systematic literature review. The dataset comprises 337 records from 18 studies containing functional size and effort data. Next, they describe the process of applying machine learning algorithms for effort estimation. Specifically, they employ a combination of techniques, including linear regression and decision trees, along with more advanced algorithms such as Random Forest, Gradient Boosting, and Support Vector Machines. The researchers apply a leave-one-out cross-validation scheme to optimize model performance and compare the results across various metrics, including magnitude of relative error, median magnitude of relative error, and percentage relative deviation.
+
+**Results**
+The study compares the performance of machine learning models on the constructed dataset versus the widely-used ISBSG dataset. The experiments demonstrate that the constructed dataset enables more accurate predictions than ISBSG in most cases, showcasing its potential as a reliable tool for effort estimation. Notably, the results show that the performance gain is evident mainly among low-productivity projects.
+
+**Discussion**
+The discussion section addresses the implications of the research findings, specifically answering the three main research questions asked by the authors:
+
+1.   Can a software benchmarking dataset be created through a systematic literature review?
+    Yes, the study demonstrates the possibility of collecting data through systematic literature review.
+
+2.   Does the constructed dataset facilitate predictive effort estimation?
+    The results confirm that the constructed dataset holds promise for developing predictive effort estimation models.
+
+3.   Can machine-learning-based approaches refine estimation precision?
+    Indeed, the experiment showcases the advantages of utilizing machine learning techniques for refining effort estimation.
+
+**Threats to Validity**
+The authors admit that their investigation has several threats to validity stemming from the restricted nature of their search and the elimination of outlier projects in the data preprocessing step. Nonetheless, they argue that these concerns do not undermine the efficacy of their approach.
+
+**Conclusion**
+The paper concludes by noting the limitations of relying solely on the ISBSG dataset for effort estimation, pointing out that alternative tools and strategies can provide a complimentary view of the problem space. Ultimately, the results validate the authors' hypothesis that an alternative software benchmarking dataset can be used for predictive effort estimation.
+
+Now let's look at the list of predictors mentioned in the paper for estimating web application effort:
+
+1.  Bayesian Ridge
+2.  Bayesian Ridge Regression
+3.  Cosminc
+4.  Decision Tree
+5.  Feature (size)
+6.  ISBSG
+7.  Isometric
+8.  K-Nearest Neighbor
+9.  Lightweight GBM
+10. Linear Approach
+11. Linear Regression
+12. LightGBM
+13. Log Transformation
+14. Loocv 
+15. Manifold Learning
+16. Material
+17. Multiple Layer Perception (MLP)
+18. Multivariate Gaussian Probability Density
+19. Nested Ensemble Modeling (NEM)
+20. Neural Network (ANN)
+21. Normalised Effort
+22. Object-Oriented Programming Language (OOPL)
+23. Optimization Algorithm
+24. Overleaf
+25. Random Forest
+26. Recursive Feature Elimination (RFEC)
+27. Residual Distribution
+28. Ridge Regression
+29. Semi-supervised Machine Learning Algorithms
+30. Sequence Model
+31. Sequential Monte Carlo (SMC) Simulation
+32. Simple Imputation Techniques
+33. Single Value Decomposition (SVD)
+34. Social Influence Matrix
+35. Software Development Cost Estimating Relation Database (SDEERDB)
+36. Source Code Lines Of Codes (SLOC)
+37. Standard Template Library(STL)
+38. Stepwise Linear Discriminant Analysis (SWDA)
+39. Supervised Learning Algorithms
+40. Topological Properties of Graphs
+
+41. Transfer Learning 
+42. Unsupervised Learning Algorithm 
+43. User Interface Design (UID)
+44. Variogram
+45. Wavelet Transform

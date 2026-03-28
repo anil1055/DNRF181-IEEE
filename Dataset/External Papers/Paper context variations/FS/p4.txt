@@ -1,0 +1,50 @@
+Based on the provided paper titled "Software effort estimation based on inception network optimized by enhanced banyan tree growth optimizer", the following summarizes the contents of the paper:
+
+**Introduction**: 
+The paper discusses the importance of accurate software effort estimation for achieving project success. Standard estimation methods struggle to deliver reliable results due to the complex relationships within project data. A new hybrid approach is proposed that combines the Inception Network with the Enhanced Banyan Tree Growth Optimizer (EBTGO) for improved accuracy.
+
+**Predictors used for estimating web application effort**:
+
+1.  **Inception Network**: This predictor captures hierarchical features better from high-dimensional data sets and serves as the base architecture for the proposed model.
+2.  **Enhanced Banyan Tree Growth Optimizer (EBTGO)**: This is a metaheuristic optimization algorithm inspired by the growth characteristics of banyan trees. It enhances the Inception Network's performance by adapting to the ever-changing landscape of hyperparameters.
+
+**Research Background**:  
+Software effort estimation is crucial in software project management, playing a vital role in planning, budgeting, and resource allocation. Accurate estimates guarantee timely and budget-friendly project completion. Current conventional methods fall short due to their simplistic assumptions about the relationships between project attributes and effort.
+
+**Literature Review**: Recent years have seen advancements in software effort estimation using machine learning (ML) and deep learning (DL) techniques. Despite these advances, existing methods suffer from hyperparameter tuning and overfitting issues. Other papers referenced in the literature review include:
+
+    -   The use of metaheuristic methods for generating a suitable parametric method for software effort estimation.
+    -   Employing GWO (Grey Wolf Optimizer) and SB (Strawberry) for optimizing DL designs for estimation of software effort.
+    -   Comparing the effectiveness of AGANN, LNI-NN, GEHO-based NFN, and NFL for estimating effort.
+    -   Using Fully Connected Neural Networks (FCNN) combined with GWO for software effort estimation.
+    -   Developing an approach that includes fuzzy clustering and convolutional neural networks to enhance data representation.
+
+**Methodology**: The proposed approach involves merging the strength of the Inception Network with the Enhanced Banyan Tree Growth Optimizer (EBTGO). The latter addresses the shortcomings of existing metaheuristic optimization algorithms, enabling the efficient discovery of optimal hyperparameters.
+
+**Key Steps Involved**:  
+
+        1.  **Architecture Design**: The Inception Network was modified to suitably process tabular data by treating instances of projects as 1D tensors.
+        2.  **Data Preprocessing**: Minimax normalization, feature selection, handling missing values, splitting datasets into training, validation, and testing sets, encoding categorical variables, and removing outliers.
+        3.  **Hyperparameter Tuning**: Utilize the Enhanced Banyan Tree Growth Optimizer (EBTGO) for automatic hyperparameter tuning.
+
+**Experiments and Evaluation Metrics**: Two common datasets were employed for experimentation—Maxwell and COCOMO81—to assess the performance of the proposed model against established baseline methods. Performance metrics included Mean Absolute Error (MAE) and Mean Magnitude of Relative Error (MMRE).
+
+**Experimental Findings**:  
+
+            -   The proposed Inception-EBTGO model surpassed competitors on both datasets, exhibiting notable improvements in accuracy and reliability indicators such as MAE and MMRE.
+            -   Statistical tests such as the Wilcoxon signed-rank test reinforced the conclusion that the proposed model offered statistically significant advantages over traditional and many machine learning baseline methods.
+
+**Conclusion**: By combining the power of the Inception Network with the agility of the Enhanced Banyan Tree Growth Optimizer, this paper introduces a groundbreaking hybrid approach for software effort estimation. Its noteworthy achievements underscore the immense potential of mixed-method frameworks in overcoming the constraints of prevalent methods, potentially revolutionizing predictive modeling in software engineering and project management.
+
+The proposed Inception-EBTGO model utilizes the following predictors to estimate web application effort:
+
+1.  **Size**: Indicates the size of the software measured in thousands of lines of code.
+2.  **Personnel**: Represents the number of developers involved in the project.
+3.  **Schedule**: Measures the duration of the project in months.
+4.  **Environment**: Reflects the environmental factors impacting productivity, encompassing things such as tools and working conditions.
+5.  **Complexity**: Captures the complexity level of the software system.
+6.  **Documentation**: Shows the degree of documentation required.
+7.  **Management**: Demonstrates the management quality index.
+8.  **Language**: Records the programming language used, encoded numerically.
+9.  **Experience**: Displays the experience level of the development team.
+10. **Effort**: Acts as the target variable, denoting the actual effort in person-months.

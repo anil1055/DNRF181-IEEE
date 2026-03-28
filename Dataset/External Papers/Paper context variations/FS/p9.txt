@@ -1,0 +1,40 @@
+The paper "Software Effort Estimation Modeling and Fully Connected Artificial Neural Network Optimization Using Soft Computing Techniques" proposes a new method called GWO-FC for software development effort estimation (SEE). The GWO-FC combines the Gray Wolf Optimizer (GWO) with a Fully Connected Neural Network (FCNN) to improve the accuracy of SEE predictions.
+
+Here is a detailed breakdown of the paper:
+
+1. **Introduction**: The authors introduce the importance of software development effort estimation (SEE) and highlight the challenges faced in accurately predicting software development effort. They mention that machine learning methods have been successfully applied to solve various engineering problems and propose using a combination of GWO and FCNN to tackle SEE.
+2. **Background**: The authors provide a brief overview of the GWO and FCNN. They discuss the strengths and weaknesses of the GWO and FCNN individually, highlighting their potential benefits and limitations.
+3. **Proposed Methodology**: The authors describe the proposed GWO-FC method, which integrates the GWO with the FCNN. They outline the steps involved in the GWO-FC method, including:
+	* Preparing the input data
+	* Initializing the GWO parameters
+	* Running the GWO algorithm to optimize the FCNN parameters
+	* Evaluating the FCNN performance using the optimized parameters
+4. **Experimental Design**: The authors detail the experimental setup, including the choice of datasets, evaluation criteria, and hyperparameter settings. They perform the GWO-FC method on 12 public datasets and compare the results with traditional FCNN and other state-of-the-art methods.
+5. **Results**: The authors present the results of the GWO-FC method, showing improvements in SEE accuracy and precision compared to traditional FCNN and other state-of-the-art methods. They also conduct a comprehensive evaluation of the GWO-FC method using various evaluation metrics, including MSE, RAE, MAE, VAF, ED, MdMRE, RMSE, RRSE, R², and SA.
+6. **Comparison with State-of-the-Art Methods**: The authors compare the GWO-FC method with other state-of-the-art methods, including SSA-BPNN, GA-HSBA, BHO-HSBA, FFA-HSBA, ACO, PSO, BA, CFRT, MLP, KNN, CART, LR, and SRF. They find that the GWO-FC method achieves better performance in SEE in most cases.
+7. **Statistical Analysis**: The authors use statistical tests, including Wilcoxon-Mann Whitney, Friedman, and Holm-Hochberg tests, to confirm the significance of the results and rank the performances of the compared methods.
+8. **Discussion**: The authors discuss the implications of the results and note that the GWO-FC method offers a good balance between exploration and exploitation, contributing to its improved performance in SEE.
+9. **Conclusion**: The authors conclude that the GWO-FC method represents a valuable advancement in SEE and offer suggestions for future research directions.
+
+Key Findings:
+
+1. The GWO-FC method yields better performance in SEE compared to traditional FCNN and other state-of-the-art methods.
+2. The GWO-FC method exhibits improved accuracy and precision in SEE predictions.
+3. The GWO-FC method balances exploration and exploitation effectively, resulting in better performance.
+4. The GWO-FC method is computationally efficient and scalable.
+
+Predictors Used in the Paper:
+
+1. Input Layer Neurons: Representing the number of features in the dataset.
+2. Hidden Layer Neurons: Determined through trial-and-error experimentation.
+3. Output Layer Neurons: Representing the target variable (estimated effort).
+4. Connection Weights: Representing the strength of the relationship between input features and output variable.
+5. Biases: Adjusting the intercepts of the linear combinations.
+
+Other Relevant Points:
+
+1. The GWO-FC method uses the Wilcoxon-Mann-Whitney test to evaluate the significance of the results.
+2. The authors utilize the Friedman and Holm-Hochberg tests to confirm the significance of the results and rank the performances of the compared methods.
+3. The GWO-FC method demonstrates better performance in SEE compared to other state-of-the-art methods, including SSA-BPNN, GA-HSBA, BHO-HSBA, FFA-HSBA, ACO, PSO, BA, CFRT, MLP, KNN, CART, LR, and SRF.
+
+Overall, the paper introduces a novel approach for software development effort estimation using a combination of the GWO and FCNN. The results demonstrate the efficacy of the GWO-FC method in achieving higher accuracy and precision in SEE predictions compared to existing methods.

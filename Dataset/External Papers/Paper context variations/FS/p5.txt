@@ -1,0 +1,60 @@
+Based on the research paper titled "Software Development Effort Estimation Using Relational Database and Optimized Learning Mechanism", the following steps will guide us through summarizing the entire contents of the paper.
+
+1. Introduction 
+   - The introduction explains the importance of accurate software development cost estimation in project planning and resource allocation.
+   - Traditional cost estimation methods rely heavily on expert judgement and historical data which can lead to inaccuracies.
+   - The proposed approach uses a learning-based model that utilizes relational databases to achieve greater accuracy.
+
+2. Background
+    - Historically, software development methodologies included waterfall, Scrum, and Agile methods for handling dynamic contexts and reducing software development efforts.
+    - Past studies lacked accessibility of historical data, resulting in limitations of traditional algorithmic models relying on heuristics rather than exact information.
+    
+3. Literature Review
+    - Various existing methods for SDEE/SDCE categorized into three primary areas: Algorithmic Approaches, Non-Algoirthmic Approaches, and Learning-Based Approaches.
+    - Examples of classic method-COCOMO-is discussed alongside the pros and cons of its limitations.
+    - Hybridizations of multiple approaches for achieving better outcomes have become increasingly popular in recent times.
+    
+4. Materials and Methods
+   - The study focuses on utilizing relational databases for improving the accuracy of software effort estimation, emphasizing the capability of organized data storage and processing.
+   - Dataset sourced from Github containing information of 1800 open-source repositories on software development metrics, comprising 16 variables with five numeric and 11 categorical variables.
+   
+5. Methodology
+   - Relational database was utilized to implement the proposed scheme for estimating the software development effort.
+   - The data preprocessing involved converting the object-oriented representations of SQL-tables into Python-class analogues via ORM-sqlAlchemy library.
+   - Only eleven out of sixteen variables were deemed relevant to the modeling process due to high collinearity and intercorrelation amongst others.
+
+6.Dataset Analysis 
+   - Release-wise effort table consisted of 7400 records across 16 attributes with six numeric and ten categorical ones.
+   - Each attribute had no missing or duplicate values except the repo_name attribute having varying lengths.
+   - Variables such as loc, daf, modloc exhibited irregular distributions indicating the presence of anomalies requiring transformation before modeling.
+   
+7.Model Implementation 
+   - Pre-trained word embeddings utilizing GloVe and Word2Vec on the repository descriptions extracted via Paragraph Vector allowed capturing semantic meanings.
+   - Features extraction incorporated PCA and TF-IDF on the embedded words and transformed repository texts respectively.
+   - Developed a predictive model involving stacked Autoencoders followed by Soft Max classifier, along with attention mechanism providing interpretability.
+
+8.Result and Discussions  
+   - Performance evaluation of proposed effort estimation model indicated promising efficacy surpassing prior attempts.
+   - Statistical assessments revealed superior accuracy rates of approximately 90 percent against state-of-the-art alternatives employing cross-validation strategies.
+   - Experimental validation confirmed practical usability of developed model in real-world settings.
+
+9.Conclusion
+   - The relational-database-driven model succeeded in resolving inconsistencies inherent in earlier methods through augmentation and combination of disparate inputs yielding substantial improvements in predictions.
+   - Potential avenues for extension include expansion to diverse datasets, employment of advanced ensemble models, incorporation of novel features covering project management and testing phases.
+
+
+
+Regarding the predictors used in the research paper for predicting software development effort, the list includes:
+
+1. Repo Size (MB)
+2. Number of lines of code (LOC)
+3. Stars
+4. Programming Language Used
+5. Operating System Supported
+6. Type of Repository
+7. Project Title
+8. Short Description of the Project
+9. Relevant Keywords (from metadata)
+10. Category of the Repository
+
+These predictor variables serve as inputs to the proposed model for producing reasonable approximations of the software development effort.

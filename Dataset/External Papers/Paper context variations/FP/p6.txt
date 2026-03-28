@@ -1,0 +1,659 @@
+[Latest updates: hps://dl.acm.org/doi/10.1145/3530019.3531331](https://dl.acm.org/doi/10.1145/3530019.3531331)
+
+RESEARCH-ARTICLE
+**The Influence of Cost Drivers on Effort Estimation in Distributed**
+**Soware Development**
+
+**[DANISH IQBAL](https://dl.acm.org/doi/10.1145/contrib-99659560178)** [, Masaryk University, Brno, Czech Republic](https://dl.acm.org/doi/10.1145/institution-60029543)
+
+**[SHER BADSHAH](https://dl.acm.org/doi/10.1145/contrib-99659562828)** [, Dalhousie University, Halifax, NS, Canada](https://dl.acm.org/doi/10.1145/institution-60015913)
+
+**[IRFAN KAZIM](https://dl.acm.org/doi/10.1145/contrib-99660480567)** [, COMSATS University Islamabad, Islamabad, Pakistan](https://dl.acm.org/doi/10.1145/institution-60089631)
+
+**[Open Access Support](https://libraries.acm.org/acmopen)** provided by:
+
+**[Dalhousie University](https://dl.acm.org/doi/10.1145/institution-60015913)**
+
+**[Masaryk University](https://dl.acm.org/doi/10.1145/institution-60029543)**
+
+**[COMSATS University Islamabad](https://dl.acm.org/doi/10.1145/institution-60089631)**
+
+
+**PDF Download**
+
+**3530019.3531331.pdf**
+**26 January 2026**
+**Total Citations:** 0
+
+**Total Downloads:** 147
+
+**Published:** 13 June 2022
+
+**[Citation in BibTeX format](https://dl.acm.org/action/exportCiteProcCitation?dois=10.1145%2F3530019.3531331&targetFile=custom-bibtex&format=bibtex)**
+
+[EASE 2022: The International Conference](https://dl.acm.org/conference/ease)
+
+[on Evaluation and Assessment in](https://dl.acm.org/conference/ease)
+
+[Soware Engineering 2022](https://dl.acm.org/conference/ease)
+
+*June 13 - 15, 2022*
+*Gothenburg, Sweden*
+
+
+EASE '22: Proceedings of the 26th International Conference on Evaluation and Assessment in Soware Engineering (June 2022)
+hps://doi.org/10.1145/3530019.3531331
+ISBN: 9781450396134
+
+.
+
+# **The Influence of Cost Drivers on Effort Estimation in** **Distributed Software Development**
+
+Danish Iqbal, Ijaz ul haq and Irfan Kazim
+Faculty of Informatics, Masaryk University, Brno Czech Republic
+Faculty of Education, Psychology and Social Work, University of Lleida, 25003 Lleida, Spain
+Department of Computer science COMSATS University Islamabad, Islamabad, Pakistan
+danish@mail.muni.cz, ijaz.ul-haq@udl.cat,erfanmumtaz@gmail.com
+
+
+**ABSTRACT**
+
+Nowadays, software projects are a vital element in any organization’s success. It plays the highest role in the organization’s success
+in most cases. Hence, its main focus is to earn more money on
+a project and minimize the developing time cost. Sometimes due
+to unavailability of experts may decrease the profit of the organization. Thus, the organization comes with these types of issues.
+They want to increase the profit and decrease the development time
+and on fewer budgets, hire the more expert people to achieve the
+organization’s goal. For this purpose, they are applying the new
+development approach called GSD (global software development).
+Through global software development, they develop their project
+on a reasonable budget and maximize profit. However, in GSD,
+other challenges of team communication, coordination, geographical location, and cultural and time zone differences increase the
+project’s effort. This paper shows the more critical factors in GSD
+and the more challenging and shows their impact. They are more
+challenging on which project manager or team leader more focus
+on these factors, which can be more helpful for the project’s success.
+This paper is more helpful for both industries and researchers in
+that they can easily estimate the effort in the context of GSD.
+
+**CCS CONCEPTS**
+
+- **Software and its engineering** → **Distributed Software De-**
+**velopment** ; - **Effort Estimation** → *Global Software Development* ;
+
+- **Effort Estimation In Global Software Development** ;
+
+**KEYWORDS**
+
+Global Software Development (GSD); Cost Drivers; Software Effort
+
+Estimation
+
+**ACM Reference Format:**
+Danish Iqbal, Ijaz ul haq and Irfan Kazim. 2022. The Influence of Cost Drivers
+on Effort Estimation in Distributed Software Development. In *The Interna-*
+*tional Conference on Evaluation and Assessment in Software Engineering 2022*
+*(EASE 2022), June 13–15, 2022, Gothenburg, Sweden.* ACM, New York, NY,
+[USA, 9 pages. https://doi.org/10.1145/3530019.3531331](https://doi.org/10.1145/3530019.3531331)
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than ACM
+must be honored. Abstracting with credit is permitted. To copy otherwise, or republish,
+to post on servers or to redistribute to lists, requires prior specific permission and/or a
+fee. Request permissions from permissions@acm.org.
+*EASE 2022, June 13–15, 2022, Gothenburg, Sweden*
+© 2022 Association for Computing Machinery.
+ACM ISBN 978-1-4503-9613-4/22/06...$15.00
+[https://doi.org/10.1145/3530019.3531331](https://doi.org/10.1145/3530019.3531331)
+
+399
+
+
+**1** **INTRODUCTION**
+
+In Global software development, multiple teams are involved in a
+specific software project. All teams may consist of different people
+with different geographical locations, communication gap, and their
+capability of understanding is also different in GSD. In distributed
+team projects, the project manager and the development team of a
+particular project are distributed. They find it difficult to focus on a
+common point of interest and how to implement the project. In GSD,
+distributed team members follow different standards for development, quality models, and processes for the project’s development,
+which leads to project failure. In [ 17 ], a study was conducted in
+which 40 percent of failed projects related to offshore. Several challenges are discussed related to GSD in [ 20 ], [ 30 ], and [ 7 ], which
+relate to project the failure of projects.
+In literature, a survey was conducted on the algorithmic model
+in which 364 companies’ data were examined. Almost 14 percent
+of organizations used an algorithmic model for cost estimation,
+and other organizations used analogy base estimation [ 10 ]. Another research shows that 17 percent of organizations are using
+component-based development. Almost 7 percent of total organizations use algorithmic models for estimation [ 17 ]. However, the most
+regular and common technique which is used for cost estimation is
+past project base.
+Some studies are conducted in which they found factors affecting
+contextual base communication. They evaluate that there is no
+proper framework to solve it. In Global Software Development
+(GSD) the achievement and failure of any software depends on the
+very significant factor, which is geographical location. In Global
+Software Development (GSD), requirements gathering face is most
+difficult task some work is done in literature [ 30 ], but they only
+focus on the management of requirements, and they claimed that
+in GSD requirement managing is the most difficult task.
+There are number of reasons for algorithmic models are not
+used in different organizations because these models are unable to
+historical data or past project data. One of the previous research
+projects examined that 50 percent of companies [ 10 ] do not store
+historical data for future reuse from which they can reduce their
+development effort. Another research was also conducted, which
+determined that approximately 300 measurement programs began
+between 1980 and 1990, between these, 75 percent were successful
+
+[ 26 ]. By calculating performance related elements, the analogy base
+estimates give better results than model base estimates [21].
+Historical data draw a big impact on project estimation because
+if our previous estimates are not accurate and consistent, then estimation for new project does not produce better results, so because
+
+EASE 2022, June 13–15, 2022, Gothenburg, Sweden Danish et al.
+
+
+of these, chances of under and overestimation becomes high, which
+is not appropriate for any project [3].
+In the new era of Globalization, the necessity of software and
+business process increases day by day, so Global Specifically, communication hurdles in GSD impose bad impact on project cost,
+which affect the estimation of software development effort and cost,
+as shown in Table 1 and Table 2. So, it is necessary to focus on
+communication and coordination factors, which help us estimate
+GSD projects effectively. GSD provides a distributed working environment for organizations to produce maximum output by making
+an effort to reduce code and implement innovation and ideas with
+scarce resources and in a limited period. Development company’s
+trends are now changing from co-located to distribute working
+environment. COBRA or Cocomo 2 is used to check the impact
+of different geographical, social, and cultural factors involved in
+any project of the development organization. We identified the
+factors affecting GSD as portrayed in Table 3, Table 4, and Table 5
+by estimating their impact on cost, project success, and risk using
+different estimation techniques and finding results, and concluding
+the paper at the end.
+The rest of this article is structured as follows : In Section II,
+we briefly introduce the related work of GSD. In Section III, we
+described our methodology. In Section IV, we analyze the experimental results in detail. In Section V, we conclude our study.
+
+**2** **RELATED WORK**
+
+Global Software Development (GSD) refers to a set of activities,
+processes, practices, and technologies that people and businesses
+use to create and maintain software and products [ 22 ]. In GSD Communication barriers in GSD have a negative influence on project
+costs, as illustrated in Tables 1 and 2. Distance (the distance between
+developers and their clients or end users); time-zone differences
+(to a significant extent, time zone is a complicating factor with
+distance); and national culture are the elements that distinguish
+GSD from normal (centralized) (including language, national traditions, customs, and norms of behavior). Distance, time zone, and
+national culture all have influence on the GSD, and we discovered
+the components that affect it from the literature. Table 3 illustrates
+these factors, and Table 4 shows their occurrence.
+
+**3** **METHODOLOGY**
+
+In this study, the systematic literature review (SLR) methodology
+is used the identification different. Factors Affecting the Effort
+Estimation in Global Software Development (GSD). SLR is a style of
+study that is used to discover a specific problem to identify, analyze
+and explore [11].
+
+**3.1** **Systematic Literature review**
+
+To identify, analyze, and explore a specific problem or topic, the
+systematic literature review (SLR) is the best method for identifying
+and evaluating the problem. SLR provides deep knowledge about
+a specific situation from the literature and applies the inclusion
+and exclusion method [ 31 ], [ 27 ] to select particular papers. In the
+Systematic Literature Review shown in Table 7, there are main
+three phases which are planning, conducting, and reporting and
+shown in Table 6.
+
+400
+
+
+**3.2** **Phase 1**
+
+**Planning**
+**Research questions:**
+This study aims to identify different factors affecting effort estimation in global software development (GSD). Ours focused on the
+research question, which is defined below.
+**RQ1:** What factors affect the Effort Estimation in Global Software
+Development (GSD)?
+**Inclusion Exclusion Criteria:** In this study, we have selected the
+papers written in the English language. In these papers, complete
+information must be presented and analyzed using some methods.
+The selected papers for this study must be published or presented in
+any workshop, conference, or journal. We have studied or selected
+those papers in which different factors affecting on global software
+development (GSD) while estimating the effort.
+**Exclusion criteria** In this study, we have rejected those papers
+written in remaining languages except English, and the papers selected multiple times were also excluded. In papers where factors
+affecting effort estimation in global software development are not
+discussed are rejected.
+
+**Quality Assessment criteria for study selection** n identifying different factors involved in GSD, we parallel achieved the
+Quality Assessment mechanism for the nominated papers with the
+information extraction phase. For QA, guidelines represented in [ 3 ]
+
+[17] [30] are followed, and a checklist is also produced.
+
+  - Value 1 is assigned to papers that fully represent all the
+questions present in the checklist
+
+  - Value 0.5 is assigned to papers that do not fully represent all
+the questions present in the checklist but partially.
+
+  - Value 0 is assigned to those papers which do not represent
+any question present in the checklist
+
+**Search String** Search strings are based on different keywords related to a specific topic, and research strings are derived from literature and research questions [9][10][11][12]. In this paper, the
+following search strings, as presented in Table 7, are used for different databases for the selection of papers.
+
+**3.3** **Phase 2**
+
+**Conducting Primary study:**
+Primary studies are analyzed in this phase. The papers selected
+in the preliminary study are finalized using the approach tollgate
+proposed in [27]. Different phases of the tollgate approach are
+discussed below.
+
+**Phase 1.** Relevant papers are selected by using the search string
+applied to different databases.
+**Phase 2.** In the second phase, apply inclusion and exclusion
+based on the paper title.
+**Phase 3.** This phase applies the inclusion and exclusion based
+on the paper abstract and conclusion..
+**Phase 4.** In phase 4, apply inclusion and exclusion after reading
+the full paper text.
+**Phase 5.** After inclusion and exclusion apply to previous phases,
+the remaining papers are selected for the SLR.
+**Data Extraction**
+
+The Influence of Cost Drivers on Effort Estimation in Distributed Software Development EASE 2022, June 13–15, 2022, Gothenburg, Sweden
+
+**Table 1: Questions, Concept Model, and the Findings**
+
+
+
+
+
+
+
+
+
+
+
+
+|Reference|Focus Questions|Concept Model|Findings|
+|---|---|---|---|
+|[15]|Identifying different functions af-<br>fecting GSD most in term of com-<br>plexity and draw causal model<br>and find most critical factors af-<br>fecting the GSD.|21 most common factors were identified<br>for GSD. Divide these factors into seven<br>different categories and analysis were<br>performed using structural equation.|Number of different field are identified in which<br>work can be extended difficulties related to team<br>and the impact of estimation in project duration.|
+|[22]|Factors identifying that impact<br>software team productivity and<br>affect the schedule in global soft-<br>ware development.|Three years of project data related to<br>GSD are analyzed and different factors<br>are identifying related to team productiv-<br>ity and model is proposed which helps to<br>distinguish schedule risk.|Interviewed from different team members about<br>their problems and they say to understand specific<br>functionality in depth communication is needed<br>and the expert person contact was unavailable.|
+|[25]|Requirements engineers face<br>lack of knowledge or framework<br>for identifying different factors<br>that affect the requirement<br>engineering process.|In industry, survey was conducted to eval-<br>uate different factors that affect RE activ-<br>ities and these factors are accommodated<br>in RE framework.|Finding the prominent factors, we calculate the<br>mean for each factor for this purpose. The factors<br>have value equal or above 4 and are consider as a<br>most powerful factor.|
+|[16]|Language, geographical and<br>culture differences are the major<br>problems in communication<br>while in GSD text base and<br>audio base communication is<br>very important and it requires<br>improvement according to GSD<br>context.|In these 57 interviews were conducted on<br>8 GSD projects and all projects used audio<br>and text base communication.|In this study, they divide the GSD users in two cat-<br>egories like technical and non-technical and iden-<br>tified that technical users use text base commu-<br>nication and non-technical users use audio base<br>communication.|
+|[16]|Analyzing different techniques<br>that evaluate performance of<br>learner in GSD and how they<br>affect global software develop-<br>ment.|A study was conducted in which differ-<br>ent students assigned projects total 70 stu-<br>dents were participated in GSD project.<br>Students are dividing into 15 different<br>groups.|In this research, the authors are unable to define<br>how to analyze the groups contributing to GSD. In<br>this study three assessment approaches were used<br>and none of them able to address all related issues.|
+|[31]|Offshore and onsite team draw<br>a drastic impact in global soft-<br>ware development, so identifica-<br>tion of different factors affecting<br>on these elements is important.|In this research 10 different factors were<br>used for evaluating the commitment be-<br>tween offshore team and onsite team. Us-<br>ing this empirical knowledge, we deter-<br>mine that knowledge sharing between<br>offshore and onsite team have major im-<br>pact on GSD.|Finding of this paper explain that how onsite<br>team and offshore team expertise, commitment<br>and trust have very important effect on the out-<br>come or work produced in GSD.|
+|[18]|How to handle the change re-<br>quirements in GSD? How to cal-<br>culate the estimation and main-<br>tain when some changes occurs.<br>How to analyze the change when<br>comes in GSD and make a project<br>to success.|They handle the change requirement and<br>minimize the cost and time. Improved the<br>chances of developing toward the suc-<br>cess in GSD. They conduct the case study<br>for online shopping system. They han-<br>dle these changes. They validate their<br>method on case study.|They cannot estimate the whole effort and cost<br>and how much they reduce the cost of change<br>from their method. They applied their method<br>only on one application they did not apply on com-<br>mercial projects.|
+|[5]|What are the factors that directly<br>influence on effort estimation?|They reduce the cost and time through<br>better effort estimation. They apply dif-<br>ferent effort estimation method just as<br>Cocomo and SLIM. They validate their<br>method through expert judgment.|They cannot find the influence on risk. What’s<br>the impact on project success or failure they did<br>not talk about it? But there are also some barriers<br>comes when they validate their method through<br>expert depend on expertise level and skills.|
+|[23]|Which methods are used in GSD<br>for effort estimation? What’s the<br>factor and sub factor that influ-<br>ence on GSD? Which type of<br>industry they target and which<br>type of project?|They apply some use cases and apply<br>some estimation method and validate the<br>results. They work on agile method.|The main barrier they note the time zone and cul-<br>tural.Their results do not show us how much they<br>minimize the cost and time and what’s the ratio<br>of the project success and failure.|
+|[14]|Work distribution and task allo-<br>cation strategies and factor that<br>influence on them in globally dis-<br>tributed environment.|By conducting Systematic Literature Re-<br>view and Empirical Studies Identified 11<br>factors related to task allocation support<br>to improve estimation accuracy in GSD.|Need focus on different task allocation criteria,<br>standard rules and procedures for accurate task<br>allocation in order to make accurate estimation of<br>software projects under GSD. For the validation of<br>these finding and to check the impact of these fac-<br>tor on task allocation empirical studies were con-<br>ducted.|
+
+
+401
+
+
+EASE 2022, June 13–15, 2022, Gothenburg, Sweden Danish et al.
+
+**Table 2: Identified Factors from Selected Papers**
+
+
+
+
+
+
+
+
+
+|Identified form Paper<br>[20]|Factors identified<br>form Paper [10]|Factors identified<br>from Paper[26]|Factors identified<br>from Paper[3]|Factors identified<br>from Paper[21]|
+|---|---|---|---|---|
+|Communication Cul-<br>tural Travel Process<br>Time Zone|Identifying different<br>functions affecting<br>GSD most in term of<br>complexity and draw<br>causal model and find<br>most critical factors<br>affecting the GSD.|21 most common fac-<br>tors were identified for<br>GSD. Divide these fac-<br>tors into seven different<br>categories and analysis<br>were performed using<br>structural equation.|Number of different<br>field are identified in<br>which work can be<br>extended difficulties<br>related to team and the<br>impact of estimation in<br>project duration.|Language and Cultural<br>Differences, Time Zone,<br>Trust, Communication,<br>Requirements Stability,<br>Evolution in Technology,<br>Team Experience, Face<br>to Face Interaction|
+|Identified form Paper<br>[28]|Factors identified<br>form Paper [22]|Factors identified<br>from [25]|Factors identified<br>from [16]|Factors identified<br>form [11]|
+|Team Performance,<br>Task Dependency, Com-<br>munication, Language<br>and Cultural Differences,<br>Task Uncertainty|Requirements Stability,<br>Geographical Distance,<br>Time Zone Differences,<br>Task Size, Team Experi-<br>ence, Task Dependency,<br>Government Rules|Project Manager Skills,<br>Requirements Specifi-<br>cation, Communication<br>,language and Cultural<br>Differences, Archi-<br>tecture Mismatch,<br>difficulties related to<br>team and the impact of<br>estimation in project<br>duration.|Team Experience, Face<br>to Face Interaction, Evo-<br>lution in Technology,<br>Language and Cultural<br>Differences, Time Zone<br>Differences|Scarce of Communica-<br>tion, Scarce of Documen-<br>tation, Scarce of Compat-<br>ibility, Mismatches|
+|Identified from [31]|Factors identified<br>from [19]|Factors identified<br>from [5]|Factors identified<br>from [18]|Factors identified<br>from [8]|
+|Cultural, Communica-<br>tion, Lack of Integration<br>Planning, Roles Re-<br>sponsibilities, Lack of<br>Knowledge and Skills|Language Difference,<br>Cultural Difference,<br>Communication Gap,<br>Team Capability|Continuous Validation,<br>Efficient Utilization of<br>Resources, Time Zone<br>Differences, Communi-<br>cation Difference, Task<br>Dependency, Process<br>Maturity|Different Time Zone, De-<br>lay in Response, Unavail-<br>ability of Concerned Per-<br>sonal, Communication,<br>Team Experience|Requirements Stability,<br>Coupling between<br>Tasks, Task Complexity,<br>Technical Knowledge,<br>Project Experience,<br>Language and Cultural<br>Differences|
+|Identified form Paper<br>[8]|Factors identified<br>from [23]|Factors identified<br>from [14]|Factors identified<br>from [12]|Factors identified<br>from [3]|
+|Project Manager Ex-<br>perience, Team Leader<br>Behavior, Conflicts in<br>Team, Task Dependency|Requirements Under-<br>standing, Team Trust,<br>Architecture Mismatch,<br>Lack of Integration<br>Planning.|Language and Cultural,<br>Geographical Distance,<br>Process and Manage-<br>ment Issues, Product<br>Architecture, Trust in<br>Team.|Early Identification of<br>Dependencies, Commu-<br>nication Tools, Docu-<br>mentation, Integration,<br>Process Maturity.|Travel, Team Size,<br>Requirements Stability,<br>Unrealistic, Milestones,<br>Time Zone, Language<br>and Cultural Differences|
+
+
+After applying the inclusion and exclusion criteria based on the
+tollgate approach, selection of papers. As shown in Figure 1. **Data**
+**analysis**
+Different factors affecting global software development while estimating the effort are identified from the papers selected from the
+literature. We use the tollgate approach for this purpose. We also
+
+402
+
+
+assessed the research question from the data achieved from the
+literature.
+
+**3.4** **Phase 3**
+
+**Reporting**
+This study aims to extract different factors affecting global software
+development while estimating the effort. To achieve this study,
+
+The Influence of Cost Drivers on Effort Estimation in Distributed Software Development EASE 2022, June 13–15, 2022, Gothenburg, Sweden
+
+**Table 3: Finalize Factors after Removing Duplication**
+
+|Communication|Language and Cultural Differences|Process Maturity|
+|---|---|---|
+|Time Zone|Evolution in Technology|Unrealistic Milestones|
+|Time Zone|Evolution in Technology|Unrealistic Milestones|
+|Requirements Stability|Task Dependency|Task Complexity|
+|Team Experience|Team Size|Team Trust|
+|Architecture Mismatch|Lack of Integration and Planning|Integration Failure|
+|Communication with face-to-face|Unclear Responsibility|Lack of Communication|
+|Lack of Documentation|Geographical Distance|Continuous Validation|
+|Conflicts in Team|Requirements Understanding|Team organization|
+
+
+
+**Table 4: Numbers of occurrence of different factors**
+
+
+
+
+
+
+
+
+
+|Communication|Language and Cul-<br>tural Differences|Process Maturity|Process Matu-<br>rity|Process Matu-<br>rity|Process Matu-<br>rity|
+|---|---|---|---|---|---|
+|Evidence forms pa-<br>pers PE=paper evi-<br>dence|PE[17], PE[20], PE[26],<br>PE[21], PE[28], PE[22],<br>PE[25], PE[16], PE[11],<br>PE[31], PE[27], PE[2],<br>PE[5], PE[8], PE[14], PE<br>[12], PE[3]|PE[20], PE[22], PE[22],<br>PE[16], PE[11], PE[31],<br>PE[27], PE[18],PE[5],<br>PE[23],|PE[20], PE[10],<br>PE[26], PE[25],<br>PE[16], PE[11],<br>PE[31], PE[31],<br>PE[18],PE[5],<br>PE[23],|PE[25], PE[25],<br>PE[11],PE[23]|PE[1], PE[20],<br>PE[21], PE[26],<br>PE[22], PE[5],<br>PE[3]|
+
+
+a detailed systematic literature review is conducted. We identify
+factors from the literature on global software development that
+affects GSD while estimating the effort. In future work, we will
+provide authentic solutions to overcome the most common factors
+in GSD.
+
+**4** **RESULTS**
+
+After the text edit has been completed, the paper is ready for the template. The results show that the impact of communication-related
+factors is very high as compared to any other factors because due to
+software development at the distributed location, the most critical
+challenges are communication challenges such as lack of face-toface interaction, language barriers, cultural differences, geographical differences and time zone difference which will cover 25%
+highest as compare to all other factors. After that, the coverage of
+
+403
+
+
+management-related factors is covered the 23% of overall factors the
+management related factors that highly affect the effort estimation
+because if the management overhead increases, the effort also increases the categorical factors included in management that highly
+affect the overall result of simulation the challenges are team cost,
+schedule and resources used by the development organizations.
+The results of organizational factors also impose maximum impact
+on effort estimation compared to process and technology-related
+factors. The organizational factors which covered 20% that highly
+affect the effort estimations are unavailability requirements, team
+conflict, project management experience, and lack of documentation. Technological factors have the 17% contribute to the overall
+impact on effort, and the factors that impact on the goal are an evolution of technology, use of tools and architectural mismatches are
+also challenged that may increase the overall effort in distributed
+software development. The process-related factors maturity, task
+
+EASE 2022, June 13–15, 2022, Gothenburg, Sweden Danish et al.
+
+**Table 5: Challenging factors in GSD**
+
+
+
+
+
+
+
+
+
+
+
+
+|Factors|Equations used/Scaling|Description|References|
+|---|---|---|---|
+|Communication|a(a-1) ÷ 2 Where a = total no of stakehold-<br>ers participate in projects.|If communication channel in-<br>crease the more effort required.|Software Project Management<br>Book sixth Edition|
+|Management|SPI = EV/PV, SCI = EV/AC If SP! >1 be-<br>hind schedule, If SP! <1 ahead schedule,<br>If SP!=1 exactly on schedule.|Poor project management may in-<br>crease project effort|Software Project Management<br>Book sixth Edition|
+|Process|ROE = net income/ average stakeholder<br>equity Total ROE = ROE1 + ROE2 + ..........<br>+ ROEn (-infinity to 0%) poor (0% to 2%)<br>normal (2% to 4%) good (4% to + infinity)<br>v.good|If process is mature less effort re-<br>quired. [equity= total assets-total<br>liabilities) 0-1 CMMI Level poor<br>2-3 CMMI Level good 4-5 CMMI<br>Level very good|[11]|
+|Organization re-<br>sources|New project resources * training overhead<br>/ 100|Experience resources required to<br>train new resources so effort in-<br>crease.|[29]|
+|Project Complex-<br>ity|Project size + time/ no of requirement *<br>100|If project is complex the chance<br>to error increase so effort also in-<br>crease|[4]|
+|Team Conflict|1 high conflict (46 %), 2 medium (26 %), 3<br>low conflict (17 %-), 4 No conflict (12 %-)|1. due to organizational law im-<br>posed on customer 2. due to mis-<br>understanding org laws or poli-<br>cies 3. don’t accept law conflict|[13]|
+|Tool used|Total tool = communication tool + coop-<br>eration tool + control tool|If no of tool increase, then in<br>will increase effort due to train-<br>ing overhead of new tool|[6]|
+|Architectural<br>change|((n/total)*100), n= missing requirement,<br>n= add requirement + delete requirement<br>+ modify requirement|If architectural requirement<br>changes the effort increased|[24]|
+|Programmer Pro-<br>ductivity|Productivity = LoC/PM or FP/PM|Programmer productivity is in-<br>crease then effort also increase.If<br>the accuracy of programmer pro-<br>ductivity increase the effort re-<br>duced.|[9]|
+|Requirement un-<br>derstanding|No of total requirements, unclear require-<br>ments / total requirements|When requirement are unclear<br>then its difficult to understand so<br>effort increase|[13]|
+
+
+dependency, and continuous validation have overall combine 15%
+effect on effort estimation.
+
+**5** **CONCLUSIONS**
+
+This paper shows the result of a systematic literature review of
+effort estimation in the environment of GSD. The paper’s main
+
+
+goal is to improve productivity and minimize the cost of the effort
+estimation in GSD. It is helpful for both industry and researcher.
+We have identified the 26 factors that affect effort estimation and
+categorized them into five main categories. The result shows which
+factor is more challenging and critical regarding effort estimation
+in GSD. From these factors, we conclude that we simulate the factor
+
+
+404
+
+The Influence of Cost Drivers on Effort Estimation in Distributed Software Development EASE 2022, June 13–15, 2022, Gothenburg, Sweden
+
+**Table 6: Phases of SLR**
+
+|Phases of SLR|Steps|
+|---|---|
+|Planning|1.Select Databases to get the Papers 2. Identify Research Questions 3. Identify and apply Inclusion and Exclusion<br>Criteria 4.Identify the Search String|
+|Planning|1.Select Databases to get the Papers 2. Identify Research Questions 3. Identify and apply Inclusion and Exclusion<br>Criteria 4.Identify the Search String|
+|Conducting|1.Conduct Primary study (Background Knowledge) 2. Data Extracted from Different Databases Analyze the Data|
+|Reporting|Results are Represented and well Documented|
+
+
+
+**Table 7: Data gathering source**
+
+
+
+
+|Databases|Search String|
+|---|---|
+|IEEE Explorer|(Factors Or variables) AND (Effort Estimation) AND (“Global Software Development” OR “Global Software<br>Engineering”)|
+|ACM|(Factors Or variables) AND (Effort Estimation) AND (“Global Software Development” OR “Global Software<br>Engineering”)|
+|Wiley Inter Sci-<br>ence|(Factors Or variables) AND (Effort Estimation) AND (“Global Software Development” OR “Global Software<br>Engineering”)|
+|Google Scholar|(Factors Or variables) AND (Effort Estimation) AND (“Global Software Development” OR “Global Software<br>Engineering”)|
+|Science Direct|(Factors Or variables) AND (Effort Estimation) AND (“Global Software Development” OR “Global Software<br>Engineering”)|
+
+
+**Table 8: Data gathering source**
+
+|E-Databases|Total|Title Filtration|Abstract Filtration|Complete Text Filtration|Selected Articles|
+|---|---|---|---|---|---|
+|IEEE Explorer|14|11|7|6|5|
+|ACM|8|6|5|3|1|
+|Wiley online|78|18|8|6|4|
+|Google scholar|305|14|9|8|7|
+|Science direct|87|20|11|7|3|
+|Total|492|69|40|30|20|
+
+
+through simulation and validate the equation of each factor. The
+results show that the communication category is more challenging
+in a global software environment. The project manager must focus
+on the communication barrier because of communication, and we
+fail our project in the GSD environment. This SLR finds out a wide
+range of cost drivers that affect the project communication, cultural
+time zone, etc.so keep in mind when you estimate the effort in GSD.
+
+405
+
+
+It is a very helpful to study for that industry who are working in a
+GSD environment through this study, we can easily estimate the
+effort in a distributed environment and minimize the budget of the
+project. In a future we want to map these factors with cocomo2 and
+we easily estimate the whole cost of the project through effort in
+GSD.
+
+EASE 2022, June 13–15, 2022, Gothenburg, Sweden Danish et al.
+
+**Figure 1: Article selection using tollgate approach**
+
+**Figure 2: Overall categorical percentage**
+
+**Figure 3: Graph of communication categories**
+
+406
+
+The Influence of Cost Drivers on Effort Estimation in Distributed Software Development EASE 2022, June 13–15, 2022, Gothenburg, Sweden
+
+
+**REFERENCES**
+
+[1] Turki Alelyani, Ke Mao, and Ye Yang. 2017. Context-centric pricing: early pricing
+models for software crowdsourcing tasks. In *Proceedings of the 13th International*
+*Conference on Predictive Models and Data Analytics in Software Engineering* . 63–72.
+
+[2] Naveed Ali and Richard Lai. 2016. A method of requirements change management
+for global software development. *Information and Software Technology* 70 (2016),
+49–67.
+
+[3] Julian M Bass, Beecham Sarah, Mohammed Abdur Razzak, and John Noll. 2018.
+Employee retention and turnover in global software development: Comparing inhouse offshoring and offshore outsourcing. In *2018 IEEE/ACM 13th International*
+*Conference on Global Software Engineering (ICGSE)* . IEEE, 77–86.
+
+[4] Nicolas Bettenburg, Meiyappan Nagappan, and Ahmed E Hassan. 2012. Think
+locally, act globally: Improving defect and effort prediction models. In *2012 9th*
+*IEEE Working Conference on Mining Software Repositories (MSR)* . IEEE, 60–69.
+
+[5] Ricardo Britto, Muhammad Usman, and Emilia Mendes. 2014. Effort estimation
+in agile global software development context. In *International Conference on Agile*
+*Software Development* . Springer, 182–192.
+
+[6] Saad Yasser Chadli, Ali Idri, Joaquín Nicolás Ros, José Luis Fernández-Alemán,
+Juan M Carrillo de Gea, and Ambrosio Toval. 2016. Software project management
+tools in global software development: a systematic mapping study. *SpringerPlus*
+5, 1 (2016), 1–38.
+
+[7] Mario Coccia. 2018. Measurement of the evolution of technology: A new perspective. *arXiv preprint arXiv:1803.08698* (2018).
+
+[8] Ana Cristina Costa and Neil Anderson. 2011. Measuring trust in teams: Development and validation of a multifaceted measure of formative and reflective
+indicators of team trust. *European Journal of Work and Organizational Psychology*
+20, 1 (2011), 119–154.
+
+[9] Ana Cristina Costa and Neil Anderson. 2011. Measuring trust in teams: Development and validation of a multifaceted measure of formative and reflective
+indicators of team trust. *European Journal of Work and Organizational Psychology*
+20, 1 (2011), 119–154.
+
+[10] Fabio QB da Silva, Catarina Costa, A Cesar C Franca, and Rafael Prikladinicki.
+2010. Challenges and solutions in distributed software development project management: A systematic literature review. In *2010 5th IEEE International Conference*
+*on Global Software Engineering* . IEEE, 87–96.
+
+[11] Jose Javier Dolado. 2000. A validation of the component-based method for
+software size estimation. *IEEE Transactions on Software Engineering* 26, 10 (2000),
+1006–1021.
+
+[12] D Hartama, Herman Mawengkang, M Zarlis, and RW Sembiring. 2017. Smart City:
+Utilization of IT resources to encounter natural disaster. In *Journal of Physics:*
+*Conference Series*, Vol. 890. IOP Publishing, 012076.
+
+[13] Danish Iqbal, Assad Abbas, Mazhar Ali, Muhammad Usman Shahid Khan, and
+Raheel Nawaz. 2020. Requirement validation for embedded systems in automotive
+industry through modeling. *IEEE Access* 8 (2020), 8697–8719.
+
+[14] Dehua Ju. 2006. A concerted effort towards flourishing global software development. In *Proceedings of the 2006 international workshop on Global software*
+*development for the practitioner* . 62–65.
+
+[15] Huma Hayat Khan, Mohd Naz’ri bin Mahrin, and Suriayati bt Chuprat. 2014.
+Situational requirement engineering framework for global software development. In *2014 International Conference on Computer, Communications, and Control*
+*Technology (I4CT)* . IEEE, 224–229.
+
+407
+
+
+
+[16] S Arun Kumar and Arun Kumar Thangavelu. 2013. Factors affecting the outcome
+of Global Software Development projects: An empirical study. In *2013 Interna-*
+*tional Conference on Computer Communication and Informatics* . IEEE, 1–10.
+
+[17] Adailton Magalhães Lima. 2010. Risk assessment on distributed software projects.
+In *2010 ACM/IEEE 32nd International Conference on Software Engineering*, Vol. 2.
+IEEE, 349–350.
+
+[18] Sajjad Mahmood, Sajid Anwer, Mahmood Niazi, Mohammad Alshayeb, and Ita
+Richardson. 2017. Key factors that influence task allocation in global software
+development. *Information and Software Technology* 91 (2017), 102–122.
+
+[19] Prateeti Mohapatra, Petra Björndal, and Karen Smiley. 2010. Causal analysis of
+factors governing collaboration in global software development teams. In *2010*
+*5th IEEE International Conference on Global Software Engineering* . IEEE, 128–132.
+
+[20] Mohammad Muhairat, Saleh Aldaajeh, and Rafa E Al-Qutaish. 2010. The impact
+of global software development factors on effort estimation methods. *European*
+*Journal of Scientific Research* 46, 2 (2010), 221–232.
+
+[21] Mahmood Niazi, Sajjad Mahmood, Mohammad Alshayeb, Abdul Majid Qureshi,
+Kanaan Faisal, and Narciso Cerpa. 2016. Toward successful project management
+in global software development. *International Journal of Project Management* 34,
+8 (2016), 1553–1567.
+
+[22] Tuomas Niinimaki, Arttu Piri, and Casper Lassenius. 2009. Factors affecting
+audio and text-based communication media choice in global software development projects. In *2009 Fourth IEEE International Conference on Global Software*
+*Engineering* . IEEE, 153–162.
+
+[23] S Ramacharan and K Venu Gopala Rao. 2016. Software effort estimation of GSD
+projects using calibrated parametric estimation models. In *Proceedings of the*
+*Second International Conference on Information and Communication Technology*
+*for Competitive Strategies* . 1–8.
+
+[24] Md Rounok Salehin. 2013. Missing requirements information and its impact on
+software architectures: A case study. (2013).
+
+[25] Kathleen Swigger, Fatma Cemile Serce, Ferda Nur Alpaslan, Robert Brazile,
+George Dafoulas, and Victor Lopez. 2009. A comparison of team performance
+measures for global software development student teams. In *2009 Fourth IEEE*
+*International Conference on Global Software Engineering* . IEEE, 267–274.
+
+[26] June M Verner, O Pearl Brereton, Barbara A Kitchenham, Mahmood Turner, and
+Mahmood Niazi. 2014. Risks and risk mitigation in global software development:
+A tertiary study. *Information and Software Technology* 56, 1 (2014), 54–78.
+
+[27] Aurora Vizcaíno, Félix García, José Carlos Villar, Mario Piattini, and Javier Portillo.
+2013. Applying Q-methodology to analyse the success factors in GSD. *Information*
+*and Software Technology* 55, 7 (2013), 1200–1211.
+
+[28] Minghui Wu and Hui Yan. 2009. Simulation in Software Engineering with System
+Dynamics: A Case Study. *J. Softw.* 4, 10 (2009), 1127–1135.
+
+[29] Minghui Wu and Hui Yan. 2009. Simulation in Software Engineering with System
+Dynamics: A Case Study. *J. Softw.* 4, 10 (2009), 1127–1135.
+
+[30] Ye Yang, Mei He, Mingshu Li, Qing Wang, and Barry Boehm. 2008. Phase
+distribution of software development effort. In *Proceedings of the Second ACM-*
+*IEEE international symposium on Empirical software engineering and measurement* .
+61–69.
+
+[31] Atique Ahmad Zafar, Shahela Saif, Muzafar Khan, Javed Iqbal, Adnan Akhunzada,
+Abdul Wadood, Ahmad Al-Mogren, and Atif Alamri. 2017. Taxonomy of factors
+causing integration failure during global software development. *IEEE Access* 6
+(2017), 22228–22239.
+
