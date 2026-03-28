@@ -1,0 +1,49 @@
+This paper investigates the use of Tabu Search (TS) to configure Support Vector Regression (SVR) parameters for effort estimation. Here's a comprehensive summary of the paper:
+
+**Introduction**: The researchers aim to determine whether TS can effectively set SVR parameters for effort estimation, specifically for web application development efforts. Their primary concern is that SVR's flexibility, although beneficial, can become a limitation if not configured correctly.
+
+**Related Work**: Previous studies have demonstrated that SVR can be effective in effort estimation, but manual parameter setting can be challenging. Researchers have tried using brute-force optimization, but this approach is computationally expensive and may not converge to the optimal solution.
+
+**Research Questions**: Two main research questions guide the study:
+
+1. Is TS able to effectively set SVR configuration parameters?
+2. Are the effort predictions obtained by using the combination of TS and SVR significantly superior to the ones obtained by other techniques?
+
+**Methods**: The researchers employed the Tukutuku database, a widely-used dataset in web effort estimation studies, and divided it into two training sets (containing 130 projects each) and two validation sets (containing 65 projects each). They used SVR with linear and radial basis function (RBF) kernels, along with two preprocessing strategies: unprocessed data and log-transformation.
+
+**Techniques Used**:
+
+1. **Support Vector Regression (SVR)**: A type of supervised learning algorithm that predicts continuous output variables based on inputs. 
+2. **Tabu Search (TS)**: A metaheuristic search algorithm designed to efficiently search through the solution space to find near-optimal solutions quickly.
+3. **Manuel Step-Wise Regression (MSWR)**: A traditional method of finding the best subset of independent variables for multiple linear regression.
+4. **Case-Based Reasoning (CBR)**: An AI paradigm that solves complex tasks by recalling previously encountered situations relevant to the task at hand.
+5. **Bayesian Networks (BN)**: Probabilistic graphical models representing relationships between variables.
+
+**Key Findings**:
+
+1. Using TS to optimize SVR parameters led to improved performance and better handling of noisy data.
+2. When using the RBF kernel with log-transformed data, TS-SVR produced the highest average rankings in four of six summary metrics and was never ranked last, whereas the baseline SVR consistently scored third-lowest overall.
+3. TS-SVR achieved higher-than-baseline accuracy rates in five of nine scenarios and tied the baseline rate in four scenarios, showing evidence of substantial progress toward achieving desired levels of accuracy.
+4. Comparisons against additional baselines, including manually tuned SVR and standard parametric regression, yielded mixed outcomes, suggesting room for improvement before widespread deployment.
+
+**Conclusion**: The findings indicate that TS-SVR produces meaningful improvements over naive SVR, particularly in terms of ranking positions within the comparison group. Although challenges persist, especially concerning noise robustness and transferability across diverse domains, TS offers opportunities to fine-tune SVR performance in practice.
+
+Predictors used as effort estimators in the paper:
+
+1. Number of programming languages adopted in the project (*nlang*)
+2. Number of Developers involved in the project (*DevTeam*)
+3. Mean number of years of experience for the team members (*TeamExp*)
+4. Effort in person-hours (*TotEff*)
+5. Total number of Web pages (new and reused) (*TotWP*)
+6. Total number of new Web pages (*NewWP*)
+7. Total number of images (new and reused)(*TotImg*)
+8. Total number of new images (*NewImg*)
+9. Features/reused functions without adaptation (*Fots*)
+10. Reused High-Effort features/adapted (*HFotsA*)
+11. New high-effort features/functions.(*Hnew*)
+12. Total high-effort features/functions (*totHigh*) 
+13. Reused Low-Effort features/adapted (*FotsA*)
+14. New low-effort features/functions(*New*)
+15. Total low-effort features/functions(*totNHigh*)
+
+These predictors serve as crucial factors in determining the difficulty and complexity associated with developing web applications.

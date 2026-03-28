@@ -1,0 +1,37 @@
+**Summary of "Circumstantial-Evidence-Based Effort Judgement for Web Service Composition-Based SOA Implementations" Paper**
+
+The paper discusses the challenge of effort estimation for Web Service Composition (WSC)-based Service Oriented Architecture (SOA) implementations. The authors propose a circumstantial-evidence-based effort judgement approach to overcome the difficulties associated with quantitatively investigating the effort of various WSC approaches.
+
+**Key Points:**
+
+1.  The authors suggest treating a WSC-based SOA system as a mechanically organised entity, borrowing concepts from organisation theory to guide their research in the area of service-oriented software engineering.
+2.  They use the Divide-and-Conquer (D&C) strategy, a classic problem-solving approach borrowed from organisation theory, to break down the effort judgement for a whole WSC-based SOA implementation into separate tasks for individual WSCs.
+3.  The authors create an effort-oriented classification matrix to categorize WSC approaches along two dimensions: context and process. The context dimension considers pattern, semiotics, mechanism, design-time, and run-time considerations, while the process dimension looks at workflow-based, model-driven, AI-planning technologies.
+4.  Due to the lack of readily available data on effort estimation for various WSC approaches, the researchers opt for a circumstantial-evidence-based judgement approach instead. Circumstantial evidence refers to indirect proof derived from observations, events, or circumstances suggesting something might happen, whereas direct evidence establishes a direct link between a piece of evidence and what you're trying to prove.
+5.  They develop a framework to systematically collect circumstantial evidence, leveraging Systematic Literature Reviews (SLRs) to extract effort-related hypotheses. 
+6.  Circumstantial evidence is utilised via the Theory of Propositional Learning (TPL) for diagnostic reasoning. This enables the creation of a logical chain connecting potential explanations and observed phenomena.
+7.  The authors present a case study involving a railway supply company called RailCo Ltd., demonstrating the effectiveness of their circumstantial-evidence-based approach in comparing different WSC approaches' effort scores for a given WSC project.
+8.  Key findings indicate that their approach provides a useful basis for evaluating the relative effort of different WSC approaches, facilitating the determination of the most efficient course of action.
+
+**Predictors Used as Effort Estimators:**
+
+1.  Contextual Factors:
+
+    *   Pattern (orchestration and choreography)
+    *   Semiotics (semantics and syntax)
+    *   Mechanisms (SOAP and REST)
+    *   Design-Time Processes (manual, semi-automatic, and automatic)
+    *   Runtime Environment (static and dynamic)
+2.  Process Dimensions:
+
+    *   Workflow-Based Technologies
+    *   Model-Driven Approaches
+    *   Artificial Intelligence Planning Techniques
+3.  Specific Features Considered in Each Category:
+    *   Complexity of Methods Used
+        *   Internal Environmental Complexities
+            o   Difficulty Levels Behind Process Models
+                \- Human Activities Involved
+                    \- Tools Adopted
+                        \- Technically Sophisticatedness
+                            \- Level of Tool Support

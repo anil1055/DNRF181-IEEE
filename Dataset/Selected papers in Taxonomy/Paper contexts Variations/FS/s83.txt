@@ -1,0 +1,57 @@
+After carefully analyzing the content of the paper, I've summarized the essential information regarding the predictors used for estimating web application effort. Here's my breakdown of the paper:
+
+**Introduction**
+
+The paper discusses the importance of reliable web effort estimation in web project management and aims to contribute to a broader understanding of the fundamental factors affecting web effort estimation and their causal relationships.
+
+**Background**
+
+Previous studies on web effort estimation have used various methods, including machine learning techniques, multivariate regression, and Bayesian networks. However, these efforts have limitations, such as focusing on correlated factors rather than causal ones and failing to assess companies' expertise in effort estimation.
+
+**Methodology**
+
+The authors propose a novel approach called Causal Structure Aggregation Modeling (CSAM), which aggregates multiple expert-driven causal maps to identify common factors and causal relationships among web development companies. The methodology involves seven steps:
+
+1. Formatting of companies' causal maps
+2. Removal of optimization nodes
+3. Creation of an input table for mapping
+4. Aggregation algorithm
+5. Checking for cycles
+6. Checking for unmapped nodes
+7. Finalize the CSAM
+
+**Predictors Used for Estimation**
+
+Although the term "predictors" isn't explicitly mentioned in the paper, the authors discuss the factors used to estimate web application effort. According to the paper, the CSAM includes 67 factors, categorized as follows:
+
+* Number of new web pages
+* Number of reused web pages
+* Features off the shelf
+* Project management effort
+* Client difficulty
+* Development team size
+* Requirements clarity
+* Type of project
+* Template structure
+* Amount of text per page
+* Are metrics used throughout the project?
+* Average project team experience with technology
+* Average project team experience (excluding technology)
+* And many others (total of 67 factors)
+
+These factors are derived from six independently elicited single-company causal maps from local web development companies in Auckland, New Zealand.
+
+**Key Findings**
+
+The analysis reveals interesting insights, such as:
+
+* Most common factors appear in fewer than half of the participating companies' maps.
+* Only 16% of causal relations are shared across at least two maps.
+* Edges with higher cardinality tend to be closer to the Total Effort node, indicating that influential factors tend to be near the end of the chain leading to effort estimation.
+* Factors like 'Number of New Web Pages', 'Number of Reused Web Pages', and 'Average Project Team Experience with Technology' are common influences on Total Effort.
+
+While the paper doesn't explicitly mention the predictors as traditional statistical predictors, the factors discussed serve as indirect indicators of potential predictors for web application effort estimation.
+
+Keep in mind that the paper focuses on developing a framework (CSAM) to integrate expert-driven causal maps rather than proposing explicit predictive models or equations. Nonetheless, the extracted factors provide valuable insight into the complexities surrounding web effort estimation and suggest avenues for further exploration.
+
+If you'd like me to clarify anything or elaborate on specific aspects, please don't hesitate to ask!

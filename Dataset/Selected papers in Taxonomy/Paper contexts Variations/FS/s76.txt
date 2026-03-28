@@ -1,0 +1,56 @@
+After conducting a thorough analysis of the paper, here is a comprehensive summary of the article:
+
+**Title:** Measures and Techniques for Effort Estimation of Web Applications: An Empirical Study Based on a Single-Company Dataset
+
+**Authors:** Sergio Di Martino, Filomena Ferrucci, Carmine Gravino, and Emília Mendes
+
+**Summary:**
+
+This paper discusses various size metrics and techniques for estimating the effort required for developing web applications. The authors conducted an empirical study using a dataset consisting of 15 web applications developed by an Italian software company. Two sets of size measures, referred to as Set1 and Set2, were employed. Set1 included length measures such as the number of pages, media, server-side scripts, and internal links, while Set2 comprised the nine components of the Web Objects measure, an extension of Function Points.
+
+The authors examined three effort estimation techniques: Manual Stepwise Regression (MSWR), Case-Based Reasoning (CBR), and Regression Tree (RT). MSWR uses statistical techniques to predict effort based on multiple variables, CBR relies on a knowledge base of historical data to estimate effort, and RT applies machine learning principles to identify relationships between variables.
+
+**Results:**
+
+The study demonstrated that both Set1 and Set2 measures were good indicators of the effort expended in developing the web applications. Specifically:
+
+* MSWR produced better results with Set1 than with Set2, with Mean Magnitude of Relative Error (MMRE) ranging from 12% to 23%.
+* CBR yielded comparable results with both sets, with MMRE ranging from 11% to 25%.
+* RT+C BR resulted in the lowest MMRE with Set1 (11%) and moderate results with Set2 (19%).
+
+The study also explored the impact of combining RT with either MSWR or CBR. Combining RT with CBR provided promising results, particularly with Set1, yielding a MMRE of 11%.
+
+**Findings:**
+
+The findings indicate that:
+
+* Both Set1 and Set2 measures were viable options for estimating web application effort.
+* MSWR outperformed CBR and RT+C BR in terms of accuracy when using Set1.
+* CBR exhibited mixed results depending on the combination of variables and analogy strategies employed.
+* Combination of RT with CBR tended to yield better outcomes, particularly with Set1.
+
+**Limitations:**
+
+While the study provides valuable insights, it is limited by the small dataset size (15 projects) and the fact that it focuses solely on a single company's data.
+
+**Implications:**
+
+The results imply that:
+
+* Practitioners can utilize either Set1 or Set2 measures effectively, although MSWR appears to excel with Set1.
+* Companies may benefit from implementing a hybrid approach combining RT with CBR.
+
+Overall, this study sheds light on the suitability of various effort estimation techniques and measures for web applications, highlighting areas for improvement and opportunities for future research.
+
+**Used Effort Estimators/Predictors:**
+
+The paper identifies the following predictors used as effort estimators:
+
+* Number of Server Side Scripts and Applications (SSApp)
+* Number of Internal Links (IL)
+* Number of Multimedia Elements (Me)
+* External Inputs (EI)
+
+These predictors are part of the measurement sets Set1 and Set2 discussed earlier.
+
+Note: The study explores numerous techniques and combinations, making it essential to refer to the original paper for detailed descriptions and comparisons of each methodology.

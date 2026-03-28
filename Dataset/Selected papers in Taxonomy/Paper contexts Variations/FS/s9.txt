@@ -1,0 +1,68 @@
+Here's a detailed summary of the paper:
+
+**Introduction**: 
+The authors emphasize the importance of realistic effort estimates in managing software projects successfully, particularly in web development. Since current efforts focus primarily on functional measures of size, the researchers aim to investigate alternative size metrics like length and complexity for predicting web design and authoring effort.
+
+**Related Work**: 
+Previous studies on effort prediction for web development concentrated on proposing methods, methodologies, and tools but rarely focused on predictive modeling. Examples mentioned include experiments conducted by Morisio et al., Rollo, and Mendes et al. However, none of them evaluated the suitability of commonly accepted metrics for predicting web design and authoring effort accurately.
+
+**Research Question and Objective**:
+The primary objectives of the research were to assess the effectiveness of commonly used metrics for predicting web effort in a systematic manner and explore whether commonly accepted metrics yield comparable outcomes across the scope of web effort prediction.
+
+**Methodology**: 
+The researchers adopted a case study approach with forty-three computer science students participating in the study. Students designed and authored web applications under specific guidelines following the cognitive flexibility theory. Data collection occurred via self-reported surveys after completing the task. Various size metrics (length, complexity, and functionality) and confounding factors were recorded.
+
+**Variables Collected**:
+1. Size Metrics:
+    - Length: 
+        • Page Count
+        • Media Count
+        • Program Count
+        • Total Page Allocation
+        • Total Media Allocation
+        • Total Embedded Code Length
+        • Reused Media Count
+        • Reused Program Count
+        • Total Reused Media Allocation
+        • Total Reused Code Length
+    - Complexity:
+        • Connectivity
+        • Connectivity Density
+        • Total Page Complexity
+        • Cyclomatic Complexity
+    - Functionality:
+        • Size-CFSU
+2. Effort Metrics:
+    - Structural effort
+    - Interlinking effort
+    - Interface planning
+    - Implementation building
+    - Link testing effort
+    - Media testing effort
+3. Confounding Variables:
+    - Tool usage
+    - Subject's experience with web authoring and design
+
+**Analysis Methods Used**:
+Both linear and step-wise regression analyses were performed to derive prediction equations for each of the size metric dimensions. Specifically, the relationships between structural effort, interlinking effort, interface planning, implementation building, link testing effort, media testing effort and various size metrics were analyzed.
+
+**Results**:
+After analyzing the results from both linear and step-wise regressions, the findings indicated that:
+- All size metrics exhibited similarities in terms of prediction accuracy.
+- For 'length,' both linear and step-wise regression equations yielded considerable variance in residuals.
+- In contrast, 'functionality' and 'complexity' demonstrated somewhat better consistency among the residual patterns.
+However, despite the moderate success achieved in evaluating certain relations, overall accuracy remains a concern, especially considering common criteria.
+
+**Conclusion**: Despite finding promising leads toward improvement, the authors stress that effort prediction for web development still requires extensive refinement before achieving reliable forecasts. Overall, this research contributes positively toward investigating web-specific effort prediction strategies beyond traditional functional measures, though additional advancements remain needed.
+
+Used Predictors for Estimating Web Application Effort:
+
+1. Length: 
+    - Page Count
+    - Total Reuse Code Length
+    
+2. Complexity: 
+    - Connectivity
+    
+3. Functionality: 
+    - Size CFSU

@@ -1,0 +1,25 @@
+After carefully reading the research paper titled "Estimating the Development Effort of Web Projects in Chile," I've analyzed the content and extracted essential details about the predictors used for estimating web application effort. Here's a comprehensive summary:
+
+**Summary**
+
+The paper proposes the Chilean Web Application Development Effort Estimation (CWADEE) method, designed to provide quick and accurate estimates for web-based software development efforts in Chile. The authors aim to address the limitations of conventional effort estimation methods for web-based projects, particularly in the context of small-to-medium-sized projects in Chile. The CWADEE method focuses on leveraging the data model of the target system to estimate development effort, providing a novel approach tailored to the local development scenario.
+
+**Predictors Used in CWADEE**
+
+The CWADEE method employs various predictors to estimate the development effort of web-based projects. The significant predictors used in the CWADEE method are:
+
+1.  **Data Web Points (DWP)**: This predictor is based on the data model of the system to be developed, representing system functionality. Each type of entity and relationship in the data model is associated with a certain number of DWPs, which are then multiplied by a weight representing the development effort of each component.
+2.  **Representativeness Coefficient**: This coefficient accounts for the proportion of the system's functionality that cannot be inferred solely from the data model. It is calculated by comparing the actual project size against the predicted size based on the data model.
+3.  **User Cost (UC)**: This predictor reflects the system's ability to handle multiple user types and the corresponding functionalities. The user cost is influenced by the scope of each user type, the degree of reuse among user types, and the overall system size.
+4.  **Cost Drivers**: Similar to the WebMo model, CWADEE incorporates eight cost drivers that influence the development effort:
+	*   COPLX (Product Reliability and Complexity): measures the system's reliability and complexity.
+    *   DIFPLA (Platform Difficulty): assesses the difficulties arising from changing platforms and network volatility.
+    *   PERS (Personnel Capabilities): evaluates the skills, knowledge, and abilities of the workforce.
+    *   EXPER (Experience of the Personnel): gauges the depth and breadth of the staff's experience.
+    *   INFRA (Infrastructure): examines the availability of necessary tools, equipment, geographical distribution, etc.
+    *   SCHED (Scheduling): determines the impact of reduced delivery times on the project schedule.
+    *   CLIEN (Client Type): assesses the technology familiarity and requirement stability of the client.
+    *   WTEAM (Work Team): evaluates the synergy within the team.
+    *   EFPRO (Process Efficiency): measures the effectiveness of the development process.
+
+These predictors form the core of the CWADEE method, enabling efficient estimation of web-based project development efforts in Chilean contexts. By incorporating domain-specific considerations, the CWADEE method aims to enhance the precision and speed of effort estimation for small-to-medium-sized web-based projects.

@@ -1,0 +1,583 @@
+# **Towards the Prediction of Development Effort for** **Hypermedia Applications**
+
+
+*Nile Mosley*
+Computer Science Department
+Auckland University of
+Technology,
+Auckland, New Zealand
+nile_mosley@yahoo.com
+
+
+*Emilia Mendes*
+Computer Science Department
+The University of Auckland
+Auckland, New Zealand
+emilia@cs.auckland.ac.nz
+
+
+*Steve Counsell*
+Computer Science Department
+Birkbeck College
+London, UK
+steve@dcs.bbk.ac.uk
+
+
+**ABSTRACT**
+Accurate estimates of development effort play an important
+role in the successful management of larger hypermedia
+development projects. By applying measurement principles
+to measure characteristics of the applications and their
+development processes, feedback can be obtained to help
+understand, control and improve future applications and
+corresponding processes.
+
+The objective of this paper is to describe the application of
+case-based reasoning to estimating the effort for developing
+hypermedia applications. The data used in the estimation
+process was obtained through an experiment where effort
+and size metrics were collected.
+
+We have shown that case-based reasoning is a candidate
+technique to effort estimation and, with the aid of an
+automated environment, can be applied to hypermedia
+development effort prediction.
+
+**KEYWORDS:** effort prediction, hypermedia development,
+case-based reasoning.
+
+**INTRODUCTION**
+In any scientific field, measurement generates quantitative
+descriptions of processes and products, making it possible
+to understand behaviour and result. This understanding
+allows for the selection of better techniques and tools to
+control and improve processes, products and resources [19].
+
+Software practitioners recognise the importance of realistic
+estimates of effort for the successful management of large
+software projects, hypermedia applications are no
+exception.
+
+Permission to make digital or hard copies of all or part of this work
+for personal or classroom use is granted without fee provided that
+copies are not made or distributed for profit or commercial
+advantage, and that copies bear this notice and the full citation on
+the first page. To copy otherwise, to republish, to post on servers or
+to redistribute to lists, requires prior specific permission and/or a fee.
+HT'01 8/01 Aarhus, Denmark
+® 2001 ACM ISBN 1-59113-420-7/01/0008…$5.00
+
+249
+249
+
+
+Using realistic estimates at an early stage in a project's life
+cycle allow project managers and development
+organisations to manage resources effectively.
+
+Prediction, a necessary part of an effective process, be it
+authoring, design, testing, or development, comprises [5]:
+step 1. Capturing data from past projects (software and
+development processes) which can be used to
+estimate effort.
+step 2. Generation of prediction models based on historical
+data, collected during step 1.
+step 3. Evaluation of how effective those models are.
+
+This paper focuses on effort prediction for design and
+authoring processes. We adopt the classification proposed
+by Lowe and Hall [13] where authoring encompasses the
+management of activities for the actual content and
+structure of the application and its presentation. Design
+covers the methods used for generating the structure and
+functionality of the application, and typically does not
+include aspects such as application requirements elicitation,
+feasibility consideration and applications maintenance. In
+addition, our design phase also incorporates the conceptual
+design of the application, reflected in map diagrams
+showing documents and links.
+
+As effort is the largest and least predictable component of
+project costs, most approaches found in the literature focus
+on this measure [5]. In this paper we only address design
+and authoring effort.
+
+The data used in the estimation process was gathered
+through an experiment [6] where a set of suggested metrics
+for effort prediction were measured. The metrics were
+classified as size, effort and confounding factors [12].
+
+A number of size metrics from the literature in Software
+Engineering and Multimedia were reused [5,9,25] or
+adapted [15]. The effort for authoring and designing
+hypermedia applications was estimated using Case-based
+reasoning (CBR) [11,21] also called estimation by analogy.
+
+
+The rationale for CBR is to characterise the project, for
+which the estimate is to be made, relative to a number of
+attributes (e.g. application complexity, link complexity etc).
+This description is then used to find other similar projects,
+already finished, and an estimate for the new project is
+made based on the known effort values for those finished
+projects.
+
+This paper is organised as follows: Section 2 presents
+related work in development effort prediction for
+hypermedia applications. Section 3 presents in more depth
+the technique of case-based reasoning and in Section 4 we
+describe the tool used to automate the estimation process.
+In Section 5 we present the experiment and Section 6
+describes the empirical results of applying CBR. Finally,
+Section 7 concludes with an analysis of the strengths and
+weaknesses of using CBR and suggestions on future work.
+
+**CASE-BASED REASONING**
+Case-based Reasoning involves [21]:
+� Characterising the project for which an estimate is
+required, i.e., identifying project attributes (application
+size, link complexity etc) which can influence effort.
+� Use of this characterisation as a basis for finding
+similar (analogous) completed projects, for which
+effort is known.
+� Use these effort values, possibly with adjustment, to
+generate a predicted value of effort.
+
+Finding the right analogies and assessing the degree of
+similarity are the difficulties of this method.
+
+When using CBR there are a number of issues to consider
+
+[23]:
+� How to best characterise a project? The range of
+attributes must be limited to the information available
+at the point that the estimation is required. Attributes
+should portray the project as precisely as possible and
+it is essential to choose at least one attribute that
+characterises project in terms of size.
+� How to detect similarities (analogies) between projects
+and with what level of confidence?
+� How to identify the number of analogies to search for?
+� How an effort estimate for a new project can be
+derived from analogous finished projects? Options are
+to use the mean effort of all analogous finished
+projects; to calculate a weighted mean of efforts where
+more influence is placed on the most similar finished
+projects (closer analogies).
+
+Once there is a dataset containing historical data of
+finished projects, effort for new projects can then be
+estimated.
+
+The analogies used in our work were calculated according
+to the following steps:
+Step 1) Find the best combination of attributes to give the
+best estimate.
+Step 2) Use the results obtained in step 1 to find the most
+similar finished project(s) to the new project, for
+which effort needs to be estimated. During this
+step it is also necessary to decide the number of
+projects (analogies) to be used in the estimation,
+
+
+which can vary from 1 to total-number-ofcompleted-projects-available [2] .
+Step 3) Calculate the estimated effort as the mean of the
+known effort values for those projects selected in
+step 2 [3] .
+
+A detailed description of CBR and a survey of several
+effort prediction models is given in [10,21].
+
+**THE ANGEL-PLUS SOFTWARE TOOL**
+It is feasible to find analogies, using the method described
+in Section 3, without the help of a computer program,
+however it can be both time consuming and error prone as
+the number of projects or attributes increase. Consequently,
+we have used a case-based reasoning effort estimation tool
+which automates the process and provides an environment
+where data can be stored, analogies found and estimates
+generated. The tool was developed at Bournemouth
+University under the name of ANaloGy softwarE tooL Plus
+(ANGEL-Plus). An important feature of ANGEL-Plus is
+the ability to determine the optimum combination of
+attributes for finding analogies.
+
+Figure 1 (see appendix A) shows part of a template for
+recording project data. Templates are used to describe the
+data used in the estimation process and can be configured
+to match the specific data collection environment of an
+organisation. As ANGEL-Plus does not impose any
+particular set of attributes the estimation process can take
+optimal advantage of the data available. The user chooses
+the number of attributes and their names, the only
+exceptions are the project number, status and actual effort
+which are compulsory. ANGEL-Plus uses the project
+number to uniquely identify each project. Status shows
+whether or not a project is “on” or “off”, representing
+respectively a completed project which can be used as a
+source of analogy or a new/ongoing project. The actual
+effort is mandatory for all completed projects as it supplies
+the foundation for prediction. Figure 2 (Appendix A)
+shows the data collected for the dataset used in our work.
+
+Once the template has been created and data entered, the
+next step is to find the optimum combination of attributes
+used to find analogies. The justification behind the
+selection of attributes is that not necessarily all attributes
+collected will be useful to finding good analogies. The user
+can select all or a subset of attributes described in the
+template.
+
+2 Schofield [9] suggests that one project, followed by two
+projects, are generally the most effective options. However, it is
+possible that dissimilar datasets may reveal different
+characteristics.
+3 Although intuitively it would seem adequate to weight the mean
+in order to reflect the influence of the projects chosen in step 2,
+Kadoda et al. [10] show that using weighted mean does not
+contribute to the accuracy of a prediction.
+
+251
+251
+
+
+Once chosen, the attributes are used in the estimation
+algorithm, resulting in an estimated effort (see Figure 3 in
+Appendix A).
+
+Typically where there are only a few projects or where the
+projects differ broadly in nature the results will not be as
+accurate as when the dataset represents similar projects.
+
+Figure 3 (Appendix A) shows the estimated effort for a
+selected project, estimated based on three completed
+projects (3 analogies). The estimated effort is of 34 personhours. Figure 3 also shows the best combination of
+attributes to generate the best estimate.
+
+**THE EXPERIMENT**
+The experiment [6] consisted of the design and authoring of
+hypermedia applications aimed at teaching a chosen topic,
+structured according to the Cognitive Flexibility Theory
+(CFT) principles [24], using a minimum of 50 documents.
+The delivery system (environment) chosen was the World
+Wide Web, as this was the one most students were familiar
+with.
+
+Forty three Computer Science students from the University
+of Auckland participated in the experiment. They were
+attending the Hypermedia and Multimedia Systems course,
+offered during the first semester of 2000. Two
+questionnaires were used to collect the data. The first [4]
+
+asked subjects to rate their Web authoring experience using
+five scales, from no experience (zero) to very good
+experience (four). The second questionnaire [5] was used to
+measure characteristics of the Web applications developed
+(suggested metrics) and the effort involved in designing
+and authoring those applications. On both questionnaires,
+we describe in depth each scale type, to avoid any
+misunderstanding. Members of the research group checked
+both questionnaires for ambiguous questions, unusual tasks,
+number of questions and definitions in the Appendix.
+
+Early analysis showed that six questionnaires were missing
+fundamental information. They were not used in the data
+analysis, leaving thirty seven datapoints.
+
+To reduce learning effects, subjects were given a
+coursework prior to designing and authoring the Web
+applications, which consisted of:
+� Creating a simple personal homepage.
+� Designing a multi-page Web application.
+
+�
+Creating a Web site for the Matakohe Kauri Museum [6],
+improving on their existing site.
+� Loading the Web pages onto a Web server.
+
+4 http://www.cs.auckland.ac.nz/~emilia/Assignments/expquestionnaire.html.
+5 http://www.cs.auckland.ac.nz/~emilia/Assignments/questionnaire
+.html.
+6 http://www.hmu.auckland.ac.nz:8001/gilchrist/matakohe/.
+
+
+Finally, all subjects received training on the Cognitive
+Flexibility Theory authoring principles for approximately
+150 minutes.
+
+**Metrics collected**
+The metrics collected during the experiment (see Table 1)
+were organised into 3 categories:
+� Size metrics - used to measure the size of hypermedia
+applications.
+� Process metric - used to measure effort (person-hours).
+� Confounding factors - used to measure possible factors
+that could influence the validity of the results.
+
+|Size Metrics|Description|
+|---|---|
+|Node Count|Number of html files.|
+|Media Count|Number of not reused media files.|
+|Reused Media<br>Count|Number of reused7 media files.|
+|Total Node<br>Allocation|Total space8 allocated for all the html<br>files.|
+|Total Media<br>Allocation|Total space8 allocated for all the<br>media files not reused.|
+|Total Reused<br>Media<br>Allocation|Total space8 allocated for all the<br>reused media files.|
+|Connectivity|Total number of internal links9. We<br>do not include dynamically generated<br>links.|
+|Connectivity<br>Density|Connectivity divided by Node Count.|
+|Total Node<br>Complexity|Average number of different types of<br>media per node.|
+|Cyclomatic<br>Complexity|(Connectivity - Node Count) + 2.|
+|Process Metric|Description|
+|Effort|Estimated amount of person-hours to<br>develop an application|
+|Confounding<br>Factors|Description|
+|Structure|Main structure (backbone) of the<br>application10.|
+|Experience|Authoring/design experience of a<br>subject11.|
+|Type|Measures the type of tool used to<br>author/design the Web pages12:|
+
+
+
+**Table 1 - Size Metrics**
+
+7 Reuse can be either black-box reuse or white-box reuse.
+8 Space was measured in Mbytes.
+9 Subjects did not use external links to other Web sites. All links
+pointed to pages within the application.
+10 Sequence, hierarchy or network.
+11 Measured using a scale from 0 (no experience) to 4 (a great deal
+of experience).
+12 WYSIWYG (What You See Is What You Get), close to
+WYSIWYG or text-based.
+
+252
+252
+
+
+**Validity of the Experiment**
+Here we present our comments on the validity of the
+experiment:
+
+- The metrics collected, apart from effort, experience
+and structure, were all objective and precisely
+quantifiable. The scales used to measure *experience*
+and *structure* were described in detail in both
+questionnaires.
+
+- Subjects' authoring and design experiences were
+mostly scaled little or average, with a low difference
+between skill levels. Consequently the original dataset
+was left intact.
+
+- To reduce maturation effects, i.e. learning effects
+caused by subjects learning as an experiment proceeds,
+subjects had to develop each a Web application as part
+of their first assignment. They also received training in
+the CFT principles.
+
+- All applications used a hierarchical structure.
+
+- Notepad (or similar text editor) and FirstPage were the
+two tools most frequently used. Notepad is a simple
+text editor while FirstPage is freeware offering buttonembedded HTML tags. Although they differ with
+respect to the functionality offered, data analysis
+revealed that the corresponding effort was similar,
+suggesting that confounding effects from the tools
+were controlled.
+
+- As the subjects who participated in the experiment
+were either Computer Science Honours or MSc
+students, it is likely that they present skill sets similar
+to Web professionals at the start of their careers. The
+use of students as subjects, while sometimes
+considered unrealistic, is justified for two reasons:
+firstly, empirical evidence by Bohem-Davis and Ross
+
+[1] indicates that students are equal to professionals in
+many quantifiable measures, including their approach
+to developing software; secondly, for pragmatic
+considerations, having students as subjects was the
+only viable option for this experiment.
+
+**EMPIRICAL RESULTS USING CBR**
+In order to evaluate how precise the estimations were using
+CBR, we followed seven steps:
+Step 1 One datapoint was chosen and removed from the
+dataset. This datapoint was considered as a new
+project for the sake of this evaluation.
+Step 2 The remaining 36 datapoints were kept in the
+dataset and used in the estimation process.
+Step 3 For the removed project, its actual effort data was
+discarded, and only the known size metrics kept.
+This was done in an attempt to simulate a new
+project for use with ANGEL-Plus to calculate
+estimated effort.
+Step 4 The optimum combination of attributes was
+generated by using the "Best attribute set" option.
+
+
+Step 5 Effort was estimated using 1 to 3 analogies,
+looking for the estimated effort closest to the
+removed project’s discarded actual effort.
+Step 6 The datapoint which had been removed on Step 1
+was added back to the dataset.
+Step 7 Steps 2 through 6 were repeated until all 37
+projects had been removed and had had their effort
+estimated.
+
+The results obtained (see Table 2) are as follows:
+
+- Except for one datapoint, the best combination of
+attributes for the whole dataset was *Media Count*,
+*Total Node Allocation* and *Total Reused Media*
+*Allocation*, suggesting that the number of media files
+used by an application and the space allocated for
+nodes and reused media may be good indicators of
+
+
+effort. Further analysis of our dataset showed that there
+was a slight negative relationship between effort and
+both *Total Reused Media Allocation* and *Reused Media*
+*Count,* suggesting that the higher the amount of reuse
+the smaller the effort. The relationship between reuse
+and effort/productivity has received considerable
+attention in the literature [5,7,13,17,22] as it seems that
+level of reuse is inversely related to effort.
+
+- The average percentage of error between actual effort
+and estimated effort was of 9.21%, indicating a very
+good prediction power [21].
+
+- One analogy, followed by three analogies, presented
+the most accurate estimates.
+
+
+
+
+|Project|Actual<br>Effort|EE1|EE2|EE3|PE<br>Act&EE|Best combination of attributes|
+|---|---|---|---|---|---|---|
+|01|24.00|28|18|25*|4.17|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|02|32.00|40|36.5|34.3*|7.19|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|03|40.00|52|42.5|36*|6.25|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|04|46.00|35|43.5|43.3*|5.43|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|05|42.00|32|42|35.6*|0.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|06|62.00|45|45.5|57*|8.06|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|07|32.00|30*|34*|36.6|6.25|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|08|27.00|42|36*|40.3|33.33|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|09|39.00|39*|23|28.6|0.00|Media Count + Total Media Allocation|
+|10|42.00|34*|24.5|32.6|19.05|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|11|49.00|42*|25|29.6|14.29|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|12|42.00|30|41*|30.6|2.38|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|13|52.00|48|40|45.3*|7.69|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|14|46.00|45|53.5|45.6*|0.87|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|15|50.00|52*|52*|37.3|4.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|16|26.00|28*|31.5|33.6|7.69|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|17|28.00|32*|41|41.6|14.29|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|18|20.00|39|23.5*|29|17.50|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|19|30.00|34|25|33*|10.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|20|29.00|27|26|27.3*|5.86|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|21|52.00|46*|16.5|25.3|11.54|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|22|40.00|30|40*|40.6|0.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|23|35.00|46|36*|38.3|2.86|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|24|45.00|46*|48|52.6|2.22|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|25|35.00|40*|41.5|46.3|14.29|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|26|48.00|52|54|50*|4.17|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|27|33.00|27|21|30.6*|7.27|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|28|52.00|50*|27|20.6|3.85|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|29|30.00|42|46|34*|13.33|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|30|28.00|24*|24*|18.3|14.29|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|31|34.00|42|15.5|26.6*|21.76|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|32|40.00|35|37*|34|7.50|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|33|30.00|48|39*|43.3|30.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|34|43.00|52|37.5*|32.3|12.79|Media Count + Total Node Allocation + Total Reused Media Allocation|
+
+
+253
+
+253
+
+
+|35|39.00|39*|7.5|16.3|0.00|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|---|---|---|---|---|---|---|
+|36|28.00|26*|45.5|47.6|7.14|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|37|40.00|32|31|34.6*|13.50|Media Count + Total Node Allocation + Total Reused Media Allocation|
+|General PE Act&EE :|General PE Act&EE :|General PE Act&EE :|General PE Act&EE :|General PE Act&EE :|9.21||
+|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|EE1 = Estimated effort using 1 analogy EE2 = Estimated effort using 2 analogies<br>EE3 = Estimated effort using 3 analogies PE Act&EE = Percentage of error between actual effort and estimated effort|
+
+
+**Table 2 – Results obtained using CBR**
+
+
+How can the results and prediction methodology presented
+in this paper be of benefit to hypermedia/Web developers?
+In whatever type of hypermedia application (educational,
+fiction etc) there is at least one phase of their development
+which is common to all - authoring. Furthermore, most
+hypermedia systems reported in the literature provide
+environments to author static hypermedia applications
+
+[3,4,14]. Consequently, the metrics suggested in this paper
+may be of interest and useful to a wider range of
+hypermedia authors other than Web authors. In addition,
+the prediction methodology we have used can be applied to
+any organisation and to any type of hypermedia application
+and development environment.
+
+In summary, there is an increased need for effective
+management of time and resources in organisations
+undertaking large numbers of projects and measurement
+principles can help understand, control and improve
+processes and products.
+
+**CONCLUSIONS AND FUTURE WORK**
+This paper presented the application of Case-based
+reasoning to estimating Web authoring and design effort.
+The dataset used was obtained through an experiment in
+which we measured Application, Process and Resource
+metrics.
+
+The analogy was performed using an estimation tool ANGEL-Plus. The average percentage of error between
+actual effort and estimated effort was of 9.21%, which
+represents very good predictions. This result suggests that
+Case-based reasoning is a candidate technique to effort
+estimation and that with the aid of an automated
+environment it is a practical technique to apply to
+hypermedia development effort prediction.
+
+As part of our future work we plan to apply effort
+prediction to the whole development cycle of hypermedia
+applications and to compare the performance of case-based
+reasoning against human estimation and regression
+techniques, in a similar way to [8,16,18].
+
+To conclude, there is an urgent need for adequate
+hypermedia development effort prediction at an early stage
+in the development. As the use of hypermedia, and in
+particular the Web, as a delivery environment increases,
+effort estimation can contribute significantly to the
+
+254
+
+
+reduction of costs and time involved in developing
+hypermedia applications.
+
+**APPENDIX**
+
+
+**Figure 1 – Data Entry Templates in ANGEL-Plus**
+
+256
+
+256
+
+
+**Figure 2 – A Dataset in ANGEL-Plus**
+
+257
+
+257
+
+
+**Figure 3 – Predicting Effort using ANGEL-Plus**
+
+258
+
+258

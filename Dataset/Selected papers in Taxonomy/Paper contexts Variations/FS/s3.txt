@@ -1,0 +1,32 @@
+Summary of Research Paper on Investigating Metrics for a Development Effort Prediction Model of Web Applications
+
+The paper investigates the development effort required to build web applications and proposes four metrics to predict the effort involved. Here's a detailed breakdown of the paper:
+
+**Background**: The researcher conducted a study to investigate the process of web authoring using a scientific approach, focusing on proposing and evaluating metrics for predicting development effort.
+
+**Research Questions**: The primary research question addressed in this paper is: Which metrics can effectively predict the development effort involved in building web applications?
+
+**Methodology**: The researchers employed a quantitative case study involving 45 computer science students tasked with designing and developing simple web applications. Students were provided with guidelines for organizing their projects using the Cognitive Flexibility Theory (CFT). Data was gathered through self-reported surveys after completion of the project.
+
+**Predictors Used as Effort Estimators**: Four metrics were evaluated for their effectiveness in predicting development effort:
+
+1. **Hyperdocument size**: Refers to the total number of documents within the web application.
+2. **Connectivity**: Measures the number of links between documents within the web application.
+3. **Perceived Compactness (P-Compactness)**: Assesses how interconnected the documents within the web application are.
+4. **Perceived Stratum (P-Stratum)**: Evaluates the organization of the web application, indicating linearity or sequential access.
+
+These metrics were chosen because previous studies suggest they are relevant indicators of web application complexity and thus potentially influential on the development effort required.
+
+**Validation Methods**: The authors utilized the Kitchenham validation framework to evaluate the theoretical foundations of the selected metrics. Additionally, statistical methods such as the Spearman rank correlation test and the Mann-Whitney U-test were employed to assess the relationships between the metrics and development effort.
+
+**Key Findings**:
+
+* Three out of the four proposed metrics demonstrated statistically significant correlations with development effort, specifically:
+	+ Hyperdocument size
+	+ Perceived Compactness (P-Compactness)
+	+ Connectivity
+* Perceived Stratum (P-Stratum) failed to demonstrate strong evidence supporting its role as a metric for predicting development effort.
+
+**Conclusion**: Based on the results, the authors conclude that hyperdocument size, connectivity, and P-Compactness appear to be suitable candidates for inclusion in a predictive model of web development effort. Future research aims to refine the model and explore additional factors influencing development effort.
+
+Overall, this study contributes to the body of knowledge regarding effective metrics for predicting development effort in web application construction, providing insights into potential factors that affect the time needed to complete web development projects.

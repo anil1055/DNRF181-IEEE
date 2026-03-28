@@ -1,0 +1,24 @@
+Based on the provided research paper "An Empirical Comparison of Function Points and Web Objects" by Giuliobaro et al., here is a thorough summary of the content:
+
+**Introduction**: 
+The authors highlight the importance of accurately predicting the effort required for software development, especially for web applications, given the complexities involved in measuring their sizes. They emphasize that selecting the right size metric is crucial for obtaining accurate predictions.
+
+**Background**: 
+Traditional size metrics, such as Function Points (FP), may not adequately capture the specifics of web applications. Recent efforts aimed at tailoring metrics for web applications include Web Points, Internet Points, Data Web Points, and others. Among these alternatives, Web Objects (WO) stands out as a promising option, extending FP by incorporating components typical of web systems.
+
+**Related Work**: 
+Previous studies explored various methods for measuring software development effort, including Function Points, Object-Oriented Function Points (OOFP), and Use Case Points. Other researchers attempted to create customized metrics for web applications, such as Web Points, Internet Points, and Data Web Points, although none proved suitable for reliably sizing complex web applications.
+
+**Research Study**: 
+To evaluate the reliability of Web Objects, the authors conducted an empirical study within a single Italian software company. Ten real-world web application projects were selected for the investigation, ranging from 2003 to 2009. Each project included requirement documents, Function Point estimates, and pictures illustrating page layouts. For consistency, Function Points were only applied during later stages to calculate the Web Objects' initial count without considering factors beyond basic parameters.
+
+**Methodology**:
+Two primary steps comprise the experiment: 
+   - Size calculation for each project using Function Points (FP) and Web Objects (WO): FP breaks down applications into five categories: data items and transactional processes, assigning complexity weightage accordingly, whereas WO includes five common web components: Multimedia Files, Web Building Blocks, Embedded Scripts, Links to External Apps/Databases, & Interfaces. 
+   - Comparing the accuracy of the resultant measurements against actual effort expended on the projects.
+
+**Evaluation Metric**: Magnitude of Relative Error (MRE) serves as the principal indicator of predictive success, indicating the closeness of estimates to actual outcomes. Calculations are made for individual projects then compared across datasets.
+
+**Key Findings**: Both Function Points and rescaled Web Objects exhibited considerable errors in effort predictions, often leading to underestimations. There existed notable discrepancies among cases, particularly noticeable in instances where Function Points excelled over rescaled Web Objects.
+
+**Conclusion**: Despite preliminary findings showing slight superiority in favor of Function Points, ongoing investigations must explore diverse scenarios with varying productivities before final judgments are drawn regarding suitability of either measure. It remains unclear whether improved Web Objects integration would yield superior estimates.

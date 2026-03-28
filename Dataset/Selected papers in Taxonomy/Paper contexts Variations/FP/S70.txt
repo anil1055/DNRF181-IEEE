@@ -1,0 +1,503 @@
+# An Empirical Comparison of Function Points and Web Objects
+
+
+Giulio Barabino,
+Guido Porruvecchio
+
+Department. of Biophysical
+and Electronic Engineering
+University of Genova
+16145 Genova ITALY
+
+giulio.barabino@unige.it
+guido.porruvecchio@diee.unica.it
+
+
+Giulio Concas,
+Michele Marchesi
+
+Department of Electrical
+and Electronic Engineering
+University of Cagliari
+09123 Cagliari ITALY
+concas,michele@diee.unica.it
+
+
+Roberto De Lorenzi,
+Mauro Giaccardi
+
+Datasiel s.p.a.
+16149 Genova ITALY
+
+r.delorenzi,m.giaccardi@datasiel.net
+
+
+***Abstract*** **—This paper compares the effectiveness of Function**
+**Points and Web Object analysis to estimate the development**
+**effort of Web applications. The empirical study is performed on**
+**a set of industrial projects carried on in an Italian software**
+**company. Starting from original requirements and estimates,**
+**carried on using FP analysis, we compute the Web Objects**
+**analysis of the same requirements, and compare the results of the**
+**two approaches. We also assess the relative effectiveness of FP**
+**and WO using post-mortem data about the actual effort taken**
+**to develop the studied systems.**
+
+I. I NTRODUCTION
+
+Estimating software development costs is a central issue
+in software engineering; avoiding big mistakes in evaluating
+the effort required for developing a system, while satisfying
+all the customers’ needs and requested features, is a key
+success factor for companies willing to be competitive in the
+market. Software development is a complex process involving
+a plurality of aspects (team skills, technologies, domain,
+stakeholders...), so the estimating activity is affected by many
+variables. However, it is widely recognized that size is the
+main cost driver in an estimation model [1] [2] so, adopting
+the best suited size metric for the systems whose development
+effort has to be predicted, is a prerequisite for achieving good
+results in this process.
+Web technologies, once exploited only for creating hypermedia
+applications (static web sites), have known a huge development, and now they are one of the cutting-edge technologies
+for very different kinds of systems, from small informationcentred applications to large enterprise-scale commercial systems. The differences from traditional software, in terms of
+technology, development model, time-to-market needs, volatility of requirements and so on, pose serious challenges in
+adapting traditional size metrics, like Function Points [3], to
+measure Web applications.
+The purpose of this paper is to compare two size measures,
+a traditional one (Function Points), and a recently proposed,
+web-aimed one (Web Objects [4]), to evaluate their ability to
+predict the effort spent in Web applications development, in
+the context of an Italian software company. The main issue
+
+
+we investigate is whether a specific web-addressed metric
+can give a more accurate prediction of size, and therefore
+effort, than a consolidated, widespread and general-purpose
+functional measure like Function Points.
+
+The paper is organized as follows: Section 2 discusses the
+related works in the area of size measurement, while Section
+3 describes our study and the followed methodology, and
+presents the results of the research. Section 4 discusses these
+results, and eventually Section 5 presents the conclusions and
+plans for future work.
+
+II. R ELATED WORK
+
+Sizing software systems can be quite a complex task, if
+applications developed with new or emerging technologies
+must be measured using metrics tailored for different technologies/architectures. This is the case of adapting functional sizing
+for Object Oriented systems, where OOFP (Object Oriented
+Function Points [5]), Object Points [6], Use Case Points [7]
+and Class Points [8] constitutes the most important attempts
+in defining a measure where an object decomposition of the
+system is much more natural than a functional one.
+On the other hand, few examples can be found in literature
+about specific size metrics for web applications: Web Points
+
+[9], Internet Points [10], Data Web Points [11] try to address
+the problem of sizing web systems from different point of
+views. Unfortunately, we found them quite unfit for providing
+a reliable metric able to size in an easy and consistent way a
+complex web application.
+Reifer’s Web Objects [4] is a quite different measure, since it
+starts from the most classic functional size metric, Function
+Points, and extends it by taking into account components that
+can be typically found in a web system. One advantage of this
+metric is constituted by the fact that it has an associated cost
+model, WebMO. Although its validity has not been empirical
+demonstrated yet, it seems the only model specifically tailored
+for estimating web applications development effort, as there
+are no other models that takes as input a web-specific size
+measure (Web Objects in this case).
+As a matter of fact, size measures’ main goal is to describe,
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:11:51 UTC from IEEE Xplore. Restrictions apply.
+
+978-1-4244-4507-3/09/$25.00 ©2009 IEEE
+
+in the most precise way and since the early phases of the
+project, how large a software system will be; this prediction
+alone is not so useful, if it does not constitute the main input
+for an effort estimation model. Classic heavyweight models,
+such as COCOMO [1] and its evolution COCOMO II [12] use
+classic size measures such as lines of code (LOC) and Function
+Points; their efficacy in a Web environment is questionable,
+due to the fact that they have been developed to support
+very different methodologies and technologies. To overcome
+the limitations of these models, several studies evaluated the
+effectiveness of models based on analogy, like Case-Based
+Reasoning [13] [14] [15], and other statistical approaches [16]
+
+[17], that aim to build a model that relies on the knowledge
+of previous projects, whose actual effort is obviously known.
+This is the case of the only study that assess the validity
+of a model based on Web Objects size estimation [18]; it
+examines a number of industrial software projects from the
+same company, building a model based on the knowledge of
+the actual effort spent on them.
+In the next section, the description of the research will try
+to underline the different approach we followed to assess the
+reliability of Web Objects size measure.
+
+III. R ESEARCH STUDY
+
+The empirical research has been conduced in the context
+of a mid-sized Italian software company. Choosing a so
+narrow sample for our study (projects developed by only
+one company) could constitute a possible threat to generality.
+However, the lack of empirical studies in this field, as well
+as of strong evidences that prove the better suitability of a
+measure rather than another one, made us believe that such a
+starting point for this research is sensible anyway.
+
+*A. Data set*
+
+The data set is built on 10 projects developed from 2003 to
+2009 by the above cited company; it develops and maintains
+a good number of software systems, mainly for local public
+administration offices. We obviously focused our attention on
+the applications written using web technologies, which are
+now the most used by the company for developing its projects.
+The vast majority of them are built with J2EE technology,
+with a .NET exception. The analysed projects involve various applicative domains, but most of them are quite similar
+information-centred systems, with a simple business logic
+whose main task is performing computations and generating
+reports on data inserted by the user, and retrieved from the
+database.
+
+For each project, we received the requirements documentation,
+as well as the detailed Function Point estimate and some
+
+pictures describing the layout of the web pages. These artefacts
+constitute the basis for estimating the projects’ size expressed
+in Web Objects. In that way, we ”simulate” an early project
+phase, when only the requirements and some other kind of
+documents have been produced; in fact, we used Function
+Points estimates only at the end of the process for calculating
+the total Web Objects (as they are part of the sum). Their
+
+
+knowledge, as well as the knowledge of the actual effort,
+should not bias the measurement.
+
+*B. Web applications sizing*
+
+Function Points [3] are the most widely used size metric
+for ”traditional” applications; five function types are defined,
+grouped in data (interface logical files, external interface files)
+and transactions (external inputs, external outputs, external
+inquiries). The counting of the number of function types, and
+their weighting according to their complexity, returns a sum
+called ”Unadjusted Function Points”. This is the measure that
+the company computes for an early estimation of the projects,
+neglecting a factor called VAF (Value Adjustment Factor) that
+better calibrates the measure with more information about the
+
+project, but at the price of a more complex procedure. A
+further factor that the company considers for a more precise
+weighting is the reuse level.
+Web Objects [4] size measure can be considered as a significant contribute to web-based applications measurement field.
+It adds four new elements, related to web development, to
+the five FP functions (Figure 1). Then, complexity weighting
+rules are applied, and the sum of these weights becomes the
+functional size of the web application. The new elements
+describe the multimedia content of the pages (Multimedia
+files), the blocks of different nature that compose the pages
+(Web Building Blocks), as well as embedded Scripts and Links
+to external applications and databases.
+In addition, we tried to define in a more univocal way the
+several counting conventions specified in Reifer’s work, in
+order to have a measure able to be as much consistent and
+
+replicable as possible.
+
+Fig. 1. Web Objects components
+
+*C. Effort prediction*
+
+The company does not extensively use any off-the-shelf
+effort prediction model, like COCOMO, nor it developed
+any model based on past projects. Instead, a productivity
+coefficient, expressed in FP/man-day, is determined on the
+basis of the technology adopted in that project; it varies from
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:11:51 UTC from IEEE Xplore. Restrictions apply.
+
+1 (in some projects using standard J2EE technology) to 10
+(when a project is developed using RAD tools). Since the
+purpose of this research is the evaluation of size measures,
+and not of cost models (which has been done in [18]), we
+will apply this simple linear model also to the size calculated
+using Web Objects, in order to compare in a consistent way
+the two measures.
+
+In practice, starting from the requirements of the ten examined
+systems, we kept the original FP evaluation, and added to
+it the specific evaluation of Web application characteristics,
+according to Web Objects approach (Multimedia files, Web
+Building Blocks, Embedded Scripts and Links to External
+Applications and Databases). Clearly, the new estimate using
+Web Objects is consistently higher than the orignal FP one,
+because “points” were added, and never subtracted. To correct
+for this systematic bias, we computed for each project the
+percentage increase of Web Object estimate with respect to FP,
+and averaged the ten values. We got a 58% average estimate
+increase, so we rescaled Web Object estimates, dividing them
+by 1.58. We kept instead the original productivity coefficient,
+varying with the technology adopted in the project.
+Table I shows the descriptive statistics for the 10 analysed
+projects, with size estimation and actual effort:
+
+TABLE I
+
+W EB PROJECTS DESCRIPTIVE STATISTICS
+
+**Metric** **Min** **Max** **Mean** **Median Std. Dev.**
+
+Development Effort
+in Man-days 18 1096 253.6 65 340
+System size
+in Function Points 60 777 359.9 265 262
+System size
+in Web Objects 107 1342 533.8 386 369
+System size
+in Web Objects 68 849 338.9 244 244
+( rescaled )
+
+Size in Web Objects is obviously higher than size expressed
+in Function Points, due to the fact that additional web elements
+are counted. Standard deviation is higher as well, because
+of the differences in pages layout and embedded elements
+across the various projects. Rescaled Web Objects values are
+instead very similar to FP values. Data dispersion is also
+higher for actual effort, as expected due to the presence of
+projects developed using RAD and a couple of quite complex
+applications. However, the effort of most projects is well
+represented by the median value.
+
+*D. Evaluation Method*
+
+The estimation performances of the two measures in the
+research context has been evaluated by calculating the MRE
+(Magnitude of Relative Error) for each project. MRE is defined
+as follows:
+
+
+*Pred* ( *l* ) = *[k]* (2)
+
+*N*
+
+
+By performing *N* total observations, if *k* are the number of
+observations with an MRE less than or equal to *l*, *Pred* ( *l* ) is
+the percentage of projects with a MRE less than or equal to *l* .
+As literature suggests [19], having a *Pred* (0 *.* 25) greater than
+0.75 (more than 75% of the projects have an MRE less than
+0.25) indicates an acceptable estimation, so we have a further
+hint for evaluating the obtained results.
+
+IV. R ESULTS
+
+MRE values were calculated for each project, using FP
+and rescaled Web Objects data. Table II shows the relative
+descriptive statistics, as well as the *Pred* (0 *.* 25) value.
+
+TABLE II
+
+E RROR VALUES
+
+|Col1|MRE|Col3|
+|---|---|---|
+|Metric|Min Max Mean Median Std. Dev.|Pred(0.25)|
+|Function Points<br>Web Objects|0.00 3.13 0.49 0.19 0.90<br>0.03 3.39 0.61 0.36 0.95|0.6<br>0.4|
+
+
+
+Results show a similar error for the estimation performed
+using FP and Web Objects (rescaled), with a slight vantage
+for FP. Note that WO are consistently better than, or equal
+to FP in estimating Web applications using a RAD approach,
+while they are typically worst for standard Java and .NET
+applications. On the other hand, neither FP nor WO could
+give us an acceptable estimation according to the criterion
+enounced by [19], even though Function Points are much
+closer to the 75% goal. One project was perfectly estimated
+by FP, while another one highlighted the highest error for both
+measures (respectively, 3.13 and 3.39); in that case the actual
+effort was much lower than the estimated one, thanks to a
+particularly skilled team. In general, both Function Points and
+rescaled Web Objects counts resulted on average in an underestimation of the effort. FP estimation, on average, is more
+precise that WO for the considered cases.
+On the whole, these results are something unexpected, since
+
+[18] obtained opposite results, from a similar context. The
+main reason of these result can be attributed to the cost
+
+model adopted by the company. This model, making use of
+only Unadjusted Function Points and biult upon the company
+expertise of many previous similar projects, has been used with
+good results, despite its semplifications. On the other hand,
+when another size measure, like Web Objects, is adopted, it is
+not surprising that the same correction coefficients do not work
+as well, despite the correction made to make them consistent
+with the original FP method. While WO approach is not bad
+with respect to the unadjusted FP used, in the considered
+context it could be made better after a proper tuning of WO
+points with respect to a new productivity coefficient depending
+on the technology adopted. This of course needs quite a lot
+of work, and enough time.
+In Fig. 2 we show the values of FP and WO evaluation for
+four standard Java systems, in function of the corresponding
+
+
+*E* *ff* *ort* *ACT UAL* *−* *E* *ff* *ort* *EST IMAT ED*
+*MRE* =
+���� *Effort* *ACT UAL*
+
+
+(1)
+����
+
+
+Similarly to [18], we complete the error evaluation by
+calculating the prediction level Pred:
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:11:51 UTC from IEEE Xplore. Restrictions apply.
+
+Lines of Code of the developed system. We do not report in
+this figure data on the systems developed using RAD or .NET
+approach. This is an alternative perspective with respect to
+effort estimation, because in this case we consider the LOC
+written and not the actual effort in man-months. In this figure it
+is possible to appreciate the strong linear correlation between
+WO and LOC (correlation coefficient equal to 0.99), while FP
+and LOC correlation is slightly worse (c.c. equal to 0.88).
+
+Fig. 2. Estimates vs. LOC for 4 considered systems.
+
+This study presents some limitations. The small size of the
+data set, as well as the projects belonging to only one company,
+can reduce external validity. Furthermore, the Web Objects
+estimation were performed after the projects development,
+although this problem was mitigated by the effort we spent
+to limit bias ( *a priori* knowledge about the projects) in our
+
+measurements.
+
+V. C ONCLUSION AND FURTHER WORK
+
+The most effective way of evaluating the validity of a
+size measure is to assess its performance in estimating the
+development effort required by a software project. This is
+why we chose to apply Function Points and Web Objects
+as input for the same (and already in use) cost model. To
+perform the comparison, we obviously rescaled WO estimate
+to match average FO estimates. The first results of this
+research showed that, under these conditions, Web Objects
+are slightly worse than Function Points in providing a precise
+size estimate of a web application. However, these are only
+partial results, and further experiments, using different cost
+models, are required. Only the application of a more precise
+model (based on regression, analogy, or specifically tailored
+for web applications like WebMo) can tell us whether Web
+Objects can perform equally well, or better, with respect to
+Function Points. The facts that, in some cases such as RAD
+development, WO performs better than FP, and that WO is
+better correlated to system size measured in LOC for Java
+J2EE applications, encourage to continue this research.
+The next step of the research will be the development or
+the choice of a cost model more suited to take as input a
+size expressed in Web Objects. In that way, we will also be
+able to compare the obtained results with those of the unique
+
+
+similar study [18], that in fact developed an ex-novo cost
+model based on Ordinary Least Squares Regression. Clearly,
+a further validation of the results with a wider data set is also
+
+required to improve the knowledge in this quite new research
+field.
+
+R EFERENCES
+
+[1] B. W. Boehm, *Software Engineering Economics* . New Jersey: Prentice
+Hall, 1981.
+
+[2] T. C. Jones, *Estimating Software Costs* . New York: McGraw-Hill, 1998.
+
+[3] A. J. Albrecht, “Measuring application development productivity,” in
+*Proceedings of IBM Application Development Symposium*, Oct. 1979,
+pp. 83–92.
+
+[4] D. Reifer, “Web development: Estimating quick-to-market software,”
+*IEEE Software*, vol. 17, no. 8.
+
+[5] G. Caldiera, G. Antoniol, R. Fiutem, and C. Lokan, “Definition and
+experimental evaluation of function points for object-oriented systems,”
+in *Proceedings of the 5th International Symposium on Software Metrics* .
+IEEE Computer Society Washington DC, USA, 1998.
+
+[6] R. D. Banker, R. J. Kauffman, and R. Kumar, “An empirical test
+of object-based output metrics in a case environment,” *Journal of*
+*Management Information Systems*, vol. 8, no. 3, pp. 127–150, 1992.
+
+[7] G. Karner, “Estimation for objectory projects,” Objectory Systems, 1993.
+
+[8] G. Costagliola, F. Ferrucci, G. Tortora, and G. Vitiello, “Class point:
+An approach for the size estimation of object-oriented systems,” *IEEE*
+*Transactions on Software Engineering*, vol. 31, no. 1, pp. 52–74, Jan.
+2005.
+
+[9] D. Cleary, “Web-based development and functional size measurement,”
+in *Proceedings of IFPUG Annual Conference*, San Diego, USA, 2000.
+
+[10] Cost xpert group inc., estimating internet development. [Online].
+Available: http://www.costxpert.com/
+
+[11] S. F. Ochoa, M. C. Bastarrica, and G. Parra, “Estimating the development
+effort of web projects in chile,” in *Proceedings of First Latin American*
+*Web Congress*, 2003.
+
+[12] B. W. Boehm, C. Abts, A. W. Brown, S. Chulani, B. K. Clark,
+W. Horowitz, R. Madachy, D. Reifer, and B. Steece, *Software Cost*
+*Estimation With COCOMO II* . New Jersey: Prentice Hall, 2000.
+
+[13] M. Shepperd, C. Schofield, and B. Kitchenham, “Effort estimation using
+analogy,” in *Proceedings of 18th International Conference on Software*
+*Engineering (ICSE ’96)*, Berlin, Germany, 1996.
+
+[14] G. Kadoda, M. Cartwright, L. Chen, and M. Shepperd, “Experiences using case-based reasoning to predict software project effort,” in *Proceed-*
+*ings of Evaluation and Assessment in Software Engineering Conference*
+*(EASE 2000)*, Keele, UK, 2000.
+
+[15] E. Mendes, N. Mosley, and S. Counsell, “The application of case-based
+reasoning to early web project cost estimation,” in *Proceedings of the 26*
+*th Annual International Computer Software and Applications Conference*
+*(COMPSAC02)*, Oxford, UK, 2002.
+
+[16] G. Costagliola, S. Di Martino, F. Ferrucci, C. Gravino, G. Tortora, and
+G. Vitiello, “Effort estimation modeling techniques: a case study for
+web applications,” in *ICWE ’06: Proceedings of the 6th international*
+*conference on Web engineering* . New York, NY, USA: ACM, 2006,
+pp. 9–16.
+
+[17] E. Mendes, I. Watson, C. Triggs, N. Mosley, and S. Counsell, “A comparative study of cost estimation models for web hypermedia applications,”
+*Empirical Software Engineering*, vol. 8, no. 2, pp. 163–196, Jun. 2003.
+
+[18] M. Ruhe, R. Jeffery, and I. Wieczorek, “Using web objects for estimating
+software development effort for web applications,” in *Proceedings*
+*of Ninth International Software Metrics Symposium (METRICS ’03)*,
+Sydney, Australia, 2003.
+
+[19] S. D. Conte, H. E. Dunsmore, and V. Y. Shen, *Software engineering*
+*metrics and models* . The Benjamin/Cummings Publishing Company,
+1986.
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:11:51 UTC from IEEE Xplore. Restrictions apply.
+

@@ -1,0 +1,36 @@
+After carefully analyzing the content of the paper titled "Two Novel Effort Estimation Models Based on Quality Metrics in Web Projects," I have identified the key findings and extracted essential details regarding the effort estimation approaches discussed in the paper. Here's a comprehensive summary of the paper:
+
+**Summary:**
+
+The paper focuses on developing new effort estimation models specifically designed for web development projects. Traditional effort estimation methods fail to provide accurate predictions due to the unique characteristics of web projects, such as high volatility, tight schedules, and varying skill levels. Two novel effort estimation models, named WEBMO+ and VPM+, are proposed based on quality metrics. Both models aim to overcome the limitations of previous approaches by incorporating various factors, including Web objects, functional complexity, and ease of implementation.
+
+**Predictors Used for Effort Estimation:**
+
+1. **Function Points**: Initially considered in conjunction with Web Objects, but ultimately replaced due to inaccuracies.
+2. **Source Lines of Code (SLOC)**: Not directly used, but rather modified through a new formula involving "Number of External Use Cases" (#EUC): `SLOC = 272.11 * (#EUC)^1.709`.
+3. **Web Objects (WO)**: Considered a promising approach to quantify the size of web applications.
+4. **Object Points**: Analyzed but deemed unsuitable for precise effort estimation.
+5. **Algebraic Specification Language (ASL)**: Utilized to describe the system's functionality and complexity.
+6. **Operators and Operands**: Representing the functionalities of Abstract Data Types (ADTs) in the System Description Language.
+7. **Syntactic Properties**: Measuring the system's functionality using the count of syntactic operations (OPs).
+8. **Semantic Properties**: Assessing the system's complexity via the count of semantic operations (OPs).
+9. **Length of an ADT**: Calculating the atomic units specified in both syntactic and semantic sections.
+
+**Models Developed:**
+
+1. **WEBMO+:** An adaptation of the Web Model (WEBMO), utilizing Web Objects (WO) instead of Source Lines of Code (SLOC) to calculate the system size. The modified SLOC formula incorporates "#EUC."
+2. **VPM+:** An enhancement of the Vector Prediction Model (VPM), integrating the concept of Vector Size Measure (VSM) to assess the system size. VSM evaluates the system's functionality and complexity using the counts of OPs in syntactic and semantic sections.
+
+**Methodology:**
+
+The researchers employed an empirical approach, gathering data from various sources, including university courses, academic publications, and industrial settings. The dataset consisted of approximately 120 web projects, allowing for thorough analysis and comparison of the proposed models.
+
+**Performance Evaluations:**
+
+Both models underwent rigorous evaluations against commonly recognized performance measures, including Mean Magnitude of Relative Error (MMRE), Standard Deviation (SD), Percentage of Predictions Within ± n % of Actual Value (PRED(n)), and Pearson's r (Correlation Coefficient). After evaluating numerous candidate models using these metrics, WEBMO+ and VPM+ emerged as the top performers.
+
+**Conclusion:**
+
+The research introduces innovative effort estimation models tailored to meet the specific demands of web development projects. By leveraging the strengths of Web Objects and Vector-based approaches, WEBMO+ and VPM+ demonstrate improved predictive capabilities, overcoming the limitations of traditional methods. Their simplicity makes them ideal for small-to-medium-sized web-based projects requiring efficient estimation and planning.
+
+By closely examining the paper's content, it becomes clear that the authors aimed to create practical solutions addressing the complexities inherent in predicting effort for web development endeavors.

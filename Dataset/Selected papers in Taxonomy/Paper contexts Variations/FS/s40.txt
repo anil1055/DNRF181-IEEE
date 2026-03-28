@@ -1,0 +1,35 @@
+**Summary**
+
+The paper "Investigating Web size metrics for early Web cost estimation" published in the Journal of Systems and Software explores the challenges of estimating the effort required for Web development projects. The authors conducted a comprehensive review of existing Web size metrics aimed at Web cost estimation and proposed new size metrics through empirical evidence.
+
+**Background**
+
+The rapid growth of the Web as a delivery platform has led to increased demand for quality Web applications, making cost estimation crucial for successful project planning and resource allocation. Traditional software metrics, such as function points, have limitations when applied to Web development. Existing research has proposed various size metrics for Web cost estimation, but little attention has been paid to evaluating these metrics' effectiveness in predicting effort.
+
+**Methodology**
+
+The authors employed a multi-method approach consisting of two surveys, a case study, and a second survey to collect and analyze data on Web size metrics and cost factors. The first survey (S1) analyzed 133 Web project price quote forms from companies worldwide to identify commonly used size metrics and cost factors. The second survey (S2) validated the results of S1 among 32 Web companies in New Zealand. Additionally, a case study of a mature Web company was conducted to verify the applicability of the identified size metrics and cost factors.
+
+**Results**
+
+From the survey responses, two key observations emerged:
+
+*   **Static vs Dynamic Characteristics**: The top-ranked size metrics were 'total number of Web pages' (70%) and 'features/functionality to be provided by the application' (66%). Interestingly, while 'total number of Web pages' corresponds to a traditional length-size metric typically associated with Web hypermedia applications, 'features/functionality' aligns closer to an abstract measure of functionality, characteristic of Web software applications. 
+*   **Early Effort Estimation Predictors:** Multivariate regression analysis revealed that the two predictors selected by the best-fit model for early effort estimation were remarkably consistent with the two highest-ranked size metrics from S1 – 'Web pages' and 'features/functionality'. The inclusion of 'web pages' reinforces earlier proposals that it serves as a valuable predictor of effort for Web development efforts. Moreover, the identification of 'features/functionality' as a critical aspect underscores the importance of considering the potential complexities inherent in implementing these functionalities early on in the development lifecycle.
+
+**Key Findings**
+
+*   The authors conclude that the identified metrics ('web pages', 'features/functionality') are indeed viable predictors for effort estimation in Web development contexts. Their practical significance stems from enabling companies to derive meaningful insights about expected effort inputs before engaging in extensive design activities.
+*   The Tukutuku Benchmarking Project demonstrates the feasibility of capturing relevant project details from participating organizations, providing an essential foundation for refining predictive models tailored to the specifics of the individual firms.
+*   Through rigorous evaluation using leave-one-out cross-validation, the predicted performance of the derived formula falls short of expectations relative to median estimates based on experts. Nonetheless, this methodological exercise highlights the continued necessity for fine-tuning algorithms grounded in larger datasets to yield reliable outcomes.
+*   Furthermore, a direct comparison against other metrics outlined in the literature accentuates the relevance of the proposed framework centered around 'web pages' and 'features/functionality'.
+
+**Conclusion**
+
+The study contributes meaningfully to ongoing discussions surrounding effective effort estimation strategies applicable to web development endeavors. By emphasizing the role of easily quantifiable characteristics ("web pages") alongside abstract representations of functionality ("features/functionality"), decision-makers gain actionable intelligence for making pre-project commitments based on empirically-informed assumptions.
+
+These findings underscore the importance of leveraging both concrete, tangible indicators ("web pages") and intangible assessments ("features/functionality"). Notably, incorporating these dual perspectives enables stakeholders to effectively plan for resources and establish realistic timelines prior to commencing intricate development phases.
+
+Moreover, this research fosters greater recognition of the interconnected nature of structure and functionality within web-based undertakings, reinforcing the notion that robust estimation frameworks rely heavily on balanced comprehension of both quantitative and qualitative aspects.
+
+In conclusion, this article delves into the intricacies of early effort estimation in web development, revealing significant strides toward establishing reliable forecasting mechanisms centered around 'web pages' and 'features/functionality.' The insights garnered serve as pivotal groundwork for informing strategic choices in preparation for initiating web development initiatives.

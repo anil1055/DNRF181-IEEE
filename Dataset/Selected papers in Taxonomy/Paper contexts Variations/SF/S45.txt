@@ -1,0 +1,1186 @@
+## **Design of a Fuzzy Decision-making Model and Its Application to Software ** **Functional Size Measurement **
+
+Xunmei Gu, Guoxin Song, Lizhong Xiao
+*College of information science and Engineering*
+*East China University of Science and Technology*
+*Shanghai, 200237, China*
+*gu790219@163.com*
+
+**Abstract** Functional User Requirements (FUR) of the software.
+
+A FSM method measures the logical external view of
+
+*COSMIC-FFP as a Functional Size Measurement* the software from the user’s perspective by evaluating
+*method has greatly improved the estimation of real-* the amount of functionality to be delivered [1][2]. The
+*time software system. Based on math expectation and* capability to accurately quantify the size of software in
+*variance, this paper puts forward the concepts of fuzzy* an early or late stage of the development lifecycle is
+*expectation and fuzzy variance. And then the fuzzy* critical to software project managers. COSMIC-FFP
+*regression analysis is formed on the basis of these* (Common Software Measurement International
+*concepts. The effort estimation decision-making model,* Consortium Full Function Point) is a candidate method
+*which can determine regression frequency according* of FSM methods [4]. The recent development of
+*to actual needs, is established based on this fuzzy* COSMIC-FFP as a functional size measurement metric
+*regression analysis. This effort estimation decision-* has greatly improved the functional sizing of real-time
+*making model can also make the disturbance of* systems [3]. Furthermore, fuzzy logic models have
+*morbid data and bad information in regression* been widely applied in estimation because their fuzzy
+*analysis to the decision result decrease bit by bit until* output reduces the reliance on a single value for
+*we are satisfied. When applying this estimation model* estimation, which can lead to loss of resources if the
+*to software metrics of COSMIC-FFP, we can estimate* value is erroneous.
+*the effort accurately, which leads to a correct decision.* In spite of the presence of many fuzzy logic
+
+estimation models [5], none is adaptive for a
+COSMIC-FFP estimation model. The main
+
+**1. Introduction**
+
+contribution of this paper is to establish a fuzzy
+decision-making model for the COSMIC-FFP data [6].
+
+Software practitioners have realized the importance
+of realistic estimates of effort to the successful In this paper, the concepts of fuzzy expectation and
+
+fuzzy variance are put forward based on math
+
+management of software projects. Estimates are
+
+expectation and variance. These concepts are taken as
+
+necessary throughout the whole development life cycle.
+
+theoretical bases to put forward fuzzy regression
+
+They are fundamental when people bid for a contact or
+
+analysis and establish a practical model of fuzzy
+
+determine a project’s feasibility in terms of cost
+decision-making. It has been proved that this
+
+benefit analysis. In addition, they allow project
+
+estimation model is practical.
+
+managers and development organizations to manage
+
+This paper is structured as follows. Section 2
+
+resources effectively.
+
+focuses on Fuzzy expectation and fuzzy variance. The
+
+Size, which can be described in terms of length,
+
+fuzzy regression model based on the concepts of fuzzy
+
+functionality and complexity, is often a major
+
+expectation and fuzzy variance are established in
+
+determinant factor of effort. Although length and
+
+Section 3. In section 4, the fuzzy decision-making
+
+complexity are also essential aspects of size, most
+
+model is applied to the COSMIC-FFP data set [6]. The
+
+effort prediction models concentrate on functional
+measurement of size. preliminary results of this application using fuzzy
+
+regression analysis are presented in Section 5 and
+
+Functional Size Measurement (FSM) methods are
+
+conclusions are drawn in Section 6.
+
+used to measure the size of software by quantifying the
+
+International Conference on Computational Intelligence for Modelling
+Control and Automation,and International Conference on
+Intelligent Agents,Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)
+0-7695-2731-0/06 $20.00 © 2006 Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:07:17 UTC from IEEE Xplore. Restrictions apply.
+
+
+**2. Fuzzy expectation and fuzzy variance**
+
+**2.1. Fuzzy expectation**
+
+Math expectation describes an important
+characteristic of random variables and can be used to
+
+estimate the value of random variable. But in practice,
+because the data is not continuous and finite, it is
+impossible to gain exact probability values. So fuzzy
+expectation will be the realistic math model. Since the
+probability values are unknown, suppose that random
+variables are equal probability and then the math
+expectation can be expressed as [5][8]:
+
+1
+# E X ( ) = ∑ x k (1)
+
+*n* *k*
+
+Here, n denotes the number of sample points. And
+then the math variance can be expressed as [5][8]:
+# D X ( ) = 1 ∑ ( x k − E X ( )) 2 (2)
+
+*n* *k*
+
+Here, *E X* ( is the mean value of random variables )
+
+(i.e. the math expectation of an equal probability event)
+and *D X* ( is the variance of an equal probability event. )
+
+So fuzzy expectation is defined as:
+
+
+*u x* *k* *k*
+# E F ( X ) = [∑] k        (3) ∑ u k
+
+
+*k* *k*
+*F* ( *X* ) = *k*
+# ∑ u k
+
+*k*
+
+
+( *X* )
+
+
+Here, *[u]* [ is the membership function that the fuzzy ] *k*
+
+set corresponds to [5]. The value of *[u]* [ (] *k* *[u]* [ ∈] *k* (0,1) )
+
+corresponds to the values of random variables. But in
+practical applications, the value of *[u]* [ may be 0 or 1. If ] *k*
+
+the value of *[u]* [ in expression (3) is 1, the expression (3) ] *k*
+
+will become:
+
+1
+# E F ( X ) = ∑ x k = E X ( ) (4)
+
+*n* *k*
+
+From the above formula, we can see that when the
+membership degree is 1, fuzzy expectation will be the
+mean value of random variables and also be the math
+
+expectation of equal probability events.
+
+**2.2. Fuzzy variance**
+
+According to the definition of fuzzy expectation,
+fuzzy variance is defined as:
+
+
+In the same way, when *[u]* [ =] *k* 1, then
+
+*E* *F* ( *X* ) = *E X* ( ) and the expression (5) will become:
+
+1 2
+# D F ( X ) = ∑ ( x k − E F ( X )) = D X ( )   (6)
+
+*n* *k*
+
+Here, fuzzy variance is obviously the variance of an
+equal probability event.
+
+**3. Fuzzy regression model**
+
+**3.1. Fuzzy regression analysis**
+
+Fuzzy regression methods have considerably
+widened the field of application of classical regression
+methods in such a way that they are helpful in
+determining regression relations from fuzzy initial data,
+which can be either quantitative or qualitative.
+Therefore, fuzzy regression methods can be applied to
+expert estimation and several fields of human activities.
+When applying regression analysis to predict random
+variables based on the existing observed values, we
+can see that the data obtained will be affected more or
+
+less by random factors. Suppose that n sample points
+have been gained, so if all data points approximately
+reflect the actual things, the result gained will be
+relatively reasonable. Such a result is very realistic but
+seldom appears in practice. So when one or some data
+points are greatly influenced by random factors, there
+must be a difference between the result gained and the
+actual values. At that time, the classical regression
+analysis is not applicable.
+In this paper, fuzzy least squares method is put
+forward based on fuzzy expectation and fuzzy variance.
+By fuzzy least squares method, the regression
+parameters are estimated and the corresponding
+regression model is established. Such is taken as fuzzy
+regression analysis. Fuzzy regression analysis can
+make the disturbance of morbid data and bad
+
+information to the decision result decrease to the
+
+minimum and raise accuracy and reliability of the
+decision result accordingly.
+
+**3.2. Establishing the fuzzy regression model**
+
+**3.2.1. Determining dependent and independent**
+**variables**
+
+If a variable *y* is linearly relative to other variables
+
+*x x* 1, 2, …, *x* *k*, the regression model of these variables is
+
+represented as [7]
+
+ˆ
+*y* = *b* 0 + *b x* 1 1 + *b x* 2 2 +� + *b x* *k* *k* (7)
+
+
+*u* *k* ( *x* *k* − *E* *F* ( *X* )) 2
+# = [∑] k (5) ∑ u k
+
+
+*u* *k* ( *x* *k* − *E* *F* ( *X* )) 2
+# ( X ) = [∑] k
+
+
+*u* *k* ( *x* *k* − *E* *F* ( *X*
+# D F ( X ) = [∑] k
+
+*u*
+
+
+*k* *k* *F*
+*F* ( *X* ) = *k*
+# ∑ u k
+
+*k*
+
+
+International Conference on Computational Intelligence for Modelling
+Control and Automation,and International Conference on
+Intelligent Agents,Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)
+0-7695-2731-0/06 $20.00 © 2006 Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:07:17 UTC from IEEE Xplore. Restrictions apply.
+
+
+Here, variables *b b b* 0, 1, 2, …, *b* *k* are *k* + regression 1
+
+parameters to be determined later. When the *k* + 1
+parameters are determined based on the actually
+observed values, the regression model will be
+determined accordingly and *y* will be predicted by
+
+variables *x x* 1, 2, …, *x* *k* . In order to distinguish values,
+
+*y* ˆ expresses predicted values and *y* expresses
+
+observed values. Here, *x x* 1, 2, …, *x* *k* are called
+
+independent variables and *y* is called dependent
+
+variable.
+
+**3.2.2. Determining fuzzy set and dependent variable**
+
+The rule of determining regression parameters is to
+make the sum of the square of dispersion
+between ˆ *y* and *y* reach the minimum. The method to
+
+be used is least squares method and the expression is
+given as:
+
+*n*
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+When *[u]* *i* [ =] [, the expression (10) will become the ] 1
+
+least squares method. On the basis of the expression
+(10), a group of equations to obtain the fuzzy
+parameters are provided as:
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+⎧⎪ *s bs b* 21 111 1 ++ *s bs b* 2212 22 ++��++ *s bs b* 12 *kk* *kk* ==
+⎪⎨⎪ �
+⎪⎩ *s b* *k* 1 1 + *s b* *k* 2 2 +� + *s b* *kk* *k* =
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+*s b* 11 1 + *s b* 12 2 +� + *s b* 1 *k* *k* = *s* 1
+
+*s b* + *s b* +� + *s b* = *s*
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+�
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+(11)
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+11 1 12 2 1 *k* *k* 1
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+�
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+*k* *k* 1 *y*
+
+*k* *k* = *s* 2 *y*
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+21 1 22 2 2 *k* *k* 2
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+�
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+*s b* + *s b* +� + *s b* = *s*
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+�
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+*k* 1 1 *k* 2 2 *kk* *k* *ky*
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+1 1 *k* 2 2
+
+P P
+
+P P
+
+P P
+
+P P
+
+# ∑ ( y i − y ˆ i ) 2 = min (8)
+
+=
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+2
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+ˆ
+( *y* *i* − *y* *i* ) = min
+
+= 1
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+*y* *i* − *y* *i*
+
+*i* = 1
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+According to the expression (8), regression
+parameters can be gained and then the regression
+model can be preliminarily established. For observed
+values *x* *i* 1, *x* *i* 2, …, *x* *ik* of any group of independent
+
+variables, there exist *y* ˆ and *y* accordingly. So a fuzzy
+
+set is defined and the universe of discussion is all the
+
+data points. The fuzzy concept is the deviation degree
+between all the data points and fitness equations. The
+farther a data point is apart from the fitness equation,
+the smaller the membership degree is. On the contrary,
+
+P P
+
+the closer a data point is near the fitness equation, the
+
+P P
+
+bigger the membership degree is. Because the value of
+random variables usually conforms to normal
+distribution, the membership function can be given as
+the following form:
+
+− ( *[y]* *i* − *y* ˆ *i* ) 2
+
+*[u]* *i* = *e* σ, *i* = 1,2, …,, *n* σ ∈ *R* (9)
+
+P P
+
+**3.2.3. Determining regression coefficients with**
+**fuzzy least squares method**
+
+P P
+
+If we add fuzzy domain to least squares method, the
+effect of discrete data points on the fitness result will
+be reduced and the effect of concentrated data points
+on the fitness result will be enhanced. Such is called
+
+fuzzy least squares method. The fuzzy least squares
+method is represented by the following expression:
+
+# Here, s ij = ∑∑ u ux x i j − ∑ ux i ∑ ux j, and s iy = ∑∑ u ux y i − ∑ ux i ∑ uy, i j, = 1,2, �, k .
+
+According to this group of equations, first we can
+obtain the values of variables *b b* 1, 2, �, *b* *k* . And finally
+
+*[b]* 0 [ is gained by: ]
+# b 0 = ∑ uy − b 1 ∑ ux 1 − b 2 ∑ ux 2 − � − b k ∑ ux k (12)
+
+*u* *u* *u* *u*
+# ∑ ∑ ∑ ∑
+
+Thus, the first fuzzy regression is finished, i.e. the
+first iteration. Then return to the expression (9),
+determine the membership functions of fuzzy sets with
+the new coefficients and gain the coefficients of
+expression (7) finally. Such is the second iteration.
+Little by little, compared with the last iteration, the
+quantity grades of regression parameters gained after
+several iterations are very close, i.e. the difference
+between the quantity grades is tiny. At that time, the
+final regression model can be established.
+
+**3.2.4. Coefficient of determination**
+
+Coefficient of determination is used to assess the
+quality of the estimation models and expressed by R P [2] P .
+
+The coefficient R P [2] P is calculated by:
+
+*n*
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+Here, *y* expresses the mean value of random
+variables. Obviously, the coefficient R P [2] P describes the
+
+percentage of variability and the value is between 0
+and 1; when an R P [2] P is close to 1, it indicates that this
+
+model can explain variability in the response to the
+predictive variable, i.e. there is a strong relationship
+between the independent and dependent variables.
+
+**4. The application of the fuzzy decision-**
+**making model to COSMIC-FFP**
+
+The COSMIC-FFP size estimation method accounts
+
+for all the functionality within a real-time system. The
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+2
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+2 *i* = 1
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+(13)
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*[y]* *i* − *y* ˆ *i* 2
+
+( )
+
+σ, *i* = 1,2, …,, *n*
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*R* 2 = *i* = 1
+
+−
+# ∑ ( y y
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+−
+
+P P
+
+P P
+
+
+P P
+
+P P
+# ∑
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+−
+
+( *y* *y* )
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*[y]* *i* − *y* *i*
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*[u]* *i* = *e* σ, *i* = 1,2, …,, *n* σ ∈ *R*
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*i* = 1
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+*i*
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+1
+
+P P
+
+P P
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+*n*
+
+
+P P
+
+P P
+
+P P
+
+P P
+# ∑ u y i ( i − y ˆ i ) 2 = min (10)
+
+=
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+2
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+ˆ
+
+*u y* *i* ( *i* − *y* *i* ) = min
+
+= 1
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+*u y* *i* *i* − *y* *i*
+
+*i* = 1
+
+
+P P
+
+P P
+
+P P
+
+P P
+
+International Conference on Computational Intelligence for Modelling
+Control and Automation,and International Conference on
+Intelligent Agents,Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)
+0-7695-2731-0/06 $20.00 © 2006 Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:07:17 UTC from IEEE Xplore. Restrictions apply.
+
+
+efficacy of the COSMIC-FFP can be completely
+exploited only when it is applied in effort estimation
+models early in the software lifecycle. But during the
+late lifecycle, only linear and non-linear regression
+models for effort estimation with COSMIC-FFP have
+
+been explored [6]. In this paper, the data sets in [6] are
+used to develop fuzzy decision-making regression
+models. In the linear and non-linear regression models,
+there is also a lot of uncertainty in the modeling P
+because the other factors affecting the software effort P
+have not been identified. Thus the applicability of P
+fuzzy decision-making models based on fuzzy
+regression is justified.
+
+**4.1. Linear and non-linear regression models**
+
+The simple linear regression model with one
+independent variable size is presented in [6]. Then
+multiple regression models were produced and these
+models took into account additional variables that
+
+could have an influence on the productivity of
+software projects.
+With the full data set of 15 maintenance projects of
+organization A [6], the simple linear regression model
+with one independent variable functional size was
+constructed in Figure 1 [6]. The model yields
+*Effort* = 91.161 + 0.768 × *Cfsu*, where Cfsu is a
+
+standard unit of measurement, i.e. one COSMIC-FFP
+functional size unit. This model has a coefficient of
+
+determination (R2) of 0.38, which indicates that only
+38% of the total variability of the dependent variable
+effort is explained by the variability of the independent
+variable functional size.
+
+
+Besides the linear regression models, various other
+non-linear regression models were investigated, as
+illustrated in Table 1. Like the above, this table is
+based on the same 15 observations. From the Table 1
+
+[6], we can come to a conclusion that the relationship
+between the increase in effort due to an increase in size
+
+is not strong.
+
+
+
+|Table 1.|Non-linear|r regression m|models [6]|] 2|
+|---|---|---|---|---|
+|Equation|A|B|R|R2<br>PP|
+|Y=A×XB<br>P P|0.94|1.046|0.846|0.716|
+|Y=A×e(B×X)<br>P P|45.95|0.006|0.662|0.387|
+|Y=A+B×ln(X)|-241.20|96.792|0.664|0.442|
+|Y=A+B/X|265.16|-2570.562|0.524|0.274|
+|Y=1/(A+B×X)|0.057|-0.0002|0.477|0.228|
+
+
+|Projects|1|2|3|4|5|
+|---|---|---|---|---|---|
+|Cfsu|111|397|190|157|202|
+|Effort(h)|70|219|119|238|216|
+|Projects|6|7|8|9|10|
+|Cfsu|224|183|8|115|32|
+|Effort(h)|167|460|5|383|70.5|
+|Projects|11|12|13|14|15|
+|Cfsu|450|39|172|210|69|
+|Effort(h)|495.25|15|312|314.5|235|
+
+
+
+**Figure 1.** Linear regression model on functional size of
+organization A
+
+This linear regression model provides an initial
+indication that either the relationship might not be
+linear or that another variable might have a significant
+influence on the relationship between size and work
+effort [9][10].
+
+
+**4.2. Applying the fuzzy decision-making model**
+**to the data set**
+
+The COSMIC-FFP size-effort relation is modeled
+
+with the fuzzy decision-making model based on fuzzy
+regression. The principle of fuzzy regression is on the
+basis of fuzzy expectation and fuzzy variance.
+The data set collected at organization A, which
+develops Web-based applications, is presented in
+Table 2 [6]. Functional size varies from 8 Cfsu to 450
+Cfsu, with an average of 169 Cfsu, while effort varies
+from 5 hours to 495 hours, with an average of 221
+hours (or 1.5 person/hour).
+**Table 2.** The data set of or g anization A
+
+Here, we consider Cfsu as a dependent variable and
+effort as an independent variable. From the Table 2,
+we can approximately find the data of several projects
+are exceptional. It indicates that there exists morbid
+data in the sample points. Now, we establish a
+regression model for the sample universe. In order to
+make the value of membership functions spread
+between 0 and 1 properly, we define the membership
+function as the following expression:
+
+− ( *y* ˆ *i* − *y* *i* ) 2
+
+*[u]* *i* = *e* 10, *i* = 1,2, …,15 (14)
+
+Of course, this expression is proved to be effective
+and completely conforms to the definition of
+membership functions.
+
+
+( *y* ˆ *i* − *y* *i* ) 2
+10, *i* = 1,2, …,15
+
+
+*y* *i* − *y* *i*
+
+
+
+*[u]* *i* = *e* 10, *i*
+
+
+International Conference on Computational Intelligence for Modelling
+Control and Automation,and International Conference on
+Intelligent Agents,Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)
+0-7695-2731-0/06 $20.00 © 2006 Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:07:17 UTC from IEEE Xplore. Restrictions apply.
+
+
+Based on the observed values (Table 2), we should
+determine the regression parameters. Because we only
+take the functional size into account, we only need
+calculate *[b]* 0 [ and ] *[b]* 1 [ . So the regression model is ]
+
+represented as:
+
+ˆ
+*Effort* = *b* 0 + *b* 1 × *Cfsu* (15)
+
+We can gain the value of *[b]* 1 [ based on equation (11), ]
+
+and then calculate the value of *[b]* 0 [ according to ]
+
+equation (12).
+Firstly, we can obtain the result of the zeroth
+regression by least squares method. In fact, the typical
+linear regression is just the zeroth regression. Then we
+can use the expressions (11) and (14) repeatedly to
+gain other regression models. Of course, each
+regression model is based on the last regression model.
+Because we must calculate the value of each *y* ˆ *i*
+
+according to the last regression equation first, we may
+get the *[u]* *i* [ based on expression (14). In this way, we ]
+
+calculate 18 regression equations. These iterative
+results are as follows:
+
+The result of the zeroth regression is:
+
+ˆ
+*Effort* = 91.161210 + 0.768135 × *Cfsu* .
+
+The result of the first regression is:
+
+ˆ
+*Effort* = 46.998469 + 0.977563 × *Cfsu* .
+
+The result of the second regression is:
+
+ˆ
+*Effort* = 22.790321 1.064611 + × *Cfsu* .
+
+…
+
+The result of the fifteenth regression is:
+
+ˆ
+*Effort* = 1.073694 1.081019 + × *Cfsu* .
+
+The result of the sixteenth regression is:
+
+ˆ
+*Effort* = 1.065936 1.081011 + × *Cfsu* .
+
+The result of the seventeenth regression is:
+
+ˆ
+*Effort* = 1.061344 1.081006 + × *Cfsu* .
+
+From the above regression lines, it is obvious that
+these regression parameters are very close after the
+fifteenth regression. The last two regression equations
+are very similar.
+
+**5. Results**
+
+From the above results, we can find that the
+regression model tends to be steady little by little.
+When the regression model is almost steady, the final
+regression model can be determined. This model is the
+closest to the real situation. In practice, the regression
+frequency can be controlled according to actual needs.
+In Figure 2, the first, the second and the last regression
+lines are drawn in the same reference frame. The
+
+regression lines tend to descend because the values of
+
+
+several sample points in the sample universe are higher
+than the real value.
+
+
+
+
+
+**Figure 2.** Regression lines distribution
+
+In Figure 3, the membership degree of several
+regressions is drawn. We will find that the membership
+degree of the 2nd, 7th, 9th data points is very small
+and close to 0. Thus the 3 points lie away from the
+regression lines so that these data points are
+unimportant for making decision. Maybe there are
+other factors that affect the effort of projects. After
+several regressions, a best group of membership
+degrees can be gained.
+
+
+
+
+
+**Figure 3.** Membership degree distribution
+
+By calculation, the coefficient R2 is 0.813, which
+indicates that 81.3% of the total variability of the
+dependent variable effort is explained by the
+variability of the independent variable functional size.
+This result is better than the linear, non-linear and
+other fuzzy regression models. So this model is useful
+for us.
+
+**6. Conclusions**
+
+The goal of this paper is to investigate the
+development of estimation model for maintenance
+
+
+International Conference on Computational Intelligence for Modelling
+Control and Automation,and International Conference on
+Intelligent Agents,Web Technologies and Internet Commerce (CIMCA-IAWTIC'06)
+0-7695-2731-0/06 $20.00 © 2006 Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:07:17 UTC from IEEE Xplore. Restrictions apply.
+
+
+projects in order to model the relationship between the
+size of software of a maintenance project and the
+maintenance work effort. We use the functional size of
+
+software enhancements as inputs to output the effort
+we should provide. As a whole, the effort required to
+deliver a functional enhancement in the maintenance
+
+phase increases with the size of the enhancement
+software. In this paper, a fuzzy decision-making model
+has been established. And a proper membership
+function has been defined according to the normal
+distribution characteristic of random variables.
+
+The results prove that this model is better than
+linear regression and non-linear models. Compared
+with these traditional regression models, this model
+can make the disturbance of morbid data and bad
+
+information in regression analysis to the result
+decrease little by little, until we are satisfied. And also
+this model can determine regression frequency
+according to actual needs.
+As we all know, Software size is recognized as a
+key factor in the construction of models to estimate
+project effort. Of course, software size can be
+measured from either a technical perspective, with
+LOC (lines of code) for example, or from a functional
+perspective. The COSMIC-FFP method can measure
+the functional size of almost all the software types. In
+the early stage of software development, we can
+measure the functional size from the specifications and
+then estimate the effort to be spent based on the fuzzy
+decision-making model. But in practice, some other
+factors may influence the effort, such as project
+difficulty, program language and LOC etc. So in the
+late stage of software development (e.g. maintenance
+stage), we can take these factors into account
+according to the expression (7) and build up a new
+model. In this way, the result will be more accurate
+and more useful and the coefficient R2 will be
+
+increased.
+
+
+In the practical applications, if math fuzzy is
+applied into the software metrics by making fuzzy sets
+participate in decision-making, it can raise accuracy
+and reliability of the decision result.

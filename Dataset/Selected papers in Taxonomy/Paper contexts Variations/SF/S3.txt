@@ -1,0 +1,887 @@
+# Investigating Metrics for a Development Effort Prediction Model of Web Applications
+
+Emilia Mendes
+
+*Computer Science Department*
+*The University of Auckland*
+
+*[emilia@cs.auckland.ac.nz](mailto:emilia@cs.auckland.ac.nz)*
+
+
+Abstract
+
+Although in the hypermedia literature there are metrics
+proposed to measure hypermedia processes and
+products, many lack the necessary theoretical and
+empirical validation.
+To address these issues, this paper presents the results
+of a quantitative case study which validated empirically
+a set of metrics proposed to measure the development
+effort involved in authoring Web applications. These
+metrics adhere to the representational theory of
+
+measurement.
+
+The results obtained for the case study have shown
+that three out of four of the proposed metrics
+presented statistically significant correlations with
+development effort, suggesting that they may be useful
+parameters for a prediction model that estimates the
+effort involved in developing Web applications.
+
+1. Introduction
+
+Developing good quality hypermedia applications
+has a high cost, mostly in time and the amount of
+difficulty involved for the authors [4]. Therefore, if we
+know more about how those applications are
+developed, we can have better control over them and,
+consequently, the chances of improving the
+development will increase. To facilitate control,
+measurement and feedback are obtained as the first
+
+step to improve products, processes and resources.
+
+As engineering involves the analysis of
+measurements [18], hypermedia engineering and Web
+engineering, will
+
+
+only become true engineering disciplines when a solid
+foundation of measurement-based theories is built.
+
+Although there is some research into hypermedia
+metrics, most of it to date uses an analytical method of
+research without further empirical justification.
+Consequently, many of the published research findings
+can only be interpreted as analytical advocacy research
+
+[8].
+
+The main objective of this research project was to
+investigate the process of Web authoring by using a
+scientific method of research, which comprised the
+following steps:
+
+i) The proposal of metrics to measure the
+maintainability of Web applications, the reusability of
+Web documents and the development effort involved
+in authoring a Web application.
+
+ii) The proposal of metrics which adhere to the
+representational theory of measurement.
+
+iii) The empirical and theoretical validation of
+our metrics according to the validation framework
+proposed by Kitchenham et al. [12].
+
+The first part of our research project was a survey,
+which measured the maintainability of hypermedia
+applications and the reusability of hypermedia
+information [15]. This paper presents the second part
+of the project - a quantitative case study aimed at
+validating empirically our proposed metrics as possible
+measures of the development effort involved in
+authoring Web applications. In Section 2, the
+quantitative case study is described. Section 3 presents
+the validity of the case study evaluation and the
+theoretical validation of the proposed metrics
+described in Section 4. Finally, in Section 5, the results
+of the case study are presented and in Section 6 we
+give our conclusions and comments on future work.
+
+2. The Case Study Evaluation
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+2.1 Design of the Evaluation
+
+Two questionnaires were used in the case study: the
+first one - Q1 - asked subjects to rate their level of
+Web authoring experience on a scale from 1 (little
+experience) to 10 (a great deal of experience); the
+second one - Q2 - (see Appendix A) was used to
+measure the independent and dependent variables.
+Both questionnaires were checked by members of the
+research group for ambiguous questions, unusual tasks,
+definitions in the appendix and the number of
+questions.
+
+The subjects who participated in the evaluation
+were 45 second-year Computer Science students
+attending the Human-Computer Interaction course. An
+analysis of the questionnaires obtained showed that six
+were missing fundamental information. Consequently,
+these samples were not used in the data analysis.
+
+Subjects were given a coursework that consisted of
+developing Web applications to teach about HumanComputer Interaction concepts. They were also
+required to structure their applications according to the
+Cognitive Flexibility Theory (CFT) >22] principles,
+and to create the applications using a minimum of 50
+documents.
+
+In order to reduce any learning effects
+(confounding factors) >11] subjects were given an
+initial task - to develop their personal Web pages Two Web tutorials were suggested so that it would be
+possible for subjects with no Web authoring
+experience to learn how to develop Web pages. In
+addition, all the subjects received training on the CFT
+authoring principles (90 minutes).
+
+The questionnaire Q2 was handed in together with
+the coursework (the Web application). This
+questionnaire had two sections: one to collect
+attributes of the application and another to collect the
+elapsed time spent in developing the application. The
+development was split in several sub-tasks along the
+development life-cycle, adapted from existing
+literature >1,9,10,13,14,17,20,21,23] and organised as
+follows: i) Structure the application; ii) Create the text
+contents; iii) Create the graphics contents; iv) Create
+the video contents; v) Create the audio contents; vi)
+Create the links; vii) Design the interface: planning of
+the interface; viii) Design the interface: implementing
+of the interface; ix) Test the application: test the links
+in the application; and x) Test the application: testing
+the media.
+
+
+Each of these subtasks would correspond to an
+elapsed time, which would be correlated statistically
+with the independent variables in order to check the
+hypotheses proposed.
+
+2.2 Dependent and Independent Variables
+
+The independent variables (metrics) used in the
+case study evaluation were: hyperdocument size,
+connectivity, perceived compactness and perceived
+stratum ; The dependent variable used to measure the
+development effort was the estimated elapsed time it
+took each subject to develop the Web application. At
+this stage of the research our concern was with the
+measurement for assessment rather than a
+
+measurement for prediction >7]. This means that we
+were interested in understanding the development
+effort involved in authoring Web applications and how
+the independent variables were related to it, rather than
+producing a mathematical model (prediction model) to
+be used as a predictor of development effort.
+
+Hyperdocument size refers to the number of
+documents that each Web application has. Documents
+are HTML files, and a Web application is a collection
+of documents designed with a specific aim. In our
+case, the domain considered to be representative was
+education. The Web applications considered are
+'static', where the number of dynamically generated
+pages is quite small, if not absent.
+
+Connectivity refers to the number of links that the
+Web application has. The links considered here are
+either structural or referential links >5], leaving apart
+dynamically computed links.
+
+Compactness >3] indicates how inter-connected the
+documents are. A completely connected application
+means that, from each document, there are links
+reaching all the other documents in the application.
+Compactness was measured in the case study
+evaluation by asking subjects to give an estimate of it,
+from 1 (completely disconnected) to 5 (completely
+connected). Consequently, the compactness measured
+was the perceived compactness ( P-Compactness ).
+
+Stratum >3] indicates to what degree the Web
+application is organised for directed reading. A
+sequential application represents an application where
+there is only one path to be followed by the reader. For
+the case study evaluation, subjects were asked to
+estimate the stratum of the application, from 1 (no
+sequential navigation) to 5 (sequential navigation).
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+Consequently, the stratum measured was the perceived
+stratum ( P-Stratum ).
+
+2.3 The Hypotheses
+
+Although in a scientific method of research the
+hypotheses to be tested should be the null hypotheses,
+we decided to present the alternative hypotheses as
+they explicitly show the direction of the relationship
+between the independent and dependent variables. Our
+stated hypotheses for the evaluation were as follows:
+
+H1 - The bigger the hyperdocument size the longer
+it takes to develop the Web application.
+H2 - The greater the connectivity the longer it takes
+to develop the Web application.
+H3 - The higher the p-compactness the longer it
+takes to develop the Web application.
+H4 - The smaller the p-stratum the longer it takes to
+develop the Web application.
+
+3. Validity of the Case Study Evaluation
+
+There are three types of threats to the validity of an
+empirical study >11]:
+
+- Construct validity: Represents to what extent the
+independent and dependent variables precisely
+measure the concepts they claim to measure.
+
+- Internal validity: Represents to what extent
+conclusions can be drawn about the casual effect
+
+of the independent variables on the dependent
+variables.
+
+- External validity: Represents the domain to which
+a study's findings can be generalised.
+
+3.1 Construct Validity
+
+- subjects, rather than directly measured in the
+applications. It can be argued that estimated
+values are not ideal and may weaken the results
+obtained. However, it would not be feasible to ask
+subjects to calculate themselves those measures as
+it would be very time-consuming. Compactness,
+as proposed by Botafogo et al. >3], also uses an
+estimated value on its calculation (the conversion
+constant), leading to subjective measures as well.
+Finally, stratum, as proposed by Botafogo et al.
+>3] is described by the authors as "not a perfect
+metric, where some problems are evident".
+
+
+Therefore, we decided to re-use these concepts
+and measure them in a different way.
+
+- Although the number of documents has been
+identified by hypermedia authors as a valuable
+metric to measure hyperdocument sLze >6], we are
+
+aware that there are other metrics which can also
+
+be used (for example, the length of the
+application, the complexity of documents and the
+functionality offered) and they will be the focus of
+our next evaluation.
+
+3.2 Internal Validity
+
+The following problems might threaten the internal
+validity of the experiment:
+
+- There were three confounding factors in this
+evaluation: i) subjects' experience; ii) maturation
+effects, which are learning effects caused by
+subjects learning as an experiment proceeds; and
+iii) tools used to help develop/manage the Web
+application. The data collected showed that: i) the
+experiences did vary greatly. Consequently, it was
+decided to consider two separate groups   - subjects
+with experience levels ranging from 1 to 5 (22
+subjects)   - LEL group - and subjects with
+experience levels ranging from 6 to 10 (17
+subjects)   - HEL group; ii) subjects were asked to
+develop their Web pages before developing the
+applications and they all received training in the
+CFT principles. In addition, they were given a
+general structure for their applications, using the
+CFT. Consequently, it seems that the maturation
+effects were controlled, or at least reduced; and
+iii) the number of tools used did not vary greatly.
+This result was confirmed statistically.
+
+- The selection effects, which are due to natural
+variations in subject performance, were
+controlled.
+
+- The instrumentation effects in general did not
+occur in this evaluation. The questionnaires used
+were the same and the same hypermedia system
+was used to develop the applications.
+
+3.3 External Validity
+
+The following problems might limit the external
+validity of the experiment:
+
+- The results may be domain dependent as all the
+subjects answered the questionnaires based on
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+their experience in developing Web applications
+for education. This evaluation should therefore be
+
+repeated in domains other than education if the
+results are to be generalised to other domains.
+
+- The experimental scale >19] is a threat when the
+experimental setting or the materials are not
+representative of industrial practice. The
+applications developed presented good quality
+interface and contents, when compared to other
+Web applications found in industry. Therefore,
+from this perspective it seems that the applications
+developed are representative of industrial practice.
+
+- The applications did not have more than 100
+documents and 300 links, on average, as the
+subjects were supposed to use only three working
+days to develop them. These numbers represent
+small applications and are probably not
+representative of the large Web applications for
+education developed by some organisations, in
+general. On the other hand, the applications
+developed had a similar to or even better interface
+and contents quality than Web applications
+developed by professionals, as noticed by myself
+when marking the Web applications developed by
+the students. These results seem to indicate that
+
+the results of the case study are likely to scale-up.
+
+- A threat to subject generalizability >19] may exist
+when the subject population is not drawn from the
+wider population. The subjects that participated in
+the case study may not be representative of Web
+professionals, since second-year Computer
+Science students cannot be categorised as
+experienced Web authors. The use of students as
+subjects, while sometimes considered unrealistic,
+is justified for two reasons: firstly, empirical
+evidence by Bohem-Davis and Ross (1992)
+indicates that students are equal to professionals in
+many quantifiable measures, including their
+approach to developing software; secondly, for
+pragmatic considerations, having students as
+subjects was the only viable option for this case
+study.
+
+3. Theoretical Validation of the Proposed
+Metrics
+
+This Section presents a theoretical validation of our
+metrics according to the validation framework
+proposed by Kitchenham et al. >12].
+
+
+For the validation framework, to decide whether a
+measurement is valid it is necessary to confirm:
+
+- Attribute validity, i.e., whether the attribute is
+actually exhibited by the entity being measured.
+
+- Unit validity, i.e., whether the measurement unit
+being used is an appropriate means of measuring
+the attribute.
+
+- Instrument validity, i.e., whether any model
+underlying a measuring instrument is valid and the
+measuring instrument is properly calibrated.
+
+- Protocol validity, i.e., whether an acceptable
+measurement protocol is adopted.
+
+The properties of measures used in the validation are:
+(1) For an attribute to be measurable, it must allow
+different entities to be distinguished from one
+another.
+
+(2) A valid measure must obey the representation
+condition, preserving our intuitive notions about
+the attribute and the way in which it distinguishes
+different entities.
+
+(3) Each unit of an attribute contributing to a valid
+measure is equivalent.
+(4) Different entities can have the same attribute
+value.
+
+The theoretical validation for our metrics is presented
+in table 1:
+
+4.1 Validation of Instrument Models
+
+Validating a measurement instrument represents the
+confirmation that the instrument accurately measures
+attribute values in a given unit. The instrument used in
+the quantitative case study measured all the attributes
+using appropriate scales and units.
+
+4.2 Validation of Measurement Protocols
+
+The protocols applied to the instrument used was
+validated by peer acceptance., In addition, when
+asking for volunteers, the questionnaire and
+evaluation's objectives were always explained.
+
+3. The Results of the Case Study
+
+All the correlations presented in this section were
+calculated by using the non-parametric Spearman's
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+rank correlation test with a 1-tailed significance test at
+the 1% and 5% levels.
+
+Statistically significant negative correlations for P
+
+correlations for Hyperdocument Size, Connectivity and PCompactness helped to confirm our hypotheses.
+
+The legend for the subtasks presented in tables 4
+
+
+|Statistically s tratum and|significant negative correlations for P- statistically significant positive The and 5 i|e legend for th is described be|he subtasks presented in tables 4 elow (see figure 1):|
+|---|---|---|---|
+|Acronym|Description|Acronym|Description|
+|Createt<br>Createg<br>Createv<br>Createa<br>Createc<br>Createl|Create the text contents<br>Create the graphics contents<br>Create the video contents<br>Create the audio contents<br>Total time creating text, graphics, video, audio<br>Create the links|Structap<br>Designip<br>Designii<br>Testl<br>Testm|Structure the application<br>Planning of the interface<br>Implementing of the interface<br>Testing the links in the application<br>Testing the media.|
+
+
+Figure 1. Legend for the subtasks involved in the development of a hypermedia application
+
+
+Table 1. Theoretical validation of the direct measures
+
+
+
+
+
+
+
+
+|Col1|Metric|Scale|Unit|Properties that apply|Col6|
+|---|---|---|---|---|---|
+||Hyperdocument<br>size|absolute|documents|(1) Different applications may have different hyperdocument sizes.<br>(1) The same application with different names will lead to the same<br>hyperdocument size if a software program is used as an instrument.<br>(2) Has one unit.<br>(3) Different applications can have the same hyperdocument size.|(1) Different applications may have different hyperdocument sizes.<br>(1) The same application with different names will lead to the same<br>hyperdocument size if a software program is used as an instrument.<br>(2) Has one unit.<br>(3) Different applications can have the same hyperdocument size.|
+||Connectivity|absolute|links|(2) Different applications may have different connectivity.<br>(3) The same application with different names will lead to the same<br>connectivity if a software program is used as an instrument.<br>(4) Has one unit.<br>(5) Different applications can have the same connectivity.|(2) Different applications may have different connectivity.<br>(3) The same application with different names will lead to the same<br>connectivity if a software program is used as an instrument.<br>(4) Has one unit.<br>(5) Different applications can have the same connectivity.|
+||Compactness|ordinal|Ranking of<br>cross-<br>referencing|(1) Different applications may have different compactness.<br>(2) The same application with different names may lead to the same<br>compactness if the respondents share a common knowledge about<br>the application's structure.<br>(3) Has one unit<br>(4) Different applications can have the same connectivity|(1) Different applications may have different compactness.<br>(2) The same application with different names may lead to the same<br>compactness if the respondents share a common knowledge about<br>the application's structure.<br>(3) Has one unit<br>(4) Different applications can have the same connectivity|
+||Stratum|ordinal|Ranking of<br>linearity|(1) Different applications may have different stratum.<br>(2) The same application with different names may lead to the same<br>stratum if the respondents share a common knowledge about the<br>application's structure.<br>(3) Has one unit.<br>(4) Different applications can have the same stratum.|(1) Different applications may have different stratum.<br>(2) The same application with different names may lead to the same<br>stratum if the respondents share a common knowledge about the<br>application's structure.<br>(3) Has one unit.<br>(4) Different applications can have the same stratum.|
+||Link generality|Nominal|Boolean<br>(anchor/not<br>anchor)|(1) Different systems may have different link generalities.<br>(2) The same system with different names will lead to the same link<br>generality.<br>(3) Has one unit.<br>(4) Different systems can have the same link generality.|(1) Different systems may have different link generalities.<br>(2) The same system with different names will lead to the same link<br>generality.<br>(3) Has one unit.<br>(4) Different systems can have the same link generality.|
+||Development<br>effort for a<br>hypermedia<br>application|Absolute|Estimated<br>elapsed<br>time in<br>hours|(1) Different applications may have different development efforts<br>(duration).<br>(2) The same hypermedia application with different names may lead to<br>the same duration, if answered by the same author.<br>(3) Has one unit.<br>(4) Different hypermedia applications can require the same development<br>effort.|(1) Different applications may have different development efforts<br>(duration).<br>(2) The same hypermedia application with different names may lead to<br>the same duration, if answered by the same author.<br>(3) Has one unit.<br>(4) Different hypermedia applications can require the same development<br>effort.|
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+For the LEL subjects, considering the results presented
+in table 2, it seems that, as far as the development
+effort involved in authoring a Web applications is
+concerned:
+
+- The bigger the htyperdocument size the more timeconsuming the development of the Web
+application becomes (confirms hypothesis H1).
+
+- The greater the connectivity the more timeconsuming the development of the Web
+application becomes (confirms hypothesis H2).
+
+- The higher the p-compactness the more timeconsuming the development of the Web
+application becomes (confirms hypothesis H3).
+
+The elapsed time spent in creating the text documents
+(see table 3) showed a statistically significant negative
+
+
+correlation with p-stratum, suggesting that it took
+longer to create the text documents of a Web
+application developed with a less linear style
+(concerning its navigation). However, this result was
+not sufficient to confirm hypothesis H.4.
+
+For the HEL subjects, considering the results obtained,
+it seems that, as far as the development effort involved
+in authoring a Web applications is concerned:
+
+- The greater the connectivity the more timeconsuming the development of the Web
+application becomes (confirms hypothesis H2).
+
+- The higher the p-compactness the more timeconsuming the development of the Web
+application becomes (confirms hypothesis H3).
+
+
+Table 2. Spearman ’ s correlation coefficient for metrics vs. effort
+
+|Tasks|Hyperdoc. size|Connectivity|P-Compactness|P-Stratum|
+|---|---|---|---|---|
+|Createt|0.60**|0.81**|0.62**|0.29|
+|Createg|0.12|0.2.4|0.05|0.01|
+|Createv|nc|nc|nc|nc|
+|Createa|-1.0|-1.0|-1.0|-1.0|
+|Createc|0.61**|0.72**|0.61**|0.10|
+|Createl|0.35|0.6.4**|0..41*|0.27|
+|Structap|0..40*|0.63**|0.06|0.17|
+|Designip|0.31|0..45*|0.20|0.30|
+|Designii|0.25|0..46*|0.16|0.16|
+|Testl|0.70**|0.56**|0..43*|0.22|
+|Testm|0.50|0.87|nc|0.87|
+|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|
+
+
+
+T ab l e 3 . Spea rm a n’ s co rr e l at i o n coe ffi c i e n t f o r m et ri cs v s . e ff o r t
+
+|Tasks|Hyperdoc. size|Connectivity|P-Compactness|P-Stratum|
+|---|---|---|---|---|
+|Createt|0.39|0.13|0.05|-0..42*|
+|Createg|-0.27|0..42|0.6.4**|-0.23|
+|Createv|nc|nc|nc|nc|
+|Createa|nc|nc|nc|nc|
+|Createc|0.18|0.19|0.15|-0.39|
+|Createl|0.18|0..45*|0.06|-0.35|
+|Structap|0.10|0.12|0.36|-0.27|
+|Designip|0.26|0.59**|0..40|-0.06|
+|Designii|0.38|0.63**|0.82**|0.27|
+|Testl|-0.07|0.2.4|0..46*|-0.20|
+|Testm|-1.0|0.50|0.87|0.00|
+|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|** denotes that the result is statistically significant at the 1% level nc - could not be computed<br>* denotes that the result is statistically significant at the 5% level|
+
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+The Mann-Whitney U Test was used to check
+whether the LEL and HEL groups were part of the
+same population. The results showed that they were,
+which allowed us to merge the answers into one, as
+follows:
+
+|Table 4. Results for the independent variables Development effort of Web applications|Col2|Col3|
+|---|---|---|
+|Development effort of Web applications|Development effort of Web applications|Development effort of Web applications|
+|Hypothesis|Metric|Result|
+|H1|Hyperdocument size|Confirmed|
+|H2|Connectivity|Confirmed|
+|H3|P-Compactness|Confirmed|
+|H4|P-Stratum|Not enough<br>evidence|
+
+
+
+A replication of the case study would help to
+confirm whether or not stratum could be used as a
+
+measure of deveOopment effort.
+
+3. Conclusions
+
+This paper has reported the findings of a
+quantitative case study aimed at empirically validating
+proposed metrics. The case study involved the
+development of Web applications using the principles
+of the Cognitive Flexibility Theory. The data was
+collected using questionnaires, which were answered
+by the subjects who participated in the case study.
+
+Results have shown that three of the four metrics
+
+proposed - hyperdocument size, connectivity and pcompactness - have presented statistically significant
+correlations with development effort, suggesting that
+these metrics could be used in the future as parameters
+of an effort prediction model of Web development.
+
+An important lesson learnt from the use of
+measurement is that it is better to start from a set of
+
+metrics addressing important improvement areas, and
+evolve these metrics over time, instead of debating
+forever, trying to find perfect metrics [6]. We believe
+that the steps used to propose and validate the metrics
+were as important as, or even more important than, the
+metrics themselves.
+
+As part of our future work we are currently
+developing a tool that measures our proposed metrics
+automatically. Our aim is to use this tool in our next
+evaluation, which will be a replication of the case
+study presented in this paper. We hope that the results
+obtained from the replication study will give us the
+
+
+necessary feedback towards the definition of an effort
+prediction model of Web development.
+
+4. References
+
+[1] (Balasubramanian et al. 1994) Balasubramanian,
+P., Isakowitz, Tomas, and Stohr, E. A. RMD: A
+Methodology for the Design of Hypermedia
+Applications. In: Workshop on Hypermedia Design
+and Development, (Edinburgh, September 18, 1994),
+pp. 33-38.
+
+[2] (Boehm-Davis and Ross 1992) Boehm-Davis, D.
+A., and Ross, L. S. Program design methodologies and
+the software development process, International
+Journal of Man-Machine Studies, 36, 1992, pp. 1-19,
+Academic Press Limited.
+
+[3] (Botafogo et al. 1992) Botafogo, R. A., Rivlin, E.,
+and Shneiderman, B., 1992. Structural Analysis of
+Hypertexts: Identifying Hierarchies and Useful
+Metrics. In: ACM TOIS, 10, 2, 1992, pp. 143-179.
+
+[4] (Brown 1995) Brown, P.J. Creating Educational
+Hyperdocuments: Can It Be Economic?. IETI Innovations in Education and Training Technology,
+32, 3, pp. 202-208.
+
+[5] (Conklin 1987) Conklin, J. Hypertext: An
+Introduction and Survey, IEEE COMPUTER,
+September, 1987, pp. 17-37.
+
+[6] (Daskalantonakis 1992) Daskalantonakis, Michael
+K.,. A Practical View of Software Measurement and
+Implementation Experiences Within Motorola. IEEE
+Transactions on Software Engineering, 18, 11,
+(November 1992), pp. 998-1010.
+
+[7] (Fenton and Pfleeger 1997) Fenton, N. E., and
+Pfleeger, S. L.. Software Metrics, A Rigorous &
+Practical Approach, 2nd edition., PWS Publishing
+Company and International Thomson Computer Press,
+
+1997.
+
+[8] (Fenton et al. 1994) Fenton, N., Pfleeger, S. L.,
+and Glass, R. L. Science and Substance: A challenge
+to Software Engineers. IEEE Software, July, 1994,
+pp. 86-95.
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+[9] (Fletcher et al. 1997) Fletcher, T., MacDonel, S.
+G., and Wong, W. B. L.. Early experiences in
+Measuring Multimedia Systems Development Effort.
+In: Multimedia Technology and Applications, Hong
+Kong: Springer-Verlag, 1997, pp. 211-220.
+
+[10](Ginige et al. 1995) Ginige, A., Lowe, D. B., and
+Robertson, J. Hypermedia Authoring. IEE
+MultiMedia, (Winter 1995), pp. 24-35.
+
+[11](Kitchenham et al. 1995a) Kitchenham, B., L.
+Pickard, and S. L. Pfleeger, Case Studies for Method
+and Tool Evaluation, `IEEE SofWtware`, (July, 1995), 52
+62.
+
+[12](Kitchenham et al. 1995b) Kitchenham, B., L. P.,
+Pfleeger, S. L., and Fenton, N. Towards a Framework
+for Software Measurement Validation. IEEE
+
+Transactions on Software Engineering, 21,12, 1995,
+pp. 929-944.
+
+[13](Lind and Varaivan 1989) Lind, R. K., and
+Vairavan, K. An Experimental Investigation of
+Software Metrics and Their Relationship to Software
+Development Effort, IEEE Transactions on Software
+Engineering, 15, 5, 1989, pp. 649-653, May.
+
+[14](McDonell and Fletcher 1998) McDonell, S. G.,
+and Fletcher, T. Metric Selection for Effort
+Assessment in Multimedia Systems Development, In:
+Proceedings of Metrics'98, 1998.
+
+[15](Mendes et al. 1998) Mendes, M. Emilia X.,
+Harrison, Rachel, and Hall, Wendy. Reusability and
+Maintainability in Hypermedia Applications for
+Education, Information and Systems Technology, 40,
+14, 1998. pp. 841-849.
+
+[16](Mendes 1999) Mendes, M. E. X. Developing
+Metrics for Improving Hypermedia Authoring, PhD
+Thesis, Department of Electronics and Computer
+Science, Southampton, UK, March, 1999.
+
+[17](Nanard and Nanard 1995) Nanard, J., and
+Nanard, M. Hypertext Design Environments and the
+Hypertext Design Process, Communications of the
+ACM,, Special Issue on Hypermedia Design, (August
+1995), pp. 49-56.
+
+[18](Pfleeger et al. 1997) Pfleeger, S. L., Jeffery, R.,
+Curtis, B., and Kitchenham, B. Status Report on
+
+
+Software Measurement. IEEE Software, March/April,
+
+1997.
+
+[19](Porter et al. 1997) Porter, A., Siy, H. P., Toman,
+C. A., and Votta, L. G. An Experiment to Assess the
+Cost-Benefits of Code Inspections in Large Scale
+Software Development, IEEE Transactions of
+Software Engineering, 23, 6, 1997, pp. 329-346, June.
+
+[20](Rombach 1990) Rombach, H. D. 1990. Design
+Measurement: Some Lessons Learned, IEEE Software,
+March, 1990, pp. 17-25.
+
+[21](Schwabe and Rossi 1995) Schwabe, D., and
+Rossi, G. Building Hypermedia Applications as
+Navigational Views of Information Models. In:
+Proceedings of the 28th Annual Hawaii International
+Conference on System Sciences, 1995, pp. 231-240.
+
+[22](Spiro et al. 1995) Spiro, R. J., Feltovich, P. J.,
+Jacobson, M. J., and Coulson, R. L.. Cognitive
+Flexibility, Constructivism, and Hypertext: Random
+Access Instruction for Advanced Knowledge
+Acquisition in Ill-Structured Domains. In: L. Steffe &
+J. Gale, eds., Constructivism, Hillsdale, N.J.:Erlbaum,
+
+1995.
+
+[23](Thackaberry and Rada 1998) Thackaberry, C.
+W., and Rada, R. Estimation Metrics for Courseware
+Maintenance Effort, Journal of Universal Computer
+Science, 4,3, 1998, pp. 308-325.
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+APPENDIX A - QUESTIONNAIRE
+
+Questionnaire:
+
+Name:
+
+Surname:
+
+For all time-related questions, please supply your estimate of elapsed time, in hours, considering only the
+mechanical aspects of the hypermedia design tasks and not the time it took you to research the contents. The
+underlined terms are defined in the appendix.
+
+1) How many web pages does your application have? ______________
+2) How many web pages did you develop from scratch? ______________
+3) How many web pages did you reuse from other sites? ______________
+
+4) If you reused a web page, did you do this by (tick more than one if necessary):
+
+making a link to it from your application ( )
+making a local copy of that page and using it ( )
+
+5) When reusing a web page did you (tick more than one if necessary):
+
+add new links to it ( )
+not add new links to it ( )
+
+6) Approximately how many links did you create? ________________
+
+7) What is the compactness of the application?
+
+Completely 5 4 3 2 1 Completely
+Connected Disconnected
+
+8) What is the stratum o f the application?
+
+High stratum 5 4 3 2 1 No stratum
+
+9) Please circle the structure which best describes how the core documents of the application are organised:
+
+Sequence Hierarchy Network
+
+12) For each of the following tasks, please estimate the time it took to:
+
+Create all:
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+a) text contents
+b) graphics contents
+c) video contents
+d) audio contents
+
+Create all:
+
+e) links___________
+
+
+___________
+
+___________
+
+___________
+
+___________
+
+
+Structure the application ___________
+
+Design the Interface:
+h) planning of the interface ___________
+
+i) implementing of the interface___________
+
+Test the application:
+j) testing the links in the application___________
+k) testing media, i.e., testing if ___________
+the video works, the sound
+works, etc.
+
+h) What tools did you use to develop the application and for what purpose? Tick more than one if appropriate:
+
+Purpose
+
+
+( ) An HTML editor
+
+( ) An application generator
+( ) Software to organise and
+manage the HTML files
+( ) if other, which one?
+
+APPENDIX
+
+
+________________________________________
+
+________________________________________
+
+________________________________________
+
+________________________________________
+
+
+Compactness - the connectedness of the application. A high compactness indicates that from any document a user
+can easily reach, using links, any other document in the application, suggesting a large amount of cross-referencing.
+
+Hierarchy - a structure of an application where the documents are organised as a tree (see figure 1).
+
+Figure 1 - A Hierarchy
+
+Network - application where its structure is arranged as a net of documents and links (see figure 2).
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.
+
+
+Figure 2 - A Web
+
+Sequence - a structure of an application where the documents are linearly linked (see figure 3).
+
+Figure 3 - A sequence
+
+Stratum - suggests if there is an order for reading the application. Minimum stratum means that structurally it
+makes no difference from what document one starts reading. Maximum stratum is achieved in a linear application
+(the topology is a sequence ).
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 06,2024 at 14:20:06 UTC from IEEE Xplore. Restrictions apply.

@@ -1,0 +1,22 @@
+After thoroughly reviewing the research paper "A Case Study Using Web Objects and COSMIC for Effort Estimation of Web Applications" by F. Ferrucci et al., here is a comprehensive summary:
+
+**Background**: The paper discusses the challenges in estimating the development effort of web applications due to the difficulty in measuring their size accurately. Currently, widely accepted methods like Function Points (FPs) are not suitable for web applications because they don't capture certain unique characteristics of web development.
+
+**Research Question**: Can Web Objects and COSMIC be effective size measures for estimating web application development effort?
+
+**Methodology**: The researchers collected data from 15 web applications developed by an Italian software company and created two effort estimation models using Ordinary Least Squares (OLS) regression. They then used a hold-out sample of 4 additional web applications from the same company to validate the models.
+
+**Predictors Used as Effort Estimators**: Two predictors were used in the research:
+
+1. **Web Objects (WO)**: Proposed by David Reifer, Web Objects add four new web-related components to the existing Five Function Types (FFT) of Function Point Analysis (FPA): Multimeda Files, Web Building Blocks, Scripts, and Links. 
+2. **COSMIC (Common Software Measurement Metric Including COCOMO)**: Originally designed for business and real-time applications, COSMIC counts data movements between boundaries and uses Functional Size Units (FSUs).
+
+**Procedure**: The researchers used OLS regression to create effort estimation models based on either Web Objects (WO) or COSMIC (CFP). They removed outlier cases, checked the assumptions of the regression analysis, and computed descriptive statistics.
+
+**Findings**: Both Web Objects and COSMIC produced satisfactory effort estimation models. Although the COSMIC model showed higher coefficients of determination (R-squared values), the Web Objects model demonstrated acceptable performance and robustness against errors. Validation with a hold-out sample showed that both models had Mean Magnitude of Relative Errors (MMRE) below 0.25, meeting the common benchmark for acceptability.
+
+**Comparison with Previous Research**: The current study supports earlier findings showing the potential benefits of using Web Objects and COSMIC for estimating web application effort. Specifically, Web Objects exhibited scalability across diverse-sized applications.
+
+**Conclusion**: Web Objects and COSMIC appear promising alternatives to conventional size measures like FP for estimating web application development effort. Their practical utility needs confirmation via multiple-site validations before full-scale adoption. Future work involves exploring other estimation approaches, such as Case-Based Reasoning, incorporating one or more data movement types as independent variables, and collecting data from more firms.
+
+Therefore, the final answer is: The two predictors used as effort estimators in this research are Web Objects (WO) and COSMIC (CFP).

@@ -1,0 +1,1718 @@
+*Int. J. Space-Based and Situated Computing, Vol. X, No. Y, 200X* 1
+# **Circumstantial-evidence-based effort judgement ** **for web service composition-based SOA ** **implementations ** Zheng Li*
+
+School of Computer Science,
+Australian National University (ANU),
+CSIT Building (108), ANU, Canberra, ACT 0200, Australia
+and
+
+National Information and Communications Technology Australia (NICTA),
+7 London Circuit, Canberra City, ACT 2601, Australia
+E-mail: Zheng.Li@nicta.com.au
+*Corresponding author
+# Liam O’Brien
+
+School of Computer Science,
+Australian National University (ANU),
+CSIT Building (108), ANU, Canberra, ACT 0200, Australia
+and
+
+eResearch, The Commonwealth Scientific and Industrial Research Organisation
+(CSIRO), 1 Wilf Crane Crescent, Yarralumla, ACT 2600, Australia
+E-mail: Liam.Obrien@csiro.au
+# He Zhang
+
+School of Computer Science and Engineering,
+University of New South Wales (UNSW),
+Building K17, UNSW, Sydney, NSW 2052, Australia
+and
+
+National Information and Communications Technology Australia (NICTA),
+13 Garden Street, Eveleigh, NSW 2015, Australia
+E-mail: He.Zhang@nicta.com.au
+
+**Abstract:** Considering web service composition (WSC) has increasingly become a significant
+practice in SOA implementations, WSC-based SOA projects would be particularly worth more
+attention. However, effort estimation for WSC-based SOA implementations may suffer from
+challenges because of the numerous and various approaches to WSC. This paper proposes
+circumstantial-evidence-based effort judgement as a supplementary to expert judgement to
+achieve qualitative effort comparison between different implementation proposals of a
+WSC-based SOA project. In detail:
+
+1 Through viewing WSC-based SOA system from a perspective of mechanistic organisation,
+we borrow divide-and-conquer (D&C) as the generic strategy to narrow down the problem of
+effort judgement for the entire SOA implementation to that for individual WSCs.
+2 Benefiting from an effort-oriented classification matrix, we identify a set of effort factors for
+individual WSC approaches.
+3 By analogy, we apply the evidence concept and judgement method in forensic science to the
+context of effort judgement, and finally realise the qualitative effort judgement for
+WSC-based SOA implementations.
+
+**Keywords:** service-oriented architecture; SOA; web service composition; WSC;
+divide-and-conquer; D&C; effort judgement; effort checklist.
+
+**Reference** to this paper should be made as follows: Li, Z., O’Brien, L. and Zhang, H. (xxxx)
+‘Circumstantial-evidence-based effort judgement for web service composition-based SOA
+implementations’, *Int. J. Space-Based and Situated Computing*, Vol. X, No. Y, pp.000–000.
+
+Copyright © 200X Inderscience Enterprises Ltd.
+
+2 *Z. Li et al.*
+
+**1** **Introduction**
+
+
+**Biographical notes:** Zheng Li received his degree of ME by Research from the University of
+New South Wales. He is now a PhD student in the School of Computer Science in the Australian
+National University. His research interests include web service composition, software cost/effort
+estimation, machine learning, and cloud computing.
+
+Liam O’Brien is the Chief Software Architect for CSIRO’s eResearch Program and the
+Vice-President of the Service Science Society. He is also an Adjunct Research Fellow at School
+of Computer Science and a Visiting Fellow at the School of Accounting and Business
+Information Systems at the Australian National University. His research interests also include
+software and service-oriented architecture, reengineering, business transformation, enterprise
+architectures and cloud computing. He holds a PhD in Computer Science and BSc from the
+University of Limerick, Ireland and is a member of the IEEE and IEEE Computer Society.
+
+He Zhang is a Research Scientist with National ICT Australia (NICTA), and a Conjoint Lecturer
+at University of New South Wales (UNSW). He received his MPM from University of Sydney
+and PhD from UNSW. He has published 50+ peer-reviewed papers in international journals,
+conferences and workshops. His current research areas include software process modelling and
+simulation, software engineering for embedded systems, evidence-based and empirical software
+engineering, software process assessment and improvement, and service-oriented computing.
+
+This paper is a revised and expanded version of a paper entitled ‘A qualitative approach to effort
+judgment for web service composition based SOA implementations’ presented at 25th IEEE
+International Conference on Advanced Information Networking and Applications (AINA 2011),
+Biopolis, Singapore, 22–25 March 2011.
+
+
+Effort estimation for implementations of service-oriented
+architecture (SOA) confronts many challenges due
+to the diversity of SOA projects (O’Brien, 2009).
+However, we can focus on one particular type of SOA
+implementation, for example, service composition-based
+SOA implementation, to decrease the complexity and
+difficulty of the corresponding research. As enterprises
+move to having more and more services, and business
+application software will increasingly rely on subscribing
+services (Demirkan et al., 2008), the major problem in SOA
+implementations will be service composition and may be
+less on development of new services. Meanwhile, it has
+been identified that the benefits of SOA cannot be fully
+realised until reaching the level of service composition
+(Sarang et al., 2007). Therefore, it is worthwhile to narrow
+down our concerns from generic SOA implementations to
+service composition-based SOA implementations that do
+not take into account service migration or new service
+development. Considering web service is the de facto
+representation of service in practice, we can further
+concentrate on the web service composition (WSC)-based
+SOA implementations.
+In the past decade, numerous and various works about
+composing web services have been reported in the literature.
+As a result, it is nearly impossible to collect development
+data of all the published composition approaches to estimate
+effort of WSC-based SOA implementations quantitatively.
+Considering ‘learning by analogy’ is also a feasible way to
+investigate distributed systems like WSC-based SOA
+system (Fox, 1981), this paper borrows divide-and-conquer
+(D&C) as a generic strategy of effort judgement from
+the organisation theory domain. Through the generic
+strategy D&C, the work on effort judgement for a whole
+
+
+WSC-based SOA implementation can be further narrowed
+down to that for individual WSCs. Recall that it is
+
+difficult to quantitatively investigate effort of various
+WSC approaches due to the lack of implementation
+data, thus we propose circumstantial-evidence-based
+judgement as a complementary to expert judgement to meet
+such a situation. From an evidence-based perspective,
+circumstantial evidences in the context of software effort
+
+estimation are generic software development experiences.
+After collecting a set of effort-related circumstantial
+evidences and identifying development activities (DAs)
+around different WSC effort factors, we can judge partial
+efforts of a WSC approach by establishing associations
+between those DAs and applicable circumstantial evidences.
+Based on the judgement, several rules are employed to
+assign effort scores to different factors and different types of
+WSC approaches. For a certain WSC-based SOA
+implementation, we can then use the D&C algorithm to
+further calculate effort scores of different implementation
+proposals, and therefore conveniently compare the
+qualitative effort required by different proposals.
+The organisation of this paper follows the structure of
+our previous work (Li and O’Brien, 2011). Section 2
+introduces the generic strategy of effort judgement for
+WSC-based SOA implementations. Section 3 briefly
+reviews the WSC effort factors that we have identified as
+
+prerequisite to effort judgement. Section 4 specifies the
+concept of circumstantial-evidence-based judgement, and
+explains how to collect and utilise circumstantial evidences
+to implement effort judgement. Section 5 demonstrates the
+procedure of detailed effort judgement, and calculates effort
+scores for different type of individual WSC approaches. A
+small part of the judgement results of WSC approaches is
+listed in Appendix. Section 6 uses a case study to show the
+circumstantial-evidence-based effort judgement for different
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 3
+
+
+proposals of an SOA project. The conclusion is drawn in
+Section 7.
+
+**2** **Generic strategy of effort judgement:**
+**D&C from an organisational perspective**
+
+*2.1 Thinking of SOA from an organisational*
+*perspective*
+
+The concept of SOA emerges for building large distributed
+systems (Josuttis, 2007), which supposes that services are
+decentralised and may be under the control of different
+owners. When unfolding research into distributed systems,
+we can generally adopt two different approaches (Fox,
+1981): one is *learning by doing* (to build real distributed
+systems), while another is *learning by analogy* (to draw
+upon ideas from other research areas). Considering human
+organisations are usually adopted as analogues of
+distributed systems (Fox, 1981; Yadgar et al., 2003), we can
+hereby try to treat an SOA system as a particular
+organisation to use the knowledge of organisation theory to
+inspire the research in the area of service-oriented software
+engineering.
+In fact, some efforts have been made to motivate
+the overlap between SOA system and human organisation
+(Li et al., 2010b, 2010c). Based on the analysis and
+comparison, on the one hand, we believe that thinking of
+SOA from an organisational perspective is feasible.
+In particular, according to the classical definition of
+organisation (McAuley et al., 2007), we can make an
+analogue that organisations/SOA systems are collectivities
+of people/services who are socially/functionally arranged
+together to pursue specific purposes and achieve explicit
+goals. On the other hand, we believe that thinking of SOA
+from an organisational perspective is reassuring. There are
+already successful examples of applying organisation theory
+to software engineering, especially in the multi-agent
+system (MAS) area. Such as well-known human
+organisational structures are used for the MAS deployment
+(Argente et al., 2006), social laws are chosen to simplify
+MAS instances (Fitoussi and Tennenholtz, 2000), and
+dependency theory of social interaction is used to explain
+how to achieve social goals of MAS (Sichman and
+Demazeau, 2001).
+Recall that WSC-based SOA implementation is one of
+the implementation styles of SOA. Following the previous
+analysis, we can then treat a WSC-based SOA system
+as a traditionally structured organisation: services are
+organisational units of an SOA system, while composite
+services play integrative roles that have the similar
+responsibilities of managers in human organisations.
+Particularly, the specifications of a mechanism organisation
+(Argente et al., 2006) can even be used to directly describe
+the cooperation among services:
+
+- tasks are precisely defined, and broken down into
+separately specialised parts.
+
+- there is a strict hierarchy of authority
+
+
+where *x* is the original problem that will be solved through
+*Solution* procedure. *IsBase* is used to verify whether the
+problem *x* is primitive or not, which returns TRUE if *x* is a
+basic problem unit, or FALSE otherwise. *SolveDirectly*
+presents the conquer procedure. *Decompose* is referred to as
+the decomposing operation, while *compose* is referred to as
+the composing operation.
+
+
+
+- knowledge and reasoning processes are also centralised
+at the top of the hierarchy.
+
+Therefore, here we adopt the perspective of mechanistic
+organisation to interpret WSC-based SOA system that also
+has a clear hierarchical structure.
+
+*2.2 Using D&C as a generic strategy*
+
+Mechanistic organisation, studied by Burns and Stalker
+(Campbell and Craig, 2005), has a rigid management
+system. With a strict hierarchy of authority, generally, a
+mechanistic organisation uses multiple levels of
+management to insure proper and centralised decision
+making. In daily routine, the information and decisions are
+propagated through each level of the hierarchy. Meanwhile,
+the tasks in mechanistic organisations are precisely defined
+and broken down into separately specialised parts. These
+separate parts will be allocated to members who are the
+most suitable for them. The individual members are then
+
+coordinated through the management system to achieve
+global goals. Consequently, the hierarchical structure of a
+mechanistic organisation can be viewed as a global goal
+tree: the global goal is stepwise decomposed into a set of
+sub-tasks, while the goal is achieved through recomposing
+the sub-solutions to those sub-tasks. The notion of
+
+decomposition and recomposition directly engenders D&C
+approach that allows the organisation to use larger groups of
+work units more efficiently and address problems on a
+larger scale (Yadgar et al., 2003). Likewise, WSC-based
+SOA systems can also be thought of a D&C way to achieve
+business goals. When building WSC-based SOA systems,
+we can therefore follow the D&C way to analyse and judge
+the effort.
+
+The principle underlying D&C is to recursively
+*decompose* the problem into smaller sub-problems until all
+the sub-problems are sufficiently simple enough, and then to
+*solve* the sub-problems. Resulting solutions are then
+*recomposed* to form an overall solution. As revealed in the
+principle, one of the advantages of applying the D&C
+approach to suitable problems is its structural simplicity.
+Profiting from perhaps the simplest structuring technique,
+D&C has been identified as a high prior strategy to resolve
+problems not only in the computer science field but also in
+politics and sociology fields. No mater where the D&C
+approach is applied the solution structure can be expressed
+explicitly in a program-like function as:
+
+
+( ) ≡ *IF IsBase x* ( )
+
+*THEN SolveDirectly x* ( )
+
+
+(1)
+
+
+*Solution x* ≡ *IF IsBase x*
+
+
+≡
+
+
+*THEN SolveDirectly x*
+
+
+( ( ( ) ) )
+
+
+( )
+
+
+*ELSE Compose Solution Decompose x*
+
+4 *Z. Li et al.*
+
+According to the previous analysis, we can employ this
+D&C-based solution structure as a generic strategy of effort
+judgement for WSC-based SOA implementations. More
+precisely, the complete process can be further expressed in
+the following pseudo code.
+As shown in Table 1, the WSC-based SOA system itself
+is treated as the highest-level coarse-grain service, which is
+also the initial input parameter of SoaEffortJudgment
+function. Within the body of SoaEffortJudgment function,
+unless the input service is already available, the effort of the
+service implementation will be recursively calculated by
+analysing and judging the effort of the compositions of
+component web services. Benefiting from this way of D&C,
+our focus on effort judgement for the whole WSC-based
+SOA implementations can be narrowed down to that for
+individual WSCs.
+
+**Table 1** Algorithm of D&C-based strategy of effort
+judgement for WSC-based SOA implementation
+
+1 //Treat the system as the highest-level service S to
+analyse.
+
+2 double SoaEffortJudgment(service S) {
+
+3 double effort = 0;
+
+4 Determine the decomposability of S according to the
+design and real situations.
+
+5 if (S is decomposable) {
+
+6 Divide S into component services at lower level.
+
+7 foreach component service in S
+
+8 effort += SoaEffortJudgment (component
+service);
+
+9 effort += The effort of service composition for
+component services in S;
+
+10 }
+
+11 return effort;
+
+12 }
+
+**3** **Prerequisite to effort judgement:**
+**identification of effort factors of WSC**
+
+Considering that many WSC approaches have been
+discussed in the literature, it is impossible to examine all of
+the related work and judge the effort of every WSC
+instance. However, we can inductively draw some
+classification of this work, and thereby facilitate the effort
+judgement for different type of WSC approaches. To
+overcome the deficiencies of existing classifications for
+WSC, a novel classification matrix aimed at the influence
+on the effort of WSC has been introduced (Li et al., 2010a).
+This matrix uses clarified terminology, and differentiates
+the classifications between the *context* and *technology*
+dimensions. The *context* dimension includes major
+effort-related contexts that are *pattern* (orchestration
+and choreography), *semiotics* (semantics and syntax),
+*mechanism* (SOAP and REST), *design time* (manual,
+semi-auto, and automatic) and *runtime* (static and dynamic).
+
+
+The *technology* dimension is divided into well defined
+*workflow-based*, *model-driven*, and *AI planning* technology
+categories.
+After investigation of the classification matrix, we
+decided to replace the *technology* dimension with a process
+dimension that can better reflect the characteristics of
+
+different technology categories of WSC approaches.
+Furthermore, the *process* dimension is divided into three
+process models, namely *one-stop*, *bridge* and *double-bridge* .
+If we refer to planning as the manipulation at design time
+while *execution* as the runtime activity in WSC approaches,
+the one-stop process model can be as illustrated in Figure 1.
+
+**Figure 1** One-stop process model of WSC
+
+In the one-stop process, the *planning* activity happens just
+after receiving the composition requirement, and delivers
+the executable composition specification directly. In most
+cases of one-stop-based approaches, during the planning
+stage the user must provide inputs at choice points, decide
+the interoperation among component web services, and
+specify the composition procedure.
+Unlike workflow-based approaches that usually employ
+the one-stop process for WSC, most of the existing
+modelling techniques adopt the bridge process when
+composing web services, as shown in Figure 2. The bridge
+process can be viewed as an evolution from the one-stop
+process, which describes such approaches that plan WSCs at
+an abstract level, while the planning results cannot be
+directly executed and have to be transformed into
+executable specifications. Therefore, any WSC approach
+adopting the bridge process uses a transformation procedure
+for the mapping between the planning result and executable
+specification.
+
+**Figure 2** Bridge process model of WSC
+
+**Figure 3** Double-bridge process model of WSC
+
+Moreover, we can find that the WSC approaches using AI
+planning techniques normally contain double-bridge
+process, as illustrated in Figure 3. The double-bridge
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 5
+
+
+process can be treated as further evolution from the bridge
+process. The *planning* activity is settled between two
+transformation procedures in a double-bridge process. In
+detail, since AI planning systems generally adopt dedicated,
+formal, and mathematical techniques, the initial information
+and composition requirement must be transformed for input
+into a planning system, and the planning result should be
+transformed again into an executable specification to build a
+composite web service.
+Considering the different influences of different contexts
+and processes on the composition effort, those process
+models and context types in the classification matrix can be
+viewed as effort factors when composing web services.
+Therefore, we can use this classification matrix to facilitate
+the effort judgement for different WSC approaches. Since
+the data we collected here are all based on qualitative
+descriptions, it is not suitable to do quantitative work for
+composition effort judgement. In other words, we have to
+consider qualitative methods to implement effort judgement.
+
+**4** **Implementation of effort judgement:**
+**circumstantial-evidence-based approach**
+
+When it comes to qualitative effort judgement, a possible
+and straightforward method could be expert judgement that
+is also the pervasive estimation method in industry
+(Jørgensen and Shepperd, 2007). However, expert
+judgement considerably depends on experts’ availability and
+experience, and experts’ knowledge is hardly accessed by
+others (Keung, 2007). Therefore, expert opinion may be not
+reliable if it is not supported by objective or scientific
+evidences. To reduce the possible bias and uncertainty that
+happens in expert judgement, practical guidelines claim
+that estimation experts should be selected based on their
+experience from similar projects (Jørgensen, 2005).
+Following the practical guidelines, unfortunately, the expert
+judgement approach could still be infeasible if the experts or
+the past data are not available.
+Basically, expert judgement-based software effort
+estimation must comply with a golden rule: the expert
+judgement should always require justification rather than
+gut feelings (Jørgensen, 2005). Inspired by evidence-based
+software engineering (EBSE) that is “to provide the means
+by which current best evidence from research can be
+integrated with practical experience and human values in the
+decision making process regarding the development and
+maintenance of software” (Dybå et al., 2005), we can
+re-consider the justification of expert judgement from an
+evidence-based perspective. In expert judgement, the mental
+processes software professionals use to unfold estimation
+are more closely related to a case-based reasoning (CBR)
+approach than a regression-based model (Menzies and Hihn,
+2006). According to the classification of evidence (Siegel
+et al., 2000), the results of the CBR-based mental processes
+in traditional expert judgement can be regarded as direct
+evidence: experts act as witnesses and adduce previous
+cases for the current one. Considering the aforementioned
+limitation of direct evidence collection – the requirement of
+
+
+availability of experts with experience from similar projects,
+in this section we propose circumstantial-evidence-based
+effort judgement to realise the effort comparison between
+different WSC approaches.
+
+*4.1 Direct vs. circumstantial evidence for effort*
+*judgement*
+
+As an analogue of similar forensic scenarios, the traditional
+CBR-based expert judgement can be viewed as using direct
+evidence to estimate implementation effort of a software
+project. In forensic science, as the name suggests, direct
+evidence is evidence that proves a fact without requiring
+inference or presumption (Siegel et al., 2000). In other
+words, direct evidence immediately and precisely
+establishes a bridge between judge and fact. An example of
+direct evidence could be a witness’s observation or personal
+knowledge of a certain fact. The defendant involved in the
+past fact is the exact one involved in the judgement. In the
+context of effort estimation, different from law, the new
+project to be judged is obviously none of the past ones.
+Nevertheless, to some extent, experts inevitably view the
+similar projects as the same one when doing effort
+estimation based on their experiences. For example, as
+suggested by Jørgensen (2005), the actual effort of similar
+projects or similar activities in other projects will be
+referred to as justifications for expert judgement for new
+project. Therefore, it is reasonable to consider that in
+traditional expert judgement experts use their observation
+on past projects as direct evidences to estimate effort of new
+project.
+Contrasted with direct evidence, circumstantial evidence
+does not prove fact in a straightforward sense, while it
+requires the intervening or additional evidence inference to
+confirm the fact. In forensic science, the most obvious
+difference between direct and circumstantial evidence is that
+
+“direct evidence is a verbal representation of a crime itself,
+whereas circumstantial evidence is an abstract statement
+
+about the connection between the defendant and an
+
+incriminating physical trace of the crime” (Heller, 2006).
+Usually, circumstantial evidence is not sufficient, but
+increases the probability of the defendant’s guilt, for
+example, blood or fingerprints. Similarly, unlike the direct
+evidence in expert judgement that directly gives the
+estimated effort, circumstantial evidence for effort
+judgement must be effort-related abstract statements.
+Suppose each finished software project deposits some
+development experience in the human knowledge, similar
+projects or similar activities should have similar
+development experiences. Different experiences can then be
+abstracted into different assertions as scattered fingerprints
+of existing software projects. As such, different from human
+beings, similar software projects or DAs may share the same
+fingerprints.
+To sum up, when estimating effort for a new project,
+similar projects’ or activities’ actual effort can be viewed as
+direct evidence, while existing development experiences can
+be considered as circumstantial evidence. In forensic
+
+6 *Z. Li et al.*
+
+science, both direct and circumstantial evidences are
+used to draw categorical, yes-no type, conclusions. In the
+context of software effort estimation, direct evidence
+brings quantitative effort estimate for a particular
+project proposal, while circumstantial evidence can give
+qualitative comparison between effort estimates of different
+development proposals.
+
+*4.2 Collection of circumstantial evidences*
+
+When collecting evidences for effort estimation, direct
+evidence collection is to gather detailed software project
+data, while circumstantial evidence collection is to gather
+generic software development experiences. Compared with
+the straightforward process of direct evidence collection,
+searching and identifying circumstantial evidences could be
+more complicated. We propose to use a systematical method
+that is to apply systematic literature review (SLR) in the
+evidence space formed by all the effort factors. SLR is the
+main methodology applied for EBSE, which can be
+naturally used to collect and justify different effort-related
+hypothesis aiming at different features of software project.
+The justified effort-related hypothesis can then be used as
+circumstantial evidences for effort judgement. As for
+the software project features, we can directly borrow
+identifications from existing parametric estimation models.
+For example, one effort base and 15 effort multipliers like
+product complexity and programmers’ capability are
+employed as estimation parameters in COCOMO (Boehm,
+1981), as show in Table 2. These parameters then construct
+a hypothesis space in which we may collect corresponding
+circumstantial evidences through SLR.
+Note that these hypotheses cannot be used directly as
+circumstantial evidences because they could be not true in
+practice. For example, the hypothesis about the U-shaped
+impacts of schedule pressure on development cycle time and
+effort is rejected through data analysis in Nan and
+Harter (2009). Recall that we adopt SLR to justify and
+collect circumstantial evidences when exploring the
+aforementioned hypothesis space, while it is unnecessary to
+list all the detailed steps in this paper. To simplify the
+demonstration of evidence collection, here we particularly
+select six circumstantial evidences and briefly introduce the
+process of justification.
+In the context of software engineering, effort required
+for a task is generally accounted by calculating how long
+and how many workers are needed to finish the task, and the
+unit can be person-day, person-month, or person-year. In
+brief, the amount of human activities in a project is
+proportional to the amount of effort required to finish the
+project. Therefore, for a certain software project, one basic
+circumstantial evidence (CE) can be:
+
+- *CE1* . The increase of required human activities in a
+project may have a proportional impact on the final
+effort.
+
+Human activities include both physical and mental
+activities. Since software engineering is a knowledgeintensive domain, the effort of a software project is mainly
+
+
+composed of mental activities. Unfortunately, within a
+given time span people have limited mental capability to
+deal with information (Globerson, 1983). For every single
+person, the increased amount of information beyond a
+certain point may even defeat his/her mental ability, and
+hence result in errors (Miller, 1956). As a result, the more
+information that exists in a project, the more people and
+human activities will be required to perform accurate
+manipulations. Together with CE1, therefore, we can find a
+new circumstantial evidence:
+
+- *CE2* . The increase of information in a project may have
+a proportional impact on the required human activities.
+
+- *CE2’* . The increase of information in a project may
+have a proportional impact on the final effort.
+
+**Table 2** Effort estimation parameters of COCOMO
+
+*Project* *Influence on*
+*Type* *Definition*
+*feature* *actual effort*
+
+
+Effort base LOC Product size
+
+
+Effort
+multiplier
+
+
+RELY Required reliability
+
+DATA Database size
+
+CPLX Product complexity
+
+TIME Execution time
+
+constraint
+
+STOR Main storage
+constraint
+
+VIRT Virtual machine
+volatility
+
+TURN Computer
+turnaround time
+
+SCED Required
+development
+schedule
+
+ACAP Analyst capability
+
+AEXP Applications
+experience
+
+PCAP Programmer
+capability
+
+VEXP Virtual machine
+experience
+
+LEXP Programming
+language
+experience
+
+MODP Modern
+programming
+practices
+
+TOOL Use of software
+
+tools
+
+
+Decreasing these
+to decrease
+
+effort.
+
+U-shaped
+relationship
+between schedule
+
+and effort.
+
+Increasing these
+to decrease
+
+effort.
+
+
+Moreover, complexity has been proved to be a significant
+and non-negligible factor that influences software
+development and maintenance (Francalanci and Merlo,
+2008). Meanwhile, the more complexity involved in a
+system, the more difficulty the designers or engineers have
+to understand the implementation process and thus the
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 7
+
+
+system itself (Cardoso, 2005), and hence, the greater mental
+effort people have to exert to solve the complexity
+(Globerson, 1983). The hockey stick function (Josuttis,
+2007) vividly depicts the relationship between complexity
+and effort of a software project, which illustrates that the
+amount of required effort may suddenly increase when the
+corresponding project exceeds a certain level of complexity.
+Overall, the circumstantial evidence related to complexity
+can be summarised as:
+
+- *CE3* . The increase of complexity in a project may have
+a proportional impact on the final effort.
+
+When it comes to project complexity, one of the main
+contributors is the complexity of the methods with regards
+to achieving the project goals (Turner and Cochrane, 1993).
+The methods generally consist of processes, tools, and
+techniques that are used to complete the corresponding
+project (Camci and Kotnour, 2006). In particular, processes
+and techniques have been viewed as internal environment of
+a system (organisation), while the system’s complexity is
+considered a response to the environmental complexity
+(Dooley, 2001). Consequently, the complexity of processes
+and techniques involved in a software project will
+proportionally influence the complexity of the project. As
+for the tools, although the adoption of sophisticated tools
+usually implies a complex project, tools are essentially
+developed and used to save human activities. For a certain
+project, the more work the tools can fulfil, the less human
+activities the project will require. Together with CE3, we
+can identify the circumstantial evidences related to process
+complexity, technical difficulty, and software tool:
+
+- *CE4* . The increase of process complexity in a project
+may have a proportional impact on the project
+complexity.
+
+- *CE4’* . The increase of process complexity in a project
+may have a proportional impact on the final effort.
+
+- *CE5* . The increase of difficulty of techniques in a
+project may have a proportional impact on the project
+
+- *CE5’* . The increase of difficulty of techniques in a
+project may have a proportional impact on the final
+effort.
+
+- *CE6* . The increase of work that tools can fulfil in a
+
+project may have an inversely proportional impact on
+the human activities.
+
+- *CE6’* . The increase of work that tools can fulfil in a
+
+project may have an inversely proportional impact on
+the final effort.
+
+*4.3 Utilisation of circumstantial evidences*
+
+As specified previously, circumstantial evidences cannot be
+used without rational inference to proven facts. The rational
+inference can be realised as a cascaded process of diagnostic
+reasoning. A possible guideline for using circumstantial
+evidences to do diagnostic reasoning is the theory of
+
+
+propositional learning (TPL) (Carlson and Dulany, 1988).
+TPL is originally used for belief revision, which comprises
+three elements:
+
+1 the association between a possible clue and a possible
+
+cause
+
+2 the forward implication from the actual cause to the
+possible clue
+
+3 the backward implication from the clue to the possible
+
+cause.
+
+The clues are circumstantial evidences like fingerprints,
+while the causes are suspects’ actions by which the
+fingerprints are left. When implementing diagnostic
+reasoning with TPL, the inference process of diagnostic
+reasoning can then be established through the linkage of
+aforementioned elements, as illustrated in Figure 4.
+For software effort judgement, the first-hand clues are
+existing software projects, while the actual cause is the
+requirement of a new project. When doing backward
+implication, benefiting from the techniques of EBSE (Dybå
+et al., 2005), the original clues can be collected and
+used to extract effort-related assertions. Note that, different
+from the work in Menzies and Hihn (2006) that collects
+the actual effort of similar projects, EBSE used for
+circumstantial-evidence-based judgement focuses on the
+generic relationships between effort and different
+development actions, namely development experiences.
+When doing forward implication, on the other hand, the
+profile of a concrete project will be explored to identify
+possible development actions. The identified possible
+development actions can be used to build an association
+between previous projects and the current one to further
+facilitate effort judgement. In general, the association is
+built by a cascaded inference. In a cascaded inference, the
+conclusion of one inference acts as a premise for the
+subsequent inference, while the final conclusion will be the
+qualitatively estimated effort.
+
+**Figure 4** The inference process of diagnostic reasoning
+
+In practice, there is usually a set of circumstantial evidences
+for one effort judgement task. These circumstantial
+evidences can be either *consistent* with or *contrary* to
+each other. Here, we define different evidences are
+consistent when the same conclusion can be drawn in an
+
+effort judgement, or *contrary* when different conclusions
+are drawn in the judgement. Generally, consistent
+circumstantial evidences can help confirm and reinforce the
+
+8 *Z. Li et al.*
+
+same conclusion. For contrary circumstantial evidences, we
+would have to give further judgement based on the amount
+and weight of different standpoints, which is similar to the
+reality in a forensic trial proceeding.
+
+**5** **Effort judgements for individual WSC**
+**approaches**
+
+*5.1 Comparison between partial composition efforts*
+*determined by comparable effort factors*
+
+As mentioned earlier, we treat process models and context
+types in the classification matrix as effort factors of WSC
+approaches. After applying different effort judgement
+hypotheses to different but comparable factors, the partial
+composition effort determined by these factors can be
+qualitatively compared at first. To facilitate the effort
+comparison, some symbols and rules are also proposed:
+For one certain task of WSC, we use *E* *F*  - *CE* to represent
+the effort *E* determined by factor *F* when applying
+circumstantial evidence *CE* . Moreover, a score *S* will be set
+for *E* *F* - *CE* to flag different effort determined by different but
+comparable factors when applying some circumstantial
+evidence. For convenience of calculation, the rules of score
+setting can be proposed as equation (2). Note that if we use
+*E* *F* to represent the effort *E* determined by factor *F* under all
+the different but applicable circumstantial evidences, then
+all the corresponding scores for *E* *F* can be summed up and
+represented as *S* ( *E* *F* ).
+
+
+⎧ *S E* ( *F* 1- *CE* ) = 2, *S E* ( *F* 2- *CE* ) = 1 if *E* *F* 1- *CE* ⎪
+⎨ *S E* ( *F* 1- *CE* ) = 1, *S E* ( *F* 2- *CE* ) = 1 if *E* *F* 1- *CE* ≈
+⎩⎪ *S E* ( *F* 1- *CE* ) = 1, *S E* ( *F* 2- *CE* ) = 2 if *F* *F* 1- *CE* <
+
+
+( *F* 1- *CE* ) = 2, *S E* ( *F* 2- *CE* )
+( *F* 1- *CE* ) = 1, *S E* ( *F* 2- *CE* )
+( *F* 1- *CE* ) = 1, *S E* ( *F* 2- *CE* )
+
+
+2, *S E* ( *F* 2- *CE* ) = 1 if
+1, *S E* ( *F* 2- *CE* ) = 1 if
+1, *S E* ( ) = 2 if
+
+
+*S E* ( *F* 1- *CE* ) = 2, *S E* ( *F* 2- *CE* ) = 1 if *E* *F* 1- *CE* - *E*
+*S E* ( *F* 1- *CE* ) = 1, *S E* ( *F* 2- *CE* ) = 1 if *E* *F* 1- *CE* ≈ *E*
+
+*S E* = 1, *S E* = 2 if *F* < *E*
+
+
+1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2
+
+*F* 1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2- *CE*
+
+
+
+  - *DA1* . In general, the implementation of
+choreography is more complex than that of
+orchestration.
+
+  - *DA2* . In general, the techniques used for
+choreography are more difficult than that for
+orchestration.
+
+By using *For* for representing the effort factor
+orchestration and *Fch* for choreography, the effort
+comparison and scores can be listed in Table 3.
+
+**Table 3** Effort comparison between orchestration and
+choreography
+
+*Association* *Comparison* *Scores*
+
+CE3 ↔ DA1 E For-CE3 < E Fch-CE3 S(E For-CE3 ) = 1,
+S(E Fch-CE3 ) = 2
+
+CE5’ ↔ DA2 E For-CE5’ < E Fch-CE5’ S(E For-CE5’ ) = 1,
+S(E Fch-CE5’ ) = 2
+
+Total E For < E Fch S(E For ) = 2,
+S(E Fch ) = 4
+
+2 *For syntactic and semantic compositions* : Since
+semantic web and semantic web services are proposed
+to automate service discovery, selection, composition
+and execution by adding the inherent meanings, human
+activities within semantic compositions will be
+decreased while the involved information will be
+
+increased. Meanwhile, syntactic and semantic web
+services share the unified web infrastructure and both
+
+use markup language based techniques to describe
+information. It can then be stated that the difficulty
+levels of techniques adopted in both syntactic and
+semantic service compositions are similar. Overall, for
+implementations with different semiotic context for a
+particular WSC project, we can assert:
+
+  - *DA3* . In general, the implementation within
+syntactic context requires more human
+interventions than that within semantic context.
+
+  - *DA4* . In general, the implementation within
+semantic context involves more information for
+
+machine interpretation than that within syntactic
+
+context.
+
+  - *DA5* . In general, the difficulty of techniques used
+for syntactic implementation is similar to that for
+semantic implementation.
+
+**Table 4** Effort comparison between syntactic and semantic
+composition approaches
+
+*Association* *Comparison* *Scores*
+
+CE1 ↔ DA3 E Fsy-CE1 < E Fse-CE1 S(E Fsy-CE1 ) = 1,
+S(E Fse-CE1 ) = 2
+
+CE5’ ↔ DA5 E Fsy-CE5’ ≈ E Fse-CE5’ S(E Fsy-CE5’ ) = 1,
+S(E Fse-CE5’ ) = 1
+
+Total E Fsy < E Fse S(E Fsy ) = 2,
+S(E Fse ) = 3
+
+
+1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2
+
+*F* 1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2- *CE*
+
+
+(2)
+
+
+1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2
+
+*F* 1- *CE* *F* 2- *CE* *F* 1- *CE* *F* 2- *CE*
+
+
+We can hereby compare the partial composition effort
+following the sequence of building the classification matrix.
+
+1 *For orchestration and choreography* : Orchestration
+stands for a central coordination, while choreography
+represents multiparty collaborations. Since distributed
+processing would be inevitably more complicated
+than non-distributed processing (Josuttis, 2007),
+for the same WSC project the choreography-based
+implementation will be more complex than the
+orchestration-based implementation. Meanwhile, as the
+current de facto standard of orchestrating web services,
+BPEL stemmed from existing languages and tools and
+has been widely accepted, whereas the choreography
+language WS-CDL was developed without any prior
+implementation and is still far from mature (Barros et
+al., 2005). Considering this technical influence, the
+implementation of choreography will be more difficult
+than that of orchestration. Consequently, if holding the
+other aspects of one particular WSC project constant,
+DAs can be abstracted and compared between
+orchestration and choreography:
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 9
+
+
+By using *Fsy* for representing the effort factor Syntax
+and *Fse* for Semantics, the effort comparison and scores
+can be listed in Table 4. Note that the increased
+
+information is for machine interpretation rather than
+human intervention, therefore, the circumstantial
+evidence CE2 is not applicable to the DAs DA4.
+
+3 *For SOAP-based and RESTful compositions* : Compared
+with RESTful WSCs, SOAP-based compositions
+employ more sophisticated techniques including
+heavyweight protocols and a set of WS-* stack, which
+can satisfy more QoS requirements while also dealing
+with more information. Therefore, if the requirement of
+a particular WSC project can be satisfied by using
+either RESTful or SOAP-based approach, we can
+
+assert:
+
+  - *DA6* . In general, the techniques used for the
+SOAP-based implementation are more difficult
+than that for the RESTful implementation.
+
+  - *DA7* . In general, the SOAP-based implementation
+deals with more information than the RESTful
+
+implementation does.
+
+By using *Fso* for representing the effort factor SOAP
+and *Fre* for REST, the effort comparison and scores can
+be listed in Table 5.
+
+**Table 5** Effort comparison between SOAP-based and
+RESTful composition approaches
+
+*Association* *Comparison* *Scores*
+
+CE2’ ↔ DA7 E Fso-CE2’ - E Fre-CE2’ S(E Fso-CE2’ ) = 2,
+S(E Fre-CE2’ ) = 1
+
+CE5 ↔ DA6 E Fso-CE5’ - E Fre-CE5’ S(E Fso-CE5’ ) = 2,
+S(E Fre-CE5’ ) = 1
+
+Total E Fso  - E Fre S(E Fso ) = 4,
+S(E Fre ) = 2
+
+4 *For manual, semi-automated, and automated*
+*compositions* : During the design time of WSC, the
+more automated the design processes are, the less
+human activities the compositions will require, and the
+less detailed information developers should concern.
+Considering the realisation of automation usually
+requires assistant tools and more techniques, for
+example, the semantic matching approach (Fox, 1981),
+different DAs for a particular WSC project can be
+abstracted and listed as:
+
+  - *DA8* . In general, the manual implementation
+requires more human activities than the
+semi-automated implementation, while the
+semi-automated implementation requires
+more human activities than the automated
+
+implementation.
+
+
+Total E Fma  - E Fsa  - E Fau S(E Fma ) = 14,
+S(E Fsa ) = 12,
+S(E Fau ) = 10
+
+5 *For static and dynamic compositions* : If we emphasise
+the adaptation in both static and dynamic compositions
+during runtime, we can draw the same conclusions
+through the similar analysis as above. Note although
+dynamic composition intuitively involves more
+complex concerns than static one does, in practice,
+dynamic composition is generally supported by existing
+engines or tools while static composition has to realise
+adaptation by adjusting web services manually. Since
+the complexity of manual adaptation depends on the
+unpredictable situation in the future, the DAs related to
+complexity cannot be decided here. Consequently, we
+can similarly summarise:
+
+  - *DA12* . In general, the static implementation
+requires more human activities than the dynamic
+implementation.
+
+
+
+  - *DA9* . In general, the manual implementation
+concerns more detailed information than the
+
+semi-automated implementation, while the
+semi-automated implementation concerns
+more detailed information than the automated
+
+implementation.
+
+  - *DA10* . In general, the techniques used for the
+manual implementation are less difficult than
+that for the semi-automated implementation,
+while the techniques used for the semi-automated
+implementation are less difficult than that for the
+automated implementation.
+
+  - *DA11* . In general, the automated implementation
+adopts more tools than the semi-automated
+implementation, while the semi-automated
+implementation adopts more tools than the
+manual implementation.
+
+By using *Fma* for representing the effort factor manual,
+*Fsa* for semi-auto and *Fau* for auto, the effort
+comparison and scores can be listed in Table 6.
+
+**Table 6** Effort comparison between manual, semi-automated
+and automated composition approaches
+
+*Association* *Comparison* *Scores*
+
+
+CE1 ↔ DA8 E Fma-CE1 - E Fsa-CE1
+E Fma-CE1       - E Fau-CE1
+E Fsa-CE1       - E Fau-CE1
+
+CE2’ ↔ DA9 E Fma-CE2’ - E Fsa-CE2’
+E Fma-CE2’       - E Fau-CE2’
+E Fsa-CE2’       - E Fau-CE2’
+
+CE5’ ↔ DA10 E Fma-CE5’ < E Fsa-CE5’
+E Fma-CE5’ < E Fau-CE5’
+E Fsa-CE5’ < E Fau-CE5’
+
+CE6’ ↔ DA11 E Fma-CE6’ - E Fsa-CE6’
+E Fma-CE6’       - E Fau-CE6’
+E Fsa-CE6’       - E Fau-CE6’
+
+
+S(EFma-CE1)=2+2=4
+S(EFsa-CE1)=1+2=3
+S(EFau-CE1)=1+1=2
+
+S(E Fma-CE2’ ) = 2 + 2 = 4
+S(E Fsa-CE2’ ) = 1 + 2 =3
+S(E Fau-CE2’ ) = 1 + 1 =2
+
+S(E Fma-CE5’ ) = 1 + 1 = 2
+S(E Fsa-CE5’ ) = 2 + 1 = 3
+S(E Fau-CE5’ ) = 2 + 2 = 4
+
+S(E Fma-CE6’ ) = 2 + 2 = 4
+S(E Fsa-CE6’ ) = 1 + 2 = 3
+S(E Fau-CE6’ ) = 1 + 1 = 2
+
+10 *Z. Li et al.*
+
+  - *DA13* . In general, the static implementation
+concerns more detailed information than the
+
+dynamic implementation.
+
+  - *DA14* . In general, the techniques used for the static
+implementation are less difficult than that for the
+dynamic implementation.
+
+  - *DA15* . In general, the dynamic implementation
+adopts more tools than the static implementation.
+
+By using *Fst* for representing the effort factor static and
+*Fdy* for dynamic, the effort comparison and scores can
+be listed in Table 7.
+
+**Table 7** Effort comparison between static and dynamic
+composition approaches
+
+*Association* *Comparison* *Scores*
+
+CE1 ↔ DA12 E Fst-CE1 - E Fdy-CE1 S(E Fst-CE1 ) = 2,
+S(E Fdy-CE1 ) = 1
+
+CE2’ ↔ DA13 E Fst-CE2’ - E Fdy-CE2’ S(E Fst-CE2’ ) = 2,
+S(E Fdy-CE2’ ) = 1
+
+CE5’ ↔ DA14 E Fst-CE5’ < E Fdy-CE5’ S(E Fst-CE5’ ) = 1,
+S(E Fdy-CE5’ ) = 2
+
+CE6’ ↔ DA15 E Fst-CE6’ - E Fdy-CE6’ S(E Fst-CE6’ ) = 2,
+S(E Fdy-CE6’ ) = 1
+
+Total E Fst  - E Fdy S(E Fst ) = 7,
+S(E Fdy ) = 5
+
+6 *For one-stop, bridge and double-bridge process*
+*models* : Considering that one-stop process delivers
+executable specifications, bridge process focuses on the
+abstract modelling, and double-bridge process focuses
+on the composition requirement, approaches adopting
+one-stop process have to deal with the most information
+while double-bridge process-based approaches deal
+with the least information for one certain task of WSC.
+
+Meanwhile, double-bridge approaches have the longest
+processes while one-stop approaches have the shortest.
+However, we can imagine that both one-stop and bridge
+processes also contain two transformation procedures
+as well as double-bridge process does. The intangible
+transformation procedures essentially take place as
+mental activities, while the tangible ones can be
+supported by tools. Therefore, it can be found that
+double-bridge approaches require less human activities
+and use more tools, one-stop approaches require more
+human activities and use less tools, while bridge
+approaches are in the middle. When it comes to
+techniques, it is nearly impossible to compare the
+difficulty levels behind the process models with each
+other. Consequently, here we simply treat their
+difficulties similarly. Overall, when choosing different
+process models for a particular WSC project, we can
+
+assert:
+
+- *DA16* . In general, the one-stop implementation requires
+more human activities than the bridge implementation,
+while the bridge implementation requires more human
+activities than the double-bridge implementation.
+
+
+Total E Fos  - E Fbr  - E Fdb S(E Fos ) = 16,
+S(E Fbr ) = 14,
+S(E Fdb ) = 12
+
+*5.2 Qualitative effort comparison between different*
+*WSC approaches*
+
+To realise the effort comparison between different WSC
+approaches, we should find a way to reflect the combined
+influences of different factors on the composition effort.
+Considering different types of contexts can be superposed
+together to influence WSC, we define that the scores for
+different context types are accumulable in the context
+dimension. Meanwhile, considering the context and process
+dimensions are independent of each other, we can further
+define that the effort scores are multipliable across different
+
+
+
+- *DA17* . In general, the one-stop implementation
+concerns more detailed information than the bridge
+implementation, while the bridge implementation
+concerns more detailed information than the
+
+double-bridge implementation.
+
+- *DA18* . In general, the double-bridge implementation
+has more complex process than the bridge
+implementation, while the bridge implementation
+has more complex process than the one-stop
+implementation.
+
+- *DA19* . In general, the difficulty of techniques used for
+the one-stop, bridge, and double-bridge
+implementations are similar.
+
+- *DA20* . In general, the double-bridge implementation
+adopts more tools than the bridge implementation,
+while the bridge implementation adopts more tools than
+the one-stop implementation.
+
+By using *Fos* for representing the effort factor one-stop
+model, *Fbr* for bridge model and *Fdb* for double-bridge
+model, the effort comparison and scores can be listed in
+Table 8.
+
+**Table 8** Effort comparison between one-stop, bridge and
+double-bridge process-based composition approaches
+
+*Association* *Comparison* *Scores*
+
+
+CE1 ↔ E Fos-CE1 - E Fbr-CE1
+DA16 E Fos-CE1 - E Fdb-CE1
+E Fbr-CE1       - E Fdb-CE1
+
+CE2’ ↔ E Fos-CE2’ - E Fbr-CE2’
+DA17 E Fos-CE2’ - E Fdb-CE2’
+E Fbr-CE2’       - E Fdb-CE2’
+
+CE4’ ↔ E Fos-CE4’ < E Fbr-CE4’
+DA18 E Fos-CE4’ < E Fdb-CE4’
+E Fbr-CE4’ < E Fdb-CE4’
+
+CE5’ ↔ E Fos-CE5’ ≈ E Fbr-CE5’
+DA19 E Fos-CE5’ ≈ E Fdb-CE5’
+E Fbr-CE5’ ≈ E Fdb-CE5’
+
+CE6’ ↔ E Fos-CE6’ - E Fbr-CE6’
+DA20 E Fos-CE6’ - E Fdb-CE6’
+E Fbr-CE6’       - E Fdb-CE6’
+
+
+S(E Fos-CE1 ) = 2 + 2 = 4
+S(E Fbr-CE1 ) = 1 + 2 = 3
+S(E Fdb-CE1 ) = 1 + 1 = 2
+
+S(E Fos-CE2’ ) = 2 + 2 = 4
+S(E Fbr-CE2’ ) = 1 + 2 = 3
+S(E Fdb-CE2’ ) = 1 + 1 = 2
+
+S(E Fos-CE2’ ) = 1 + 1 = 2
+S(E Fbr-CE2’ ) = 2 + 1 = 3
+S(E Fdb-CE2’ ) = 2 + 2 = 4
+
+S(E Fos-CE5’ ) = 1 + 1 = 2
+S(E Fbr-CE5’ ) = 1 + 1 = 2
+S(E Fdb-CE5’ ) = 1 + 1 = 2
+
+S(E Fos-CE6’ ) = 2 + 2 = 4
+S(E Fbr-CE6’ ) = 1 + 2 = 3
+S(E Fdb-CE6’ ) = 1 + 1 = 2
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 11
+
+
+dimensions. As such, the effort score of a WSC approach
+can be expressed through the sum and product of the scores
+of relevant effort factors. According to the combination of
+different effort factors identified in the classification matrix,
+there are 144 different types of WSC approaches in total
+(3 × 2 × 2 × 2 × 3 × 2 = 144). Therefore, we can fill the
+applicable associations between circumstantial evidences
+and DAs, and the corresponding effort scores to the
+classification matrix to achieve an effort checklist of
+
+144 types of WSC approaches, as demonstrated in
+Appendix. Benefiting from this checklist, we can
+conveniently judge the qualitative effort between different
+approaches for a certain WSC instance: one composition
+approach requires more effort than another does if the
+former’s effort score is bigger than the latter’s.
+However, it should be noted that the scores do NOT
+indicate any count of the amount of effort. Instead, these
+quantitative numbers are only used to facilitate qualitatively
+judging the effort of different composition approaches
+before implementing a WSC. Meanwhile, some other
+meaning of the effort scores can be further revealed. By
+investigating the result and procedure of the calculation of
+effort scores, as shown in Figure 5, we can find that the
+amount of applicable hypotheses implies the times of
+comparisons, while the times of consistent comparisons is
+proportional to the difference between resulting scores of
+effort factors.
+
+**Figure 5** A sample of consistent comparisons for E F2 - E F1
+(see online version for colours)
+
+Here, we define different comparisons are consistent when
+the same conclusion can be drawn in these comparisons by
+applying different hypotheses. For example, there are
+two consistent comparisons when applying circumstantial
+evidences CE3 and CE5’ to the compare between
+orchestration and choreography in Table 3. Since the
+consistent comparisons can help to confirm and reinforce
+the comparison result, the difference between scores of
+effort factors reflects the extent of our confidence in
+
+the effort judgement. When it comes to composition
+approaches, the difference between total effort scores is
+further magnified through the summation and multiplication
+by scores of effort factors. Therefore, to summarise, the
+larger difference that exists between two approach effort
+scores, the more confidence we will have in the judgement
+result.
+
+
+**6** **A case study of effort judgement for**
+**WSC-based SOA project**
+
+After analysing the effort of different types of WSC
+approaches based on a classification matrix, we can now
+tackle the problem of effort judgement for WSC-based SOA
+implementations. Here, we employ the RailCo Ltd. case
+study presented in Erl (2005) to demonstrate the effort
+judgement approach proposed in this paper. RailCo Ltd. is a
+railway parts supplier company specialising in air brakes
+and related installation tools. To improve the working
+efficiency of this company, a service-oriented analysis was
+conducted, which decomposed the business process logic
+into two business services that are composed of four
+application services. Therefore, the redesigned automation
+system can be viewed as a typical WSC-based SOA
+implementation, as illustrated in Figure 6.
+
+**Figure 6** Redesigned automation system of RailCo Ltd.
+
+By applying the algorithm listed in Table 1 and using the
+aforementioned effort checklist, we can conveniently
+calculate the complete effort score for the WSC-based SOA
+implementation of RailCo Ltd. Considering that web service
+uses an abstract interface to conceal the technical details
+
+like the implementation language, deployment platform and
+underlying communication protocol, in practice, different
+composite Web services in one SOA project can be
+implemented with different techniques under different
+contexts by different people. Consequently, we use arbitrary
+combinations of WSC approaches to represent different
+implementations of this WSC-based SOA system.
+
+**Table 9** Effort comparison between implementation proposals
+for the automation system RailCo Ltd.
+
+*Proposal* *Implementation effort scores*
+
+Proposal 1 S(WSC Approach 1) + S(WSC Approach 1) +
+S(WSC Approach 1) = 464 + 464 + 464 = 1392
+
+Proposal 2 S(WSC Approach 7) + S(WSC Approach 7) +
+S(WSC Approach 7) = 312 + 312 + 312 = 936
+
+Proposal 3 S(WSC Approach 2) + S(WSC Approach 5) +
+S(WSC Approach 9) = 432 + 406 + 312 = 1150
+
+Suppose there are three candidate implementation proposals
+listed in Table 9: Proposal 1 and Proposal 2 use only WSC
+
+12 *Z. Li et al.*
+
+approach 1 and WSC approach 7 respectively to implement
+the SOA project, while Proposal 3 employs a combination
+of WSC approach 2, 5, and 9 to satisfy the requirement.
+Through the implementation effort scores, we can find that
+second implementation proposal requires the least effort
+among those three ones. Moreover, compared with
+Proposal 3, we have more confidence to say that Proposal 1
+requires more effort than Proposal 2.
+
+**7** **Conclusions and future work**
+
+Due to the number of various WSC approaches developed
+in the literature, it is impossible to collect development data
+through experiments to do quantitative effort estimation for
+WSC-based SOA implementations. Therefore, we propose
+the circumstantial-evidence-based method to facilitate
+
+qualitatively judge the effort of different proposals before
+implementing a WSC-based SOA project. The contribution
+of this paper is mainly three-fold. First, we employ a generic
+strategy of effort judgement for WSC-based SOA
+implementations. The strategy can be realised by different
+approaches in addition to ours. Second, the proposed
+circumstantial-evidence-based judgement can not only help
+settle implementation design for a WSC-based SOA project,
+but also act as complementary to expert judgement for the
+implementation effort. Moreover, the circumstantial
+evidences in the context of effort judgement can be
+accumulated and deposited as general knowledge to further
+guide and assess individual expert judgements. Third, we
+develop a method of assigning scores to effort factors of
+WSC, which can be used to facilitate the qualitative effort
+judgement between different effort factors, between
+different type of WSC approaches and even between
+different SOA implementation proposals.
+Our future work will be unfolded in two steps. Firstly,
+we will continue to mine more circumstantial evidences for
+
+effort judgement from both literature and external experts.
+The collected circumstantial evidences can be arranged into
+a knowledge base. Benefitting from the knowledge base,
+secondly, we will be able to establish an expert system
+together with the analysis of WSCs in this paper, to give
+effort-related suggestions before implementing WSC-based
+SOA projects.
+
+**References**
+
+Anzboeck, R. and Dustdar, S. (2005) ‘Semi-automatic generation
+of web services and BPEL processes – a model-driven
+approach’, *Lecture Notes in Computer Science*, Vol. 3649,
+pp.64–79.
+
+Argente, E., Julian, V. and Botti, V. (2006) ‘Multi-agent system
+development based on organizations’, *Electronic Notes in*
+*Theoretical Computer Science*, Vol. 150, No. 3, pp.55–71.
+
+Barros, A., Dumas, M. and Oaks, P. (2005) ‘Standards for web
+service choreography and orchestration: status and
+perspectives’, *Proceedings of the 1st Workshop on Web*
+*Services Choreography and Orchestration for Business*
+*Process Management*, Springer Verlag, Nancy, France,
+5 September, pp.61–74.
+
+
+Boehm, B. (1981) *Software Engineering Economics*, Prentice Hall,
+Upper Saddle River, NJ.
+
+Camci, A. and Kotnour, T. (2006) ‘Technology complexity in
+projects: does classical project management work?’,
+*Proceedings of the Technology Management for the Global*
+*Future (PICMET 2006)*, IEEE Computer Society, Istanbul,
+Turkey, 8–13 July, pp.2181–2186.
+
+Campbell, D. and Craig, T. (2005) *Organisations and the Business*
+*Environment*, 2nd ed., Butter-worth-Heinemann, Burlington,
+MA.
+
+Cardoso, J. (2005) ‘How to measure the control-flow complexity
+of web processes and workflows’, in Fischer, L. (Ed.):
+*Workflow Handbook 2005*, pp.199–212, Layna Fischer,
+Lighthouse Point.
+
+Carlson, R.A. and Dulany, D.E. (1988) ‘Diagnostic reasoning with
+circumstantial evidence’, *Cognitive Psychology*, Vol. 20,
+No. 4, pp.463–492.
+
+Casati, F., Ilnicki, S., Jin, L., Krishnamoorthy, V. and Shan, M.
+(2000) ‘Adaptive and dynamic service composition in eFlow’,
+*Proceedings of the 12th International Conference on*
+*Advanced Information Systems Engineering (CaiSE*00)*,
+Springer Verlag, Stockholm, Sweden, 5–9 June, pp.13–31.
+
+Demirkan, H., Kauffman, R.J., Vayghan, J.A., Fill, H.G.,
+Karagiannis, D. and Maglio, P.P. (2008) ‘Service-oriented
+technology and management: perspectives on research and
+practice for the coming decade’, *Electronic Commerce*
+*Research and Applications*, Vol. 7, No. 4, pp.356–376.
+
+Dooley, K. (2001) ‘Organizational complexity’, in Warner, M.
+(Ed.): *International Encyclopedia of Business and*
+*Management*, pp.5013–5022, Thompson Learning, London.
+
+Dybå, T., Kitchenham, B.A. and Jørgensen, M. (2005)
+‘Evidence-based software engineering for practitioners’,
+*IEEE Software*, Vol. 22, No. 1, pp.58–65.
+
+Erl, T. (2005) *Service-Oriented Architecture: Concepts,*
+*Technology, and Design*, August, Prentice Hall PTR,
+Crawfordsville.
+
+Fitoussi, D. and Tennenholtz, M. (2000) ‘Choosing social laws for
+multi-agent systems: minimality and simplicity’, *Artificial*
+*Intelligence*, Vol. 119, Nos. 1–2, pp.61–101.
+
+Fox, M.S. (1981) ‘An organizational view of distributed systems’,
+*IEEE Transactions on Systems, Man, and Cybernetics*,
+Vol. SMC-11, No. 1, pp.70–80.
+
+Francalanci, C. and Merlo, F. (2008) ‘The impact of complexity on
+software design quality and costs: an exploratory empirical
+analysis of open source applications’, *Proceedings of the 16th*
+*European Conference on Information Systems (ECIS 2008)*,
+Galway, Ireland, 9–11 June, pp.1442–1453.
+
+Globerson, T. (1983) ‘Mental capacity, mental effort, and
+cognitive style’, *Developmental Review*, Vol. 3, No. 3,
+pp.292–302.
+
+Heller, K.J. (2006) ‘The cognitive psychology of circumstantial
+evidence’, *Michigan Law Review*, Vol. 105, No. 2,
+pp.241–306.
+
+Jørgensen, M. (2005) ‘Practical guidelines for expert-judgmentbased software effort estimation’, *IEEE Software*, Vol. 22,
+No. 3, pp.57–63.
+
+Jørgensen, M. and Shepperd, M. (2007) ‘A systematic review of
+software development cost estimation studies’, *IEEE*
+*Transactions of Software Engineering*, Vol. 33, No. 1,
+pp.33–53.
+
+Josuttis, N.M. (2007) *SOA in Practice: The Art of Distributed*
+*System Design*, O’Reilly Media, Inc., Sebastopol.
+
+*Circumstantial-evidence-based effort judgement for web service composition-based SOA implementations* 13
+
+
+Keung, J. (2007) ‘An alternative approach to software cost
+estimation: reasoning by analogy’, *Presentations* *of*
+*Australian Conference on Software Measurement (ACOSM*
+*2007)*, 15–16 November, Sydney, Australia.
+
+Lathem, J., Gomadam, K. and Sheth, A.P. (2007) ‘SA-REST and
+(S)mashups: adding semantics to RESTful services’,
+*Proceedings of the First IEEE International Conference on*
+*Semantic Computing (ICSC 2007)*, IEEE Computer Society,
+Irvine, California, 17–19 September, pp.469–476.
+
+Li, Z. and O’Brien, L. (2011) ‘A qualitative approach to effort
+judgment for web service composition based SOA
+implementations’, *Proceedings of the 25th IEEE International*
+*Conference on Advanced Information Networking and*
+*Applications (AINA 2011)*, IEEE Computer Society, Biopolis,
+Singapore, 22–25 March, pp.586–593.
+
+Li, Z., O’Brien, L., Keung, J. and Xu, X. (2010a) ‘Effort-oriented
+classification matrix of web service composition’,
+*Proceedings of the Fifth International Conference on Internet*
+*and Web Applications and Services (ICIW 2010)*, IEEE
+Computer Society, Barcelona, Spain, 9–15 May, pp.357–362.
+
+Li, Z., O’Brien, L., Zhang, H. and Keung, J. (2010b) ‘Towards
+SOA implementation complexity measurement enlightened
+by organization theory’, *Volume 2 of Proceedings of the 11th*
+*International Conference on Product Focused Software*
+*Development and Process Improvement (PROFES 2010)*,
+ACM Press, Limerick, Ireland, 21–23 June, pp.16–19.
+
+Li, Z., Zhang, H. and O’Brien, L. (2010c) ‘Facing service-oriented
+system engineering challenges: an organizational
+perspective’, *Proceedings of the 2010 IEEE International*
+*Conference on Service-Oriented Computing and Applications*
+*(SOCA 2010)*, IEEE Computer Society, Perth, Australia,
+13–15 December, pp.276–279.
+
+McAuley, J., Duberley, J. and Johnson, P. (2007) *Organization*
+*Theory: Challenges and Perspectives*, 1st ed., Prentice Hall,
+England.
+
+Menzies, T. and Hihn, J. (2006) ‘Evidence-based cost estimation
+for better-quality software’, *IEEE Software*, Vol. 23, No. 4
+pp.64–66.
+
+Miller, G.A. (1956) ‘The magical number seven, plus or minus
+two: some limits on our capacity for processing information’,
+*Psychological Review*, Vol. 63, No. 2, pp.81–97.
+
+Nan, N. and Harter, D.E. (2009) ‘Impact of budget and schedule
+pressure on software development cycle time and effort’,
+*IEEE Transaction on Software Engineering*, Vol. 35, No. 5,
+pp.624–637.
+
+O’Brien, L. (2009) ‘A framework for scope, cost and effort
+estimation for service oriented architecture (SOA) projects’,
+*Proceedings of the 20th Australian Software Engineering*
+*Conference (ASWEC ‘09)*, IEEE Computer Society, Gold
+Coast, Australia, 14–17 April, pp.101–110.
+
+
+Sarang, P., Jennings, F., Juric, M. and Loganathan, R. (2007) *SOA*
+*Approach to Integration: XML, Web Services, ESB, and*
+*BPEL in Real-World SOA Projects*, Packt Publishing,
+Birmingham.
+
+Sichman, J. and Demazeau, Y. (2001) ‘On social reasoning in
+multi-agent systems’, *Revista Ibero-Americana de Inteligncia*
+*Artificial*, Vol. 5, No. 13, pp.68–84.
+
+Siegel, J.A., Knupfer, G.C., Saukko, P.J. and Saukko, P.J. (2000)
+*Encyclopedia of Forensic Sciences*, Academic Press,
+San Diego, CA.
+
+Sirin, E., Parsia, B., Wu, D., Hendler, J. and Nau, D. (2004) ‘HTN
+planning for web service composition using SHOP2’, *Journal*
+*of Web Semantics: Science, Services and Agents on the World*
+*Wide Web*, Vol. 1, No. 4, pp.377–396.
+
+Skogan, D., Groenmo, R. and Solheim, I. (2004) ‘Web service
+composition in UML’, *Proceedings of the Eighth IEEE*
+*International Enterprise Distributed Object Computing*
+*Conference* *(EDOC* *2004)*, IEEE Computer Society,
+Monterey, California, 20–24 September, pp.47–57.
+
+Tabatabaei, S.G.H., Kadir, W.M.N. and Ibrahim, S. (2008)
+‘Semantic web service discovery and composition based on
+AI planning and web service modeling ontology’,
+*Proceedings of the IEEE Asia-Pacific Services Computing*
+*Conference (APSCC ‘08)*, IEEE Computer Society, Yilan,
+Taiwan, 9–12 December, pp.397–403.
+
+Timm, J.T.E. and Gannod, G.C. (2007) ‘Specifying semantic web
+service compositions using UML and OCL’, *Proceedings of*
+*the 2007 IEEE International Conference on Web Services*
+*(ICWS 2007)*, IEEE Computer Society, Salt Lake City, Utah,
+9–13 July, pp.521–528.
+
+Turner, J.R. and Cochrane, R.A. (1993) ‘Goals-and-methods
+matrix: coping with projects with ill-defined goals and/or
+methods of achieving them’, *International Journal of Project*
+*Management*, Vol. 11, No. 2, pp.93–102.
+
+Valero, V., Cambronero, M.E., Díaz, G. and Macià, H. (2009)
+‘A petri net approach for the design and analysis of web
+services choreographies’, *Journal of Logic and Algebraic*
+*Programming*, Vol. 78, No. 5, pp.359–380.
+
+Yadgar, O., Kraus, S. and Ortiz, C. (2003) ‘Scaling up distributed
+sensor networks: cooperative large-scale mobile-agent
+organizations’, in Lesser, V., Ortiz, C.L., Jr. and Tambe, M.
+(Eds.): *Distributed* *Sensor* *Networks:* *A* *Multiagent*
+*Perspective*, pp.185–218, Kluwer Academic Publishers,
+Boston Hardbound.
+
+Zhao, H. and Doshi, P. (2009) ‘Towards automated RESTful web
+service composition’, *Proceedings of the IEEE International*
+*Conference on Web Services (ICWS 2009)*, IEEE Computer
+Society, Los Angeles, California, 6–10 July, pp.189–196.
+
+14 *Z. Li et al.*
+
+**Appendix**
+
+**Table A1** A sample of effort checklist for WSC approaches
+

@@ -1,0 +1,69 @@
+Based on the provided research paper titled "Web Metrics and Development Effort Prediction" by Emilia Mendes and Nile Mosley, I will break down the content into sections and highlight the relevant points regarding the predictors used for estimating web application effort.
+
+**Introduction**
+
+The paper discusses the challenges faced by organizations worldwide in developing complex and quality web applications due to the high costs involved. It highlights the necessity of measuring the quality of these applications through various means like metrics collection, which helps obtain feedback for controlling and enhancing products and processes. Additionally, the authors emphasize the significance of developing reliable effort prediction models for web development using the derived metrics.
+
+**Predictors used in the paper**
+
+According to the paper, several predictors were considered in the study, grouped under five categories:
+
+### Size metrics
+
+*   Page count
+*   Media count
+*   Program count
+*   Total page allocation (space allocated for all HTML/sHTML pages)
+*   Total media allocation (space allocated for all media files)
+
+These metrics describe the quantity of components included in the web application.
+
+### Reusability metrics
+
+*   Reused media count (number of reused/modified media files)
+*   Reused program count (number of reused/modified programs)
+*   Total reused media allocation (total space allocated for all reused media files)
+*   Total reused code length (total number of lines of code for all reusable programs)
+
+These metrics represent the extent of reusing previous components in the current web application.
+
+### Complexity metrics
+
+*   Connectivity (total number of internal links excluding dynamically generated ones)
+*   Connectivity density ([connectivity](http://websters-dictionary.org.uk/words/connectivity)/page count)
+*   Cyclomatic complexity ((connectivity – page count) + 2)
+*   Page complexity (a weighted average of individual page complexities)
+*   Structure (how the backbone of the application is organized: sequence, hierarchy, or network)
+
+These metrics aim to capture the intricacy of the web application architecture and layout.
+
+### Effort metrics
+
+*   Structuring effort (estimated time spent structuring the application)
+*   Interlinking effort (time taken to link pages together)
+*   Interface planning (planning time for the application's interface)
+*   Interface building (building the application's interface)
+*   Link testing effort (testing all links on the application)
+*   Media testing effort (testing all media on the application)
+
+These metrics quantify the specific efforts required throughout the development process.
+
+### Confounding factors
+
+While not directly serving as predictors, the paper acknowledges potential sources of bias in the study:
+
+*   Authoring and designing experience of the developer
+*   Learning curve effect (maturation effects) resulting from continuous improvement over the duration of the study
+*   Application structure (e.g., hierarchical organization)
+*   Tool usage (text editors vs. specialized tools)
+
+However, after analyzing the impact of these factors, the researchers found minimal significant correlations and chose to proceed without adjusting for them.
+
+### Key findings and conclusion
+
+After collecting the aforementioned metrics via case studies involving computer science students creating web applications adhering to the cognitive flexibility theory, the authors employed step-wise multiple regression analysis to derive a prediction model. While acknowledging limitations in the initial attempt (relatively moderate accuracy indicators, e.g., MMRE and Pred(25)), they propose avenues for further exploration:
+
+1.  Utilizing alternative modeling approaches, such as Generalized Linear Models (GLMs).
+2.  Investigating non-algorithmic techniques like fuzzy systems and case-based reasoning.
+3.  Applying the approach across the entire web development lifecycle instead of focusing solely on the design and authoring phases.
+4.  Comparing different prediction strategies with subjective expert judgment.

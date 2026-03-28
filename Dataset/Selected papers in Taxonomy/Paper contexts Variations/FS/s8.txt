@@ -1,0 +1,41 @@
+Based on the paper "Towards the Prediction of Development Effort for Hypermedia Applications," here is a thorough summary of the paper along with the predictors used for estimating web application effort:
+
+**Introduction**: 
+The introduction highlights the significance of accurate effort estimation in managing hypermedia development projects successfully. It mentions that realistic estimates enable project managers to allocate resources efficiently. The authors aim to explore the potential of case-based reasoning in predicting effort for designing and authoring hypermedia applications.
+
+**Background**:
+Previous studies focused primarily on traditional software engineering rather than hypermedia development. Research on effort estimation for web applications remains scarce. Existing studies suggest various metrics for effort prediction but often lack consistency across domains. Some notable works like Kosmic-FFP and cognitive flexibility theory are mentioned, though not directly utilized in this paper.
+
+**Methodology**:
+The researchers conducted an experiment collecting effort and size metrics from participants who designed and authored hypermedia applications. These metrics included size, effort, and confounding factors. Authors adapted and re-used metrics from previous studies, considering factors affecting hypermedia development, such as document count, connectivity density, and effort hours spent on the task. A tool named ANGEL-Plus facilitated the automation of the estimation process.
+
+**Related Work**:
+Some relevant papers cited in the study include:
+1. Rollo's exploration of sizing methodologies for web applications using COSMIC-FFP, showing its adaptability for diverse platforms.
+2. Mendes et al.'s comparison of linear regression, step-wise regression, and case-based reasoning for predicting web application effort, concluding CBR produced the best outcomes.
+3. Fewster and Mendes' generalized linear model for risk assessment and design effort prediction for web apps, providing insights into the dynamics between static and dynamic metrics.
+
+**Predictors Used**:
+
+According to the paper, the predictors used for estimating web application effort are:
+
+1.   **Application Complexity**: Determined via metrics such as document count, media file usage, and overall size (node allocation).
+2.   **Link Complexity**: Represented by connectivity density and cyclomatic complexity.
+3.   **User Experience**: Assessed subjectively via self-reported rating.
+4.   **Tool Usage**: Consideration of whether the authoring tool affects the final product, although this factor appears minimal in this particular context since users employed standard editors.
+
+These variables serve as input parameters for the Case Based Reasoning algorithm. Additionally, the ANGEL-plus tool helps optimize combinations of attributes for more accurate analogical reasoning.
+
+**Empirical Results**:
+
+Results indicate that an average percentage error of 9.21% exists between actual effort and estimated effort when employing CBR. Most efficient results arise when utilizing one or three analogies. Overall, it demonstrates promise for real-world implementation of effort prediction strategies.
+
+Key findings:
+
+*    Three critical attributes—media count, total node allocation, and total reusable media allocation—are identified as strong contributors to the success of effort prediction via CBR.
+*    High amounts of reuse decrease effort indirectly due to lower associated effort.
+*    Tool choice does not appear to affect outcome significantly, reinforcing the idea that end-users and professional web designers exhibit comparable skills and behavior.
+
+
+
+This article offers valuable insight into predictors and estimation strategies applicable to hypermedia and web development fields. Its contribution lies in exploring novel methods incorporating CBR, alongside examining previously documented practices, contributing to the improvement of resource management.

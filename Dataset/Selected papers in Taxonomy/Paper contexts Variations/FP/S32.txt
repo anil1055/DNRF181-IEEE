@@ -1,0 +1,1201 @@
+# **A Comparison of Cross-company and Within-company Effort Estimation Models ** **for Web Applications **
+
+
+Barbara A. Kitchenham
+*Department of Computer Science*
+*Keele University, Staffordshire ST5 5GB, UK*
+
+*barbara@cs.keele.ac.uk*
+
+*and*
+*National ICT Australia*, *Locked Bag 9013 Alexandria,*
+
+*NSW 1435, Australia*
+*barbara.kitchenham@nicta.com* *.* *a* *u*
+
+**Abstract**
+
+***The objective*** *of this paper is to* *investigate* ***t*** *he use of*
+*cross-company and within-company cost estimation*
+*model for Web projects.*
+
+***The study analysis method*** *w* ***e*** *used* *was a* ***f*** *orward,*
+*stepwise regression of web project development effort*
+*with independent variables that were used for on-line web*
+*application price quotations. Model cross-validation used*
+*two approaches: one-fold cross validation and a*
+*validation subset of 13 projects from the same company.*
+
+***The setting consists of*** *Industrial Web applications*
+*from 24 different companies and 8 different countries,*
+*and the experiment units are 53 web application and*
+*hypermedia projects.*
+
+***The main outcome measure*** *was an estimate of effort*
+*for each project, for each estimation model.* *We used the*
+*summary statistics:* *MMRE, Median MRE, Pred(25),*
+*mean and median of absolute residuals to evaluate the*
+*predictive accuracy of model. We also compared*
+*estimation model accuracy with an assessment of estimate*
+*accuracy provided by the participating companies.*
+
+***Results showed that t*** *he best fitting cross-company*
+*regression model was significantly better than the median*
+*and experts at predicting effort for 13 projects from a*
+*single company (p<0.05). The best fitting within-company*
+*regression model for the company with 13 projects was*
+*significantly better than the cross-company model*
+*(p<0.05). However the accuracy of the company 1 model*
+*was worse than the accuracy achieved by company 1*
+*estimators. In addition, the company 1 model was an*
+*extremely poor predictor of effort for the other*
+*companies’ projects.*
+
+***We conclude that c*** *ross-company effort estimation*
+*model can be useful for companies that do not have past*
+*projects from which to develop their own models.*
+*However, a cross-company data set should only be used*
+*for estimation until it is possible for a Web company to*
+
+
+Emilia Mendes
+
+*Computer Science Department*
+
+*The University of Auckland*
+*Private Bag 92019, Auckland,*
+
+*New Zealand*
+*[emilia@cs.auckland.ac.nz](mailto:emilia@cs.auckland.ac.nz)*
+
+*build its own within-company model. For cross-company*
+*and within company models, simple measures, available*
+*early in the lifecycle, that can be estimated by clients are*
+*suitable for building effort estimation models.*
+
+**Keywords:** effort estimation, Web projects, crosscompany estimation models, within-company estimation
+model, regression-based estimation models.
+
+**1. Introduction**
+
+There is considerable interest in using cross-company
+data sets to construct a company specific estimation
+model in order to overcome the difficulty of accumulating
+sufficient in-house data (see for example [11], [13]).
+Indeed most benchmarking companies work on the
+assumption that it is possible to construct good crosscompany models. However, support for this assumption is
+mixed. Early evaluations of cost models suggested that it
+was not possible to take a model built in one environment,
+and apply it without calibration in another environment
+([7],[9]). However recently there have been four major
+studies of large cost estimation data sets ([1],[2],[5],[6]).
+These studies have used data from two application
+domains: ‘business’ and ‘space and military’. In two
+studies ([1],[2]) the researchers found that a crosscompany model worked well when applied to a specific
+company, but in the other two studies ([5],[6]) they did
+not observe the same effect. The two cases where the data
+were collected using rigorous quality-assurance
+procedures found cross-company models suitable for
+within-company predictions, whereas the two cases that
+did not use rigorous data collection procedures did not
+find such models. In addition, Wieczorek and Ruhe
+reanalysed one of the data sets and found that withincompany models were no better than cross-company
+models [17]. None of these studies used data on Web
+projects.
+
+This paper reports on the analysis of a cross-company
+data set of Web projects. We have constructed and
+evaluated a cost estimation model based on this data to
+investigate how good a cross-company data set is:
+
+- In its ability to predict effort for a single company
+(omitting projects from that company from model
+construction).
+
+- In comparison with a company-specific model.
+
+In addition, we also checked the extent to which a
+company-specific cost model can be used to predict effort
+for other companies’ projects.
+
+Throughout this paper a Web project can either
+represent a Web hypermedia or Web software application
+
+[3]. The former is characterised by the authoring of
+information using nodes (chunks of information), links
+(relations between nodes), anchors, access structures (for
+navigation) and its delivery over the Web. Technologies
+commonly used for developing such applications are
+HTML, JavaScript and multimedia. In addition, typical
+developers are writers, artists and organisations that wish
+to publish information on the Web and/or CD-ROMs
+without the need to use programming languages such as
+Java. Conversely, the latter represents software
+applications that depend on the Web or use the Web's
+infrastructure for execution. Typical applications include
+legacy information systems such as databases, booking
+systems, knowledge bases etc. Many e-commerce
+applications fall into this category. Typically they employ
+development technologies (e.g., DCOM, ActiveX etc),
+database systems, and development solutions (e.g. J2EE).
+Typical developers are young programmers fresh from a
+Computer Science or Software Engineering degree,
+managed by more senior staff.
+
+The remainder of the paper is organised as follows:
+Section 2 describes the research method employed in this
+study and results are presented in Section 3. Finally, a
+discussion of the results and conclusions is given in
+Section 4.
+
+**2. Research Method**
+
+**2.1 Data set Description**
+
+The analysis presented in this paper was based on Web
+projects from the Tukutuku database [14]. These projects
+represent industrial Web applications developed by Web
+companies worldwide. This database is part of the
+Tukutuku project, which aims to collect data about Web
+projects, to be used to develop Web cost estimation
+models and to benchmark productivity across and within
+Web Companies [1] .
+
+The analysis presented in this paper used data from 53
+Web projects where 13 projects come from the same Web
+
+1
+http://www.cs.auckland.ac.nz/Tukutuku/introduction.html
+
+
+company and the remaining 40 come from another 23
+companies. Each Web project in the database provided 40
+variables to characterise a Web application and its
+development process (see Table 1).
+
+The independent variables were selected as a result of
+a survey investigation [14], based on data from Web
+application pricing forms gathered worldwide. The
+variables included early Web size measures and other cost
+drivers. In addition, the variables were validated by a
+mature Web company [14]. Consequently we believe we
+have used variables for prediction that are meaningful and
+realistic measures both for Web companies and their
+clients.
+
+**Table 1 Variables for the Tukutuku database**
+
+|Variable<br>Name|Scale|Description|
+|---|---|---|
+|Country|Nominal|Country company belongs to|
+|Established|Ordinal|Amount of time company has been<br>established|
+|Services|Nominal|Services Company provides|
+|ClientInd|Nominal|Industries representative of clients|
+|TypeProj|Nominal|Type of project|
+|TypeApp|Nominal|Type of Web application developed|
+|Totwp|Ratio|Number of web pages|
+|Nnp|Ratio|Number of New Web pages|
+|WPC|Ratio|Web pages given by the customer|
+|WPO|Ratio|Web pages developed by third party|
+|Textyp|Ratio|Number text pages typed (~600<br>words)|
+|Textel|Ratio|Number text pages electronic format|
+|TSC|Ratio|Number text pages scanned|
+|Imanew|Ratio|Number new images|
+|I3P|Ratio|Number images developed by third<br>party|
+|ISC|Ratio|Number images scanned|
+|ILB|Ratio|Number images reused from a library|
+|Aninew|Ratio|Number new animations|
+|ALB|Ratio|Number animations reused from a<br>library|
+|AVN|Ratio|Number new audio/video files|
+|AVL|Ratio|Number reused audio/video files|
+|Procs|Ratio|Number <> products application<br>offers|
+|HED|Ratio|Development Effort corresponding to<br>high effort2|
+|HEA|Ratio|Adaptation/Modification Effort<br>corresponding to high effort|
+|HFots|Ratio|Number reused High effort<br>features/functions without adaptation|
+|HFotsA|Ratio|Number adapted High effort<br>features/functions|
+
+
+
+2
+High effort is taken to be on average 12 hours for a new feature and 8
+
+hours for an adapted feature.
+
+|Newhf|Ratio|Number new High effort<br>features/functions|
+|---|---|---|
+|Tothf|Ratio|Total Number high effort<br>features/functions|
+|Fots|Ratio|Low effort FOTS|
+|FotsA|Ratio|Low effort FOTS-A|
+|Newlo|Ratio|Number new Low effort<br>features/functions|
+|Totlo|Ratio|Total Number low effort<br>features/functions|
+|EFF|Ratio|Total effort develop the Web<br>application|
+|EFA|Nominal|Procedure used to record effort data|
+|Languages|Nominal|Implementation languages used|
+|DocProc?|Nominal|Project followed defined and<br>documented process|
+|ProcImpr?|Nominal|Development team involved in a<br>process improvement programme|
+|Metrics?|Nominal|Development team part of a software<br>metrics programme|
+|Devteam|Ratio|Size development team|
+|Teamexp|Ratio|Average team experience with the<br>development language(s) employed|
+
+
+**2.2 Data Quality**
+
+We did not supply Web companies that provided data
+for the Tukutuku database with automatic measurement
+
+tools. Instead, we relied on their own data collection
+mechanisms, so we have no means of assessing the
+accuracy of their data. In order to have a better idea of
+how reliable the effort data was, we asked companies how
+their effort data was collected (see Table 2).
+
+**T** **ab** **l** **e** **2 H** **o** **w** **e** **ff** **o** **r** **t** **data** **w** **as** **co** **ll** **ected**
+
+
+
+
+
+|Variable|Meaning|
+|---|---|
+|lneff|Natural log. of the company effort to produce the web<br>application|
+|lntotwp|Natural log. of number web pages in the application|
+|lnnp|Natural log. of (1+number of new web pages)|
+|lntothf|Natural log. of (1+total number of high effort functions)|
+|lnnewhf|Natural log. of (1+number of new high effort functions)|
+|lntotlo|Natural log. of (1+ total number of low effort functions)|
+|lnnewlo|Natural log. of (1+number of new low effort functions)|
+|lnprocs|Natural log. of (1+number of different products the web<br>application offers)|
+|lnaninew|Natural log. of (1+number of new animations in the<br>applications)|
+|lnimanew|Natural log. of (1+number of new images in the<br>applications)|
+|lntextyp|Natural log. of (1+number of text pages typed)|
+|lntextel|Natural log. of (1+number of text pages already in<br>electronic format)|
+|devteam|The number of people who worked on the project|
+|teamexp|Average team experience with the development<br>language(s) employed|
+|Natural log. = Natural logarithm|Natural log. = Natural logarithm|
+
+
+|effort data|Scale|Number of Projects and<br>Companies|Col4|
+|---|---|---|---|
+|effort data|Scale|# and %<br>projects|# different<br>companies|
+|No timesheets|1|12 (22.6%)|8|
+|Total hours<br>worked each<br>day or week|2|3 (5.7%)|3|
+|Hours worked<br>per project per<br>day/week|3|24 (45.3%)|12|
+|Hours worked<br>per project<br>task per day|4|14 (26.4%)|7|
+
+
+Two companies used different data collection levels
+depending on the type of project (i.e. they used level 1 for
+some projects and levels 3 and 4 for other projects). All
+
+
+13 projects from the same company recorded hours
+worked for each project for each day/week. Therefore, at
+least for 72% of Web projects in the Tukutuku database
+effort values were based on more than post-hoc guesses.
+However, even when timesheets are in use we cannot
+assume that effort values are completely accurate.
+
+The data collected to date for the Tukutuku project has
+not followed rigorous quality assurance procedures to
+validate the data. Furthermore, the projects’ application
+domains are mixed.
+
+**2.3 Modelling Techniques**
+
+We used the STATA [TM] tool to perform all data
+analysis reported in section 3.
+
+A manual forward stepwise regression was employed
+to build an effort prediction model using the variables
+shown in Table 3. This is similar to the stepwise
+technique suggested by Kitchenham [8] but we used the
+additional variable plot facility in the STATA tool to
+assess the impact of each candidate variable on the
+residuals from the current model in each step.
+
+**T** **ab** **l** **e** **3** **. V** **a** **ri** **ab** **l** **es** **used** **in** **t** **h** **e** **step** **wi** **se** **r** **eg** **r** **ess** **i** **o** **n**
+
+The set of variables used for model building was a
+subset of the full Tutukutu database. Variables were
+excluded if most instances were zero, or they were
+functionally related to other variables (e.g. number of
+reused pages was ignored because it is functionally
+related to the variables total web pages and new web
+pages) or they were categorical variables. The dependent
+variable (Total effort) was transformed to a natural
+logarithmic scale to stabilise the variance and reduce the
+impact of outliers. Highly skewed independent variables
+were also subjected to a natural logarithmic
+
+transformation. Note, to cope with zero values for
+variables, 1 was added to variables that had zero values
+prior to the log transformation.
+
+**2.4 Analysis Methods**
+
+***Model Evaluation: Stability***
+
+We used the residual analysis facilities available in the
+STATA tool to identify large residual and high influence
+data points (i.e. projects). In particular we used Cook’s D
+statistic to identify projects that exhibited jointly a large
+influence and large residual [4]. The stability of the model
+was tested by removing the high-influence, large-residual
+projects, and observing the effect their removal had on the
+model parameters.
+
+***Model Evaluation: Goodness of fit***
+
+The model’s goodness of fit model was tested on the
+raw data scale using the MMRE and Pred(25) statistics,
+the median and mean absolute residual [10] and an
+assessment of their current estimate accuracy provided by
+ten of the participating companies. This assessment was
+based on an educated guess.
+
+***Prediction Accuracy***
+
+Prediction accuracy of models was checked either by
+using the ‘omit one project at a time’ procedure (leave
+one out cross-validation), or by omitting a group of
+projects and predicting the effort for the group of omitted
+projects. In both situations, the rationale is to use different
+sets of projects to build and to validate a model. Projects
+used to build a model are called the training set and
+projects used to validate the model are called the
+validation set.
+
+**3. Results**
+
+**3.1 Model Construction**
+
+The best-fitting model for log total effort included
+three variables: log total number of web pages, log (1 +
+total number of high effort functions), and the size of the
+development team (see Table 4 ). Its adjusted R [2] was 0.597.
+This model was based on the full set of 53 Web projects.
+
+The best fitting model can be transformed back to the
+raw data scale as follows:
+
+**[Devteam ]**
+**Eff = 8.42497** **×** **(Totwp)** **[0.4332]** **×** **(Tothf+1)** **[0.6329]** **×** **e** **[0.2354 ]** **[×]**
+
+
+**T** **ab** **l** **e** **4 B** **est** **Fi** **tt** **in** **g** **M** **ode** **l** **(depe** **n** **de** **n** **t** **v** **a** **ri** **ab** **l** **e** **ln** **e** **ff** **)**
+
+|Indep.<br>Vars|Coeff.|Std.<br>Error|t|p>|t||95% Conf.<br>Interval|
+|---|---|---|---|---|---|
+|lntotwp|0.4332|0.1025|4.224|0.000|0.227-0.6392|
+|lntothf|0.6329|0.1859|3.405|0.001|0.2594-1.0064|
+|devteam|0.2354|0.0955|2.464|0.017|0.0434-0.4272|
+|constant|2.1312|0.4029|5.290|0.000|1.3219-2.9412|
+|Indep. Vars – independent variables Coeff. - Coefficient|Indep. Vars – independent variables Coeff. - Coefficient|Indep. Vars – independent variables Coeff. - Coefficient|Indep. Vars – independent variables Coeff. - Coefficient|Indep. Vars – independent variables Coeff. - Coefficient|Indep. Vars – independent variables Coeff. - Coefficient|
+
+
+
+**3.2 Model Evaluation**
+
+Before accepting the model for lneff presented in
+Section 3.1, we need to make sure that [12]:
+Step 1. The errors in our model are random and
+normally distributed. This is investigated using a
+residual plot showing residuals vs. fitted values.
+Step 2. No single project or small number of projects has
+an overly strong influence on the results. Here
+we need to use a leverage plot and to calculate
+Cook’s D values for all projects, in order to
+detect influential cases.
+
+***Step 1: Testing the Residuals***
+
+The residual plot (see Figure 1) shows that projects 21,
+16, and 17 have large residuals that are far from the other
+projects. However, overall the ellipsoid pattern of the
+residuals suggests that they are approximately normally
+distributed.
+
+***Step 2: Leverage and Stability Analyses***
+
+The leverage plot (Figure 2) identified several projects
+with large residuals and high influence, shown encircled.
+This was investigated further by calculating Cook’s D
+values (i.e. values greater than 4/n where n=53) for each
+project. The Cook’s D statistic attempts to convert the
+information in the leverage diagram into a single statistic.
+
+Table 5 identifies the projects with significant Cook’s
+D values, showing some of their variable values.
+
+**T** **ab** **l** **e** **5** **Pr** **ojects** **wi** **t** **h l** **a** **r** **ge** **Coo** **k'** **s** **D v** **a** **l** **ues**
+
+|Pro|te|lneff|Pred|lntotwp|lntothf|dv|
+|---|---|---|---|---|---|---|
+|14|90|4.4998|5.5511|1.791759|1.94591|6|
+|17|6|1.7918|4.1386|2.484907|1.098612|1|
+|20|625|6.4378|4.6058|2.995732|0|5|
+|33|3150|8.0552|6.2730|3.091043|2.197225|6|
+|16|363|5.8944|8.3026|6.39693|2.397895|8|
+|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|Pro – project te – toteffor Pred – prediction dv - devteam|
+
+
+
+In order to check the stability of the model, we
+recalculated the multiple regression omitting the projects
+with large Cook’s D values, giving the model shown in
+Table 6. The adjusted R [2] for this model is 0.715. The
+parameters in this model have similar values to those in
+the model based on the full data set. In addition, the
+
+model fit has improved. This implies that the high model and therefore do not need to be removed.
+influence data points are not destabilising the regression
+
+**Figure 1 – Residual plot for best-fitting model (with points indicated by the project number)**
+
+
+2
+
+1
+
+0
+
+-1
+
+-2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-3
+
+|Col1|37 20 33<br>44 46<br>34<br>9<br>32 36<br>47 35 45 26 15 34<br>53 10<br>19 44 13 3 38 52 5 2379<br>42 30 7 1<br>8 3112 51<br>22 4 2315 24 24 9 10 2 28<br>6 1<br>504 19 48<br>8 14<br>21<br>17 16|Col3|Col4|Col5|Col6|Col7|Col8|Col9|
+|---|---|---|---|---|---|---|---|---|
+||||||||||
+||||||||||
+||||||||||
+||||||||||
+||||||||||
+||||||||||
+
+
+
+3 4 5 6 7 8 9
+Fitted values
+
+**Figure 2 Leverage plot for best-fitting model (with points indicated by the project number)**
+
+
+.266231
+
+.022862
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.5e-07 .126976
+Normalized residual squared
+
+**Table 6 Regression model with high influence projects**
+**o** **mi** **tted** **(** **ln** **e** **ff** **as** **depe** **n** **de** **n** **t** **v** **a** **ri** **ab** **l** **e)**
+
+
+
+**3.3 Goodness of Fit and Model Value**
+
+Although the model looks a reasonable fit on the log
+scale, it is important to remember that any estimates must
+apply to the raw scale. The standard goodness of fit
+statistics for the regression model (after transformation
+
+|ind|Coef.|Std.<br>Error|t|p>|t||[95% Conf. Interv.]|Col7|
+|---|---|---|---|---|---|---|
+|lntotwp|0.4171|0.0936|4.458|0.000|0.2286|0.6059|
+|lntothf|0.7915|0.1604|4.935|0.000|0.4682|1.1147|
+|devteam|0.2590|0.1077|2.406|0.020|0.0420|0.4760|
+|_cons|2.0647|0.3503|5.895|0.000|1.3588|2.7706|
+|ind - Independent variables|ind - Independent variables|ind - Independent variables|ind - Independent variables|ind - Independent variables|ind - Independent variables|ind - Independent variables|
+
+back to the raw data scale) are shown in Table 7. They
+show that the model is a poor fit to the data. The
+difference between the mean and median MRE and the
+mean and median absolute deviation indicate that the poor
+performance is due to the impact of outliers. In addition,
+MMRE is worse than the estimate accuracy of a 68.3%
+underestimate provided by the participating companies
+(excluding company 1). Actual and estimated effort and
+size for the worst estimated projects on the raw scale are
+shown in Table 8.
+
+**Table 7 Goodness of fit statistics for the regression**
+**m** **ode** **l** **a** **n** **d** **t** **h** **e** **m** **ed** **i** **a** **n m** **ode** **l**
+
+|Goodness of fit statistic|Estimates based on<br>regression model|
+|---|---|
+|MMRE|1.05|
+|Median MRE|0.534|
+|Pred(25)|26.4%|
+|Mean absolute deviation|307.0|
+|Median absolute deviation|71.9|
+|Estimate accuracy from expert opinion|68.3%|
+
+
+
+**Ta** **b** **l** **e** **8** **Eff** **o** **r** **t** **a** **n** **d** **S** **iz** **e** **o** **f** **bad** **l** **y** **est** **im** **ated** **p** **r** **oje** **cts**
+
+|Project|Effort Estimate|Effort|Web pages|
+|---|---|---|---|
+|9|618.8|1786|100|
+|16|4059.8|363|600|
+|33|522.4|3150|22|
+|36|2041.6|5000|1390|
+
+
+
+**3.4 Comparison of Cross-company and Within-**
+**company Models**
+
+In this Section we investigate the issues of how good a
+cross-company data set is:
+
+- In its ability to predict effort for a single company
+(omitting projects from that company from model
+construction).
+
+- In comparison with a company-specific model.
+
+In order to evaluate the ability of the cross-company
+model to predict effort for a single company we
+recalculated the model presented in Section 3.1, after
+excluding all the Company 1 projects (i.e. all the 13
+projects provided by a single company). (Note, we did not
+perform a separate stepwise regression, we simply
+performed a regression using the variables shown in Table
+4 omitting the 13 projects to be predicted). We then used
+Company 1 projects as our validation set, and calculated
+MRE and residuals for each. We also compared the
+predictions for Company 1 with a prediction based on the
+median of the data set (where the median project effort
+excluding Company 1 projects is 103.5 hours). The box
+plots of the residuals are shown in Figure 3.
+
+The Wilcoxon matched-paired signed rank tests, based
+on absolute residuals, confirmed that the regression
+predictions were significantly better than the predictions
+
+
+1 2 3 4 5 6 7 8
+lntotwp
+
+Table 9 shows the prediction statistics for the
+regression based predictions and the median based
+predictions. They confirm that the regression based
+predictions are better than the median based predictions
+and better than the estimate accuracy of a 68.3%
+underestimate provided by the participating companies
+(excluding company 1). Unexpectedly, the regression
+based prediction statistics given in Table 9 are better than
+the goodness of fit statistics for the regression model
+shown in Table 7. This may be because the Company 1
+projects are particularly well-behaved (see Figure 4 which
+
+
+from the median model (p<0.05). This was also confirmed
+by the paired ‘t’ test (p<0.05).
+
+**Figure 3 Box plot of regression-based predictions**
+**compared with median predictions for the 13**
+**Company 1 projects**
+
+2000
+
+1500
+
+1000
+
+500
+
+0
+
+-500
+
+Residuals based on Residuals based on
+
+regression predictions median prediction
+
+**Figure 4 Scatter plot of log effort against log total web**
+**pages showing Company 1 projects (labelled 1) and**
+**other projects (labelled 0).**
+
+9
+
+0
+
+
+0 0 0 0 0
+
+
+0
+
+
+0
+
+0
+
+
+1
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+0 0 0
+
+0
+
+
+1
+
+
+0
+
+
+0
+
+
+0
+
+
+11 0 1
+
+
+1
+
+
+lneff
+
+
+8
+
+7
+
+6
+
+5
+
+4
+
+3
+
+2
+
+1
+
+
+0 0 0 0 0 0 0 **0** 01 1 0
+
+
+0
+
+
+1
+
+0 1
+
+
+0
+
+
+**0**
+
+
+0
+
+
+0
+
+
+0
+
+1
+
+1
+
+
+0
+0
+
+
+1
+
+
+0
+
+
+0 1 1 0
+
+
+0
+00 0 0
+
+
+0
+
+0
+
+1
+
+
+1
+
+
+0
+
+00
+
+shows how the Company 1 projects are distributed among
+the other projects). However, it is still remarkable how
+well the cross-company model fits the Company 1
+projects, particularly since the best-fitting model for
+Company 1 is somewhat different to the best fitting model
+for the entire data set (see Table 10).
+
+The best fitting model for Company 1 is shown in
+Table 10. Instead of including the logarithm of the total
+number of web pages as the most important variable, it
+includes team experience as the least important variable
+with a negative effect. The adjusted R [2] for this model is
+0.966. This is a suspiciously large value. It is primarily
+due to the strong correlation between the natural
+logarithm of effort and the natural logarithm of total
+number of high effort features shown in Figure 5. Note,
+the number of zero values for the dependent variable is a
+cause for concern. The model may well be a poor
+prediction model if future projects do not include high
+effort features.
+
+**Table 9 Prediction statistics for the regression and**
+**m** **ed** **i** **a** **n m** **ode** **l** **s**
+
+
+|Prediction statistics|Predictions based on<br>regression model|Predictions based<br>on median effort|
+|---|---|---|
+|MMRE|0.565|1.169|
+|Median MRE|0.444|0.759|
+|Pred(25)|30.8% (4 of 13)|15.4% (2 of 13)|
+|Mean absolute deviation|179.5|298.6|
+|Median absolute<br>deviation|77.5|79.5|
+
+
+**Table 10 Regression model for Company 1 (lneff as**
+**dependent variable)**
+
+|Independent<br>variables|Coef.|Std. Err.|t|P>|t||[95% Conf.<br>Interval]|Col7|
+|---|---|---|---|---|---|---|
+|lntothf|1.5510|0.1273|12.184|0.000|1.2630|1.8390|
+|devteam|0.2611|0.0661|3.949|0.003|0.1116|0.4107|
+|teamexp|-0.0881|0.0332|-2.650|0.026|--0.1632|-0.0129|
+|_cons|3.6214|0.2343|15.455|0.000|3.0913|4.1514|
+
+
+
+The best fitting model can be transformed back to the
+raw data scale as follows:
+
+|Col1|Col2|Col3|Col4|Col5|Col6|Col7|
+|---|---|---|---|---|---|---|
+||||||||
+||||||||
+||||||||
+||||||||
+||||||||
+||||||||
+
+
+**0.2611** × **Devteam**
+
+**Eff = 37.3898** **×** **(Tothf+1)** **[1.5510]** **×** e **×**
+
+e [¯] **[0.0881 ×Teamexp]**
+
+In order to evaluate the predictive accuracy of the
+cross-company model in comparison with a companyspecific model, we used the company-specific model (see
+Table 10) and constructed predictions for Company 1
+projects using the ‘omit one project at time’ procedure
+(i.e. each of the 13 validation sets had only one project).
+(Note, we did not perform a separate stepwise regression
+for each prediction, we simply performed a regression
+using the variables shown in Table 10 omitting the project
+to be predicted). The results of this procedure are shown
+
+
+in Figure 6, where the residuals have been transformed to
+the raw data scale. Both the Wilcoxon matched-paired
+signed rank test and the paired ‘t’ test confirm that the
+absolute residuals for the Company 1 model are
+significantly smaller than the absolute residuals for the
+model based on the other companies. The summary
+statistics for the Company 1 model are shown in Table 11,
+which confirms that the within-company model is much
+superior to the cross-company model. The estimate
+accuracy achieved by Company 1 was a 10%
+underestimate, which is superior to the accuracy provided
+by our model. This is an extremely good accuracy and is
+not representative of the accuracy achieved by other
+companies in our dataset. The only other report of Web
+project estimate accuracy that we are aware of reported an
+MMRE of 0.37 for a small Web company that usually
+underestimated effort [16].
+
+**Figure 5 Scatter plot of effort against high effort**
+**functions (natural log-log scale)**
+
+8
+
+7
+
+6
+
+5
+
+4
+
+3
+
+0 .5 1 1.5 2
+lntothf
+
+To check the extent to which a company-specific cost
+model can be used to predict effort for other companies’
+projects we used the Company 1 model to predict the
+values of the other companies’ projects. Unfortunately,
+Table 12 shows that the Company 1 model is a very poor
+predictor of effort for the other projects.
+
+**Table 11 Summary statistics for predictions**
+
+
+
+
+|Prediction statistics|Predictions based<br>on Company 1<br>model|Predictions<br>based on other<br>company model|
+|---|---|---|
+|MMRE|0.245|0.565|
+|Median MRE|0.234|0.444|
+|Pred(25)|53.8% (7 of 13)|30.8% (4 of 13)|
+|Mean absolute deviation|61.3|179.5|
+|Median absolute deviation|35.9|77.5|
+
+**Figure 6 Residuals for Company 1 based on the**
+**Company 1 model and the Model based on other**
+**companies**
+
+1200
+
+1000
+
+800
+
+600
+
+400
+
+200
+
+0
+
+-200
+
+Company 1 model Other company’s
+model
+
+**Table 12 Predictions of the other Companies’ projects**
+**based on Company 1 model**
+
+|Prediction Statistics|Prediction for other companies<br>based on Company 1 model|
+|---|---|
+|MMRE|3.57|
+|Median MRE|0.78|
+|Pred(25)|15%|
+|Mean absolute deviation|632.1|
+|Median absolute deviation|182.2|
+
+
+
+**4. Discussion**
+
+The results reported in this paper refer to a specific
+data set. The data was not collected by means of a
+randomised survey, so the conclusions that can be drawn
+from the data are limited. In particular, the specific
+models presented in the paper cannot be assumed to apply
+to companies other than those who contributed data, or,
+perhaps, to companies that develop applications similar in
+size and type to those described here. We are currently
+collecting data from other companies, which will allow us
+to assess whether the cross-company model can be
+applied more widely. Thus, that the main scientific
+contribution of our paper is to provide examples (or
+counter-examples) of cost estimation phenomena in the
+Web development scenario that can be compared with
+results from other studies.
+
+Our results support the view that it is possible to
+construct a cross-company effort estimation model. In
+addition, it is interesting to observe that two of the three
+variables included in the best-fitting model (total number
+of web pages and total number of high effort functions)
+were the two top ranking measures used by Web
+companies in their own pricing models [14].
+
+
+Although the cross-company regression model (see
+Table 4) was statistically significant, it only accounted for
+60% of the variation on the transformed scale and
+exhibited poor goodness of fit statistics on the raw data
+scale (MMRE=1.05 and median MRE=0.534). However,
+the model behaved better when used to predict Company
+1 projects (MMRE=0.565 and Median MRE=0.444). In
+both cases our models presented better estimation
+accuracy than the estimate accuracy achieved by the
+participating companies. This result supports two of the
+previous studies that have looked at the ability of crosscompany models to predict individual company results.
+However, in contrast to the previous studies, our results
+were found for a data set where it was not possible to
+apply rigorous quality control procedures to the data
+collection process.
+
+In contrast to [17], our results also show a substantial
+improvement if a company specific model is used. For our
+data set, this suggests that a cross-company data set
+should only be used for estimation until it is possible to
+build a within-company model. Furthermore, our withincompany model included different variables than the
+cross-company model. This implies that simple
+recalibration of an existing cross-company model will not
+necessarily lead to the best model. However, our withincompany model was no use at all for predicting the effort
+of the projects in other companies. This is consistent with
+the early studies of cost estimation models which
+suggested models could not be used outside the
+environment in which they were developed.
+
+Further study using Web projects data is necessary to
+confirm our findings. At the time this study was
+conducted only one company provided sufficient data to
+construct a within company model.
+
+In summary, for practitioners who work with Web
+development and manage Web projects, here are the key
+observations we believe can be gained from our results:
+
+- A cross-company effort estimation model can be useful
+for companies that do not have past projects from
+which to develop their own models *.* For example, small
+or immature software companies will not initially have
+past projects from which to develop their own models
+
+[15]. Therefore, the ability to estimate effort using, as a
+reference, similar projects developed by diverse Web
+companies is more reasonable than to estimate effort
+without historical data or previous experience.
+
+- A cross-company data set should only be used for
+estimation until it is possible for a Web company to
+build its own within-company model. This is even more
+appropriate for Web companies that develop Web
+projects of the same type, using standard technologies
+and the same staff. Unfortunately it is not possible to
+know in advance how many projects are needed to
+construct a useful within company data set since it
+depends on several factors and specific circumstances
+
+(e.g. the stability of the development process and the
+number of variables included in the model). However,
+another study of Web cost estimation within-company
+data obtained good prediction accuracy using 12
+projects [16]. So in some circumstances a dataset of 12
+or 13 is sufficient.
+
+- Simple size measures, available early in the lifecycle,
+that can be estimated by clients (who will almost
+certainly have no software application knowledge) are
+suitable for building effort estimation models. Note that
+to obtain the number of high effort functions it is
+necessary to provide a client with a list of high effort
+functions and to count those that have been selected. In
+addition, the development team size must already be
+known by the Web company.
+
+**Acknowledgements**
+
+
+(e.g. the stability of the development process and the [6] Jeffery, R., M. Ruhe and I. Wieczorek. Using public
+number of variables included in the model). However, domain metrics to estimate software development
+another study of Web cost estimation within-company effort. Proceedings 7th International Software
+data obtained good prediction accuracy using 12 Metrics Symposium, London, IEEE Computer
+projects [16]. So in some circumstances a dataset of 12 Society Press, 2001, pp 16-27.
+or 13 is sufficient. [7] Kemerer, C.F. An empirical validation of software
+
+- Simple size measures, available early in the lifecycle, cost estimation models. Communications ACM,
+that can be estimated by clients (who will almost 30(5), 1987.
+certainly have no software application knowledge) are [8] Kitchenham, B.A. A procedure for analysing
+suitable for building effort estimation models. Note that unbalanced data sets. IEEE Trans. Software
+to obtain the number of high effort functions it is Engineering. 24(4), 1998, pp 278-301.
+necessary to provide a client with a list of high effort [9] Kitchenham, B.A. and N.R. Taylor. Software cost
+functions and to count those that have been selected. In models. ICL Technical Journal, May 1984, pp73-102.
+addition, the development team size must already be [10] Kitchenham, B.A., L.M. Pickard, S.G. MacDonell
+known by the Web company. and M.J. Shepperd. What accuracy statistics really
+
+measure. IEE Proceedings - Software, 148(3), June
+
+**Acknowledgements** 2001, pp 81-85.
+
+We would like to thank all those companies that have [11] Lokan, C., T. Wright, Peter, R. Hill, and Michael
+volunteered data on their Web projects to the Tukutuku Stringer. Organizational benchmarking using the
+database. The Tukutuku database is available to any ISBSG Data Repository, IEEE Software, 2001 18(5),
+organization submitting three or more projects to the pp 26-32.
+database. [12] Maxwell, K. Applied Statistics for Software
+
+Managers. Software Quality Institute Series, Prentice
+
+**References** Hall, 2002.
+
+[1] Briand, L.C., K. El-Emam, K. Maxwell, D. Surmann, [13] Maxwell, K., and P. Forselius. Benchmarking
+I. Wieczorek. An assessment and comparison of Software Development Productivity. IEEE Software
+common cost estimation models. Proceedings of the 17(1), 2000, pp 80-88.
+21st International Conference on Software [14] Mendes, E., N. Mosley, and S. Counsell,
+Engineering, ICSE 99, 1999, pp 313-322. Investigating Early Web Size Measures for Web Cost
+
+[2] Briand, L.C., T. Langley, I. Wieczorek. A replicated Estimation, Proceedings of EASE’2003 Conference,
+assessment of common software cost estimation Keele, April, 2003, pp 1-22.
+techniques. Proceedings of the 22nd International [15] Moses, J. Learning how to improve effort estimation
+Conference on Software Engineering, ICSE 20, 2000, in small software development companies.
+pp 377-386. Proceedings of the 24th International Computer
+
+[3] Christodoulou, S. P., P. A. Zafiris, T. S. Software and Applications Conference, 1999.
+Papatheodorou, WWW2000: The Developer's view [16] Ruhe, M., R. Jeffery, and I. Wieczorek. Using Web
+and a practitioner's approach to Web Engineering, Objects for estimating software development effort
+Proc. Second ICSE Workshop on Web Engineering, for Web applications. Proceedings 9th International
+4 and 5 June 2000, Limerick, Ireland, 2000, pp 75- Software Metrics Symposium, Sydney, IEEE
+92. Computer Society Press, September 2003, pp 30-37.
+
+[4] Cook, R.D. Detection of influential observations in [17] Wieczorek, I. and M. Ruhe. How valuable is
+linear regression. Technometrics, 19, 1977, pp 15-18. company-specific data compared to multi-company
+
+[5] Jeffery, R., .M. Ruhe and I. Wieczorek. A data for software cost estimation? . Proceedings 8th
+Comparative Study of Two Software Development International Software Metrics Symposium, Ottawa,
+Cost Modeling Techniques using Multi- IEEE Computer Society Press, June 2002, pp 237organizational and Company-specific Data. 246.
+Information and Software Technology, 42, 2000, pp [18] Wilcoxon, F. Individual comparisons by ranking
+1009-1016. methods. Biometrics, 1, 1945, pp 80-83.
+
+Note. The data set can be made available to other researchers for independent audit of the statistical analyses presented in
+this paper but cannot be published for confidentiality reasons. Please contact Emilia Mendes at emilia@cs.auckland.ac.nz
+
+
+We would like to thank all those companies that have
+volunteered data on their Web projects to the Tukutuku
+database. The Tukutuku database is available to any
+organization submitting three or more projects to the
+database.
+
+
+**References**
+
+[1] Briand, L.C., K. El-Emam, K. Maxwell, D. Surmann,
+I. Wieczorek. An assessment and comparison of
+common cost estimation models. Proceedings of the
+21st International Conference on Software
+Engineering, ICSE 99, 1999, pp 313-322.
+
+[2] Briand, L.C., T. Langley, I. Wieczorek. A replicated
+assessment of common software cost estimation
+techniques. Proceedings of the 22nd International
+Conference on Software Engineering, ICSE 20, 2000,
+pp 377-386.
+
+[3] Christodoulou, S. P., P. A. Zafiris, T. S.
+Papatheodorou, WWW2000: The Developer's view
+and a practitioner's approach to Web Engineering,
+Proc. Second ICSE Workshop on Web Engineering,
+4 and 5 June 2000, Limerick, Ireland, 2000, pp 7592.
+
+[4] Cook, R.D. Detection of influential observations in
+linear regression. Technometrics, 19, 1977, pp 15-18.
+
+[5] Jeffery, R., .M. Ruhe and I. Wieczorek. A
+Comparative Study of Two Software Development
+Cost Modeling Techniques using Multiorganizational and Company-specific Data.
+Information and Software Technology, 42, 2000, pp
+1009-1016.
+

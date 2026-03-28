@@ -1,0 +1,31 @@
+Based on the provided paper titled "Further Comparison of Cross-company and Within-company Effort Estimation Models for Web Applications," the authors conducted a study comparing the effectiveness of cross-company and within-company effort estimation models for web applications. They analyzed a dataset of 67 web projects from the Tukutuku database and used two modeling techniques: forward stepwise regression and case-based reasoning. The purpose of the study was to evaluate the performance of these models in predicting effort for projects within a single company versus projects across multiple companies.
+
+Here's a detailed breakdown of the paper:
+
+**Key Findings:**
+
+1.  The authors concluded that within-company models performed better than cross-company models in terms of prediction accuracy for individual companies. 
+2.  Specifically, the within-company model showed significantly better prediction accuracy than the cross-company model for the 14 projects from Company 2.
+3.  The study found that the cross-company model (CCM2) gave better predictions than the cross-company model (CCM1), indicating that the way the models were constructed affected the results.
+4.  The authors observed that case-based reasoning (CBR) yielded better predictions than regression analysis for the overall dataset but not for within-company predictions.
+5.  Overall, the study demonstrated that within-company models tend to perform better than cross-company models, especially for individual companies.
+
+**Used Predictors as Effort Estimators:**
+
+1.  Total effort to develop a Web application (`toteffor`)
+2.  Natural Logarithm of Total effort to develop a Web application (`lntoteff` )
+3.  Number of different languages used (`nlang`)
+4.  Team size (`devteam`) - Average team experience with the development language(s) employed (`teamexp`)
+5.  Number of new Web pages (`newWP`)
+6.  Natural Logarithm of (1 + Number of new Web pages) (`lnnewwp`)
+7.  Natural Logarithm of (1 + total number of high-effort features) (`lntoth`)
+8.  Total number of high-effort functions (`tothigh`)
+9.  Total number of adapted high-effort functions (`hfotsa`)
+10. Total number of adapted low-effort functions (`fotsa`)
+11. Total number of low-effort functions (`totnlow`)
+12. Number of new low-effort functions (`new`)
+13. Average effort to develop a feature/function by one person (`HEffDev` ) and `HEffAdpt`
+
+These predictors were used in the regression models to estimate the effort required to develop a web application.
+
+Overall, the study highlights the importance of considering the source of data and the methodology used to construct the models when selecting an effort estimation strategy. It emphasizes the potential benefits of developing within-company models tailored to the unique characteristics of each organization.

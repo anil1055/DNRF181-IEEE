@@ -1,0 +1,52 @@
+Based on the provided research paper titled 'Resource Estimation for Web Applications', the authors propose a novel approach for estimating web application effort by combining COSMIC Full Function Points with design patterns. Here is a thorough breakdown of the paper:
+
+**Summary of Key Findings**
+
+The proposed approach focuses on providing a procedural framework for expert judgment to guide practitioners in the estimation process, aiming to reduce variance in judgments through algorithmic or statistical techniques. This hybrid approach aims to offer accuracy equivalent to expert judgment while remaining accessible to relatively inexperienced estimators.
+
+**Key Concepts Used in the Research Paper**
+
+1.  **COSMIC Full Function Points**: The researchers utilize COSMIC Full Function Points as a measuring metric for application size. This concept seems to be crucial for estimating web application effort.
+2.  **Design Patterns**: The study leverages design patterns to simplify the measurement process for iterative projects. Popular design patterns, such as Model-View-Controller, Interceptor Filter, and Data Access Object, serve as a basis for simplifying measurements.
+3.  **Functional Processes**: Three types of functional processes – control, view, and model – are distinguished according to the MVC model, enabling precise measurement and categorization of web application components.
+
+**Methodology Overview**
+
+To estimate web application effort, the researchers employed the following steps:
+
+    -   **Layer Identification**: Four main layers – application, middleware, operating system, and device drivers – are recognized and analyzed in web applications.
+    -   **Boundary Definition**: Logical boundaries around functional processes are established instead of focusing solely on physical component-based divisions.
+    -   **Function Point Counting**: COSMIC Full Function Points are utilized for counting functional points.
+        •   **Entry**, **Exit**, **Read**, and **Write** operations are identified, allowing for data grouping to facilitate efficient measurement.
+        •   Each operation contributes to a CFSU (Calculation of Function Points Units) score.
+    -   **Factors Influencing Project Variables**: Various factors influencing team performance and project variables are categorized and listed in tables for ease of reference.
+
+**Tables and Figures Referenced**
+
+There are six Tables mentioned:
+
+- Table 1 discusses factors impacting the size of view components and processes.
+- Table 2 covers factors influencing model component and process sizes.
+- Table 3 lists factors contributing to control component and process sizes.
+- Table 4 presents factors influencing team productivity.
+- Table 5 includes additional factors affecting team productivity.
+- Table 6 provides factors relevant to team familiarity and communication skills.
+- Table 7 illustrates examples from the productivity yardstick used for calibration.
+
+
+
+Several Figures aid in illustrating relationships between data, highlighting trends, and demonstrating visual representations of data points and distributions:
+
+
+
+Figures referenced in the text:
+
+-   Fig 1 demonstrates typical interaction amongst filter, model, view, and controller components in web applications.
+-   Fig 2 displays instances of simpler functional process interactions.
+-   Fig 3 portrays examples of more intricate functional process interactions.
+-   Fig 4 exemplifies a probability density curve produced via Monte Carlo simulation.
+-   Fig 5 showcases a cumulative distribution graph obtained from Monte Carlo simulations.
+
+
+
+Overall, the article outlines a comprehensive procedure involving a combination of manual and computational efforts for resource estimation in web applications. This integrated strategy seeks to reconcile the demands of precision and accessibility, ensuring a reliable approach suitable for diverse environments and skill levels.

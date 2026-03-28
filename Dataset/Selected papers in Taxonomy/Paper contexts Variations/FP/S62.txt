@@ -1,0 +1,806 @@
+34th Euromicro Conference Software Engineering and Advanced Applications
+# **A Case Study Using Web Objects and COSMIC** **for Effort Estimation of Web Applications**
+
+F. Ferrucci [1], C. Gravino [1], S. Di Martino [2]
+
+1 Dipartimento di Matematica e Informatica, University of Salerno
+2 Dipartimento di Scienze Fisiche - Sezione Informatica University of Napoli “Federico II”
+Email: *{* fferrucci, gravino, sdimartino *}* @unisa.it
+
+
+**Abstract**
+
+*Some size measures have been proposed in the literature*
+*to be employed in estimating Web application development*
+*effort, but to date few empirical studies have been under-*
+*taken to validate them and compare their effectiveness. To*
+*address this issue we have performed an empirical study by*
+*using as size measures COSMIC and Web Objects, with the*
+*aim of verifying their effectiveness as indicators of develop-*
+*ment effort. In particular, we have built two effort estima-*
+*tion models by applying the Ordinary Least-Squares regres-*
+*sion and by using a dataset of 15 Web applications devel-*
+*oped by an italian software company. The performance of*
+*the obtained models have been evaluated by using a dataset*
+*of further 4 Web applications developed by the same soft-*
+*ware company some time after the first 15 Web applications.*
+*The results reveal that both Web Objects and COSMIC are*
+*good indicators of the development effort.*
+
+**Index terms** : Empirical Studies, Effort estimation, Web applications, Web engineering.
+
+**1** **Introduction**
+
+Estimating the effort required to develop Web applications represents an emerging issue in the field of Web engineering since it can deeply affect the competitiveness of
+a software company [5] [26] [27] [30] [25] [34] [36] [37]
+
+[38]. In the context of traditional software engineering,
+several widely accepted (model-based) methods to estimate
+software development effort can be found. These methods rely on a formal approach, involving the use of algorithms that take in input some project factors influencing
+the development effort (such as the software size) and produce an effort estimate [8]. However, to date, this is not
+the case for Web applications, whose development effort is
+usually estimated using non-model based methods, mostly
+relying on expert judgments. A limitation to the diffusion
+
+
+of model-based methods comes from the lack of widelyaccepted ways to estimate Web application size that represents a key cost factor. Indeed, the size measures conceived
+and widely accepted for traditional software systems, such
+as *Function Points* ( *FPs* ) [3], are not suited for Web-based
+ones, since they fail to capture some specific features affecting the effort required for applications [36] [37] [38]. In
+the last years, some methods have been proposed to address
+this issue. Among them, *Web Objects* [34] and *COSMIC*
+
+[14] are of special interest, since in some preliminary case
+studies they showed interesting results in predicting Web
+application development effort [15] [37] [38] and revealed
+their superior performance over standard *FPs* [38]. However it is widely acknowledged that a software measure can
+be widely adopted in the industrial domain only if it has
+been validated through several studies that have proved its
+usefulness [6] [7] [40]. To date, there is a strong need for
+further empirical evidence to support these size measures.
+In this paper we report on an empirical study aimed at assessing the effectiveness of both *Web Objects* and *COSMIC*
+as indicators of Web application development effort. As for
+the estimation technique, we exploited a commonly adopted
+technique, namely the *Ordinary Least-Squares* ( *OLS* ) *re-*
+*gression*, that is a model-based technique [8].
+In order to validate the effort estimation we have performed a validation based on an *hold-out sample of applica-*
+*tions* . This is theoretically the best option since the validation set is a totally separate dataset from the dataset used to
+build the effort estimation models [22]. In particular, in our
+study the effort estimation models, one for each size measures, were constructed using 15 Web applications (training set) developed by an Italian software company. Each
+model was then validated exploiting further 4 Web applications (test set) developed some time after the first 15. In
+other words, the estimated effort for the applications in the
+test set are determined using the effort estimation models
+obtained using the applications in the training set.
+The rest of the paper is organized as follows. In Section
+2 we briefly recall the concepts regarding the employed size
+
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+**Table 1. Web Objects components**
+Internal Logical Files logical, persistent entities maintained by the Web
+application to store information of interest
+External Interface Files logical, persistent entities that are referenced by
+the Web application, but are maintained by another
+software application
+External Inputs logical, elementary business processes that cross
+into the application boundary to maintain the data
+on an Internal Logical File, access a Multi-Media
+File, invoke a Script, access a Link or ensure compliance with user requirements
+External Outputs logical, elementary business processes that result
+in data leaving the application boundary to meet a
+user requirements (e.g., reports, screens).
+External Queries logical, elementary business processes that consist
+of a data ”trigger” followed by a retrieval of data
+that leaves the application boundary (e.g., browsing of data).
+Multi-Media Files physical, persistent entities used by the Web application to generate output in multi-media format.
+Web Building Blocks logical persistent entities used to build the Web applications and automate their functionality
+Scripts logical, persistent entities used by the Web application to link internal files and building blocks together in predefined patterns
+Links logical, persistent entities maintained by the Web
+application to find links of interest to external applications
+
+measures, the estimation technique, and the evaluation criteria. Section 3 reports on the empirical evaluation carried
+out by using the two sets of 15 and 4 Web applications. Related work is discussed in Section 4 while the conclusions
+
+and future work conclude the paper.
+
+**2** **Employed size measures, estimation tech-**
+**nique, and validation criteria**
+
+**2.1** **Web Objects**
+
+*Web Objects* were proposed by Reifer to measure the size
+of Web applications [34]. In particular, Reifer adds four
+new Web-related components to the five function types of
+the *FPA* ( *Function Point Analysis* ) method, namely *Multi-*
+*media Files*, *Web Building Blocks*, *Scripts*, and *Links* . In
+Table 1 we recall the definition of the Web Objects components as provided by Reifer in his white paper explaining the
+counting conventions of the *Web Objects* [35]. He devised
+such list based on the opinion of experts and by analyzing
+64 Web applications from various application domains [35].
+To apply the *Web Objects* method, firstly the instances
+of the nine components are counted, and a complexity (low,
+average, or high) is associated to them. Then, a weight is
+associated to each counted instance of the components, by
+using a calculation worksheet [35]. The total amount of
+*Web Objects* is obtained according to the weights that are
+related to the complexity of each component, giving an indication of the size of the considered Web application. For
+
+
+further details see [35]. No empirical study was performed
+by Reifer to show the effectiveness of this approach. Successively, *Web Objects* have been employed in two case
+studies achieving interesting results [37] [38].
+
+**2.2** **COSMIC**
+
+*COSMIC* is a widely adopted method for sizing software,
+which has been approved as an international standard by
+ISO (ISO/IEC 19761:2003). This method was originally
+conceived for business and real-time applications, but it can
+be successfully applied in any other context, where software
+is mainly dominated by large amounts of data movements.
+Conversely, the method is not suited to measure software
+mostly characterized by complex algorithms or other specialized and complex rules [13]. The basic idea underlying
+this approach is that, for many kinds of software, the most of
+development efforts are devoted to handle data movements
+from/to the persistent storage and the users. Thus, their
+number can provide a meaningful sight of the system size
+(see the document: Guideline for sizing business application Software Using *COSMIC-FFP*, version 1.0, December
+2005 [13]). To identify data movements, *COSMIC* requires
+to define a proper context model for the specific application,
+bounding the software from its operating environment. Basically each data movement crossing a boundary has to be
+counted. The method considers four kinds of data move
+ments, i.e., *Entry*, *Exit*, *Read*, and *Write*, and the functional
+size of the software, in terms of *COSMIC Function Point*
+
+[13], is given by the sum of all these data movements.
+The application of the *COSMIC* method to size Web systems has been analyzed by some researchers in the last years
+
+[15] [24] [36]. The difficulties of applying the *FPA* method
+for sizing an Internet bank system firstly motivated Rollo
+to use the *COSMIC* method [36]. The successful application of the method to that system made Rollo confident
+that the *COSMIC* approach was suited for sizing Web applications [36]. However, he did not present any empirical
+result supporting his thesis. Successively, two studies investigated *COSMIC* approach to estimate Web application
+development effort [15] [24], obtaining interesting results.
+
+**2.3** **OLS regression**
+
+*OLS regression* [32] has been widely and successfully
+employed in the industrial context and in several researches
+to estimate software development effort [8]. This holds also
+for Web applications [5] [15] [27] [30] [38].
+*OLS regression* is a statistical technique that explores the
+relationship between a dependent variable and one or more
+independent variables [32], providing a prediction model
+described by an equation
+
+(1) *y* = *b* 1 *x* 1 + *b* 2 *x* 2 + *...* + *b* *n* *x* *n* + *c*
+
+
+442
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+where *y* is the dependent variable (the effort), *x* 1 *, x* 2 *, ..., x* *n*
+are the independent variables (the cost drivers), *b* *i* is the coefficient that represents the amount the variable *y* changes
+when the variables *x* *i* changes 1 unit, and *c* is the intercept.
+In our empirical study we have exploited the *OLS regression*
+to obtain linear regression models that use the variable representing the effort (in terms of person/hours) as dependent
+(namely *EFH* ) and the variable denoting the employed size
+measure (namely *WO*, representing *Web Objects*, or *CFP*,
+representing *COSMIC* ) as independent. Once the prediction
+model has been constructed, the effort estimation for a new
+system has been obtained by sizing it in terms of *WO* ( *CFP*,
+respectively) and using this value in the equation *EFH* =
+*b* - *WO* + *c* ( *EFH* = *b* - *CFP* + *c*, respectively).
+Moreover, in order to validate the obtained effort estimation models we have exploited a *hold-out validation* approach, thus a validation based on the use of an *hold-out*
+*sample of applications* [22]. In particular, we employed two
+different datasets: the first obtained from Web applications
+developed by a software company in the past and the second dataset obtained from Web applications developed by
+the same software company after the ones included in the
+first set. The first dataset (training set) was used to build the
+effort estimation models while the second dataset (test set)
+was used validate the models.
+
+**2.4** **Evaluation criteria**
+
+The accuracy of the estimations has been assessed using *MMRE* and *Pred* (0.25) [12], and boxplots of absolute
+residuals [28]. In the following we briefly recall the main
+concepts underlying *MMRE* and *Pred* (0.25), and boxplots.
+The *Magnitude of Relative Error* [12] is defined as
+
+(2) *MRE* = *|EFHreal −* *EFHpred|/EFHreal*
+
+where *EFHreal* and *EFHpred* are the actual and the estimated effort, respectively. *MRE* has to be calculated for
+each observation in the dataset. To have a cumulative mea
+sure of the error, all the *MRE* values have been aggregated
+across all the observations, thus obtaining two measures of
+the central tendency, known as *Mean of MRE* ( *MMRE* ), and
+*Median MRE* ( *MdMRE* ), where the latter is less sensitive to
+extreme values [27].
+The *Prediction at level* 0.25 [12] is defined as
+
+(3) *Pred* (0 *.* 25) = *k/N*
+
+where *k* is the number of observations whose *MRE* is less
+
+than or equal to 0.25, and *N* is the total number of observations. According to Conte *et al.*, a good effort prediction
+model should have a *MMRE≤* 0.25 and *Pred* (0.25) *≤* 0.75,
+meaning that at least 75% of the predicted values should
+fall within 25% of their actual values [12].
+
+
+Boxplots are widely employed in data analysis since
+they provide a quick visual representation to summarize the
+data, using five values: median, upper and lower quartiles,
+minimum and maximum values, and outliers [23]. They
+represent a usefull graphical representation to compare
+the distributions of absolute residuals (i.e., *|EFHreal −*
+*EFHpred|* ) obtained with different estimation models.
+Moreover, we have tested the *statistical significance* of
+the obtained results by using absolute residuals, in order to
+establish if one of the measures provided better results than
+the others [23] [27]. In particular, we have performed statistical tests to verify whether the rwo population of abosolute
+residuals, obtained using *CFP* and *WO*, respectively, have
+identical distributions.
+
+**3** **Empirical Evaluation**
+
+In this section we present and discuss the results of the
+empirical analysis we have performed.
+
+**3.1** **Dataset**
+
+A crucial aspect in any empirical software engineering
+study is the availability of reliable project data coming from
+the industrial world. Indeed, often the lack of publicly available datasets is the main problem in the empirical software
+engineering field that prevents researchers to effectively and
+efficiently verify hypothesis and ideas, and to transfer in the
+industrial world proposals conceived in the academic field.
+Data for our empirical study have been provided by an
+Italian software company, whose core business is the development of enterprise information systems, mainly for local and central government [1] . Among its clients, there are
+also health organizations, research centers, industries, and
+other public institutions. The company is specialized in
+the design, development, and management of solutions for
+Web portals, enterprise intranet/extranet applications (such
+as Content Management Systems, e-commerce, work-flow
+managers, etc.), and Geographical Information Systems. It
+is certified ISO 9001:2000, and it is also a certified partner
+of Microsoft, Oracle, and ESRI.
+This company provided us two sets of 15 and 4 Web applications. The Web applications of the second set were
+developed by the software company after the first 15. The
+two sets include e-government, e-banking, Web portals, and
+Intranet applications. They have been developed by exploiting a wide range of Web-oriented technologies, such
+as J2EE, ASP.NET, etc.. Oracle has been the commonly
+adopted DBMS, but also SQL Server, Access and MySQL
+were employed in some Web applications.
+The variables employed in our empirical analysis are:
+*EFH*, expressed in terms of person-hours, *CFP*, expressed
+
+1 For confidentiality reasons, the company name is not reported.
+
+
+443
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+**Table 2. Descriptive statistics of EFH, CFP,**
+**and WO for the study**
+
+**Dataset** **Var** **Obs** **Min** **Max** **Mean** **Median** **Std. Dev.**
+
+EFH 15 1176 3712 2677.867 2792 827.115
+
+I CFP 15 264 1022 602.400 611 249.113
+
+WO 15 465 2258 1464.867 1389 543.986
+
+EFH 4 578 2686 2287 2406 451.01
+
+II CFP 4 578 645 610.75 610 29.353
+
+WO 4 1151 1427 1280 1271 122.352
+
+in terms of *CFP* s, and *WO*, expressed in terms of number
+of *Web Objects* . Table 2 reports the summary statistics performed for *EFH*, *CFP*, and *WO*, related to the two datasets
+of 15 (I) and 4 (II) Web applications.
+
+**3.2** **Results**
+
+In this section we report on the estimation results obtained by using the two sets of 15 and 4 Web applications
+and by exploiting the *OLS regression* as modeling technique
+and *COSMIC* and *Web Objects* as size measures.
+We have performed the *OLS regression* to build effort
+estimation by using as dataset the first set of 15 Web applications. To this end, we have preliminarily carried out an
+outlier’s examination, in order to remove possible extreme
+values which may unduly influence the models, and verified the assumptions underlying the *OLS* Regression. The
+analysis highlighted the absence of outliers. Moreover, following the suggestion of Kitchenham and Mendes [30], we
+have also analyzed the residuals plot and used Cook’s distance. We have not found any influential observations that
+could threat the stability of the models.
+As for the *OLS* Regression assumptions, we have verified
+that the relationship between the independent variable and
+the dependent variable is *linear* ; the variance of the residuals is constant for all the values of the independent variable;
+and the residuals are *normally* distributed. We do not report
+on this analysis for sake of space.
+Table 3 shows the results of the *OLS* Regression carried
+out with the 15 Web applications to verify the quality of the
+obtained models. In particular, to determine the goodness of
+fit of the regression models we have used the Coefficient of
+Determination, *R* [2], which measures the percentage of variation in the dependent variable explained by the independent
+variable. A high *R* [2] value is an indication of the goodness
+of the prediction model. Other useful indicators are the *F*
+value and the corresponding *p-value* (denoted by *Sign F* ),
+whose high and low values, respectively, denote a high degree of confidence for the prediction. Moreover, we have
+performed a *t statistic* and determined the *p-value* and the
+*t-value* of the coefficient and the intercept for each model
+in order to evaluate its statistical significance. *p-value* pro
+
+**Table 3. The results of the OLS regression**
+**analysis with CFP and WO**
+
+**Value** **Std.Err** **t-value** **p-value**
+CFP Coefficient 3.014 0.386 7.801 0.000
+Intercept 862.281 250.613 3.441 0.004
+WO Coefficient 1.246 0.241 5.162 0.000
+Intercept 851.912 375.814 2.267 0.041
+*R* [2] **Adjusted** *R* [2] **Std. Err** **F** **Sign. F**
+
+CFP 0.824 0.810 360.099 60.861 0.000
+
+WO 0.672 0.647 491.513 26.645 0.000
+
+vides the probability that a coefficient of a variable is zero,
+while *t-value* can be used to evaluate the importance of the
+variable for the generated model. A *p-value* less than 0.05
+indicates that we can reject the null hypothesis and the variable is a significant predictor with a confidence of 95%. As
+for the *t-value*, a variable is significant if the corresponding
+*t-value* is greater than 1.5.
+Concerning the regression model obtained with *CFP*, the
+coefficient 3.014 and the intercept 862.281 are significant
+at level 0.05, as from the *t test* . The model is characterized
+by an high *R* [2] value (0.824) a high *F* value and a low *p-*
+*value*, indicating that the prediction is indeed possible with
+a high degree of confidence. The *t-values* and *p-values* for
+the corresponding coefficient and the intercept present values greater than 1.5 and less than 0.05, respectively.
+As for the regression model obtained using *WO* as independent variable, the coefficient 1.246 and the intercept
+851.912 are significant at level 0.05, as from the *t test* .
+This model is characterized by a *R* [2] =0.672 that can be considered a fair value, lower than the one characterizing the
+model based on *CFP* variable (about 0.15). Even if the
+*F* value is not so high, the corresponding *p-value* is less
+than 0.05. Furthermore, the *t-values* and *p-values* for the
+corresponding coefficient and the intercept present values
+greater than 1.5 and less than 0.05, respectively, suggesting
+that they can be considered accurate and significant.
+To evaluate the prediction accuracy of the models obtained with *OLS* regression using the first dataset, we have
+employed as validation set other 4 Web applications (i.e., by
+performing a hold-out validation [22]). The results are reported in Table 4. Based on the commonly accepted thresholds provided by Conte *et al.* [12], we can conclude that
+both *CFP* and *WO* are good for estimating the development effort. Thus, for the software company involved in
+our study, the models obtained by using information from
+Web applications developed in the past can be profitably exploited to estimate development effort of new applications.
+Although the model based on *CFP* has better *R* [2] and *F*
+values than the ones of the model based on *WO* (i.e., the
+former fits better than the latter), the analysis of boxplots
+of absolute residuals in Figure 1 shows a better estimation
+
+
+444
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+**Table 4. The results of the hold-out validation**
+
+**MMRE** **MdMRE** **Pred(0.25)**
+
+CFP 0.22 0.11 0.75
+
+WO 0.14 0.06 0.75
+
+CFFP WO
+
+**Figure 1. The boxplots of absolute residuals**
+
+performance of the model constructed using *WO* . Indeed,
+the median of boxplot for *WO* is more closed to zero than
+the one of boxplot of *CFP* . Furthermore, the tails and the
+box length of the *WO* boxplot are slightly smaller than the
+tails and the box length of the *CFP* boxplot.
+As suggested in [23] [27] we have also tested the statistical significance of the results by using paired absolute
+residuals. The aim was to verify whether there is statistically significant difference in the absolute residuals obtained with the *CFFP* and *WO* models, i.e., whether the absolute residuals obtained with the *CFP* model are significant
+less than those obtained with the *WO* model. To this end,
+we have performed the *Wilcoxon test*, by considering a 95%
+confidence interval. This kind of test is used to verify the
+hypothesis that the mean of the differences in the pairs (of
+absolute residuals) is zero. The test statistic is the number
+of positive differences. If the null hypothesis is true, then
+the number of positive and negative differences should be
+approximately the same.
+The performed test shows that the null hypothesis cannot
+be rejected, i.e., there is no statistically significant difference for the absolute residuals obtained by using *CFP* and
+*WO* . Thus, the two measures have comparable prediction
+accuracies with the employed dataset.
+
+**3.3** **Threats to Validity**
+
+It is widely recognized that several factors can bias the
+*construct*, *internal*, *external*, and *conclusion* validity of empirical studies. To satisfy construct validity a study has “to
+
+
+establish correct operational measures for the concepts being studied” [21]. In other words, it represents to what extent the predictor and response variables precisely measure
+the concepts they claim to measure [27]. A study has internal validity if its outcome can be considered as a function of the measured variables and not of extraneous fac
+tors. Conclusion validity is concerned with the ability to
+draw statistically correct conclusions while external validity is concerned with the ability to generalize the results to
+other contexts. In the following, we analyze our empirical
+study with respect to each of these type of validity.
+
+As for the *construct validity*, the choice of the size measures and how to collect them represents the crucial aspects.
+Regarding the selection of the size measures, we employed
+two measures that have been used in the past to estimate
+Web applications development effort [15] [38]. The collection of information about the application measures and
+actual effort represents the main difficulties to carry out this
+kind of study. Concerning the effort collection, the software
+company used timesheets to keep track of this information,
+where each team member annotates the information about
+
+his/her development effort, and weekly each project manager stored the sum of the efforts for the team. In order to
+collect all the significant information to calculate the values of the size measures, the authors defined a template to
+be filled in by the project managers. All the project managers were trained on the use of the questionnaires. They
+took into account the *COSMIC* Measurement manual, version 2.2 [13] and the rules provided in [15] for the collection
+required to apply *COSMIC* method. Moreover, they employed the counting conventions of *FPA* method [20] and
+followed the suggestions provided by Reifer in his “Web
+Objects White Paper” [35] where he explains how to quantify the *Web Objects* components for a given Web application. The projects managers had experience in applying the
+*FPA* method so they did not manifest any kind of difficulties
+to collect the information required for our empirical analysis. One of the authors analyzed the filled templates and
+the analysis and design documents, in order to cross-check
+the provided information. The same author calculated the
+values of the size measures.
+
+Some factors should be taken into account for the *inter-*
+
+*nal validity* : subjects’ authoring and designing experience,
+and reliability of the data and lack of standardization [5]
+
+[6] [23] [27]. The subjects involved in the study were professionals who worked in the software company. No initial selection of the subjects was carried out, so no bias has
+been apparently introduced. Moreover, the Web applications were developed with technologies and methods that
+subjects had experienced. Consequently, confounding effects from the employed methods and tools can be excluded.
+As for the reliability of the data and lack of standardization,
+the questionnaires used were the same for all the applica
+
+445
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+tions and the project managers were instructed on how to
+use the questionnaires, to correctly provide the required information. Instrumentation effects in general did not occur.
+As for the *conclusion validity* we have carefully applied
+the statistical tests, verifying all the required assumptions.
+A threat to conclusion validity could be the few number of
+Web applications composing the dataset. However, it is recognized that getting information on a great number of real
+world software applications is quite hard [33] [39] and this
+is especially true for Web applications for several reasons
+
+[29]. Several empirical studies are reported in the literature
+based on few observations (see e.g., [37] [38] which exploit
+12 Web applications). Indeed, this kind of study can contribute to provide useful indications that can be further validated in subsequent studies. So other investigations should
+be performed to verify/confirm the results of our study.
+The systems involved in our analysis are representative
+samples of modern Web applications, taking into account
+their type, functionalities, target platforms, and complexity.
+Thus, we think that the type of Web applications did not bias
+the external validity of the achieved results. On the other
+hand, it is recognized that the results obtained in an industrial context might not hold in others [9]. Thus, replications
+of the study taking into account data from other companies
+is necessary to get a generalization of the results.
+
+**4** **Related Work**
+
+We discuss related work by first taking into account other
+empirical studies that focused on *COSMIC* and *Web Objects*
+and then reporting on empirical studies based on different
+size measures proposed for Web applications.
+
+**4.1** **Empirical studies with COSMIC and**
+**Web Objects**
+
+*COSMIC* was applied in two studies that exploited sets
+of Web applications developed by students [15] [24], while
+*Web Objects* was assessed in two studies [37] [38] exploiting an industrial dataset.
+Regarding the studies carried out by Ruhe *et al.*, they
+performed an *OLS* regression analysis based on a dataset of
+12 Web applications developed by a medium-size software
+company operating in Australia and obtained interesting results in terms of prediction accuracy of the method [38].
+Moreover, they also used *Web Objects* as size metrics in the
+context of *WebCOBRA* [37]. In their studies, they obtained
+*MMRE* =0.24, *MdMRE* =0.23, and *Pred* (0.25)=0.67 for the
+*OLS* regression model and *MMRE* =0.17, *MdMRE* =0.15,
+and *Pred* (0.25)=0.75 for the *WebCOBRA* model. Thus, the
+analysis reported in the present paper has confirmed the
+goodness of *Web Objects* to estimate effort. Moreover, it
+is worth noting that our results not only confirm the results
+
+
+of Ruhe *et al.*, but also extend those results. Indeed, the applications used in our empirical study have larger sizes than
+the applications used by Ruhe *et al.* . In particular, the mean
+effort of our datasets is about three times the mean effort
+
+of the Ruhe *et al.* ’s dataset and the applications used in our
+empirical study are characterized by a mean number of *Web*
+*Objects* about five times the one of the applications used by
+Ruhe *et al.* . Thus, the *Web Objects* metrics can be considered a scalable measure in the sense that it turns out to be
+
+good for applications of larger size, too.
+Regarding the empirical study with *COSMIC*, Mendes *et*
+*al.* constructed an effort prediction model by applying *OLS*
+regression analysis and using data on 37 Web hypermedia
+applications developed by postgraduate and MSc students
+attending a Hypermedia and Multimedia Systems course at
+the University of Auckland (NZ) [24]. The derived model
+did not present reasonable prediction accuracy and replications of the empirical study were highly recommended
+by the authors. In [15] *COSMIC* method has been applied on 44 Web applications developed by academic students and the model obtained with *OLS* regression analysis was characterized by good estimations if we assume as
+a reasonable threshold Conte *et al.* ’s suggestion [12]. In
+particular, they obtained *MMRE* =0.15, *MdMRE* =0.10, and
+*Pred* (0.25)=0.75. However, the scientific literature has often debated on the industrial relevance of results coming
+from empirical studies with students [5] [11] [27]. Even if
+in the context of Web application development it is recognized that professional developers are usually young programmers, coming straight from university [27], further
+analysis exploiting an industrial dataset is needed to verify/confirm the results obtained with the student Web applications. To this end, the empirical studies we present in this
+paper was carried out using an industrial dataset. The results
+confirmed those obtained in [15], suggesting that *COSMIC*
+can be effectively employed to predict Web application development effort.
+
+**4.2** **Studies on other size measures for**
+**Web applications**
+
+Besides *COSMIC* and *Web Objects*, other measures proposed in the literature are extensions/adaptations of the *FPs* .
+In particular, the *OOmFPWeb* method maps the *FPs* concepts into the primitives used in the conceptual modeling
+phase of *OOWS* [1]. *OOWS* is a method for producing software for the Web. In a recent work [2], a preliminary evaluation of the *OOmFPWeb* has been provided.
+Mendes *et al.* proposed several size measures for
+static and dynamic Web applications, such as number
+of Web pages, number of graphics, number of features/functionality, etc. [27] [30]. Those measures were
+used to provide effort estimations, by employing several
+
+
+446
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+techniques, such as Case-Based Reasoning, Linear and
+Stepwise Regression, and Regression Tree and using Web
+applications developed by academic students and by companies. Moreover, the results of two surveys and of an empirical study aimed at identifying early size measures and
+cost drivers for Web cost estimation were presented in [26].
+The same authors also presented a survey literature of hypermedia and Web size metrics proposed in recent papers
+and classifies the analyzed studies according to a proposed
+taxonomy [25]. The aim was to provide a mean for classifying and understanding the body of knowledge about Web
+size measures and their employing for effort estimation.
+
+Other two surveys classified Web size measures [10]
+
+[17]. Calero *et al.* discussed a wide ranging set of
+metrics for quantifying Web quality attributes which have
+been distinguished in three dimensions related to Web Features, Lifecycle Processes, and Quality Characteristics [10].
+Dhyani *et al.* presented formulations and comparisons of
+well-known Web metrics for quantifying Web graph properties, Web page significance, Web page similarity, search
+and retrieval, usage characterization, and information theoretic properties [17]. However, both surveys did not analyze
+the use of the proposed size measures for cost estimation.
+
+Baresi and Morasca defined several measures on the basis of attributes obtained from design artifacts, automatically generated with W2000 [4], and conducted an empirical study and two replications for identifying the attributes
+that may be related to the effort required for designing Web
+applications (i.e., they did not focus on the total development effort) [5]. These studies involved the students of an
+advanced university classes on modeling Web applications
+and the authors think that the designers’ background impacted the achieved results and further analysis is required.
+
+Two set of size measures were compared in [16], the first
+included some length measures (such as number of Web
+pages, number of server-side script and applications, etc.)
+while the second contained some functional measures (in
+particular, the components used to evaluate the *Web Ob-*
+*jects* . The results of this study revealed that the first set provided better estimates when using *Case-Based Reasoning*
+while the second set provided better estimates when using
+*OLS* . However, the analysis also suggested that there were
+no significant differences in the estimations and the residuals obtained with the two sets of measures. In [18] the
+following sets of measures were compared: *Web Objects*,
+the two sets used in [16], the Tukutuku measures proposed
+in [31]. The empirical results showed that all the measures
+provided good predictions in terms of *MMRE*, *MdMRE*, and
+*Pred* (0.25) statistics and the study largely confirmed the results of previous works. It is worth that the study presented
+in [24] employed Web applications developed by academic
+students while the empirical analysis reported in [18] [16]
+
+[38] were based on industrial Web applications.
+
+
+**5** **Conclusions and lesson learned**
+
+We have reported on an empirical study carried out to
+assess the effectiveness of *Web Objects* and *COSMIC* as indicators of Web application development effort and to compare their prediction accuracy. As for the datasets used in
+the empirical analysis, we have exploited a set of 15 Web
+applications developed by a software company to build two
+effort estimation models, while further 4 Web applications
+provided by the same software company have been employed to validate the obtained models. In other words,
+we have performed a validation based on *an independent*
+*hold-out sample of applications* [22]. The results have
+highlighted the usefulness of *Web Objects* and *COSMIC*
+measures in estimating Web application development effort when employed in combination with *OLS regression* .
+The analysis has also revealed that the estimation results
+achieved with these measures are comparable.
+Finally, observe that the results presented in this paper
+have provided some indications for the software company
+that supplied the data. They might be also relevant for
+other companies that develop Web applications similar to
+those used in our investigation. However, a replication of
+the study, in different setting and with a larger dataset, is
+required in order to generalize the results to other companies. Indeed, it is widely recognized that several investigations should be performed to verify/confirm empirical results [40]. Thus, as future work, we plan to collect and
+analyze further data also from other companies. Moreover,
+we will investigate other estimation techniques (e.g., *Case-*
+*Based Reasoning* [39] that have provided interesting results
+for traditional software systems. As suggested in [19] we
+also plan to experiment regression models using on one or
+more data movement types (i.e., *Exit*, *Entry*, *Write*, and
+*Read* ) as independent variables instead of the solely *CFP*
+value.
+
+**References**
+
+[1] S. Abraho and O. Pastor. Measuring the functional size of
+web applications. *International Journal of Web Engineering*
+*and Technology*, 1(1):5–16, 2003.
+
+[2] S. Abraho, O. Pastor, and G. Poels. Evaluating a functional
+size measurement method for web applications: An empirical analysis. In *Proceedings of International Software Met-*
+*rics Symposium*, pages 358–369. IEEE press, 2004.
+
+[3] A. Albrecht. Measuring application development productivity. In *Proceedings of the Joint SHARE/GUIDE/IBM Appli-*
+*cation Development Symposium*, pages 83–92, 1979.
+
+[4] L. Baresi, F. Garzotto, and P. Paolini. From web sites to web
+applications: New issues for conceptual modeling. In *Pro-*
+*ceedings of the International Workshop on The World Wide*
+*Web and Conceptual Modeling*, 2000.
+
+
+447
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+
+[5] L. Baresi and S. Morasca. Three empirical studies on estimating the design effort of web applications. *Transaction*
+*On Software Engineering and Methodology*, 16(4), 2007.
+
+[6] V. Basili, L. Briand, and W. Melo. A validation of ObjectOriented design metrics as quality indicators. *IEEE Trans-*
+*actions on Software Engineering*, 22(10):751–761, 1996.
+
+[7] V. Basili, F. Shull, and F. Lanubile. Building knowledge
+through families of experiments. *IEEE Transactions on Soft-*
+*ware Engineering*, 25(4):435–437, 1999.
+
+[8] L. Briand and I. Wiekzorek. Software resource estimation.
+encyclopedia of software engineering. *Marciniak, John J.*
+*(ed.) New York: John Wiley & Sons*, pages 1160–1196, 2002.
+
+[9] L. Briand and J. Wust. Modeling development effort in
+Object-Oriented systems using design properties. *IEEE*
+*Transaction on Software Engineering*, 27(11):936–986,
+2001.
+
+[10] C. Calero, J. Ruiz, and M. Piattini. A web metrics survey using WQM. In *Proceedings of the International Conference*
+*on Web Engineering*, page 147160. LNCS 3140, SpringerVerlag Heidelberg, 2004.
+
+[11] J. Carver, L. Jaccheri, S. Morasca, and F. Shull. Issues in
+using students in empirical studies in software engineering
+education. In *Proceedings of International Software Metrics*
+*Symposium*, page 239249. IEEE press, 2003.
+
+[12] D. Conte, H. Dunsmore, and V. Shen. *Software engineering*
+*metrics and models* . The Benjamin/Cummings Publishing
+Company, Inc., 1986.
+
+[13] COSMIC. Cosmic measurement manuals and documents,
+url: http://www.lrgl.uqam.ca/cosmic-ffp/, 2007.
+
+[14] COSMIC. Web site, http://www.cosmicon.com, 2007.
+
+[15] G. Costagliola, S. Di Martino, F. Ferrucci, C. Gravino,
+G. Tortora, and G. Vitiello. A COSMIC-FFP approach to
+predict web application development effort. *Journal of Web*
+*Engineering*, 5(2):93–120, 2006.
+
+[16] G. Costagliola, S. Di Martino, F. Ferrucci, C. Gravino,
+G. Tortora, and G. Vitiello. Effort estimation modeling techniques: A case study for web applications. In *Proceedings*
+*of the International Conference on Web Engineering*, pages
+161–165. ACM press, 2006.
+
+[17] D. Dhyani, W. Ng, and S. S. Bhowmick. A survey of web
+metrics. *ACM Computing Surveys*, 34(4):469–503, 2002.
+
+[18] S. Di Martino, F. Ferrucci, C. Gravino, and E. Mendes.
+Comparing size measures for predicting web application development effort: A case study. In *Proceedings of Empir-*
+*ical Software Engineering and Measurement*, pages 324–
+333. IEEE press, 2007.
+
+[19] C. Gencel and L. Buglione. Do different functionality types
+affect the relationship between software functional size and
+effort? In *Proceedings of IWSM-Mensura 2007*, pages 235–
+246, 2007.
+
+[20] IFPUG. International function point users group - function
+point counting practices manual, release 4.2.1, 2004.
+
+[21] A. Kitchenham, S. L. Pfleeger, and L. M. Pickard. Case
+studies for method and tool evaluation. *IEEE Software*,
+12(4):5262, 1995.
+
+[22] B. Kitchenham, E. Mendes, and Travassos. Cross versus within-company cost estimation studies: A systematic review. *IEEE Transaction on Software Engineering*,
+33(5):316–329, 2007.
+
+
+
+[23] B. Kitchenham, L. M. Pickard, S. G. MacDonell, and M. J.
+Shepperd. What accuracy statistics really measure. *IEE Pro-*
+*ceedings Software*, 148(3):81–85, 2001.
+
+[24] E. Mendes, S. Counsell, and N. Mosley. Comparison of web
+size measures for predicting web design and authoring effort. *IEE Proceedings-Software*, 149(3):86–92, 2002.
+
+[25] E. Mendes, S. Counsell, and N. Mosley. Towards a taxonomy of hypermedia and web application size metrics. In
+*Proceedings of International Software Metrics Symposium*,
+pages 110–123. Springer LNCS 3579, 2005.
+
+[26] E. Mendes, S. Counsell, and N. Mosley. Investigating web
+size metrics for early web cost estimation. *Journal of Sys-*
+*tems and Software*, 77(2):157–172, August 2005.
+
+[27] E. Mendes, S. Counsell, N. Mosley, C. Triggs, and I. Watson. A comparative study of cost estimation models for web
+hypermedia applications. *Empirical Software Engineering*,
+8(23):163–196, 2003.
+
+[28] E. Mendes, S. Counsell, N. Mosley, C. Triggs, and I. Watson. Exploring Case-Based Reasoning for web hypermedia
+project cost estimation. *International Journal of Web Engi-*
+*neering and Technology*, 2(1):117–143, 2005.
+
+[29] E. Mendes, S. Di Martino, F. Ferrucci, and C. Gravino. Effort estimation: How valuable is it for a web company to
+use a cross-company data set, compared to using its own
+single-company data set? In *Proceedings of the Interna-*
+*tional WWW Conference*, pages 963–972. ACM press, 2007.
+
+[30] E. Mendes and B. Kitchenham. Further comparison of crosscompany and within-company effort estimation models for
+web applications. In *Proceedings of International Software*
+*Metrics Symposium*, pages 348–357. IEEE press, 2004.
+
+[31] E. Mendes, N. Mosley, and S. Counsel. Investigating early
+web size measures for web cost estimation. In *Proceedings*
+*of Conference on Evaluation and Assessment in Software*
+*Engineering*, pages 1–22, 2003.
+
+[32] D. Montgomery, E. Peck, and G. Vining. *Introduction to*
+*Linear Regression Analysis* . John Wiley and Sons, 2001.
+
+[33] M. Morisio, D. Romano, and I. Stamelos. Quality, productivity, and learning in framework-based development: An
+exploratory case study. *IEEE Transactions on Software En-*
+*gineering*, 28(9):876–888, 2002.
+
+[34] D. Reifer. Web-development: Estimating quick-time-tomarket software. *IEEE software*, 17(8):57–64, 2000.
+
+[35] D. Reifer. Web Objects counting conventions, Reifer Consultants, 2001, URL www.reifer.com/download.html, 2001.
+
+[36] T. Rollo. Sizing E-Commerce. In *Proceedings of Australian*
+*Conference on Software Measurement*, 2000.
+
+[37] M. Ruhe, R. Jeffery, and I. Wieczorek. Cost estimation for
+web applications. In *Proceedings of International Confer-*
+*ence on Software Engineering*, pages 285–294. IEEE press,
+2003.
+
+[38] M. Ruhe, R. Jeffery, and I. Wieczorek. Using Web Objects
+for estimating software development effort for web applications. In *Proceedings of the International Software Metrics*
+*Symposium*, pages 30–37. IEEE press, 2003.
+
+[39] M. Shepperd and C. Schofield. Estimating software project
+effort using analogies. *IEEE Transaction on Software Engi-*
+*neering*, 23(11):736–743, 2000.
+
+[40] C. Wohlin, P. Runeson, M. Host, M. C. Ohlsson, B. Regnell,
+and A.Wesslen. *Experimentation in Software Engineering -*
+*An Introduction* . Kluwer, ISBN 0-7923-8682-5, 2000.
+
+
+448
+
+Authorized licensed use limited to: Aarhus University. Downloaded on September 05,2024 at 11:10:41 UTC from IEEE Xplore. Restrictions apply.
+

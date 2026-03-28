@@ -1,0 +1,38 @@
+After carefully reading the paper titled "Applying Radial Basis Function Neural Networks Based on Fuzzy Clustering to Estimate Web Application Effort", here is a thorough summary of the content, highlighting the predictors used as effort estimators in the paper's research:
+
+**Summary**
+
+The paper explores the application of Radial Basis Function Neural Networks (RBFN) based on fuzzy clustering in web development effort estimation. The aim is to create a model that handles uncertain and imprecise data, improving the accuracy of effort estimates. The authors investigate the effect of incorporating fuzzy logic into the construction of the hidden layer of the RBFN through the use of the fuzzy C-means algorithm.
+
+**Predictors Used as Effort Estimators:**
+
+While the paper doesn't explicitly mention any predictor variables directly related to the actual code-level characteristics like lines of code (SLOC), the authors utilize various software attributes extracted from the Tukutuku dataset, including:
+
+1. Team experience (average number of years of experience the team has on web development)
+2. Devteam (number of people who worked on the software project)
+3. Webpages (number of web pages in the application)
+4. Textpages (number of text pages in the application)
+5. Img (number of images in the application)
+6. Anim (number of animations in the application)
+7. Audio/video (number of audio/video files in the application)
+8. Tot-high (total number of high-effort features in the application)
+9. Tot-nhigh (total number of low-effort features in the application)
+
+These attributes serve as inputs to the RBFN model, enabling it to learn patterns and relationships necessary for predicting web application effort.
+
+**Methodology:**
+
+1. The authors start by explaining the limitations of existing software effort estimation techniques, citing difficulties in capturing the complex relationship between effort and software development environment.
+2. They introduce the concept of Radial Basis Function Neural Networks (RBFN), emphasizing its suitability for approximating non-linear relationships between input and output variables.
+3. The authors discuss the importance of choosing suitable parameters for the RBFN, specifically focusing on determining the number of hidden neurons, centers, widths, and weights.
+4. They explore the potential benefits of using fuzzy clustering techniques, particularly fuzzy C-means, to incorporate uncertainty and imprecision into the estimation process.
+5. Two main models are presented: Model 1 (RBFN-FCM with Sigma-Saha) and Model 2 (RBFN-FCM with Sigma-Haykin).
+6. Various experiments are conducted to validate the efficiency of the proposed models using the Tukutuku dataset, comprising 53 web projects.
+
+**Key Findings:**
+
+1. Results demonstrate that the RBFN model employing fuzzy C-means achieves better accuracy in estimating web application effort than the RBFN model relying solely on hard K-means clustering.
+2. Sensitivity analyses reveal the impact of parameter settings, particularly the width factors, on the efficacy of the RBFN models.
+3. The authors conclude that optimizing the widths of the Gaussian kernels contributes positively to achieving improved estimates.
+
+Overall, the paper successfully demonstrates the feasibility and advantages of leveraging RBFN-based efforts coupled with fuzzy clustering for enhanced web application effort estimation. While no direct reference is made to classic source-code-based metrics like Lines of Code (SLOC), the utilized attributes reflect essential aspects of software complexity and functionality that contribute to overall effort requirements.

@@ -1,0 +1,34 @@
+Based on the provided research paper "Comparison of Web size measures for predicting Web design and authoring effort," authored by E. Mendes, N. Mosley, and S. Counsell, the following key findings and conclusions regarding effort estimators used in the paper are summarized below:
+
+1.  **Predictors Used**: The paper uses various size metrics as predictors for estimating web application effort, categorized into length, complexity, and functionality. Specifically, the metrics include:
+
+    - Length metrics:
+        • Page count
+        • Media count
+        • Program count
+        • Total page allocation
+        • Total media allocation
+        • Total embedded code length
+        • Reused media count
+        • Reused program count
+        • Total reused media allocation
+        • Total reused code length
+
+    - Complexity metrics:
+        • Connectivity (total number of internal links)
+        • Cyclomatic complexity ((connectivity - page count) + 2)
+
+    - Functionality metric:
+        • SizecFsu (size(entries) + 1:size(exits) + 1:size(reads) + 1:size(writes))
+    
+    Note that the complexity metrics mentioned in Section 4 might be incorrect and actually refer to table 4 which defines them differently, specifically "connectivity" refers to the "Total number of internal links", however the formula for cyclomatic complexity is correct as stated in the paper.
+
+2.  **Methodology**: To predict effort for Web design and authoring, the researchers conducted a case study, collecting data from forty-three computer science students who designed and built simple websites under specific guidelines. Data was gathered via two questionnaires, focusing on size metrics, confounding variables like authoring experience, and effort measurements.
+
+3.  **Data Analysis**: Both linear and step-wise regression analyses were performed using SPSS 10.0.5, considering the relationships between size metrics and effort. Predictor variables were selected based on statistical significance and relevance.
+
+4.  **Findings**: Neither linear nor step-wise regression resulted in satisfactory predictions, with neither method accurately capturing effort variance. Further investigation indicated that there was no clear winner among the effort-prediction methods studied. Measuring website functionality appeared closely tied to the presence of links, highlighting potential avenues for refining efforts estimation strategies.
+
+5.  **Conclusion**: While the initial aim of creating accurate effort prediction models for web design and authoring tasks wasn't fully met, insights gained provide valuable direction for enhancing current methodologies. The exploration highlights the difficulty in adequately capturing complex elements such as effort with available metrics, but encourages exploring alternative approaches like incorporating dynamic characteristics of web applications.
+
+Given these observations, a comprehensive interpretation of the paper suggests the necessity for continued research and improvement in web-related effort prediction, leveraging additional factors beyond traditional metrics and potentially integrating novel ones to enhance predictive power.

@@ -1,0 +1,32 @@
+Based on the provided paper "Building an Expert-based Web Effort Estimation Model using Bayesian Networks," the authors conducted a case study to develop an expert-based web effort estimation model using Bayesian Networks (BNs). Below is a thorough analysis and summary of the paper:
+
+**Objective**: The primary aim of this study was to create an expert-based Web effort estimation model using Bayesian Networks (BNs), leveraging the knowledge of a domain expert from a small Web company in Auckland, New Zealand.
+
+**Methodology**: 
+The methodology adopted involves the Knowledge Engineering of Bayesian Networks (KEBN) process, consisting of structural development, parameter estimation, and model validation. The study focused on developing a single-company BN model, taking advantage of the domain expert's extensive experience and knowledge.
+
+**Variables Selection**: Initially, the Tukutuku dataset variables served as a foundation for selecting potential factors influencing Web effort estimation. After discussing each variable, the domain expert removed irrelevant ones and introduced additional variables essential to their estimation process.
+
+**BN Structure Development**: Through multiple iterations, the BN's causal structure evolved, incorporating various factors affecting Web effort estimation. Simplifications were applied to prevent excessive computational complexities and facilitate efficient probability elicitation.
+
+**Probability Elicitation**: The domain expert spent considerable time creating probabilities for the BN, resulting in a substantial investment of approximately 8-10 hours. Iterative refinement allowed adjustments to the initial probability settings based on feedback and practical experiences.
+
+**Validation**: To verify the efficacy of the constructed model, both Model Walk-through and Predictive Accuracy methodologies were utilized. The latter involved validating the model using historical project data and adjusting parameters whenever discrepancies arose between anticipated and actual outcomes.
+
+**Findings and Conclusion**: The developed BN model proved effective in accurately forecasting effort for four subsequent projects. Although labor-intensive, especially during probability elicitation, the process offered valuable insights into the thought process behind the domain expert's estimation practices.
+
+**Key Points Summarized:**
+
+1. **Domain Expert Background**: An interviewee from a small, established Web company brought invaluable insight gained from ten years of experience and diverse project undertakings.
+2. **Initial Variables Set**: Starting with pre-defined Tukutuku dataset factors led to careful consideration and fine-tuning based on personal expertise.
+3. **Iterative Refinement**: Multiple stages guided the construction of the BN model, allowing revisions to address changing perceptions regarding influential factors.
+4. **Time-consuming Task**: Creating probabilities required significant input from the domain expert, necessitating around 8-10 hours per iteration.
+5. **Validated Results**: Successful testing revealed the utility of the developed model across varying project scales.
+
+Considering the findings of the study, the following conclusions can be drawn:
+
+*   Employing a Bayesian Network approach for constructing a web effort estimation model can yield beneficial results, particularly considering expert opinions.
+*   Extensive collaboration between knowledge engineers and domain experts facilitates comprehension and enhances the precision of constructed models.
+*   Continuous refinements throughout the modeling process guarantee alignment of theoretical concepts with realistic expectations from industry professionals.
+
+By combining human intuition and formalized frameworks, this research contributes towards advancing the reliability and applicability of efforts in software engineering. Furthermore, the lessons learned contribute to establishing guidelines for future endeavors aiming to leverage domain expertise in analogous fields.
